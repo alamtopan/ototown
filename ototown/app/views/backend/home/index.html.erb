@@ -15,7 +15,9 @@
 <a href="./page_ready_user_profile.php.html" data-toggle="tooltip" data-placement="bottom" title="Profile"><i class="gi gi-user"></i></a>
 <a href="./page_ready_inbox.php.html" data-toggle="tooltip" data-placement="bottom" title="Messages"><i class="gi gi-envelope"></i></a>
 <a href="#modal-user-settings" data-toggle="modal" class="enable-tooltip" data-placement="bottom" title="Settings"><i class="gi gi-cogwheel"></i></a>
-<a href="./login.php.html" data-toggle="tooltip" data-placement="bottom" title="Logout"><i class="gi gi-exit"></i></a>
+<%= link_to destroy_backend_admin_session_path, method: 'delete', data: {toggle: 'tooltip', placement: 'bottom'} do %>
+  <i class="gi gi-exit"></i>
+<% end %>
 </div>
 </div>
 <ul class="sidebar-section sidebar-themes clearfix">
@@ -372,7 +374,10 @@ Settings
 </li>
 <li class="divider"></li>
 <li>
-<a href="./login.php.html"><i class="fa fa-ban fa-fw pull-right"></i> Logout</a>
+
+<%= link_to destroy_backend_admin_session_path, method: 'delete' do %>
+  <i class="fa fa-ban fa-fw pull-right"></i> Logout
+<% end %>
 </li>
 <li class="dropdown-header text-center">Activity</li>
 <li>

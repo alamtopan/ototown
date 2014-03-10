@@ -1,0 +1,45 @@
+<div id="login-background">
+<img src="./img/placeholders/headers/login_header.jpg" alt="Login Background" class="animation-pulseSlow" />
+</div>
+<div id="login-container" class="animation-fadeIn">
+<div class="login-title text-center">
+<h1><i class="gi gi-flash"></i> <strong>Ototown</strong><br /><small>Please <strong>Login</strong></small></h1>
+</div>
+<div class="block remove-margin">
+<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+<div class="form-group">
+<div class="col-xs-12">
+<div class="input-group">
+<span class="input-group-addon"><i class="gi gi-envelope"></i></span>
+<%= f.email_field :email, :autofocus => true, class: "form-control input-lg", placeholder: "Email" %>
+</div>
+</div>
+</div>
+<div class="form-group">
+<div class="col-xs-12">
+<div class="input-group">
+<span class="input-group-addon"><i class="gi gi-asterisk"></i></span>
+<%= f.password_field :password, class: "form-control input-lg", placeholder: "Password" %>
+</div>
+</div>
+</div>
+<div class="form-group form-actions">
+<div class="col-xs-4">
+<label class="switch switch-primary" data-toggle="tooltip" title="Remember Me?">
+<% if devise_mapping.rememberable? %>
+  <input type="checkbox" id="login-remember-me" name="remember_me" checked="true" />
+  <%#= f.check_box :remember_me %>
+<% end %>
+<span></span>
+</label>
+</div>
+<div class="col-xs-8 text-right">
+<button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-angle-right"></i> Login to Dashboard</button>
+</div>
+</div>
+<% end %>
+<%= render "backend/admins/shared/links" %>
+</div>
+</div>
+
+
