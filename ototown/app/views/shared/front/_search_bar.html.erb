@@ -4,7 +4,19 @@
 			<div class="sell_box sell_box_1">
 				<h2><strong>Search</strong> Vehicle</h2>
 				<div class="select_wrapper">
-					<label><span>* </span><strong>Manufacturer:</strong></label>
+					<label><span></span><strong><input type="checkbox" name="vehicle" value="Bike"> All</strong> </label>
+				</div>
+				<div class="select_wrapper">
+					<label><span></span><strong><input type="checkbox" name="vehicle" value="Bike"> Used:</strong></label>
+				</div>
+				<div class="select_wrapper">
+					<label><span></span><strong><input type="checkbox" name="vehicle" value="Bike"> New:</strong></label>
+				</div>
+				<div class="select_wrapper">
+					<label><span></span><strong><input type="checkbox" name="vehicle" value="Bike"> Classic:</strong></label>
+				</div>
+				<div class="select_wrapper">
+					<label><span>* </span><strong>Brand:</strong></label>
 					<select class="select_5">
 						<option value="0">Select</option>
 						<option value="1">Audi</option>
@@ -32,7 +44,15 @@
 					</select>
 				</div>
 				<div class="select_wrapper">
-					<label><span>* </span><strong>Fabrication:</strong></label>
+					<label><span>* </span><strong>Transmission</strong></label>
+					<select class="select_5">
+						<option value="0">Select</option>
+						<option value="1">Auto</option>
+						<option value="2">Mechanic</option>
+					</select>
+				</div>
+				<div class="select_wrapper">
+					<label><span>* </span><strong>Year:</strong></label>
 					<select class="select_5">
 						<option value="0">Select</option>
 						<option value="1">2013</option>
@@ -45,8 +65,8 @@
 						<option value="8">2006</option>
 					</select>
 				</div>
-				<div class="select_wrapper last">
-					<label><span>* </span><strong>Body Type: :</strong></label>
+				<div class="select_wrapper">
+					<label><span>* </span><strong>Body Type:</strong></label>
 					<select class="select_5">
 						<option value="0">Select</option>
 						<option value="1">Sedan</option>
@@ -57,30 +77,25 @@
 					</select>
 				</div>
 				<div class="select_wrapper">
-					<label><span>* </span><strong>Transmission</strong></label>
+					<label><span>* </span><strong>Province </strong></label>
 					<select class="select_5">
 						<option value="0">Select</option>
-						<option value="1">Auto</option>
-						<option value="2">Mechanic</option>
+						<option value="1">DKI Jakarta</option>
+						<option value="2">Jawa Barat</option>
+						<option value="3">Kalimantan</option>
 					</select>
 				</div>
 				<div class="select_wrapper">
-					<label><span>* </span><strong>Cilindrics </strong> (in cm3):</label>
+					<label><span>* </span><strong>City </strong></label>
 					<select class="select_5">
 						<option value="0">Select</option>
-						<option value="1">1500</option>
-						<option value="2">2000</option>
-						<option value="3">2500</option>
-						<option value="4">3000</option>
-						<option value="5">4000</option>
+						<option value="1">Jakarta</option>
+						<option value="2">Bandung</option>
+						<option value="3">Sukabumi</option>
 					</select>
 				</div>
-				<div class="input_wrapper">
-					<label><span>* </span><strong>VIN / chassis number:</strong></label>
-					<input type="text" class="txb" value=""/>
-				</div>
-				<div class="select_wrapper last">
-					<label><span>* </span><strong>Color:</strong></label>
+				<div class="select_wrapper">
+					<label><span>* </span><strong>Price:</strong></label>
 					<select class="select_5">
 						<option value="0">Select</option>
 						<option value="1">Red</option>
@@ -90,6 +105,10 @@
 						<option value="5">White</option>
 						<option value="6">Black</option>
 					</select>
+				</div>
+				<div class="input_wrapper" style="width:100%">
+					<label><span>* </span><strong>Keyword:</strong></label>
+					<input type="text" class="txb 100full" value="" style="width:95%"/>
 				</div>
 				<input type="submit" value="Search" class="btn_search">
 				<div class="clear"></div>

@@ -178,6 +178,7 @@ cite{
 	width: 319px;
 	float: left;
 	padding: 0px 0 0 1px;
+	font-style:italic;
 }
 #header .top_info .logo a{
 	font-family: 'PTSansBold',Arial,sans-serif;
@@ -188,7 +189,7 @@ cite{
 	text-decoration: none;
 }
 #header .top_info .logo a span{
-	color: #FFB01F;
+	color: #f25a23;
 }
 #header .top_info .header_contacts{
 	width: 455px;
@@ -555,6 +556,7 @@ img.aligncenter {
 	background: none;
 	padding: 0;
 	height: 164px;
+	border: 1px solid #D9DDE3;
 }
 .recent_cars ul li{
 	margin-bottom: 20px;
@@ -730,8 +732,7 @@ img.aligncenter {
 }
 .tabs_wrapper ul.tabs{
 	overflow: hidden;
-	padding-bottom: 4px;
-	background: url(../../../assets/tab_border.jpg) repeat-x 0 bottom;
+	border-bottom: solid 2px #f25a23;
 }
 .tabs_wrapper ul.tabs li{
 	float: left;
@@ -752,7 +753,7 @@ img.aligncenter {
 	border-radius: 5px 5px 0 0;
 }
 .tabs_wrapper ul.tabs li.current{
-	background: url(../../../assets/tab_active.jpg) repeat-x 0 0;
+	background: #f25a23;
 	height: 39px;
 	border:0;
 	line-height: 40px;
@@ -1497,13 +1498,13 @@ img.aligncenter {
 	padding: 18px 15px 25px 18px;
 }
 .banner_1{
-	background: url(../../../assets/banners/bg_banner_1.jpg) repeat-x 0 0 #0C1C30;
+	background: url(../../../assets/banners/bg_banner_1.jpg) repeat-x 0 0 #222;
 	border:1px solid #0C1C30;
 	width: 425px;
 	float: left;
 }
 .banner_2{
-	background: url(../../../assets/banners/bg_banner_2.jpg) repeat-x 0 0 #F09000;
+	background: url(../../../assets/banners/bg_banner_2.jpg) repeat-x 0 0 #f25a23;
 	border:1px solid #DA8500;
 	float: right;
 	width: 425px;
@@ -3437,3 +3438,32 @@ ul.dropdown-menu li.dropdown-header{
 {
   background: rgba(0, 0, 0, 0.5);
 }
+.100full{
+	width: 100%;
+}
+.btn-default {
+	color: #333;
+	background-color: #222;
+	border-color: #111;
+	color: #ccc;
+}
+.btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open .dropdown-toggle.btn-default {
+	color: #333;
+	background-color: #111;
+	border-color: #111;
+}
+#header .top_info .accs {
+	float: right;
+	width: 50%;
+	text-align: right;
+}
+.compare{
+	background-color: #f25a23;
+	color: #fff;
+	padding: 1px 4px;
+	border-radius: 118px 118px 118px 118px;
+	-moz-border-radius: 118px 118px 118px 118px;
+	-webkit-border-radius: 118px 118px 118px 118px;
+	border: 0px solid #000000;
+}
+
