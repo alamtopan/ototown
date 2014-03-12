@@ -13,4 +13,14 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
+//= require front/js/jquery-1.11.0.min
+//= require front/js/bootstrap
+//= require front/js/jquery.easing.1.3
+//= require front/js/jquery.bxslider
+//= require front/js/jquery.mousewheel
+//= require front/js/jquery.selectik
+//= require front/js/jquery.mousewheel-3.0.4.pack
+//= require front/js/jquery.fancybox-1.3.4.pack
+//= require front/js/jquery.countdown
+//= require front/js/jquery.checkbox
+//= require front/js/js

@@ -1,0 +1,1272 @@
+@media only screen and (min-width: 10px) and (max-width: 400px),
+only screen and (min-device-width: 10px) and (max-device-width: 400px){
+	
+	/*
+	================================================================================
+	|                                     HEADER                                   |
+	================================================================================
+	*/
+	#header{
+		min-width:240px;
+		width: 100%;
+		padding-top: 40px;
+	}
+	#header .top_info{
+		width: auto;
+		margin: 0 auto;
+		padding: 15px 0px 25px;
+	}
+	#header .top_info .logo{
+		width: auto;
+		float: none;
+		text-align: center;
+		padding: 0px 0 10px 0px;
+	}
+	#header .top_info .logo a{
+		font-size: 40px;
+	}
+	#header .top_info .header_contacts{
+		width: auto;
+		float: none;
+		padding: 8px 0 0 0px;
+		text-align: center;
+	}
+	#header .top_info .header_contacts .phone{
+		padding: 0 0 2px 0;
+	}
+	#header .top_info .socials{
+		float: none;
+		width: auto;
+		text-align: center;
+		padding: 14px 0 0 0;
+	}
+	#header .top_info .socials a{
+		display: inline-block;
+		margin: 0 0 0 2px;
+	}
+	#search_form{
+		float: none;
+		width: 100%;
+		position: absolute;
+		top:10px;
+		right: 0px;
+		padding: 10px 0 0 0;
+		text-align: center;
+	}
+	#search_form .txb_search{
+		border: 1px solid #D0D0D0;
+		display: inline-block;
+		vertical-align: top;
+		background: #FFFFFF;
+		border-radius: 4px;
+		width: 127px;
+		height: 26px;
+		margin: 0;
+		padding: 0;
+		padding: 1px 10px 0 10px;
+		line-height: 26px;
+		font-family: 'PTSansRegular',Arial,sans-serif;
+		color: #798FA1;
+		box-shadow: 0 1px 0 0 #FFFFFF;
+	}
+	/*
+	================================================================================
+	|                                     NAVIGATION                               |
+	================================================================================
+	*/
+	.bg_navigation{
+		width: 100%;
+		min-width: 240px;
+	}
+	.navigation_wrapper{
+		width: auto;
+		padding: 15px 0 15px 0;
+		overflow: visible;
+	}
+	#navigation{
+		width: 200px;
+		float: none;
+		padding: 0 0 0 0;
+		background: url(../../../assets/bg_small_navigation.jpg) repeat-x 0 0;
+		height: 29px;
+		margin: 0 auto;
+		border-radius: 5px;
+		position: relative;
+	}
+	#navigation span{
+		display: block;
+	}
+	#navigation ul{
+		display: none;
+		position: absolute;
+		top:29px;
+		left:0;
+		background: #283C4C;
+		width: 200px;
+		border-radius: 0 0 5px 5px;
+	}
+	#navigation ul li{
+		display: block;
+		width: 200px;
+		height: 29px;
+		margin-bottom: 3px
+	}
+	#navigation ul li a{
+		font-size: 15px;
+		height: 29px;
+		line-height: 28px;
+		display: block;
+		color: #FFFFFF;
+		padding:0 15px;
+		text-shadow:none;
+	}
+	/*
+	================================================================================
+	|                                     CONTENT                                  |
+	================================================================================
+	*/
+	h1{
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+	cite{
+		display: block;
+		width: auto;
+	}
+	.breadcrumbs{
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	#content{
+		width:100%;
+		min-width: 240px;
+		margin: 0 auto;
+	}
+	.content{
+		width: auto;
+		margin: 0 auto;
+		padding: 15px 10px 0;
+	}
+	.slider_wrapper{
+		float: none;
+		width: auto;
+		padding: 0 0px 0 0;
+		margin-bottom: 20px;
+	}
+	.search_auto_wrapper{
+		float: right;
+	}
+	.wrapper_2 .left,
+	.wrapper_3 .left{
+		width: auto;
+		float: none;
+		padding-top:13px;
+	}
+	.wrapper_2 .right,
+	.wrapper_3 .right{
+		width: auto;
+		float: none;
+		padding-left: 10px;
+		padding-right: 10px;
+		min-width: 220px;
+		margin: 0 auto;
+	}
+	.home_tabs .box.visible{
+		position:relative;
+	}
+	img.alignright {
+		float:none; 
+		margin-left: 0;
+		width: 100%;
+		margin-bottom: 20px;
+	}
+	img.alignleft {
+		float:none; 
+		width: 100%;
+		margin-right: 0;
+		margin-bottom: 20px;
+	}
+	img.aligncenter {
+		display: block; 
+		margin-left: auto; 
+		margin-right: auto;
+	}
+	.alignright {
+		float:none; 
+		margin-left: 0;
+		margin-bottom: 16px;
+	}
+	.alignleft {
+		float:none; 
+		margin-right: 0;
+		margin-bottom: 16px;
+	}
+	/*
+	================================================================================
+	|                                     TABS                                   |
+	================================================================================
+	*/
+	.tabs_wrapper ul.tabs li{
+		float: none;
+		margin-right: 0;
+		width: auto;
+		height: 38px;
+		padding-left: 9px;
+		padding-right: 9px;
+		border-radius: 0;
+	}
+	.tabs_wrapper ul.tabs li.current{
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	.home_tabs .box{
+		padding-left: 9px;
+		padding-right: 9px;
+		min-width: 220px;
+		position: relative;
+	}
+	.home_tabs .box .all{
+		float: none;
+		margin-right: 0;
+		position:absolute;
+		top:35px;
+		left:10px;
+	}
+	.home_tabs .box .results{
+	  	padding: 0 0 35px 0;
+	}
+	.tabs_wrapper .bx-wrapper{
+		width: 150px;
+		margin: 0 auto;
+		min-width: 150px;
+	}
+	.tabs_wrapper .bx-controls{
+		right: -30px;
+	}
+	/*
+	================================================================================
+	|                                     SLIDER                                   |
+	================================================================================
+	*/
+	.home_slider .slider{
+		width: 100%;
+		height: auto;
+	}
+	.home_slider .slider .slide{
+		width: 100%;
+		height: auto;
+		padding-bottom: 100px;
+	}
+	.home_slider .slider .slide img{
+		width: 100%;
+		height: auto;
+	}
+	.home_slider .slider .slide .description{
+		width: 100%;
+		padding: 13px 0 20px;
+	}
+	.home_slider .slider .slide .description h2{
+		max-width: 180px;
+		overflow: hidden;
+	}
+	.home_slider .slider .slide .description p{
+		max-width: 180px;
+		overflow: hidden;
+		padding-bottom: 0;
+	}
+	.home_slider .slider .slide .description .price{
+		float: none;
+		position:relative;
+		right: auto;
+		padding-left: 20px;
+		margin: 0;
+		top:auto;
+	}
+	.page_slider {
+		margin-bottom: 7px;
+		position:relative;
+	}
+	.page_slider .slider{
+		width: 100%;
+		height: auto;
+	}
+	.page_slider .slider .slide{
+		width: 100%;
+		height: auto;
+		padding-bottom: 100px;
+	}
+	.page_slider .slider .slide img{
+		width: 100%;
+		height: auto;
+	}
+	.page_slider .slider .slide .description{
+		width: 100%;
+		padding: 13px 0px 20px 0px;
+	}
+	.page_slider .slider .slide .description .price{
+		float: none;
+		position:relative;
+		right: auto;
+		padding-left: 20px;
+		margin: 0;
+		top:auto;
+	}
+	.page_slider .bx-controls{
+		right:21px;
+	}
+	.side_banners{
+		float: none;
+		width: auto;
+	}
+	/*
+	================================================================================
+	|                                     SEARCH AUTO                              |
+	================================================================================
+	*/
+	.search_auto{
+		width: auto;
+		border:1px solid #EBEBEB;
+		padding: 11px 19px 13px;
+		background: #F8F8F8;
+		min-width: 180px;
+	}
+	.catalog_sidebar .search_auto{
+		width: auto;
+		margin-bottom: 20px;
+		float: none;
+		margin-left: 10px;
+		margin-right: 10px;
+		min-width: 160px;
+	}
+	.catalog_sidebar .search_auto h3{
+		float: none;
+	}
+	.search_auto h3{
+		float: none;
+	}
+	.search_auto .categories{
+		float: none;
+		padding-top: 0;
+		margin-left: -5px;
+	}
+	.catalog_sidebar .search_auto .categories{
+		float: none;
+		padding-top: 0px;
+		margin-left: -5px;
+	}
+	.search_auto .select_box{
+		display: inline-block;
+		width: 45%;
+	}
+	.search_auto .select_box_1{
+		width: auto;
+		padding: 0 0 8px 0;
+	}
+	.catalog_sidebar .search_auto .select_box_1{
+		width: auto;
+	}
+	.search_auto .select_box_2{
+		width: auto;
+		padding: 0 0 8px 0;
+	}
+	.search_auto .chb_wrapper{
+		float: none;
+	}
+	.catalog_sidebar .search_auto .select_box_2{
+		width: auto;
+		padding: 0 0 8px 0;
+	}
+	.search_auto .select_box_2 .custom-select,
+	.catalog_sidebar .search_auto .select_box_2 .custom-select{
+		float: right;
+		width: 45%;
+	}
+	.search_auto .select_box_2 .custom-select:first-child,
+	.caltalog_sidebar .search_auto .select_box_2 .custom-select:first-child{
+		margin-right: 10px;
+		float: left;
+	}
+	.search_auto .btn_search{
+		float: none;
+	}
+	.catalog_sidebar .search_auto .btn_search{
+		float: none;
+	}
+	/*
+	================================================================================
+	|                              CUSTOM SELECT                                   |
+	================================================================================
+	*/
+	.select_box_1 .select-list{
+		width: 100%;
+	}
+	.select_box_2 .select-list{
+		width: 100%;
+	}
+	.catalog_sidebar .select_box_1 .select-list,
+	.car_sidebar .select_box_1 .select-list{
+		width: 100%;
+	}
+	.catalog_sidebar .select_box_2 .select-list,
+	.car_sidebar .select_box_2 .select-list{
+		width: 100%;
+	}
+	.catalog_sidebar .search_auto .chb_wrapper{
+		float: none;
+		padding-top: 20px;
+	}
+	.catalog_sidebar .search_auto .btn_search{
+		float: none;
+	}
+	/*
+	================================================================================
+	|                                     BANNERS                                   |
+	================================================================================
+	*/
+	.banner a img{
+		width: 100%;
+	}
+	.banner_1{
+		margin: 0 auto 20px;
+		float: none;
+		width: auto;
+	}
+	.banner_2{
+		margin: 0 auto 20px;
+		float: none;
+		width: auto;
+	}
+	.main_banner a{
+		margin: 13px auto 0;
+		float: none;
+	}
+	.main_banner.banner_1 .text_wrapper,
+	.main_banner.banner_2 .text_wrapper{
+		background-position: center 0;
+	}
+	.main_banner .text_wrapper{
+		float: none;
+		width: auto;
+		padding: 60px 20px 0;
+		text-align: center;
+	}
+	/*
+	================================================================================
+	|                                     RECENT BLOG                              |
+	================================================================================
+	*/
+	.recent_blog{
+		padding-left: 10px;
+		padding-right: 10px;
+		min-width: 220px;
+		padding-bottom: 35px;
+	}
+	.recent_blog h2{
+		margin-bottom: 21px;
+	}
+	.recent_blog .post_block{
+		float: none;
+		overflow: hidden;
+		width: auto;
+		margin: 0 0px 20px 0;
+		padding: 19px 19px 28px;
+	}
+	.recent_blog .post_block.last{
+		margin: 0;
+	}
+	.recent_blog .post_block a.thumb{
+		margin: 0 0px 20px 0;
+		float: none;
+	}
+	/*
+	================================================================================
+	|                                     VIDEO		                              |
+	================================================================================
+	*/
+	.video_box{
+		padding-bottom: 20px;
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	.video_box .post_block{
+		float: none;
+		width: auto;
+		margin: 0 0 20px 0;
+		overflow: hidden;
+	}
+	/*
+	================================================================================
+	|                               HOME NEWS		                              |
+	================================================================================
+	*/
+	.news {
+		overflow: hidden;
+		float: none;
+		min-width: 180px;
+		width: auto;
+	}
+	.news h2{
+		margin: 0 auto 20px;
+	}
+	.news_wrapper{
+		float: none;
+		width: auto;
+		overflow: hidden;
+	}
+	.news .news_box{
+		margin: 0;
+		width: auto;
+		float: none;
+		overflow: hidden;
+		padding-bottom:17px;
+	}
+	.news .news_box.bottom{
+		float: none;
+	}
+	.news .news_box .thumb{
+		width: 180px;
+		float: left;
+		margin-right: 15px;
+	}
+	.news .news_box .thumb img{
+		width: auto;
+	}
+	.news .all_wrapper{
+		width: 100%;
+		margin: 0;
+		clear: both;
+	}
+
+	/*
+	================================================================================
+	|                               SUBSCRIBE		                              |
+	================================================================================
+	*/
+	.banners_wrapper{
+		float: none;
+		width: auto;
+	}
+	.get_news_box{
+		width: auto;
+		float: none;
+		margin: 0 0 20px;
+	}
+	.get_news_box h3{
+		max-width: 180px;
+		width: 100%;
+		margin: 0 auto 21px;
+	}
+	.get_news_box form{
+		max-width: 180px;
+		width: 100%;
+		margin: 0 auto;
+	}
+	.side_banners img{
+		width: 100%;
+	}
+	.get_news_box{
+		padding: 12px 0px 21px;
+	}
+	/*
+	================================================================================
+	|                                     FOOTER                                   |
+	================================================================================
+	*/
+	#footer{
+		min-width:240px;
+		width: 100%;
+	}
+	.bg_top_footer{
+		min-width:240px;
+		width: 100%;
+	}
+	.top_footer{
+		width:auto;
+		margin: 0 auto;
+		padding-bottom: 40px;
+		padding-left: 10px;
+		padding-right: 10px;
+		overflow: hidden;
+	}
+	.top_footer .f_widget{
+		width: auto;
+		float: none;
+		padding: 0 0px 40px 0;
+	}
+	.top_footer .fwidget_separator{
+		display: none;
+	}
+	.top_footer .f_widget.divide{
+		float: none;
+	}
+	.bottom_footer{
+		width: auto;
+		padding-bottom: 0;
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	.bottom_footer .f_widget{
+		width: auto;
+		padding: 0 0px 20px 0;
+		float: none;
+	}
+	.bottom_footer .f_widget.divide{
+		float: none;
+	}
+	.bottom_footer .fwidget_separator{
+		display: none;
+	}
+	#footer .frame_wrapper{
+		min-width: 220px;
+		width: auto;
+		overflow: hidden;
+	}
+	.copyright_wrapper{
+		width: 100%;
+		min-width: 240px;
+	}
+	.copyright{
+		width: auto;
+	}
+	/*
+	================================================================================
+	|                                     404	                                   |
+	================================================================================
+	*/
+	.needs_wrapper {
+		padding-bottom: 0;
+		padding-left: 19px;
+		margin-left: 10px;
+		margin-right: 10px;
+		padding-right: 19px;
+	}
+	.needs_wrapper .post_block{
+		float: none;
+		width: auto;
+		padding: 0 0 20px;
+	}
+	.needs_wrapper .post_block.center{
+		padding:0 0 20px;
+	}
+	.newsletter{
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	.newsletter .txb{
+		width: 180px;
+		margin:0 0 15px;
+	}
+	.counter_heading,
+	.counter_wrapper{
+		padding-left:10px;
+		padding-right:10px;
+	}
+	#counter .countdown_section{
+		width: 50px;
+		margin: 0 2px;
+		font-size: 12px;
+	}
+	#counter .countdown_amount{
+		width: 50px;
+		height: 50px;
+		background: url(../../../assets/digit_small.png) no-repeat 0 0;
+		font-size: 35px;
+		line-height: 50px;
+		padding: 0 0 0 0px;
+	}
+	/*
+	================================================================================
+	|                                  CONTACTS		                                |
+	================================================================================
+	*/
+	.contacts_box{
+		margin-left: 10px;
+		margin-right: 10px;
+		width: auto;
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	.contacts_box .left{
+		width: 100%;
+		float: none;
+	}
+	.contacts_box .map{
+		width: auto;
+		float: none;
+		overflow: hidden;
+	}
+	.contact_form{
+		padding: 0 10px 28px 10px;
+	}
+	.contact_form h2{
+		margin-bottom: 15px;
+	}
+	.contact_form .fld_box{
+		width: 100%;
+		float: none;
+	}
+	.contact_form .fld_box.last{
+		padding: 0 0px 0 0px;	
+		float: right;
+	}
+	.contact_form .fld_box.center{
+		padding: 0 0px 0 0px;	
+	}
+	.contact_form input{
+	    width: 92%;
+	}
+	.contact_form textarea{
+	    width: 96%;
+	}
+	.personal_box{
+		padding: 0 10px;
+	}
+	ul.personal_list{
+		overflow: hidden;
+	}
+	ul.personal_list li{
+		width: 100%;
+		float: none;
+		display: block;
+		margin: 0 0px 36px 0;
+	}
+	ul.personal_list li img.thumb{
+		float: none;
+		width: 100%;
+		height: auto;
+		margin: 0 0 10px 0;
+	}
+	ul.personal_list li .inner{
+		float: none;
+		padding: 0px 0 0 0px;
+		width: auto;
+	}
+	ul.personal_list li .grey_area span{
+		display: block;
+	}
+	ul.personal_list li .inner .fR,
+	ul.personal_list li .inner .fL{
+		float: none;
+	}
+	/*
+	================================================================================
+	|                                     CATALOG                                   |
+	================================================================================
+	*/
+	.main_catalog{
+		float:none;
+		width: auto;
+		padding: 15px 0 0 0;
+	}
+	.catalog_sidebar{
+		width: auto;
+		padding: 0 0px 0 0;
+		float: none;
+	}
+	.top_catalog_box .clear{
+		clear: right;
+	}
+	.top_catalog_box .pagination{
+		margin-top: 40px;
+		padding-left: 0;
+		padding-right: 0;
+		clear:both;
+		float: none;
+	}
+	.cars_categories, .steps{
+		position:relative;
+		top:0;
+		padding-left: 10px;
+		padding-right: 10px;
+		padding-bottom: 10px;
+		min-width: 220px;
+	}
+	.cars_categories a, 
+	.steps a,
+	.cars_categories span, 
+	.steps span{
+		margin-right: 0px;
+		margin-left: 0;
+		padding-left: 7px;
+		padding-right: 7px;
+	}
+	.switch{
+		float: none;
+		padding: 0 0 0 0;
+	}
+	.top_catalog_box{
+		margin: 0 10px;
+	}
+	.drop_list{
+		padding: 1px 0 0 0;
+		float: none;
+		clear: both;
+		z-index: 1;
+		position: relative;
+		display: block;
+	}
+	.sorting.drop_list{
+		z-index: 2;
+	}
+	.view_on_page.drop_list{
+		z-index: 1;
+	}
+	.drop_list span{
+		z-index: 5;
+	}
+	.drop_list .active span{
+		z-index: 10;
+	}
+	.drop_list .active ul{
+		z-index: 9;
+	}
+	.pagination{
+		float: none;
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	/*
+	================================================================================
+	|                                CATALOG TABLE	                              |
+	================================================================================
+	*/
+	.catalog_table,
+	.dealer_catalog{
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	.catalog_table li a.thumb,
+	.dealer_catalog li a.thumb{
+		float: none;
+		width: auto;
+		margin: 0;
+		height: auto;
+	}
+	.catalog_table li a.thumb img,
+	.dealer_catalog li a.thumb img{
+		width: 100%;
+		height: auto;
+	}
+	.catalog_table li .catalog_desc,
+	.dealer_catalog li .catalog_desc{
+		padding: 0 0 0 0;
+		width: auto;
+		float: none;
+	}
+	.catalog_table li .catalog_desc .location,
+	.dealer_catalog li .catalog_desc .location{
+		float: none;
+		padding-top: 10px;
+	}
+	.catalog_table li .catalog_desc .title_box,
+	.dealer_catalog li .catalog_desc .title_box{
+		float: none;
+	}
+	.catalog_table li .catalog_desc .clear,
+	.dealer_catalog li .catalog_desc .clear{
+		clear: right;
+	}
+	.catalog_table li .grey_area,
+	.dealer_catalog li .grey_area{
+		margin: 0px 0 0 0;
+	}
+	/*
+	================================================================================
+	|                                CATALOG LIST	                              |
+	================================================================================
+	*/
+	.catalog_list {
+		padding-left: 10px;
+		padding-right: 10px;
+		width: 213px;
+		margin: 0 auto;
+	}
+	.catalog_list li{
+		width: auto;
+		float: none;
+		margin: 0 0 20px 0;
+		overflow: hidden;
+	}
+	.catalog_list li.last{
+		margin-right: 0;
+		float: none;
+	}
+	/*
+	================================================================================
+	|                                    CAR                                       |
+	================================================================================
+	*/
+	.cars_id{
+		position: relative;
+		top:0;
+		right: 0;
+		padding: 0 10px 10px;
+		text-align: left;
+	}
+	.car_image_wrapper{
+		width: auto;
+		margin-right: 10px;
+		margin-left: 10px;
+		float: none;
+	}
+	.car_characteristics{
+		width: auto;
+		float: none;
+		margin:0 10px 23px;
+	}
+	.car_image_wrapper .big_image{
+		width: 100%;
+	}
+	.car_image_wrapper .big_image a{
+		width: 100%;
+	}
+	.car_image_wrapper .big_image a img{
+		width: 100%;
+	}
+	.car_image_wrapper .small_img{
+		width: auto;
+		padding-left: 5px;
+	}
+	.car_image_wrapper .small_img a{
+		float: left;
+		margin: 0 2px 0 0;
+	}
+	.car_image_wrapper .small_img a{
+		width: 19%;
+		height: auto;
+	}
+	.car_image_wrapper .small_img a img{
+		width: 100%;
+		height: auto;
+	}
+	.features_table .line .left{
+		width: auto;
+		float: none;
+	}
+	.features_table .line .right{
+		width: auto;
+		float: none;
+	}
+	.wanted_line .left{
+		width: auto;
+		float: none;
+	}
+	.wanted_line .right{
+		width: auto;
+		float: none;
+	}
+	.info_box{
+		float: none;
+		width: auto;
+		padding: 10px 10px 16px 10px;
+	}
+	.car_sidebar{
+		width: 100%;
+		padding-bottom: 13px;
+		float: none;
+	}
+	.car_sidebar .calculator{
+		width: auto;
+		float: none;
+	}
+	.car_sidebar .banner{
+		float: right;
+		width: 40%;
+	}
+	.car_info .info_left{
+		float: none;
+		width: auto;
+		padding: 0 0px 20px 0;
+	}
+	.car_info .info_right{
+		float: none;
+		width: auto;
+		padding: 0 0px 20px 0;
+	}
+	.car_contacts .left{
+		float: none;
+		width: auto;
+		padding-right: 0;
+	}
+	.car_contacts .right{
+		float: none;
+		width: auto;
+	}
+	/*
+	================================================================================
+	|                                CALCULATOR		                              |
+	================================================================================
+	*/
+	.calculator{
+		width: auto;
+		margin-left: 10px;
+		margin-right: 10px;
+		min-width: 160px;
+	}
+	.calculator .select_box_1{
+		width: auto;
+	}
+	/*
+	================================================================================
+	|                                SELL			                              |
+	================================================================================
+	*/
+	.message{
+		margin: 0 10px 33px;
+	}
+	.sell_box{
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+	.sell_submit_wrapper{
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+	.sell_submit_wrapper .custom_chb_wrapper.fL{
+		float: none;
+	}
+	.sell_box .select_wrapper,
+	.sell_box .input_wrapper,
+	.sell_box .single_chb_wrapper{
+		width: auto;
+		float: none;
+	}
+	.sell_box .select_wrapper.last,
+	.sell_box .input_wrapper.last,
+	.sell_box .single_chb_wrapper.last{
+		width: auto;
+		float: none;
+	}
+	.sell_box .input_wrapper.large{
+		width: auto;
+		float: none;
+	}
+	.sell_box .input_wrapper.large input{
+		width: 183px;
+	}
+	.sell_box .chb_group{
+		float: none;
+		padding: 4px 0 20px 0;
+		width: auto;
+	}
+	.sell_box .chb_group.last{
+		width: auto;
+		float: none;
+	}
+	.chb_devider{
+		display: block;
+		clear: both;
+	}
+	.sell_box .foto_wrapper{
+		width: 40%;
+		margin: 6px 3% 20px 2%;
+	}
+	.sell_box .foto_wrapper a{
+		width: 98%;
+	}
+	.sell_submit_wrapper input.sell_submit{
+		float: none;
+	}
+	/*
+	================================================================================
+	|                                     CHECKBOXES                               |
+	================================================================================
+	*/
+	.custom_chb_wrapper label{
+		float: none;
+		padding: 0 0 0 25px;
+		display: block;
+	}
+	/*
+	================================================================================
+	|                                 BLOG		                                   |
+	================================================================================
+	*/
+	.blog{
+		width: auto;
+		margin: 0 10px;
+		float: none;
+		padding: 0 0px 0 0;
+	}
+	.blog_post .blog_desc{
+		float: none;
+		width: auto;
+		padding: 2px 0 0 0px;
+	}
+	.blog_post .thumb, 
+	.blog_post .thumb img{
+		float: none;
+		width: 100%;
+		margin-right: 0;
+		margin-bottom: 10px;
+	}
+	.blog .pagination{
+		padding-left: 0;
+		padding-right: 0;
+	}
+	/*
+	================================================================================
+	|                                     WIDGETS                                   |
+	================================================================================
+	*/
+	.sidebar{
+		float: none;
+		width: auto;
+		margin:0 10px;
+		padding-bottom: 20px;
+		padding-top: 20px;
+	}
+	.sidebar .widget{
+		float: none;
+		width: auto;
+		margin-right: 0;
+		margin-left: 0;
+	}
+	.sidebar .widget .thumb{
+		width: auto;
+		display: block;
+	}
+	.sidebar .widget .thumb img{
+		width: 100%;
+	}
+	.sidebar .tabs_widget{
+		width: auto;
+		margin-right: 0;
+		margin-left: 0;
+		float: none;
+	}
+	.sidebar .tabs_widget .tab_post .desc{
+		float: none;
+		padding: 2px 0 0 71px;
+	}
+	.widget_divider{
+		display: block;
+		clear: both;
+	}
+	/*
+	================================================================================
+	|                               COMMENTS	                                   |
+	================================================================================
+	*/
+	.comment_form .fld_box{
+		width: 100%;
+		float: none;
+	}
+	.comment_form .fld_box.center{
+		padding: 0 0 0 0;	
+	}
+	.comment_form input{
+	    width: 89%;
+	}
+	.comment_form textarea{
+	    width: 94%;
+	}
+	.comments ul li ul li .wrapper{
+		padding: 24px 0 25px 0px;
+	}
+	.comments ul li ul li ul li .wrapper{
+		padding: 24px 0 25px 0px;
+	}
+	/*
+	================================================================================
+	|                                     SERVICES                                 |
+	================================================================================
+	*/
+	.services{
+		padding-left: 9px;
+		padding-right: 9px;
+	}
+	.services .service{
+		width: auto;
+		float: none;
+		padding: 19px 19px 14px 19px;
+		height: auto;
+		overflow: hidden;
+		margin-bottom: 20px;
+	}
+	.services .service.center{
+		margin: 0 0 20px 0;
+	}
+	.services .service h2{
+		min-height: 39px;
+		font-size: 26px;
+		line-height: 32px;
+		padding: 3px 0 11px 53px;
+	}
+	/*
+	================================================================================
+	|                                    RECENT		                                 |
+	================================================================================
+	*/
+	.recent{
+		padding-left:10px;
+		padding-right: 10px;
+		width: 220px;
+		margin: 0 auto;
+	}
+	.recent_cars{
+		min-width:220px;
+		width: auto;
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	.recent_cars ul{
+		width: 220px;
+		margin: 0 auto;
+	}
+	.recent_cars ul li.last{
+		margin-right: 0;
+		margin-left: 0;
+	}
+	.recent_cars ul li{
+		width: auto;
+		float: none;
+		margin-right: 0;
+		margin-left: 0;
+		overflow: hidden;
+	}
+	
+	/*
+	================================================================================
+	|                              DEALER		                                   |
+	================================================================================
+	*/
+	.best_offer{
+		width: 100%;
+		height: auto;
+		position: relative;
+		padding-bottom: 100px;
+	}
+	.best_offer img{
+		width: 100%;
+		height: auto;
+		position:relative;
+		z-index: 1;
+		top:0;
+		left:0;
+	}
+	.best_offer .description{
+		width:100%;
+		padding: 13px 0 20px;
+	}
+	.best_offer .description h2{
+		padding: 0 20px 3px;
+		max-width: 160px;
+		overflow: hidden;
+		white-space: nowrap;
+	}
+	.best_offer .description p{
+		padding: 0 20px;
+		max-width: 140px;
+		white-space: nowrap;
+	}
+	.best_offer .description .price{
+		float: none;
+		position:relative;
+		right: auto;
+		padding-left: 20px;
+		margin: 0;
+		top:auto;
+		white-space: nowrap;
+	}
+}
