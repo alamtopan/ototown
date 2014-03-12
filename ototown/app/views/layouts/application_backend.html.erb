@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ototown</title>
+  <%= stylesheet_link_tag    "application_backend", media: "all", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div id="page-container" class="sidebar-full">
+  	<%= yield %>
+  </div>
+	<%= javascript_include_tag "application_backend", "data-turbolinks-track" => true %>
+</body>
+</html>
