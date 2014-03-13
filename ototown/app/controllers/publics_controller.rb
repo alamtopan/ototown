@@ -10,6 +10,9 @@ class PublicsController < ApplicationController
 	end
 	def dealers
 	end
+	def detail_dealer
+		render layout: 'application_dealer'
+	end
 	def cars
 	end
 	def detail_car

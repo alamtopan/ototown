@@ -3476,12 +3476,6 @@ ul.dropdown-menu li.dropdown-header{
 	-webkit-border-radius: 118px 118px 118px 118px;
 	border: 0px solid #000000;
 }
-.margin-top80{
-	margin-top: 80px;
-}
-.margin-top60{
-	margin-top: 60px;
-}
 .box{
 	background: #fff!important;
 }
@@ -3553,7 +3547,7 @@ body #content .profile_layout .widget-nav-profile li{
 
 }
 .profile_layout .widget-nav-profile li a:hover,.profile_layout .widget-nav-profile li.active a{
-	color:#f89d13;
+	color:#f25a23;
 	text-decoration: none;
 }
 body #content .profile_layout .widget-nav-profile li.settings{
@@ -3746,6 +3740,7 @@ body #content .profile_layout .widget-nav-profile li.dealer_affiliates{
 	border-bottom:1px solid #ebebeb;
 	height: 150px;
 	padding-top: 20px;
+	background: #fff;
 }
 .profile_content .cars_list .car:hover,.profile_content .cars_list .car.active{
 	background-color:#f9f9f9;
@@ -3822,13 +3817,13 @@ body #content .profile_layout .widget-nav-profile li.dealer_affiliates{
 	padding: 3px 32px 3px 24px;
 }
 .profile_content .cars_list .car .statistics_info div.item-views{
-	background: url(../images/cars_list/views.png) 0 2px no-repeat;
+	background: url(../../../assets/cars_list/views.png) 0 2px no-repeat;
 }
 .profile_content .cars_list .car .statistics_info div.item-id{
-	background: url(../images/cars_list/id.png) 0 1px no-repeat;
+	background: url(../../../assets/cars_list/id.png) 0 1px no-repeat;
 }
 .profile_content .cars_list .car .statistics_info div.item-info{
-	background: url(../images/cars_list/info.png) 0 1px no-repeat;
+	background: url(../../../assets/cars_list/info.png) 0 1px no-repeat;
 }
 .profile_content .cars_list .car .count_photo{
 	width:128px;
@@ -3908,17 +3903,9 @@ textarea {
 }
 
 .btn2{
-	color:#ffffff;
+	color:#ffffff!important;
 	text-shadow:0 -1px 0 #f36804;
-	background-color: #FDA61F;
-  	*background-color: #FDA61F;
-	background-image: -ms-linear-gradient(top, #FDA61F 0%, #F29204 100%);
-	background-image: -moz-linear-gradient(top, #FDA61F 0%, #F29204 100%);
-	background-image: -o-linear-gradient(top, #FDA61F 0%, #F29204 100%);
-	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #FDA61F), color-stop(1, #F29204));
-	background-image: -webkit-linear-gradient(top, #FDA61F 0%, #F29204 100%);
-	background-image: linear-gradient(to bottom, #FDA61F 0%, #F29204 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FDA61F', endColorstr='#F29204',GradientType=0 ); /* IE6-9 */
+	background: #f25a23;
 }
 .btn2:hover {
 	opacity: 0.8;
@@ -4466,7 +4453,7 @@ textarea.text{
 	vertical-align: top;
 	background: #FFFFFF;
 	border-radius: 4px;
-	width: 183px;
+	width: 183px!important;
 	height: 28px;
 	margin: 0;
 	padding: 1px 10px 0 10px;

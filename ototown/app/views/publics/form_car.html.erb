@@ -11,50 +11,156 @@
 			<div class="main_wrapper">
 				<div class="main_wrapper">
 					<h1><strong>Add</strong> Car</h1>
-					<form method="post" action="http://autodealer.winterjuice.com/profile/vehicles/add/" id="vehicle-form" novalidate="novalidate">
+					<form method="post" action="#" id="vehicle-form">
 						<div class="step_breadcrumb">
-							<a href="#" class="active" id="step_1">step 1.  announcement</a>
-							<a href="#" class="" id="step_2">step 2.  technical characteristics</a>
-							<a href="#" class="" id="step_3">step 3.  photo</a>
+							<a href="#" class="active" id="step_1">step 1.  SELECT CATEGORIES</a>
+							<a href="#" class="" id="step_2">step 2.  TECHNICAL CHARACTERISTICS</a>
+							<a href="#" class="" id="step_3">step 3.  PHOTO</a>
 						</div>
-						<div class="sell_box step_1" style="display: block;">
-							<h2><strong>Vehicle</strong> data</h2>
+						<div class="sell_box step_1">
+							<h2><strong>Categories</strong></h2>
+							<div class="col_opt">
+								<span class="custom_chb_wrapper">
+									<span class="custom_chb">
+										<input id="_4wd" name="_4wd" type="checkbox">
+									</span>
+									<label>ALL</label>
+								</span>
+							</div>
+							<div class="col_opt">
+								<span class="custom_chb_wrapper">
+									<span class="custom_chb">
+										<input id="_abs" name="_abs" type="checkbox">
+									</span>
+									<label>USED</label>
+								</span>
+							</div>
+							<div class="col_opt">
+								<span class="custom_chb_wrapper">
+									<span class="custom_chb">
+										<input id="_adjustable_suspension" name="_adjustable_suspension" type="checkbox">
+									</span>
+									<label>NEW</label>
+								</span>
+							</div>
+							<div class="col_opt_last">
+								<span class="custom_chb_wrapper">
+									<span class="custom_chb">
+										<input id="_air_conditioning" name="_air_conditioning" type="checkbox">
+									</span>
+									<label>CLASSIC</label>
+								</span>
+							</div>
+							<div class="br"></div>
 							<div class="col_1">
 								<div class="select_wrapper">
-									<label><span>* </span><strong>Transport Type:</strong></label>
-									<select class="text error" id="_transport_type_id" name="_transport_type_id" required="" value-note-quals="0">
+									<label><span>* </span><strong>Category:</strong></label>
+									<select name="#" class="text error">
 										<option value="0">Select</option>
-										<option value="1">Bikes</option>
-										<option value="2">Bus</option>
-										<option value="3">Cars</option>
-										<option value="4">Trucks</option>
+										<option value="1">Car</option>
+										<option value="2">Spare parts</option>
 									</select>
-									<label for="_transport_type_id" generated="true" class="error">This field is required.</label>
 								</div>
-								<div class="select_wrapper">
-									<label><span>* </span><strong>Manufacturer:</strong></label>
-									<select class="text error" id="_manufacturer_id" name="_manufacturer_id" required="" value-note-quals="0">
-										<option value="0">Select</option>
-										<option value="1">Abarth</option>
-										<option value="193">Zanella</option>
-										<option value="194">ZAZ</option>
-										<option value="195">ZIL</option>
-									</select>
-									<label for="_manufacturer_id" generated="true" class="error">This field is required.</label>
-								</div>
-								<div class="select_wrapper">
-									<label><span>* </span><strong>Model:</strong></label>
-									<select class=" text" id="_model_id" name="_model_id" required="" value-note-quals="0"></select>
-								</div>
+							</div>
+							<div class="col_2">
 								<div class="input_wrapper">
-									<label><span> </span><strong>Version:</strong></label>
-									<input type="text" class="text" id="_version" name="_version" value="">
+									<label><span>* </span><strong>Title:</strong></label>
+									<input type="text" class="text 100full" value=""/>
+								</div>
+							</div>
+							<div class="col_3">
+								<div class="select_wrapper">
+									<label><span>* </span><strong>Status:</strong></label>
+									<select name="#" class="text error">
+										<option value="0">Select</option>
+										<option value="1">Publish</option>
+										<option value="2">Save Draft</option>
+									</select>
+								</div>
+							</div>
+							<div class="input_wrapper" style="width:98%">
+								<label><span>* </span><strong>Description:</strong></label>
+								<textarea class="text" style="width:100%;" id="post_content" name="post_content"></textarea>
+							</div>
+							<div class="clear"></div>
+							<h2></h2>
+							<div class="btn-next">
+								<a href="#" class="btn3">Back</a>
+								<a href="#" class="btn1">Next</a>
+							</div>
+						</div>
+						<div class="sell_box step_2" style="display: none;">
+							<h2><strong>Characteristics</strong></h2>
+							<div class="col_1">
+								<div class="select_wrapper">
+									<label><span>* </span><strong>Province:</strong></label>
+									<select name="#" class="text error">
+										<option value="0">Select</option>
+										<option value="1">DKI Jakarta</option>
+										<option value="2">Jawa Barat</option>
+										<option value="3">Kalimantan</option>
+									</select>
+								</div>
+								<div class="select_wrapper">
+									<label><span>* </span><strong>City:</strong></label>
+									<select name="#" class="text error">
+										<option value="0">Select</option>
+										<option value="1">DKI Jakarta</option>
+										<option value="2">Jawa Barat</option>
+										<option value="3">Kalimantan</option>
+									</select>
+								</div>
+								<div class="select_wrapper">
+									<label><span>* </span><strong>Brand:</strong></label>
+									<select class="text error" name="#">
+										<option value="0">Select</option>
+										<option value="1">Audi</option>
+										<option value="2">Mercedes-Benz</option>
+										<option value="3">BMW</option>
+										<option value="4">Lexus</option>
+										<option value="5">Lincoln</option>
+										<option value="6">Ford</option>
+										<option value="7">Fiat</option>
+										<option value="8">Dodge</option>
+									</select>
 								</div>
 							</div>
 							<div class="col_2">
 								<div class="select_wrapper">
+									<label><span>* </span><strong>Model:</strong></label>
+									<select class="text error" name="#">
+										<option value="0">Select</option>
+										<option value="1">R8</option>
+										<option value="2">S500</option>
+										<option value="3">540i</option>
+										<option value="4">RX300</option>
+										<option value="5">Navigator</option>
+										<option value="6">Taurus</option>
+										<option value="7">Doblo</option>
+										<option value="8">Viper</option>
+									</select>
+								</div>
+								<div class="select_wrapper">
+									<label><span>* </span><strong>Transmission:</strong></label>
+									<select class="text error" name="#">
+										<option value="0">Select</option>
+										<option value="1">Auto</option>
+										<option value="2">Mechanic</option>
+									</select>
+								</div>
+								<div class="input_wrapper price">
+									<label><span>* </span><strong>Year:</strong></label>
+									<select class="text valid" name="#">
+										<option value="1">IDR</option>
+										<option value="1">EURO</option>
+										<option value="2">USD</option>
+									</select>
+								</div>
+							</div>
+							<div class="col_3">
+								<div class="select_wrapper">
 									<label><span>* </span><strong>Body Type:</strong></label>
-									<select name="_body_type_id" id="_body_type_id" class="text error" required="" value-note-quals="0">
+									<select name="#" class="text error">
 										<option value="0">Select</option>
 										<option value="10">Chopper</option>
 										<option value="2">Coupe</option>
@@ -67,67 +173,28 @@
 										<option value="8">Truck</option>
 										<option value="6">Van</option>
 										<option value="7">Wagon</option>
-									</select><label for="_body_type_id" generated="true" class="error">This field is required.</label>
+									</select>
 								</div>
 								<div class="select_wrapper">
-									<label><span>* </span><strong>Fabrication:</strong></label>
-									<select name="_fabrication" id="_fabrication" class="text error" required="" value-note-quals="0">
+									<label><span></span><strong>Color: </strong></label>
+									<select class="text valid" name="#">
 										<option value="0">Select</option>
-										<option value="1915">1915</option>
-										<option value="1914">1914</option>
-										<option value="1913">1913</option>
-										<option value="1912">1912</option>
+										<option value="1">White</option>
+										<option value="1">White</option>
+										<option value="1">White</option>
 									</select>
-									<label for="_fabrication" generated="true" class="error">This field is required.</label>
-								</div>
-								<div class="input_wrapper with_text">
-									<label><span>* </span><strong>Mileage:</strong></label>
-									<input type="text" class="text" name="_mileage" id="_mileage" required="" value="">
-									miles
-								</div>
-								<div class="input_wrapper">
-									<label><span> </span><strong>VIN / chassis number:</strong></label>
-									<input type="text" class="text" id="_vin" name="_vin" value="">
-								</div>
-							</div>
-							<div class="col_3">
-								<div class="select_wrapper">
-									<label><span>* </span><strong>Region:</strong></label>
-									<select class="text error" id="_region_id" name="_region_id" required="" value-note-quals="0">
-										<option value="0">Select</option>
-										<option value="4">China</option>
-										<option value="1">Germany</option>
-										<option value="2">Great Britain</option>
-										<option value="5">Japan</option>
-										<option value="6">Russia</option>
-										<option value="7">Ukraine</option>
-										<option value="3">USA</option>
-									</select>
-									<label for="_region_id" generated="true" class="error">This field is required.</label>
 								</div>
 								<div class="input_wrapper price">
 									<label><span>* </span><strong>Price:</strong></label>
-									<select class="text valid" id="_currency_id" name="_currency_id" style="float:right;">
+									<select class="text valid" name="#">
+										<option value="1">IDR</option>
 										<option value="1">EURO</option>
 										<option value="2">USD</option>
 									</select>
-									<input type="text" class="text" id="_price" name="_price" required="" number="" value="" onblur="if(this.value=='') this.value='0.00';" onfocus="if(this.value=='0.00') this.value='';">
-								</div>
-								<div class="select_wrapper">
-									<label><span></span><strong>Technical condition: </strong></label>
-									<select class="text valid" id="_technical_condition_id" name="_technical_condition_id">
-										<option value="0">Select</option>
-										<option value="1">Good</option>
-									</select>
+									<input type="text" class="text" id="_price" name="_price" required="" number="" value="">
 								</div>
 							</div>
 							<div class="clear"></div>
-							<div class="col_all">
-								<div class="input_wrapper">
-									<label><span> </span><strong>Description: </strong></label>
-									<textarea class="text" style="width:265px;" id="post_content" name="post_content"></textarea>
-								</div>
-							</div>
 							<div class="clear"></div>
 							<h2></h2>
 							<div class="checkbox_items">
@@ -140,398 +207,6 @@
 							</div>
 							<h2></h2>
 							<div class="btn-next">
-								<a href="#" class="btn1">Next</a>
-							</div>
-						</div>
-						<div class="sell_box step_2" style="display: none;">
-							<h2><strong>Technical</strong> Characteristics</h2>
-							<div class="col_1">
-								<div class="select_wrapper">
-									<label><span> </span><strong>Transmission:</strong></label>
-									<select name="_transmission_id" id="_transmission_id" class="text valid">
-									<option value="0">Select</option>
-										<option value="1">Automatic</option>
-										<option value="2">Mechanic</option>
-									</select>
-								</div>
-								<div class="select_wrapper">
-									<label><span> </span><strong>Drive:</strong></label>
-									<select class="text valid" id="_drive_id" name="_drive_id">
-										<option value="0">Select</option>
-										<option value="1">Left</option>
-										<option value="2">Right</option>
-									</select>
-								</div>
-								<div class="select_wrapper">
-									<label><span> </span><strong>Number of doors:</strong></label>
-									<select name="_door_id" id="_door_id" class="text valid">
-										<option value="0">Select</option>
-										<option value="1">2</option>
-										<option value="2">3</option>
-										<option value="3">4</option>
-										<option value="4">5</option>
-									</select>
-								</div>
-							</div>
-							<div class="col_2">
-								<div class="input_wrapper">
-									<label><span> </span><strong>Number of seats:</strong></label>
-									<input type="text" class="text" name="_seats" id="_seats" value="">
-								</div>
-								<div class="select_wrapper">
-									<label><span> </span><strong>Color:</strong></label>
-									<div class="custom-select color-select done">
-										<span class="custom-text" style="color: rgb(96, 117, 134);">
-											<span style="background-color:#ff0000"></span>Red
-										</span>
-										<div class="select-list custom-scroll maxlength" style="display: none;">
-											<div class="select-scroll" style="height: 10px;">
-												<span class="scroll-drag" style="height: 8.333333333333334px; top: 0px;"></span>
-											</div>
-											<ul style="height: 10px; top: 0px;">
-												<li class="" data-value="0">Select</li>
-												<li class="" data-value="1"><span style="background-color:#0a0a0a"></span>Black</li>
-												<li class="" data-value="5"><span style="background-color:#0000fa"></span>Blue</li>
-												<li class="" data-value="4"><span style="background-color:#00a120"></span>Green</li>
-												<li class="selected" data-value="3"><span style="background-color:#ff0000"></span>Red</li>
-												<li class="" data-value="2"><span style="background-color:#fafafa"></span>White</li>
-											</ul>
-										</div>
-										<select class=" text" id="_color_id" name="_color_id">
-											<option value="0">Select</option>
-											<option data-selectik="&lt;span style='background-color:#0a0a0a'&gt;&lt;/span&gt;Black" data-color="#0a0a0a" value="1">Black</option>
-											<option data-selectik="&lt;span style='background-color:#0000fa'&gt;&lt;/span&gt;Blue" data-color="#0000fa" value="5">Blue</option>
-											<option data-selectik="&lt;span style='background-color:#00a120'&gt;&lt;/span&gt;Green" data-color="#00a120" value="4">Green</option>
-											<option data-selectik="&lt;span style='background-color:#ff0000'&gt;&lt;/span&gt;Red" data-color="#ff0000" value="3">Red</option>
-											<option data-selectik="&lt;span style='background-color:#fafafa'&gt;&lt;/span&gt;White" data-color="#fafafa" value="2">White</option>
-										</select>
-									</div>
-								</div>
-								<div class="select_wrapper">
-									<label><span> </span><strong>Fuel:</strong></label>
-									<select name="_fuel_id" id="_fuel_id" class="text valid">
-										<option value="0">Select</option>
-											<option value="1">92</option>
-											<option value="2">95</option>
-											<option value="3">Diesel</option>
-											<option value="4">Gas</option>
-										</select>
-								</div>
-							</div>
-							<div class="col_3">
-								<div class="select_wrapper with_text">
-									<label><span> </span><strong>Engine:</strong></label>
-									<select name="_cilindrics" id="_cilindrics" class="text valid">
-										<option value="0">Select</option>
-										<option value="900">900</option>
-										<option value="1000">1000</option>
-										<option value="6000">6000</option>
-										<option value="6100">6100</option>
-										<option value="6200">6200</option>
-										<option value="6300">6300</option>
-										<option value="6400">6400</option>
-										<option value="6500">6500</option>
-									</select>cm³
-								</div>
-								<div class="input_wrapper with_text">
-									<label><span> </span><strong>Engine power:</strong></label>
-									<input type="text" class="text" name="_engine_power" id="_engine_power" value="">
-									kW
-								</div>
-								<div class="select_wrapper">
-									<label><span> </span><strong>Category:</strong></label>
-									<select name="_category_id" id="_category_id" class="text valid">
-										<option value="1">New car</option>
-										<option value="2" selected="selected">Used</option>
-									</select>
-								</div>
-							</div>
-							<div class="clear"></div>
-							<h2></h2>
-							<div class="col_opt">
-								<span class="custom_chb_wrapper">
-									<span class="custom_chb">
-										<input id="_4wd" name="_4wd" type="checkbox">
-									</span>
-									<label>4WD</label>
-								</span>
-							</div>
-							<div class="col_opt">
-								<span class="custom_chb_wrapper">
-									<span class="custom_chb">
-										<input id="_abs" name="_abs" type="checkbox">
-									</span>
-									<label>ABS</label>
-								</span>
-							</div>
-							<div class="col_opt">
-								<span class="custom_chb_wrapper">
-									<span class="custom_chb">
-										<input id="_adjustable_suspension" name="_adjustable_suspension" type="checkbox">
-									</span>
-									<label>Adjustable suspension</label>
-								</span>
-							</div>
-							<div class="col_opt_last">
-								<span class="custom_chb_wrapper">
-									<span class="custom_chb">
-										<input id="_air_conditioning" name="_air_conditioning" type="checkbox">
-									</span>
-									<label>Air conditioning</label>
-								</span>
-							</div>
-							<div class="col_opt">
-								<span class="custom_chb_wrapper">
-									<span class="custom_chb">
-										<input id="_airbag" name="_airbag" type="checkbox">
-									</span>
-									<label>Airbag</label>
-								</span>
-							</div>
-							<div class="col_opt">
-								<span class="custom_chb_wrapper">
-									<span class="custom_chb">
-										<input id="_alarm" name="_alarm" type="checkbox">
-									</span>
-									<label>Alarm</label>
-								</span>
-							</div>
-							<div class="col_opt">
-								<span class="custom_chb_wrapper">
-									<span class="custom_chb">
-										<input id="_alloy_wheels" name="_alloy_wheels" type="checkbox">
-									</span>
-									<label>Alloy wheels</label>
-								</span>
-							</div>
-							<div class="col_opt_last">
-								<span class="custom_chb_wrapper">
-									<span class="custom_chb">
-										<input id="_autopilot" name="_autopilot" type="checkbox">
-									</span>
-									<label>Autopilot</label>
-								</span>
-							</div>
-							<div class="col_opt">
-								<span class="custom_chb_wrapper">
-									<span class="custom_chb">
-										<input id="_auxiliary_heating" name="_auxiliary_heating" type="checkbox">
-									</span>
-									<label>Auxiliary heating</label>
-								</span>
-							</div>
-							<div class="col_opt">
-								<span class="custom_chb_wrapper">
-									<span class="custom_chb">
-										<input id="_board_computer" name="_board_computer" type="checkbox">
-									</span>
-									<label>Board computer</label>
-								</span>
-							</div>
-							<div class="col_opt">
-								<span class="custom_chb_wrapper">
-									<span class="custom_chb">
-										<input id="_central_locking" name="_central_locking" type="checkbox">
-									</span>
-									<label>Central locking</label>
-								</span>
-							</div>
-							<div class="col_opt_last">
-								<span class="custom_chb_wrapper">
-									<span class="custom_chb">
-										<input id="_differential_lock" name="_differential_lock" type="checkbox">
-									</span>
-									<label>Differential lock</label>
-								</span>
-							</div>
-							<div class="col_opt">
-								<span class="custom_chb_wrapper">
-									<span class="custom_chb">
-										<input id="_eds" name="_eds" type="checkbox">
-									</span>
-									<label>EDS</label>
-								</span>
-							</div>
-							<div class="col_opt">
-								<span class="custom_chb_wrapper">
-									<span class="custom_chb">
-										<input id="_electric_mirrors" name="_electric_mirrors" type="checkbox">
-									</span>
-									<label>Electric mirrors</label>
-								</span>
-							</div>
-							<div class="col_opt">
-								<span class="custom_chb_wrapper">
-									<span class="custom_chb">
-										<input id="_electric_windows" name="_electric_windows" type="checkbox">
-									</span>
-									<label>Electric windows</label>
-								</span>
-							</div>
-							<div class="col_opt_last">
-								<span class="custom_chb_wrapper">
-									<span class="custom_chb">
-										<input id="_esp" name="_esp" type="checkbox">
-									</span>
-									<label>ESP</label>
-								</span>
-							</div>
-							<div class="col_opt">
-								<span class="custom_chb_wrapper">
-									<span class="custom_chb">
-										<input id="_fog_lights" name="_fog_lights" type="checkbox">
-									</span>
-									<label>Fog lights</label>
-								</span>
-							</div>
-							<div class="col_opt">
-								<span class="custom_chb_wrapper">
-									<span class="custom_chb">
-										<input id="_hatch" name="_hatch" type="checkbox">
-									</span>
-									<label>Hatch</label>
-								</span>
-							</div>
-							<div class="col_opt">
-								<span class="custom_chb_wrapper">
-									<span class="custom_chb">
-										<input id="_heated_seats" name="_heated_seats" type="checkbox">
-									</span>
-									<label>Heated seats</label>
-								</span>
-							</div>
-							<div class="col_opt_last">
-								<span class="custom_chb_wrapper">
-									<span class="custom_chb">
-										<input id="_heated_windscreen" name="_heated_windscreen" type="checkbox">
-									</span>
-									<label>Heated windscreen</label>
-								</span>
-							</div>
-							<div class="col_opt">
-								<span class="custom_chb_wrapper">
-									<span class="custom_chb">
-										<input id="_immobilizer" name="_immobilizer" type="checkbox">
-									</span>
-									<label>Immobilizer</label>
-								</span>
-							</div>
-							<div class="col_opt">
-								<span class="custom_chb_wrapper">
-									<span class="custom_chb">
-										<input id="_leather_upholstery" name="_leather_upholstery" type="checkbox">
-									</span>
-									<label>Leather upholstery</label>
-								</span>
-							</div>
-							<div class="col_opt">
-								<span class="custom_chb_wrapper">
-									<span class="custom_chb">
-										<input id="_navigation_system" name="_navigation_system" type="checkbox">
-									</span>
-									<label>Navigation system</label>
-								</span>
-							</div>
-							<div class="col_opt_last">
-								<span class="custom_chb_wrapper">
-									<span class="custom_chb">
-										<input id="_panoramic_roof" name="_panoramic_roof" type="checkbox">
-									</span>
-									<label>Panoramic roof</label>
-								</span>
-							</div>
-							<div class="col_opt">
-								<span class="custom_chb_wrapper">
-									<span class="custom_chb">
-										<input id="_parking_sensors" name="_parking_sensors" type="checkbox">
-									</span>
-									<label>Parking sensors</label>
-								</span>
-							</div>
-							<div class="col_opt">
-								<span class="custom_chb_wrapper">
-									<span class="custom_chb">
-										<input id="_power_steering" name="_power_steering" type="checkbox">
-									</span>
-									<label>Power steering</label>
-								</span>
-							</div>
-							<div class="col_opt">
-								<span class="custom_chb_wrapper">
-									<span class="custom_chb">
-										<input id="_protection_framework" name="_protection_framework" type="checkbox">
-									</span>
-									<label>Protection framework</label>
-								</span>
-							</div>
-							<div class="col_opt_last">
-								<span class="custom_chb_wrapper">
-									<span class="custom_chb">
-										<input id="_radio_cd" name="_radio_cd" type="checkbox">
-									</span>
-									<label>Radio / CD</label>
-								</span>
-							</div>
-							<div class="col_opt">
-								<span class="custom_chb_wrapper">
-									<span class="custom_chb">
-										<input id="_rain_sensors" name="_rain_sensors" type="checkbox">
-									</span>
-									<label>Rain sensors</label>
-								</span>
-							</div>
-							<div class="col_opt">
-								<span class="custom_chb_wrapper">
-									<span class="custom_chb">
-										<input id="_steering_wheel_contro" name="_steering_wheel_contro" type="checkbox">
-									</span>
-									<label>Steering wheel contro</label>
-								</span>
-							</div>
-							<div class="col_opt">
-								<span class="custom_chb_wrapper">
-									<span class="custom_chb">
-										<input id="_tinted_glass" name="_tinted_glass" type="checkbox">
-									</span>
-									<label>Tinted glass</label>
-								</span>
-							</div>
-							<div class="col_opt_last">
-								<span class="custom_chb_wrapper">
-									<span class="custom_chb">
-										<input id="_tow" name="_tow" type="checkbox">
-									</span>
-									<label>Tow</label>
-								</span>
-							</div>
-							<div class="col_opt">
-								<span class="custom_chb_wrapper">
-									<span class="custom_chb">
-										<input id="_traction_control" name="_traction_control" type="checkbox">
-									</span>
-									<label>Traction control</label>
-								</span>
-							</div>
-							<div class="col_opt">
-								<span class="custom_chb_wrapper">
-									<span class="custom_chb">
-										<input id="_velor_interior" name="_velor_interior" type="checkbox">
-									</span>
-									<label>Velor interior</label>
-								</span>
-							</div>
-							<div class="col_opt">
-								<span class="custom_chb_wrapper">
-									<span class="custom_chb">
-										<input id="_xenon" name="_xenon" type="checkbox">
-									</span>
-									<label>Xenon</label>
-								</span>
-							</div>
-							<div class="clear"></div>
-							<h2></h2>
-							<div class="btn-next">
-								<a href="#" class="btn3">Back</a>
 								<a href="#" class="btn1">Next</a>
 							</div>
 						</div>

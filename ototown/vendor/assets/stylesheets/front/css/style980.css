@@ -660,7 +660,7 @@ only screen and (min-device-width: 800px) and (max-device-width: 980px){
 	*/
 	.sidebar{
 		float: right;
-		width: 25%;
+		width: 100%;
 		padding-bottom: 20px;
 	}
 	.sidebar .widget .thumb{
@@ -751,5 +751,11 @@ only screen and (min-device-width: 800px) and (max-device-width: 980px){
 	.best_offer .description p{
 		padding: 0 20px;
 		max-width: 380px;
+	}
+	.profile_layout .sidebar, .profile_content {
+		margin: 0;
+		float: none;
+		padding: 0;
+		width: 100%;
 	}
 }

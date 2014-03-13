@@ -49,9 +49,9 @@ ActiveRecord::Schema.define(version: 20140312073119) do
     t.string   "username"
   end
 
-  add_index "operators", ["email"], name: "index_operators_on_email", unique: true
-  add_index "operators", ["reset_password_token"], name: "index_operators_on_reset_password_token", unique: true
-  add_index "operators", ["role_id"], name: "index_operators_on_role_id"
-  add_index "operators", ["unlock_token"], name: "index_operators_on_unlock_token", unique: true
+  add_index "operators", ["email"], name: "index_operators_on_email", unique: true, using: :btree
+  add_index "operators", ["reset_password_token"], name: "index_operators_on_reset_password_token", unique: true, using: :btree
+  add_index "operators", ["role_id"], name: "index_operators_on_role_id", using: :btree
+  add_index "operators", ["unlock_token"], name: "index_operators_on_unlock_token", unique: true, using: :btree
 
 end
