@@ -26,20 +26,15 @@ gem 'jbuilder', '~> 1.2'
 
 # group :db do
   gem 'mysql2','0.3.11'
-  gem 'kaminari'                        # pagination
-  gem 'paperclip'                       # attachment tool
   gem 'ancestry'                        # Table Tree tool
-  gem 'devise'                          # authentication
-  gem 'cancan'                          # role management system
   gem 'inherited_resources'             # DRY for CRUD methods in controller
 # end
 
 group :assets do
   gem 'devise'
   gem 'cancan'
-  gem 'carrierwave'
+  gem 'paperclip'                     # attachment tool
   gem 'mini_magick'
-  gem 'acts_as_tree'
   gem 'kaminari'
   gem 'ckeditor'
   gem 'breadcrumbs_on_rails'
