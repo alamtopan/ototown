@@ -6,14 +6,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div id="page-container" class="sidebar-full">
-    <%= render 'backend/shared/menu_bar' %>
-    <div id="main-container">
-      <%= render 'backend/shared/header_nav' %>
-    	<%= yield %>
-    </div>
-  </div>
-  <%= render 'backend/shared/modal_content' %>
+	<%= yield %>
 	<%= javascript_include_tag "application_backend", "data-turbolinks-track" => true %>
 </body>
 </html>
