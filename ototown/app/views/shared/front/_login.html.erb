@@ -1,0 +1,87 @@
+<div class="modal fade bs-modal-sm" id="myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <br>
+      <div class="bs-example bs-example-tabs">
+        <ul id="myTab" class="nav nav-tabs">
+          <li class="active"><a href="#signin" data-toggle="tab">Sign In</a></li>
+          <li class=""><a href="#signup" data-toggle="tab">Register</a></li>
+        </ul>
+      </div>
+      <div class="modal-body">
+        <div id="myTabContent" class="tab-content">
+          <div class="tab-pane fade active in" id="signin">
+            <a href="#" class="btn btn-primary-fb">
+              &nbsp;&nbsp;&nbsp;SignUp With Facebook
+            </a>
+            <br>
+            <form class="form-horizontal">
+              <fieldset>
+                <div class="control-group">
+                  <label class="control-label" for="userid">Username Or Email:</label>
+                  <div class="controls">
+                    <input required="" id="userid" name="userid" type="text" class="form-control width90" placeholder="JoeSixpack" class="input-medium" required="">
+                  </div>
+                </div>
+                <div class="control-group">
+                  <label class="control-label" for="passwordinput">Password:</label>
+                  <div class="controls">
+                    <input required="" id="passwordinput" name="passwordinput" class="form-control width90" type="password" placeholder="********" class="input-medium">
+                  </div>
+                </div>
+                <div class="control-group">
+                  <label class="control-label" for="signin"></label>
+                  <div class="controls">
+                    <button id="signin" name="signin" class="btn btn-success">Sign In</button>
+                  </div>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+          <div class="tab-pane fade" id="signup">
+            <form class="form-horizontal">
+              <fieldset>
+                <div class="control-group">
+                  <label class="control-label" for="Email">Email:</label>
+                  <div class="controls">
+                    <input id="Email" name="Email" class="form-control width90" type="text" placeholder="JoeSixpack@sixpacksrus.com" class="input-large" required="">
+                  </div>
+                </div>
+                <div class="control-group">
+                  <label class="control-label" for="userid">Username:</label>
+                  <div class="controls">
+                    <input id="userid" name="userid" class="form-control width90" type="text" placeholder="JoeSixpack" class="input-large" required="">
+                  </div>
+                </div>
+                <div class="control-group">
+                  <label class="control-label" for="password">Password:</label>
+                  <div class="controls">
+                    <input id="password" name="password" class="form-control width90" type="password" placeholder="********" class="input-large" required="">
+                    <em>1-8 Characters</em>
+                  </div>
+                </div>
+                <div class="control-group">
+                  <label class="control-label" for="reenterpassword">Re-Enter Password:</label>
+                  <div class="controls">
+                    <input id="reenterpassword" class="form-control width90" name="reenterpassword" type="password" placeholder="********" class="input-large" required="">
+                  </div>
+                </div>
+                <div class="control-group">
+                  <label class="control-label" for="confirmsignup"></label>
+                  <div class="controls">
+                    <button id="confirmsignup" name="confirmsignup" class="btn btn-success">Sign Up</button>
+                  </div>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+      <center>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </center>
+      </div>
+    </div>
+  </div>
+</div>
