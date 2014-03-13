@@ -11,6 +11,7 @@
 	*= require_self
 	*= require front/css/bootstrap
 	*= require front/css/style
+	*= require front/css/overide
 	*= require front/css/style980
 	*= require front/css/style800
 	*= require front/css/style700

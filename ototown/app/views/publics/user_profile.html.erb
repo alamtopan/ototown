@@ -1,0 +1,43 @@
+<div class="profile_content">
+	<h1><strong>Profile</strong></h1>
+	<div class="settings_photo" id="upload-photo-container" style="position: relative;">
+		<div class="photo">
+			<img id="profile_photo" src="http://autodealer.winterjuice.com/wp-content/themes/winterjuice/framework/usr_data/user/75/138x138/75.jpg">
+			<div class="loader"></div>
+		</div>
+		<div class="upload-photo">
+			<div class="username">yudi</div>
+			<a href="#" class="btn1" id="upload-photo" style="position: relative; z-index: 1;">upload a photo</a>
+		</div>
+	</div>
+	<form action="http://autodealer.winterjuice.com/profile/settings/" method="post" id="settings-form" novalidate="novalidate">
+		<div class="settings_form">
+			<div class="col1">
+				<label class="text">Full name:</label>
+				<input type="text" class="text" name="name" id="name" value="yudi">
+			</div>
+			<div class="col2">
+				<label class="text">E-mail:</label>
+				<input type="text" disabled="" class="text" name="email" id="email" value="abd.rmt.wyd@gmail.com">
+			</div>
+			<div class="col1">
+				<label class="text">Phone 1:</label>
+				<input type="text" name="phone_1" class="text" value="">
+			</div>
+			<div class="col2">
+				<label class="text">Phone 2:</label>
+				<input type="text" name="phone_2" class="text" value="">
+			</div>
+			<div class="col1 last">
+				<label class="text">Region:</label>
+				<select name="region_id" id="region_id" class="text">
+					<option value="0">Any</option>
+				</select>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<a href="#" class="btn1 submit-save">SAVE CHANGES</a>
+		<a href="#" class="btn2 submit-change-password">CHANGE PASSWORD</a>
+	</form>
+</div>
+<div class="clear mb1"></div>

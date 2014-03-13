@@ -20,7 +20,7 @@
 //= require front/js/jquery.mousewheel
 //= require front/js/jquery.selectik
 //= require front/js/jquery.mousewheel-3.0.4.pack
-//= require front/js/jquery.fancybox-1.3.4.pack
 //= require front/js/jquery.countdown
 //= require front/js/jquery.checkbox
 //= require front/js/js
+//= require front/js/vehicles

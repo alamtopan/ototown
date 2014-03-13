@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ototown</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body class="page">
+	<%= render partial: 'shared/front/header' %>
+	<div class="margin-top80">
+		<div id="content">
+			<div class="content">
+				<div class="breadcrumbs">
+					<a href="http://autodealer.winterjuice.com/">Home</a>
+					<img src="http://autodealer.winterjuice.com/wp-content/themes/winterjuice/framework/assets/images/marker_2.gif" alt="">
+					<a href="http://autodealer.winterjuice.com/profile/">Account</a>
+					<img src="http://autodealer.winterjuice.com/wp-content/themes/winterjuice/framework/assets/images/marker_2.gif" alt="">
+					My cars
+				</div>
+				<div class="main_wrapper profile_layout">
+					<%= render partial: 'shared/front/side_bar_user' %>
+					<%= yield %>
+				</div>
+			</div>
+		</div>
+	</div>
+	<%= render partial: 'shared/front/footer' %>
+	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+</body>
+</html>

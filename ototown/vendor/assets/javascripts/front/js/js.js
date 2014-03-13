@@ -97,19 +97,6 @@ jQuery(document).ready(function(){
 	$('ul.tabs').delegate('li:not(.current)', 'click', function() {
 	    $(this).addClass('current').siblings().removeClass('current').parents('div.section').find('div.box').eq($(this).index()).fadeIn(150).siblings('div.box').hide();
 	});
-	$(".video_box .preview a").fancybox({
-		'width'				: '75%',
-		'height'			: '75%',
-		'autoScale'			: false,
-		'transitionIn'		: 'elastic',
-		'transitionOut'		: 'elastic',
-		'type'				: 'iframe'
-	});
-	$("a[rel=car_group]").fancybox({
-		'autoScale'			: false,
-		'transitionIn'		: 'elastic',
-		'transitionOut'		: 'elastic'
-	});
 
 	var austDay = new Date();
 	austDay = new Date(austDay.getFullYear(),austDay.getMonth(), austDay.getDate()+36,austDay.getHours()+7,austDay.getMinutes()+24,austDay.getSeconds()+59);

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ototown</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body class="page">
+	<%= render partial: 'shared/front/header' %>
+	<div id="content">
+	<div class="content">		
+		<div class="wrapper_3 margin-top80">
+			<div class="left">
+				<%= yield %>
+			</div>
+			<div class="right">
+				<%= render partial: 'shared/front/left_news' %>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<%= render partial: 'shared/front/bottom_latest_info' %>
+	</div>
+</div>
+	<%= render partial: 'shared/front/footer' %>
+	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+</body>
+</html>

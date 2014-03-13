@@ -10,6 +10,9 @@ only screen and (min-device-width: 500px) and (max-device-width: 600px){
 		width: 100%;
 		padding-top: 40px;
 	}
+	#header .top_info .accs {
+		width: 100%;
+	}
 	#header .top_info{
 		width: auto;
 		margin: 0 auto;
