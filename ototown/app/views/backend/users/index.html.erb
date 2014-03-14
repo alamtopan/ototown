@@ -1,46 +1,40 @@
 <div id="page-content">
-<div class="content-header">
-<div class="header-section">
-<h1>
-<i class="gi gi-iphone"></i>Responsive Tables<br /><small>Play nice on various screen sizes!</small>
-</h1>
-</div>
-</div>
-<ul class="breadcrumb breadcrumb-top">
-<li>Tables</li>
-<li><a href="./page_tables_responsive.php.html">Responsive</a></li>
-</ul>
-<div class="block">
-<div class="block-title">
-<h2><strong>Partial Table</strong> Responsive</h2>
-</div>
-<p>The second way is to use specific CSS classes for hiding columns in various screen resolutions. This way you can hide the less important columns and keep the most valuable on mobiles. At the following example the <strong>Subscription</strong> column isn't visible on small and extra small screens and <strong>Email</strong> column isn't visible on extra small screens. Try resizing your browser window to check it live!</p>
-<table class="table table-vcenter table-striped">
-<thead>
-<tr>
-<th style="width: 150px;" class="text-center"><i class="gi gi-user"></i></th>
-<th>Client</th>
-<th class="hidden-xs">Email</th>
-<th class="hidden-sm hidden-xs">Subscription</th>
-<th style="width: 150px;" class="text-center">Actions</th>
-</tr>
-</thead>
-<tbody>
-  <% @users.each do |user| %>
-    <tr>
-    <td class="text-center"><img src="./img/placeholders/avatars/avatar9.jpg" alt="avatar" class="img-circle" /></td>
-    <td><a href="./page_ready_user_profile.php.html"><%= user.username %></a></td>
-    <td class="hidden-xs"><%= user.email %></td>
-    <td class="hidden-sm hidden-xs"><a href="javascript:void(0)" class="label label-warning">Trial</a></td>
-    <td class="text-center">
-    <div class="btn-group btn-group-xs">
-    <a href="javascript:void(0)" data-toggle="tooltip" title="Edit" class="btn btn-default"><i class="fa fa-pencil"></i></a>
-    <a href="javascript:void(0)" data-toggle="tooltip" title="Delete" class="btn btn-danger"><i class="fa fa-times"></i></a>
-    </div>
-    </td>
-    </tr>
-  <% end %>
-</tbody>
-</table>
-</div>
+	<div class="block">
+		<div class="block-title">
+			<h2><strong>Users</strong>Index</h2>
+		</div>
+		<div class="pull-right">
+			<%= link_to 'Add Data', new_backend_user_path, class: 'btn btn-default', data: {toogle: 'tooltip', title: 'Add'} %>
+		</div>
+		<table class="table table-vcenter table-striped">
+			<thead>
+				<tr>
+					<th style="width: 150px;" class="text-center"><i class="gi gi-user"></i></th>
+					<th class="hidden-xs">Email</th>
+					<th class="hidden-sm hidden-xs">Subscription</th>
+					<th style="width: 150px;" class="text-center">Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% @users.each do |user| %>
+				<tr>
+					<td class="text-center"><img src="./img/placeholders/avatars/avatar9.jpg" alt="avatar" class="img-circle" /></td>
+					<td><a href="./page_ready_user_profile.php.html"><%= user.username %></a></td>
+					<td class="hidden-xs"><%= user.email %></td>
+					<td class="hidden-sm hidden-xs"><a href="javascript:void(0)" class="label label-warning">Trial</a></td>
+					<td class="text-center">
+						<div class="btn-group btn-group-xs">
+							<%= link_to edit_backend_user_path(user), class: 'btn btn-default', data: {toogle: 'tooltip', title: 'Edit'} do %>
+								<i class="fa fa-pencil"></i>
+							<% end %>
+							<%= link_to backend_user_path(user), method: 'delete',class: 'btn btn-danger', data: {toogle: 'tooltip', title: 'Delete'} do %>
+								<i class="fa fa-times"></i>
+							<% end %>
+						</div>
+					</td>
+				</tr>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
 </div>

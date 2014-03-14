@@ -5,5 +5,6 @@ class Admin < Operator
   devise :database_authenticatable, :lockable, :timeoutable, 
          :recoverable, :rememberable, :trackable, :validatable
   
-  default_scope where(role_id: ROLE_ID)
+  default_scope { where(role_id: ROLE_ID) }
+
 end

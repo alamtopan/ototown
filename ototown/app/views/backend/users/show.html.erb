@@ -1,1 +1,122 @@
-show
+<div id="page-content">
+  <div class="content-header">
+    <div class="header-section">
+      <h1>
+        <i class="gi gi-warning_sign"></i>Form Validation<br /><small>Tools for easy form validation and user assist!</small>
+      </h1>
+    </div>
+  </div>
+  <ul class="breadcrumb breadcrumb-top">
+    <li>Forms</li>
+    <li><a href="./page_forms_validation.php.html">Validation</a></li>
+  </ul>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="block">
+        <div class="block-title">
+          <h2><strong>Form Validation</strong> Example</h2>
+        </div>
+        <fieldset>
+          <legend><i class="fa fa-angle-right"></i> Vital Info</legend>
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="val_username">Username <span class="text-danger">*</span></label>
+            <div class="col-md-6">
+              <div class="input-group">
+                <%= @user.username %>
+                <span class="input-group-addon"><i class="gi gi-user"></i></span>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="val_email">Email <span class="text-danger">*</span></label>
+            <div class="col-md-6">
+              <div class="input-group">
+                <%= @user.email %>
+                <span class="input-group-addon"><i class="gi gi-envelope"></i></span>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend><i class="fa fa-angle-right"></i> Personal</legend>
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="val_bio">Mini Bio <span class="text-danger">*</span></label>
+            <div class="col-md-8">
+              <textarea id="val_bio" name="val_bio" rows="6" class="form-control" placeholder="Tell us your story.."></textarea>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="val_skill">Best Skill <span class="text-danger">*</span></label>
+            <div class="col-md-6">
+              <select id="val_skill" name="val_skill" class="form-control">
+                <option value="" />Please select
+                <option value="html" />HTML
+                <option value="css" />CSS
+                <option value="javascript" />Javascript
+                <option value="php" />PHP
+                <option value="mysql" />MySQL
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="val_website">Website <span class="text-danger">*</span></label>
+            <div class="col-md-6">
+              <div class="input-group">
+                <input type="text" id="val_website" name="val_website" class="form-control" value="http://" />
+                <span class="input-group-addon"><i class="gi gi-globe"></i></span>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="val_credit_card">Credit Card <span class="text-danger">*</span></label>
+            <div class="col-md-6">
+              <div class="input-group">
+                <input type="text" id="val_credit_card" name="val_credit_card" class="form-control" />
+                <span class="input-group-addon"><i class="gi gi-credit_card"></i></span>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend><i class="fa fa-angle-right"></i> Extras</legend>
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="val_digits">Digits <span class="text-danger">*</span></label>
+            <div class="col-md-6">
+              <div class="input-group">
+                <input type="text" id="val_digits" name="val_digits" class="form-control" placeholder="1" />
+                <span class="input-group-addon"><i class="gi gi-asterisk"></i></span>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="val_number">Number <span class="text-danger">*</span></label>
+            <div class="col-md-6">
+              <div class="input-group">
+                <input type="text" id="val_number" name="val_number" class="form-control" placeholder="1.0" />
+                <span class="input-group-addon"><i class="gi gi-asterisk"></i></span>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="val_range">Range [1, 1000] <span class="text-danger">*</span></label>
+            <div class="col-md-6">
+              <div class="input-group">
+                <input type="text" id="val_range" name="val_range" class="form-control" placeholder="100" />
+                <span class="input-group-addon"><i class="gi gi-asterisk"></i></span>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-4 control-label"><a href="#modal-terms" data-toggle="modal">Service Terms</a> <span class="text-danger">*</span></label>
+            <div class="col-md-8">
+              <label class="switch switch-primary" for="val_terms">
+                <input type="checkbox" id="val_terms" name="val_terms" value="1" />
+                <span data-toggle="tooltip" title="I agree to the terms!"></span>
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+    </div>
+  </div>
+</div>

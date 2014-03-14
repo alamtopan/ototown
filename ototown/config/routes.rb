@@ -23,6 +23,7 @@ Ototown::Application.routes.draw do
     get '/', to: 'home#index'
     devise_for :admins, :controllers => { :sessions => "backend/admins/sessions" }
     resources :users
+    resources :categories
   end
 
 end
