@@ -1,5 +1,5 @@
-class Backend::ApplicationController < InheritedResources::Base
+class Backend::ApplicationController < ActionController::Base
   layout 'application_backend'
-  # before_filter :authenticate_admin!
+  before_filter :authenticate_backend_admin!
   protect_from_forgery with: :exception
 end
