@@ -1,0 +1,24 @@
+<%= form_failure_message @category %>
+<%= form_for :category, as: @category, url: (@category.new_record? ? backend_categories_path : backend_category_path(@category)), method: (@category.new_record? ? :post : :put),
+      html: { role: 'form',class: 'form-horizontal form-bordered' } do |f| %>
+  <fieldset>
+    <legend><i class="fa fa-angle-right"></i> Category Info</legend>
+    <div class="form-group">
+      <%= f.label :name do %>
+        Name <span class="text-danger">*</span>
+      <% end %>
+      <div class="col-md-6">
+        <div class="input-group">
+          <%= f.text_field :name, class: 'form-control', placeholder: 'name', required: true %>
+          <span class="input-group-addon"><i class="gi gi-user"></i></span>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+  <div class="form-group form-actions">
+    <div class="col-md-8 col-md-offset-4">
+      <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-arrow-right"></i> Submit</button>
+      <button type="reset" class="btn btn-sm btn-warning"><i class="fa fa-repeat"></i> Reset</button>
+    </div>
+  </div>
+<% end %>

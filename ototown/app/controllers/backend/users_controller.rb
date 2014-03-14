@@ -27,7 +27,6 @@ class Backend::UsersController < Backend::ApplicationController
   end
 
   def update
-    debugger
     if @user.update(user_params)
       flash[:success] = 'user was successfully updated'
       redirect_to edit_backend_user_path(@user)
@@ -53,7 +52,7 @@ class Backend::UsersController < Backend::ApplicationController
 
     def user_params
       params.require(:user).permit(:username, :email, :password, :password_confirmation, 
-          profile_attributes: [:full_name, :birthday, :gender, :address, :city, :codepos, :phone] )
+          profiles_attributes: [:full_name, :birthday, :gender, :address, :city, :codepos, :phone] )
     end
     
     def draw_password
