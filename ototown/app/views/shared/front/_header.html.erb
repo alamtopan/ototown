@@ -15,19 +15,33 @@
     </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#about">Dealers</a></li>
-        <li><a href="#about">Used Cars</a></li>
-        <li><a href="#about">New Cars</a></li>
-        <li><a href="#about">Classic Cars</a></li>
-        <li><a href="#about">Spare Parts</a></li>
-        <li><a href="#contact">News & Tips</a></li>
+        <li>
+          <%= link_to 'Dealers',dealers_path %> 
+        </li>
+        <li>
+          <%= link_to 'Used Cars',cars_path %> 
+        </li>
+        <li>
+          <%= link_to 'New Cars',cars_path %> 
+        </li>
+        <li>
+          <%= link_to 'Classic Cars',cars_path %> 
+        </li>
+        <li>
+          <%= link_to 'Spare Parts',cars_path %> 
+        </li>
+        <li>
+          <%= link_to 'News & Trik',news_path %> 
+        </li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
             <span class="glyphicon glyphicon-cog"></span>
            My Account
           </a>
           <ul class="dropdown-menu">
-            <li><a href="#">Pofile</a></li>
+            <li>
+              <%= link_to 'Profile', user_home_path %>
+            </li>
             <li><a href="#">Add Auto</a></li>
             <li><a href="#">My Reclame</a></li>
             <li class="divider"></li>
@@ -44,18 +58,24 @@
 <div id="header">
   <div class="top_info">
     <div class="logo">
-      <a href="#">Oto<span>Town.com</span></a>
+      <%= link_to root_path do %>
+        Oto<span>Town.com</span>
+      <% end %>
     </div>
     <div class="header_contacts">
     </div>
     <div class="accs">
       <div class="btn-group">
-        <button type="button" class="btn btn-default">
-          <span class="glyphicon glyphicon-new-window"></span> Add Auto
-        </button>
-        <button type="button" class="btn btn-default">
-          <span class="glyphicon glyphicon-screenshot"></span> Compare Cars <span class="compare">2</span>
-        </button>
+        <%= link_to form_car_path do %>
+          <button type="button" class="btn btn-default">
+            <span class="glyphicon glyphicon-new-window"></span> Add Auto
+          </button>
+        <% end %>
+        <%= link_to form_car_path do %>
+          <button type="button" class="btn btn-default">
+            <span class="glyphicon glyphicon-screenshot"></span> Compare Cars <span class="compare">2</span>
+          </button>
+        <% end %>
       </div>
     </div>
   </div>

@@ -24,3 +24,13 @@
 //= require front/js/jquery.checkbox
 //= require front/js/js
 //= require front/js/vehicles
+//= require front/js/jquery.fancybox
+
+$(document).ready(function(){
+    //FANCYBOX
+    //https://github.com/fancyapps/fancyBox
+    $(".fancybox").fancybox({
+        openEffect: "none",
+        closeEffect: "none"
+    });
+});

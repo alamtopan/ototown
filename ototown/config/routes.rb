@@ -9,7 +9,7 @@ Ototown::Application.routes.draw do
   #Cars
   get   '/cars',              to: 'cars#cars',                 as: 'cars'
   get   '/detail_car',        to: 'cars#detail_car',           as: 'detail_car'
-  get   '/form_car',          to: 'carss#form_car',            as: 'form_car'
+  get   '/form_car',          to: 'cars#form_car',             as: 'form_car'
 
   #News
   get   '/detail_news',				to: 'publics#detail_news',       as: 'detail_news'
