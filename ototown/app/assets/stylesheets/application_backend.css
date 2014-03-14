@@ -13,4 +13,5 @@
 	*= require back/main
 	*= require back/plugins
 	*= require back/themes
+	*= require back/overide
   */

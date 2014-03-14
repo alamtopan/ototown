@@ -1,0 +1,20 @@
+.br{
+	width: 100%;
+	height: 20px;
+	float: left;
+}
+.float-right{
+	float: right;
+}
+.ototown{
+	font-family: 'PTSansBold',Arial,sans-serif;
+	font-size: 48px!important;
+	color: #FFFFFF;
+	line-height: 60px;
+	font-weight: bold;
+	text-decoration: none;
+	font-style: italic;
+}
+.orange{
+	color: #f25a23!important;
+}

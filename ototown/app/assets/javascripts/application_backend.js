@@ -41,3 +41,6 @@
 //= require back/helpers/gmaps.min
 //= require ckeditor/override
 //= require ckeditor/init
+
+//= require back/pages/tablesDatatables
+$(function(){ TablesDatatables.init(); });
