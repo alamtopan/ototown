@@ -40,7 +40,7 @@
       </div>
     </div>
   </fieldset>
-  <%= f.fields_for :profiles do |profile| %>
+  <%= f.fields_for :profile do |profile| %>
     <%= render 'profile_fields', :f => profile %>
   <% end %>
   <div class="form-group form-actions">
