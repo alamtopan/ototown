@@ -2,7 +2,7 @@
 	<div class="sidebar-scroll">
 		<div class="sidebar-content">
 			<a href="./index.php.html" class="sidebar-brand">
-				<strong>Administrator</strong>
+				<strong><%= current_backend_admin.email %></strong>
 			</a>
 			<div class="sidebar-section sidebar-user clearfix">
 				<div class="sidebar-user-avatar">
@@ -21,30 +21,36 @@
 			</div>
 			<ul class="sidebar-nav">
 				<li>
-					<a href="./index.php.html"><i class="gi gi-stopwatch sidebar-nav-icon"></i>Dashboard</a>
+					<%= link_to backend_path do %>
+						<i class="gi gi-stopwatch sidebar-nav-icon"></i>Dashboard
+					<% end %>
 				</li>
 				<li class="sidebar-header">
-					<span class="sidebar-header-options clearfix"><a href="javascript:void(0)" data-toggle="tooltip" title="Quick Settings"><i class="gi gi-settings"></i></a><a href="javascript:void(0)" data-toggle="tooltip" title="Create the most amazing pages with the widget kit!"><i class="gi gi-lightbulb"></i></a></span>
 					<span class="sidebar-header-title">Widget Kit</span>
 				</li>
 				<li>
-					<a href="./page_widgets_stats.php.html"><i class="gi gi-charts sidebar-nav-icon"></i>Statistics</a>
+					<%= link_to '#!' do %>
+						<i class="gi gi-charts sidebar-nav-icon"></i>Statistics
+					<% end %>
 				</li>
 				<li>
-					<a href="./page_widgets_social.php.html"><i class="gi gi-share_alt sidebar-nav-icon"></i>Social</a>
+					<%= link_to '#!' do %>
+						<i class="gi gi-share_alt sidebar-nav-icon"></i>Social
+					<% end %>
 				</li>
 				<li class="sidebar-header">
-					<span class="sidebar-header-options clearfix"><a href="javascript:void(0)" data-toggle="tooltip" title="Quick Settings"><i class="gi gi-settings"></i></a></span>
 					<span class="sidebar-header-title">Data Content</span>
 				</li>
 				<li>
-					<a href="#" class="sidebar-nav-menu"><i class="fa fa-angle-left sidebar-nav-indicator"></i><i class="gi gi-certificate sidebar-nav-icon"></i>Dealers</a>
+					<%= link_to '#', class: 'sidebar-nav-menu' do %>
+						<i class="fa fa-angle-left sidebar-nav-indicator"></i><i class="gi gi-certificate sidebar-nav-icon"></i>Dealers</a>
+					<% end %>
 					<ul>
 						<li>
-							<a href="./page_ui_grid_blocks.php.html">Create New</a>
+							<%= link_to 'Create New', '#!'  %>
 						</li>
 						<li>
-							<a href="./page_ui_typography.php.html">List Data</a>
+							<%= link_to 'List Data', '#!'  %>
 						</li>
 					</ul>
 				</li>
@@ -52,10 +58,10 @@
 					<a href="#" class="sidebar-nav-menu"><i class="fa fa-angle-left sidebar-nav-indicator"></i><i class="gi gi-certificate sidebar-nav-icon"></i>Users</a>
 					<ul>
 						<li>
-							<a href="./page_ui_grid_blocks.php.html">Create New</a>
+							<%= link_to 'Create New', new_backend_user_path  %>
 						</li>
 						<li>
-							<a href="./page_ui_typography.php.html">List Data</a>
+							<%= link_to 'List Data', backend_users_path %>
 						</li>
 					</ul>
 				</li>
@@ -63,10 +69,10 @@
 					<a href="#" class="sidebar-nav-menu"><i class="fa fa-angle-left sidebar-nav-indicator"></i><i class="gi gi-certificate sidebar-nav-icon"></i>Cars</a>
 					<ul>
 						<li>
-							<a href="./page_ui_grid_blocks.php.html">Create New</a>
+							<%= link_to 'Create New', '#!'  %>
 						</li>
 						<li>
-							<a href="./page_ui_typography.php.html">List Data</a>
+							<%= link_to 'List Data', '#!'  %>
 						</li>
 					</ul>
 				</li>
@@ -74,10 +80,10 @@
 					<a href="#" class="sidebar-nav-menu"><i class="fa fa-angle-left sidebar-nav-indicator"></i><i class="gi gi-certificate sidebar-nav-icon"></i>Spare Parts</a>
 					<ul>
 						<li>
-							<a href="./page_ui_grid_blocks.php.html">Create New</a>
+							<%= link_to 'Create New', '#!'  %>
 						</li>
 						<li>
-							<a href="./page_ui_typography.php.html">List Data</a>
+							<%= link_to 'List Data', '#!'  %>
 						</li>
 					</ul>
 				</li>
@@ -85,10 +91,10 @@
 					<a href="#" class="sidebar-nav-menu"><i class="fa fa-angle-left sidebar-nav-indicator"></i><i class="gi gi-certificate sidebar-nav-icon"></i>News</a>
 					<ul>
 						<li>
-							<a href="./page_ui_grid_blocks.php.html">Create New</a>
+							<%= link_to 'Create New', new_backend_news_path %>
 						</li>
 						<li>
-							<a href="./page_ui_typography.php.html">List Data</a>
+							<%= link_to 'List Data', backend_news_index_path %>
 						</li>
 					</ul>
 				</li>
@@ -96,10 +102,10 @@
 					<a href="#" class="sidebar-nav-menu"><i class="fa fa-angle-left sidebar-nav-indicator"></i><i class="gi gi-certificate sidebar-nav-icon"></i>Pages</a>
 					<ul>
 						<li>
-							<a href="./page_ui_grid_blocks.php.html">Create New</a>
+							<%= link_to 'Create New', '#!'  %>
 						</li>
 						<li>
-							<a href="./page_ui_typography.php.html">List Data</a>
+							<%= link_to 'List Data', '#!'  %>
 						</li>
 					</ul>
 				</li>
@@ -107,10 +113,10 @@
 					<a href="#" class="sidebar-nav-menu"><i class="fa fa-angle-left sidebar-nav-indicator"></i><i class="gi gi-certificate sidebar-nav-icon"></i>Edit Contents</a>
 					<ul>
 						<li>
-							<a href="./page_ui_grid_blocks.php.html">Create New</a>
+							<%= link_to 'Create New', '#!'  %>
 						</li>
 						<li>
-							<a href="./page_ui_typography.php.html">List Data</a>
+							<%= link_to 'List Data', '#!'  %>
 						</li>
 					</ul>
 				</li>
