@@ -6,7 +6,7 @@
 	<table id="example-datatable" class="table table-vcenter table-condensed table-bordered">
 		<thead>
 			<tr>
-				<th class="text-center">ID</th>
+				<th class="text-center">No</th>
 				<th>Title</th>
 				<th>Created At</th>
 				<th>Publish At</th>
@@ -15,13 +15,13 @@
 			</tr>
 		</thead>
 		<tbody>
-		<% @news.each do |news| %>
+		<% @news.each_with_index do |news,index| %>
 			<tr>
-				<td class="text-center">1</td>
+				<td class="text-center"><%= index + 1 %></td>
 				<td><a href="javascript:void(0)"><%= news.title %></a></td>
-				<td>No description</td>
-				<td><span class="label label-primary">No descriptio</span></td>
-				<th>Admin</th>
+				<td><%= news.created_at %></td>
+				<td><span class="label label-primary"><%= news.created_at %></span></td>
+				<td>Admin</td>
 				<td class="text-center">
 					<%= render partial: 'backend/shared/action_buttons', locals: {resource: news, confirmation: "#{news.title} will be deleted, are you sure ?"} %>
 				</td>

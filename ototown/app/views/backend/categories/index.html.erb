@@ -1,35 +1,28 @@
-<div id="page-content">
-  <div class="block">
-    <div class="block-title">
-      <h2><strong>Categories</strong>Index</h2>
-    </div>
-    <div class="pull-right">
-      <%= link_to 'Add Data', new_backend_category_path, class: 'btn btn-default', data: {toogle: 'tooltip', title: 'Add'} %>
-    </div>
-    <table class="table table-vcenter table-striped">
-      <thead>
-        <tr>
-          <th class="hidden-xs">Name</th>
-          <th style="width: 150px;" class="text-center">Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @categories.each do |cate| %>
-        <tr>
-          <td><%= cate.name %></td>
-          <td class="text-center">
-            <div class="btn-group btn-group-xs">
-              <%= link_to edit_backend_category_path(cate), class: 'btn btn-default', data: {toogle: 'tooltip', title: 'Edit'} do %>
-                <i class="fa fa-pencil"></i>
-              <% end %>
-              <%= link_to backend_category_path(cate), method: 'delete',class: 'btn btn-danger', data: {toogle: 'tooltip', title: 'Delete'} do %>
-                <i class="fa fa-times"></i>
-              <% end %>
-            </div>
-          </td>
-        </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
-</div>
+<%= render layout: 'backend/shared/prepare_table', 
+           locals: {
+                     table_name:  'Category', 
+                     button_name: 'Category'
+                   } do %>
+  <table id="example-datatable" class="table table-vcenter table-condensed table-bordered">
+    <thead>
+      <tr>
+        <th class="text-center">No</th>
+        <th>Name</th>
+        <th>Created At</th>
+        <th class="text-center">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @categories.each_with_index do |cate,index| %>
+      <tr>
+        <td class="text-center"><%= index + 1 %></td>
+        <td><a href="javascript:void(0)"><%= cate.name %></a></td>
+        <th><%= cate.created_at %></th>
+        <td class="text-center">
+          <%= render partial: 'backend/shared/action_buttons', locals: {resource: cate, confirmation: "#{cate.name} will be deleted, are you sure ?"} %>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+<% end %>

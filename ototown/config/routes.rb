@@ -24,7 +24,9 @@ Ototown::Application.routes.draw do
     devise_for :admins, :controllers => { :sessions => "backend/admins/sessions" }
     resources :users
     resources :news
+    resources :category_news
     resources :categories
+    resources :products
   end
 
 end

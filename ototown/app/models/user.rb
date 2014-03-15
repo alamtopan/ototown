@@ -14,6 +14,6 @@ class User < Operator
                                           :thumb => "100x100>" 
                                         }
 
-  # default_scope { where(role_id: ROLE_ID) }
+  default_scope { where(role_id: ROLE_ID) }
   
 end

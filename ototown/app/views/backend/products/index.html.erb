@@ -1,0 +1,32 @@
+<%= render layout: 'backend/shared/prepare_table', 
+           locals: {
+                     table_name:  'Product', 
+                     button_name: 'Product'
+                   } do %>
+	<table id="example-datatable" class="table table-vcenter table-condensed table-bordered">
+		<thead>
+			<tr>
+				<th class="text-center">No</th>
+				<th>Name</th>
+				<th>Category</th>
+				<th>Condition</th>
+				<th>Type</th>
+				<th class="text-center">Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+		<% @products.each_with_index do |product,index| %>
+			<tr>
+				<td class="text-center"><%= index + 1 %></td>
+				<td><a href="javascript:void(0)"><%= product.name %></a></td>
+				<td><%= product.category.try(:name) || '-' %></td>
+				<td><%= product.condition %></td>
+				<td><%= product.type %></td>
+				<td class="text-center">
+					<%= render partial: 'backend/shared/action_buttons', locals: {resource: product, confirmation: "#{product.name} will be deleted, are you sure ?"} %>
+				</td>
+			</tr>
+		<% end %>
+		</tbody>
+	</table>
+<% end %>
