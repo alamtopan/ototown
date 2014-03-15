@@ -1,0 +1,32 @@
+<%= render layout: 'backend/shared/prepare_table', 
+           locals: {
+                     table_name:  'News', 
+                     button_name: 'News'
+                   } do %>
+	<table id="example-datatable" class="table table-vcenter table-condensed table-bordered">
+		<thead>
+			<tr>
+				<th class="text-center">ID</th>
+				<th>Title</th>
+				<th>Created At</th>
+				<th>Publish At</th>
+				<th>Author</th>
+				<th class="text-center">Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+		<% @news.each do |news| %>
+			<tr>
+				<td class="text-center">1</td>
+				<td><a href="javascript:void(0)"><%= news.title %></a></td>
+				<td>No description</td>
+				<td><span class="label label-primary">No descriptio</span></td>
+				<th>Admin</th>
+				<td class="text-center">
+					<%= render partial: 'backend/shared/action_buttons', locals: {resource: news, confirmation: "#{news.title} will be deleted, are you sure ?"} %>
+				</td>
+			</tr>
+		<% end %>
+		</tbody>
+	</table>
+<% end %>

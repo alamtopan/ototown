@@ -20,9 +20,10 @@ Ototown::Application.routes.draw do
   get   '/user_profile',      to: 'users#user_profile',        as: 'user_profile'
 
   namespace :backend do
-    get '/', to: 'home#index'
+    get '/',                  to: 'home#index'                 
     devise_for :admins, :controllers => { :sessions => "backend/admins/sessions" }
     resources :users
+    resources :news
     resources :categories
   end
 

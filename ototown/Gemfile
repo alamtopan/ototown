@@ -1,21 +1,8 @@
 source 'https://rubygems.org'
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
-
-# Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
-
-# Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
-
-# Use CoffeeScript for .js.coffee assets and views
-# gem 'coffee-rails', '~> 4.0.0'
-
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
-
-# Use jquery as the JavaScript library
 gem 'jquery-rails'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
@@ -28,7 +15,22 @@ gem 'jbuilder', '~> 1.2'
   gem 'mysql2','0.3.11'
   gem 'ancestry'                        # Table Tree tool
   gem 'inherited_resources'             # DRY for CRUD methods in controller
+  gem 'kaminari'                        # pagination
+  gem 'protected_attributes'
 # end
+
+# group :addons do
+  gem 'cocoon'                          # Dynamic nested forms using jQuery
+  gem 'delayed_job_active_record'       # Background Job Tools
+  gem 'daemons'                         # Daemon for Background Job
+  gem 'delayed_job_web'                 # Delayed Job Monitoring System
+  gem 'acts_as_list'
+  gem 'friendly_id'
+  gem 'httparty'
+  gem 'wash_out'
+  gem 'htmlentities'
+#end
+
 
 group :assets do
   gem 'devise'
