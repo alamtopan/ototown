@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140313234112) do
+ActiveRecord::Schema.define(version: 20140316133219) do
 
   create_table "advertises", force: true do |t|
     t.integer  "user_id"
@@ -63,6 +63,15 @@ ActiveRecord::Schema.define(version: 20140313234112) do
     t.string   "email"
     t.text     "content"
     t.integer  "advertise_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "dealer_infos", force: true do |t|
+    t.text     "address"
+    t.text     "no_dealer"
+    t.integer  "dealer_id"
+    t.boolean  "active"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

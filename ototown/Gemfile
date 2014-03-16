@@ -33,6 +33,7 @@ gem 'jbuilder', '~> 1.2'
 
 
 group :assets do
+  gem 'omniauth-facebook'
   gem 'devise'
   gem 'cancan'
   gem 'paperclip'                     # attachment tool

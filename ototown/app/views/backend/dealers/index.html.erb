@@ -1,7 +1,7 @@
 <%= render layout: 'backend/shared/prepare_table', 
            locals: {
-                     table_name:  'Users', 
-                     button_name: 'Users'
+                     table_name:  'Dealers', 
+                     button_name: 'Dealers'
                    } do %>
 	<table id="example-datatable" class="table table-vcenter table-condensed table-bordered">
 		<thead>
@@ -15,15 +15,15 @@
 			</tr>
 		</thead>
 		<tbody>
-		<% @users.each do |user| %>
+		<% @dealers.each do |dealer| %>
 			<tr>
 				<td class="text-center">1</td>
-				<td><a href="javascript:void(0)"><%= user.username %></a></td>
+				<td><a href="javascript:void(0)"><%= dealer.username %></a></td>
 				<td>Fullname</td>
-				<td><span class="label label-primary"><%= user.email %></span></td>
-				<th><%= user.created_at  %></th>
+				<td><span class="label label-primary"><%= dealer.email %></span></td>
+				<th><%= dealer.created_at %></th>
 				<td class="text-center">
-					<%= render partial: 'backend/shared/action_buttons', locals: {resource: user, confirmation: "#{user.username} will be deleted, are you sure ?"} %>
+					<%= render partial: 'backend/shared/action_buttons', locals: {resource: dealer, confirmation: "#{dealer.username} will be deleted, are you sure ?"} %>
 				</td>
 			</tr>
 		<% end %>

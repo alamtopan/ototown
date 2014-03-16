@@ -1,0 +1,52 @@
+<%= form_failure_message @dealer %>
+<%= form_for :dealer, as: @dealer, url: (@dealer.new_record? ? backend_dealers_path : backend_dealer_path(@dealer)), method: (@dealer.new_record? ? :post : :put),
+      html: { role: 'form',class: 'form-horizontal form-bordered' } do |f| %>
+  <fieldset>
+    <legend><i class="fa fa-angle-right"></i> Dealer Info</legend>
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="username">Username <span class="text-danger">*</span></label>
+      <div class="col-md-6">
+        <div class="input-group">
+          <%= f.text_field :username, class: 'form-control', placeholder: 'Username', required: true %>
+          <span class="input-group-addon"><i class="gi gi-user"></i></span>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="val_email">Email <span class="text-danger">*</span></label>
+      <div class="col-md-6">
+        <div class="input-group">
+          <%= f.email_field :email, class: 'form-control', placeholder: 'test@example.com', required: true %>
+          <span class="input-group-addon"><i class="gi gi-envelope"></i></span>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="val_password">Password <span class="text-danger">*</span></label>
+      <div class="col-md-6">
+        <div class="input-group">
+          <%= f.password_field :password, class: 'form-control', placeholder: 'Password' %>
+          <span class="input-group-addon"><i class="gi gi-asterisk"></i></span>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="val_confirm_password">Confirm Password <span class="text-danger">*</span></label>
+      <div class="col-md-6">
+        <div class="input-group">
+          <%= f.password_field :password_confirmation, class: 'form-control', placeholder: 'Confirm Password' %>
+          <span class="input-group-addon"><i class="gi gi-asterisk"></i></span>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+  <%= f.fields_for :profile do |profile| %>
+    <%= render 'profile_fields', :f => profile %>
+  <% end %>
+  <div class="form-group form-actions">
+    <div class="col-md-8 col-md-offset-4">
+      <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-arrow-right"></i> Submit</button>
+      <button type="reset" class="btn btn-sm btn-warning"><i class="fa fa-repeat"></i> Reset</button>
+    </div>
+  </div>
+<% end %>
