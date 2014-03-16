@@ -42,17 +42,9 @@
 					<span class="sidebar-header-title">Data Content</span>
 				</li>
 				<li>
-					<%= link_to '#', class: 'sidebar-nav-menu' do %>
-						<i class="fa fa-angle-left sidebar-nav-indicator"></i><i class="gi gi-certificate sidebar-nav-icon"></i>Dealers</a>
+					<%= link_to backend_dealers_path, class: '' do %>
+						<i class="gi gi-certificate sidebar-nav-icon"></i>Dealers</a>
 					<% end %>
-					<ul>
-						<li>
-							<%= link_to 'Create New', '#!'  %>
-						</li>
-						<li>
-							<%= link_to 'List Data', '#!'  %>
-						</li>
-					</ul>
 				</li>
 				<li>
 					<a href="#" class="sidebar-nav-menu"><i class="fa fa-angle-left sidebar-nav-indicator"></i><i class="gi gi-certificate sidebar-nav-icon"></i>Users</a>
@@ -69,10 +61,10 @@
 					<a href="#" class="sidebar-nav-menu"><i class="fa fa-angle-left sidebar-nav-indicator"></i><i class="gi gi-certificate sidebar-nav-icon"></i>Cars</a>
 					<ul>
 						<li>
-							<%= link_to 'Create New', '#!'  %>
+							<%= link_to 'Create New', new_backend_product_path  %>
 						</li>
 						<li>
-							<%= link_to 'List Data', '#!'  %>
+							<%= link_to 'List Data', backend_products_path  %>
 						</li>
 					</ul>
 				</li>
@@ -80,10 +72,10 @@
 					<a href="#" class="sidebar-nav-menu"><i class="fa fa-angle-left sidebar-nav-indicator"></i><i class="gi gi-certificate sidebar-nav-icon"></i>Spare Parts</a>
 					<ul>
 						<li>
-							<%= link_to 'Create New', '#!'  %>
+							<%= link_to 'Create New', new_backend_product_path  %>
 						</li>
 						<li>
-							<%= link_to 'List Data', '#!'  %>
+							<%= link_to 'List Data', backend_products_path  %>
 						</li>
 					</ul>
 				</li>
