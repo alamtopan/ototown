@@ -11,6 +11,12 @@
     <%= f.text_area :content, class: 'form-control', rows: '9', placeholder: 'Description' %>
   </div>
 </div>
+ <div class="form-group">
+  <label class="col-md-3 control-label" for="example-textarea-input">Category</label>
+  <div class="col-md-9">
+    <%= f.select :category_id, options_for_select(news_category_options, @news.category_id),{prompt: 'Select Category'},class: 'form-control' %>
+  </div>
+</div>
 </fieldset>
 <div class="form-group form-actions submit-bott">
   <div class="col-md-8 col-md-offset-4">
