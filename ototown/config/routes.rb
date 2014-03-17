@@ -31,7 +31,8 @@ Ototown::Application.routes.draw do
     resources :news
     resources :category_news
     resources :categories
-    resources :products
+    resources :cars
+    resources :spareparts
     resources :page_contents
   end
 
