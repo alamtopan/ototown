@@ -11,7 +11,7 @@
 				<th>Username</th>
 				<th>Fullname</th>
 				<th>Email</th>
-				<th>Created At</th>
+				<th>Dealer</th>
 				<th class="text-center">Actions</th>
 			</tr>
 		</thead>
@@ -22,7 +22,7 @@
 				<td><a href="javascript:void(0)"><%= user.username %></a></td>
 				<td>Fullname</td>
 				<td><span class="label label-primary"><%= user.email %></span></td>
-				<th><%= user.created_at  %></th>
+				<th><%= link_to 'Add To Dealer', add_dealer_backend_user_path(user) %></th>
 				<td class="text-center">
 					<%= render partial: 'backend/shared/action_buttons', locals: {resource: user, confirmation: "#{user.username} will be deleted, are you sure ?"} %>
 				</td>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140317192725) do
+ActiveRecord::Schema.define(version: 20140317192726) do
 
   create_table "advertises", force: true do |t|
     t.integer  "user_id"
@@ -147,7 +147,7 @@ ActiveRecord::Schema.define(version: 20140317192725) do
     t.text     "description"
     t.integer  "category_id"
     t.string   "condition"
-    t.string   "type"
+    t.string   "type_product"
     t.string   "brand"
     t.string   "model"
     t.string   "year"

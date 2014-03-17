@@ -38,6 +38,11 @@
 //= require back/pages/widgetsStats
 //= require ckeditor/override
 //= require ckeditor/init
+//= require bootstrap-datepicker
 
 //= require back/pages/tablesDatatables
 $(function(){ TablesDatatables.init(); });
+  $(document).ready(function(){
+    // datepicker
+    $('.datepicker').datepicker();
+  })
