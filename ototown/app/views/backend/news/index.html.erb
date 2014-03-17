@@ -8,10 +8,9 @@
 		<thead>
 			<tr>
 				<th class="text-center">No</th>
-				<th>Title</th>
+				<th>Title News</th>
+				<th>Category News</th>
 				<th>Created At</th>
-				<th>Publish At</th>
-				<th>Author</th>
 				<th class="text-center">Actions</th>
 			</tr>
 		</thead>
@@ -20,9 +19,8 @@
 			<tr>
 				<td class="text-center"><%= index + 1 %></td>
 				<td><a href="javascript:void(0)"><%= news.title %></a></td>
-				<td><%= news.created_at %></td>
-				<td><span class="label label-primary"><%= news.created_at %></span></td>
-				<td>Admin</td>
+				<td><span class="label label-primary"><%= news.category_news.try(:title) %></span></td>
+				<td><%= news.created_at.strftime('%d %b %Y - at %I:%M%p') %></td>
 				<td class="text-center">
 					<%= render partial: 'backend/shared/action_buttons', locals: {resource: news, confirmation: "#{news.title} will be deleted, are you sure ?"} %>
 				</td>

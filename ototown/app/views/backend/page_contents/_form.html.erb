@@ -1,22 +1,22 @@
 <fieldset>
   <div class="form-group">
+    <label class="col-md-3 control-label" for="example-textarea-input">Category</label>
+    <div class="col-md-6">
+      <%= f.select :category, @category_contents,{:prompt => "- Category Content -"},{class: 'form-control', required: true} %>
+    </div>
+  </div>
+  <div class="form-group">
     <label class="col-md-3 control-label" for="example-text-input">Title</label>
     <div class="col-md-9">
      <%= f.text_field :title, class: 'form-control', placeholder: 'Title' %>
    </div>
- </div>
- <div class="form-group">
-  <label class="col-md-3 control-label" for="example-textarea-input">Content</label>
-  <div class="col-md-9">
-    <%= f.text_area :content, class: 'ckeditor form-control', rows: '9', placeholder: 'Description' %>
   </div>
-</div>
- <div class="form-group">
-  <label class="col-md-3 control-label" for="example-textarea-input">Category</label>
-  <div class="col-md-9">
-    <%= f.select :category, @category_contents,{:prompt => "- Category Content -"},{class: 'form-control', required: true} %>
+  <div class="form-group">
+    <label class="col-md-3 control-label" for="example-textarea-input">Content</label>
+    <div class="col-md-9">
+      <%= f.text_area :content, class: 'ckeditor form-control', rows: '9', placeholder: 'Description' %>
+    </div>
   </div>
-</div>
 </fieldset>
 <div class="form-group form-actions submit-bott">
   <div class="col-md-8 col-md-offset-4">
