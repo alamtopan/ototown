@@ -5,6 +5,8 @@ default: &default
   password: 
   pool: 5
   timeout: 5000
+  socket: /opt/lampp/var/mysql/mysql.sock
+
 
 development:
   <<: *default

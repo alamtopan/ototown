@@ -2,7 +2,7 @@
 	<div class="sidebar-scroll">
 		<div class="sidebar-content">
 			<a href="./index.php.html" class="sidebar-brand">
-				<strong><%= current_backend_admin.email %></strong>
+				<strong>Administrator</strong>
 			</a>
 			<div class="sidebar-section sidebar-user clearfix">
 				<div class="sidebar-user-avatar">
@@ -10,7 +10,7 @@
 						<img src="./img/placeholders/avatars/avatar2.jpg" alt="avatar" />
 					</a>
 				</div>
-				<div class="sidebar-user-name">John Doe</div>
+				<div class="sidebar-user-name"><%= current_backend_admin.username %></div>
 				<div class="sidebar-user-links">
 					<a href="./page_ready_user_profile.php.html" data-toggle="tooltip" data-placement="bottom" title="Profile"><i class="gi gi-user"></i></a>
 					<a href="#modal-user-settings" data-toggle="modal" class="enable-tooltip" data-placement="bottom" title="Settings"><i class="gi gi-cogwheel"></i></a>
@@ -88,16 +88,8 @@
 						<li>
 							<%= link_to 'List Data', backend_news_index_path %>
 						</li>
-					</ul>
-				</li>
-				<li>
-					<a href="#" class="sidebar-nav-menu"><i class="fa fa-angle-left sidebar-nav-indicator"></i><i class="gi gi-certificate sidebar-nav-icon"></i>Pages</a>
-					<ul>
 						<li>
-							<%= link_to 'Create New', '#!'  %>
-						</li>
-						<li>
-							<%= link_to 'List Data', '#!'  %>
+							<%= link_to 'Category', backend_category_news_index_path %>
 						</li>
 					</ul>
 				</li>
@@ -108,7 +100,7 @@
 							<%= link_to 'Create New', '#!'  %>
 						</li>
 						<li>
-							<%= link_to 'List Data', '#!'  %>
+							<%= link_to 'List Data', backend_page_contents_path %>
 						</li>
 					</ul>
 				</li>

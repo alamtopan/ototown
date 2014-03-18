@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require back/app
 //= require back/plugins
 //= require back/vendor/bootstrap.min
@@ -37,8 +36,6 @@
 //= require back/pages/uiTypography
 //= require back/pages/widgetsSocial
 //= require back/pages/widgetsStats
-//= require back/helpers/excanvas.min
-//= require back/helpers/gmaps.min
 //= require ckeditor/override
 //= require ckeditor/init
 

@@ -14,7 +14,7 @@
  <div class="form-group">
   <label class="col-md-3 control-label" for="example-textarea-input">Category</label>
   <div class="col-md-9">
-    <%= f.select :category_id, options_for_select(news_category_options, @news.category_id),{prompt: 'Select Category'},class: 'form-control' %>
+    <%= f.select :category, @category_contents,{:prompt => "- Category Content -"},{class: 'form-control', required: true} %>
   </div>
 </div>
 </fieldset>

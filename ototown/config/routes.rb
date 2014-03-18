@@ -28,6 +28,7 @@ Ototown::Application.routes.draw do
     resources :category_news
     resources :categories
     resources :products
+    resources :page_contents
   end
 
 end

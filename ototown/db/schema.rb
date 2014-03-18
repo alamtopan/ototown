@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140316133219) do
+ActiveRecord::Schema.define(version: 20140317192725) do
 
   create_table "advertises", force: true do |t|
     t.integer  "user_id"
@@ -133,6 +133,14 @@ ActiveRecord::Schema.define(version: 20140316133219) do
   add_index "operators", ["reset_password_token"], name: "index_operators_on_reset_password_token", unique: true, using: :btree
   add_index "operators", ["role_id"], name: "index_operators_on_role_id", using: :btree
   add_index "operators", ["unlock_token"], name: "index_operators_on_unlock_token", unique: true, using: :btree
+
+  create_table "page_contents", force: true do |t|
+    t.string   "title"
+    t.text     "content"
+    t.string   "category"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "products", force: true do |t|
     t.string   "name"

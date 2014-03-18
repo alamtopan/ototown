@@ -1,4 +1,4 @@
-class Backend::UsersController < Backend::ResourcesController
+class Backend::UsersController < Backend::ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   prepend_before_filter :draw_password, only: :update
  
