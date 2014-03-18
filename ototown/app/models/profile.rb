@@ -3,10 +3,12 @@ class Profile < ActiveRecord::Base
 
   belongs_to :user, foreign_key: 'user_id'
   belongs_to :dealer, foreign_key: 'user_id'
-  has_attached_file :avatar, :styles => { 
-                                          :medium => "300x300>", 
-                                          :thumb => "100x100>" 
-                                        }, 
-                                    			:default_url => "/assets/no-image.jpg"
+  has_attached_file :avatar, styles:  { 
+                                     :medium => "600x600>", 
+                                     :thumb => "100x100>" 
+                                    }, 
+                                    :default_url => "/assets/no-image.jpg"
+                                    
+  validates_attachment :avatar, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }
 
 end
