@@ -4,8 +4,17 @@
     <label class="col-md-4 control-label" for="val_website">Full Name </label>
     <div class="col-md-6">
       <div class="input-group">
-        <%= f.text_field :full_name, class: 'form-control' %>
+        <%= profile.text_field :full_name, class: 'form-control' %>
         <span class="input-group-addon"><i class="gi gi-user"></i></span>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="val_website">Avatar</label>
+    <div class="col-md-6">
+      <div class="input-group">
+        <%= image_tag @dealer.profile.avatar.url(:medium) %>
+        <%= profile.file_field :avatar, class: "form-control" %>
       </div>
     </div>
   </div>
@@ -13,21 +22,21 @@
     <label class="col-md-4 control-label" for="val_website">Birthday </label>
     <div class="col-md-6">
       <div class="input-group">
-        <%= f.text_field :birthday, class: 'form-control datepicker' %>
+        <%= profile.text_field :birthday, class: 'form-control datepicker' %>
       </div>
     </div>
   </div>
   <div class="form-group">
     <label class="col-md-4 control-label" for="val_bio">Address </label>
     <div class="col-md-8">
-      <%= f.text_area :address, rows: 4, class: 'form-control' %>
+      <%= profile.text_area :address, rows: 4, class: 'form-control' %>
     </div>
   </div>
   <div class="form-group">
     <label class="col-md-4 control-label" for="val_website">City </label>
     <div class="col-md-6">
       <div class="input-group">
-        <%= f.text_field :city, class: 'form-control' %>
+        <%= profile.text_field :city, class: 'form-control' %>
       </div>
     </div>
   </div>
@@ -35,7 +44,7 @@
     <label class="col-md-4 control-label" for="val_website">Codepos </label>
     <div class="col-md-6">
       <div class="input-group">
-        <%= f.text_field :codepos, class: 'form-control' %>
+        <%= profile.text_field :codepos, class: 'form-control' %>
       </div>
     </div>
   </div>
@@ -44,8 +53,8 @@
     <div class="col-md-6">
       <select id="gender" name="gender" class="form-control">
         <option value="" />Please select
-        <option value="html" />Laki-laki
-        <option value="css" />Perempuan
+        <option value="Laki-laki" />Laki-laki
+        <option value="Perempuan" />Perempuan
       </select>
     </div>
   </div>
@@ -53,7 +62,7 @@
     <label class="col-md-4 control-label" for="val_credit_card">Phone Number </label>
     <div class="col-md-6">
       <div class="input-group">
-        <%= f.text_field :phone, class: 'form-control' %>
+        <%= profile.text_field :phone, class: 'form-control' %>
       </div>
     </div>
   </div>

@@ -22,7 +22,11 @@ Ototown::Application.routes.draw do
   namespace :backend do
     get '/',                  to: 'home#index'                 
     devise_for :admins, :controllers => { :sessions => "backend/admins/sessions" }
-    resources :users
+    resources :users do
+      member do
+        get 'add-to-dealer', to: 'users#add_dealer', as: 'add_dealer'
+      end
+    end
     resources :dealers
     resources :news
     resources :category_news

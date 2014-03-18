@@ -22,7 +22,7 @@
 				<td><a href="javascript:void(0)"><%= product.name %></a></td>
 				<td><%= product.category.try(:name) || '-' %></td>
 				<td><%= product.condition %></td>
-				<td><%= product.type %></td>
+				<td><%= product.type_product %></td>
 				<td class="text-center">
 					<%= render partial: 'backend/shared/action_buttons', locals: {resource: product, confirmation: "#{product.name} will be deleted, are you sure ?"} %>
 				</td>

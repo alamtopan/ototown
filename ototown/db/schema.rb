@@ -151,7 +151,7 @@ ActiveRecord::Schema.define(version: 20140318034831) do
     t.text     "description"
     t.integer  "category_id"
     t.string   "condition"
-    t.string   "type"
+    t.string   "type_product"
     t.string   "brand"
     t.string   "model"
     t.string   "year"
