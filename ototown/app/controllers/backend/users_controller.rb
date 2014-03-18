@@ -1,18 +1,8 @@
 class Backend::UsersController < Backend::ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  defaults :resource_class => User, :collection_name => 'users', :instance_name => 'user'
   prepend_before_filter :draw_password, only: :update
- 
 
-  private
-    def set_user
-      @user = User.find(params[:id])
-    end
-
-    def user_params
-      params.require(:user).permit(:username, :email, :password, :password_confirmation, 
-          profiles_attributes: [:full_name, :birthday, :gender, :address, :city, :codepos, :phone] )
-    end
-    
+  private    
     def draw_password
       %w(password password_confirmation).each do |attr|
         params[:user].delete(attr)

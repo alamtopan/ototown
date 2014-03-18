@@ -1,6 +1,4 @@
-<%= form_failure_message @user %>
-<%= form_for :user, as: @user, url: (@user.new_record? ? backend_users_path : backend_user_path(@user)), method: (@user.new_record? ? :post : :put),
-      html: { role: 'form',class: 'form-horizontal form-bordered' } do |f| %>
+<%= f.fields_for(:profile) do |profile| %>
   <fieldset>
     <legend><i class="fa fa-angle-right"></i> User Info</legend>
     <div class="form-group">
@@ -40,9 +38,7 @@
       </div>
     </div>
   </fieldset>
-  <%= f.fields_for :profile do |profile| %>
-    <%= render 'profile_fields', :f => profile %>
-  <% end %>
+  <%= render 'profile_form', profile: profile %>
   <div class="form-group form-actions">
     <div class="col-md-8 col-md-offset-4">
       <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-arrow-right"></i> Submit</button>
