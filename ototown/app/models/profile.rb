@@ -1,5 +1,5 @@
 class Profile < ActiveRecord::Base
-	attr_accessible :full_name, :birthday, :address, :city, :codepos, :gender, :phone, :user_id, :avatar
+	attr_accessible :full_name, :birthday, :address, :city, :codepos, :gender, :phone, :user_id, :avatar, :province
 
   belongs_to :user, foreign_key: 'user_id'
   belongs_to :dealer, foreign_key: 'user_id'

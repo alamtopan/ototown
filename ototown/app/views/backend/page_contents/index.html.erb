@@ -7,11 +7,10 @@
 	<table id="example-datatable" class="table table-vcenter table-condensed table-bordered">
 		<thead>
 			<tr>
-				<th class="text-center">No</th>
-				<th>Title</th>
-				<th>Category</th>
+				<th class="text-center" width="10%">No</th>
+				<th width="30%">Title Content</th>
+				<th>Category Content</th>
 				<th>Created At</th>
-				<th>Author</th>
 				<th class="text-center">Actions</th>
 			</tr>
 		</thead>
@@ -20,9 +19,8 @@
 			<tr>
 				<td class="text-center"><%= index + 1 %></td>
 				<td><a href="javascript:void(0)"><%= page.title %></a></td>
-				<td><%= page.category %></td>
-				<td><span class="label label-primary"><%= page.created_at %></span></td>
-				<td>Admin</td>
+				<td><span class="label label-primary"><%= page.category %></span></td>
+				<td><%= page.created_at.strftime('%d %b %Y - at %I:%M%p') %></td>
 				<td class="text-center">
 					<%= render partial: 'backend/shared/action_buttons', locals: {resource: page, confirmation: "#{page.title} will be deleted, are you sure ?"} %>
 				</td>
