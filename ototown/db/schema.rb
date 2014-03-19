@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140319083714) do
+ActiveRecord::Schema.define(version: 20140319173047) do
 
   create_table "advertises", force: true do |t|
     t.integer  "user_id"
@@ -146,6 +146,10 @@ ActiveRecord::Schema.define(version: 20140319083714) do
     t.string   "category"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "pic_file_name"
+    t.string   "pic_content_type"
+    t.integer  "pic_file_size"
+    t.datetime "pic_updated_at"
   end
 
   create_table "products", force: true do |t|
@@ -188,6 +192,26 @@ ActiveRecord::Schema.define(version: 20140319083714) do
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
     t.string   "province"
+  end
+
+  create_table "web_settings", force: true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.text     "keywords"
+    t.text     "header_tags"
+    t.text     "footer_tags"
+    t.string   "contact"
+    t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "pav_icon_file_name"
+    t.string   "pav_icon_content_type"
+    t.integer  "pav_icon_file_size"
+    t.datetime "pav_icon_updated_at"
+    t.string   "logo_file_name"
+    t.string   "logo_content_type"
+    t.integer  "logo_file_size"
+    t.datetime "logo_updated_at"
   end
 
 end

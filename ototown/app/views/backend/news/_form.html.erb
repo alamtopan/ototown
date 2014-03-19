@@ -23,11 +23,11 @@
 <div class="form-group">
   <label class="col-md-3 control-label" for="example-textarea-input">Publish On</label>
   <div class="col-md-3">
-    <%= f.text_field :publish, class: 'form-control input-datepicker', placeholder: 'mm/dd/yy', "date-format" => "mm/dd/yy" %>
+    <%= f.text_field :publish, class: 'form-control input-datepicker', placeholder: 'mm/dd/yyyy', data: {"date-format" => "yyyy-mm-dd"} %>
   </div>
   <label class="col-md-1 control-label" for="example-textarea-input">Expire On</label>
   <div class="col-md-3">
-    <%= f.text_field :unpublish, class: 'form-control input-datepicker', placeholder: 'mm/dd/yy',"date-format" => "mm/dd/yy" %>
+    <%= f.text_field :unpublish, class: 'form-control input-datepicker', placeholder: 'mm/dd/yyyy', data: {"date-format" => "yyyy-mm-dd"} %>
   </div>
 </div>
 <div class="form-group">

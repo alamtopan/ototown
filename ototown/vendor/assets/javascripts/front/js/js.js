@@ -98,13 +98,6 @@ jQuery(document).ready(function(){
 	    $(this).addClass('current').siblings().removeClass('current').parents('div.section').find('div.box').eq($(this).index()).fadeIn(150).siblings('div.box').hide();
 	});
 
-	var austDay = new Date();
-	austDay = new Date(austDay.getFullYear(),austDay.getMonth(), austDay.getDate()+36,austDay.getHours()+7,austDay.getMinutes()+24,austDay.getSeconds()+59);
-	$('#counter').countdown({
-		until: austDay, 
-		format: 'dHMS'
-	});
-
 	$('.drop_list .selected span').click(function(e){
 		e.preventDefault();
 		$(this).parent('.selected').addClass('active');

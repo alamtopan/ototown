@@ -6,6 +6,15 @@
     </div>
   </div>
   <div class="form-group">
+    <label class="col-md-3 control-label" for="example-text-input">Picture</label>
+    <div class="col-md-9">
+      <div class="input-group">
+        <%= image_tag @page_contents.pic.url(:medium) %>
+        <%= f.file_field :pic, class: "form-control" %>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
     <label class="col-md-3 control-label" for="example-text-input">Title</label>
     <div class="col-md-9">
      <%= f.text_field :title, class: 'form-control', placeholder: 'Title' %>

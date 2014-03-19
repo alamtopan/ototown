@@ -1,3 +1,30 @@
+@media only screen and (max-width: 767px) {
+.fb-comments{width: 100% !important;}
+.fb-comments iframe[style]{width: 100% !important;}
+.fb-like-box{width: 100% !important;}
+.fb-like-box iframe[style]{width: 100% !important;}
+.fb-comments span{width: 100% !important;}
+.fb-comments iframe span[style]{width: 100% !important;}
+.fb-like-box span{width: 100% !important;}
+.fb-like-box iframe span[style]{width: 100% !important;} }
+.blog_post {
+	border-bottom: 1px solid #D1D5DC;
+	overflow: hidden;
+	padding: 15px;
+	margin-bottom: 30px;
+	background: #fff;
+}
+.blog_desc {
+	width: 420px!important;
+}
+.padding-left10{
+	padding-left: 10px;
+}
+.left-float{
+	float: left;
+	margin-right: 20px;
+	width: 50%;
+}
 .back-white{
 	background: #fff!important;
 }

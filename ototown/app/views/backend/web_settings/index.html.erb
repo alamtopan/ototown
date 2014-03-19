@@ -1,0 +1,27 @@
+<%= render layout: 'backend/shared/prepare_table', 
+           locals: {
+                     table_name:  'Web Settings', 
+                     button_name: 'Web Settings',
+                     add_method: true
+                   } do %>
+  <table id="example-datatable" class="table table-vcenter table-condensed table-bordered">
+    <thead>
+      <tr>
+        <th class="text-center">No</th>
+        <th>Web Settings</th>
+        <th class="text-center">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @web_settings.each_with_index do |web_settings,index| %>
+      <tr>
+        <td class="text-center">1</td>
+        <td><a href="javascript:void(0)">www.ototown.com</a></td>
+        <td class="text-center">
+          <%= render partial: 'backend/shared/action_buttons', locals: {resource: web_settings, confirmation: "#{web_settings.title} will be deleted, are you sure ?"} %>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+<% end %>

@@ -12,7 +12,7 @@ Ototown::Application.routes.draw do
   get   '/form_car',          to: 'cars#form_car',             as: 'form_car'
 
   #News
-  get   '/detail_news',				to: 'publics#detail_news',       as: 'detail_news'
+  get   '/detail_news/:id',				to: 'publics#detail_news',       as: 'detail_news'
   get   '/news',     					to: 'publics#news',              as: 'news'
 
   #Users
@@ -22,6 +22,9 @@ Ototown::Application.routes.draw do
   namespace :backend do
     get '/',                  to: 'home#index'                 
     devise_for :admins, :controllers => { :sessions => "backend/admins/sessions" }
+    resources :admins  do
+      resources :profiles
+    end
     resources :users do
       member do
         get 'add-to-dealer', to: 'users#add_dealer', as: 'add_dealer'
@@ -34,6 +37,7 @@ Ototown::Application.routes.draw do
     resources :cars
     resources :spareparts
     resources :page_contents
+    resources :web_settings
   end
 
 end

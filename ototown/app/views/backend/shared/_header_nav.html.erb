@@ -19,23 +19,21 @@
     <ul class="nav navbar-nav-custom pull-right">
       <li class="dropdown">
         <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">
-          <img src="./img/placeholders/avatars/avatar2.jpg" alt="avatar"> <i class="fa fa-angle-down"></i>
+          <%= image_tag "#{current_backend_admin.profile.avatar}" %><i class="fa fa-angle-down"></i>
         </a>
         <ul class="dropdown-menu dropdown-custom dropdown-menu-right">
           <li class="dropdown-header text-center">Account</li>
           <li>
-            <a href="./page_ready_user_profile.php.html">
-              <i class="fa fa-user fa-fw pull-right"></i>
-              Profile
-            </a>
-            <a href="#modal-user-settings" data-toggle="modal">
+            <%= link_to edit_backend_admin_path(current_backend_admin.id) do %>
               <i class="fa fa-cog fa-fw pull-right"></i>
               Settings
-            </a>
+            <% end %>
           </li>
           <li class="divider"></li>
           <li>
-            <a href="./login.php.html"><i class="fa fa-ban fa-fw pull-right"></i> Logout</a>
+            <%= link_to destroy_backend_admin_session_path, method: 'delete' do %>
+              <i class="fa fa-ban fa-fw pull-right"></i> Logout
+            <% end %>
           </li>
         </ul>
       </li>

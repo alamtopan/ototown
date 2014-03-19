@@ -1,49 +1,23 @@
-<div class="news_wrapper">
+<div class="news_wrapper" style="padding-top:25px;">
 	<div class="news">
-		<h2><strong>News</strong> & Update</h2>
+		<h2><strong>Latest</strong> & News</h2>
 		<div class="scrool">
-			<div class="news_box">
-				<a href="#" class="thumb">
-					<img src="assets/pics/news_1.jpg" alt="" />
-				</a>
-				<h5><a href="#">UNOFFICIAL PORSCHE 918 SPYDER PRICING POPS UP</a></h5>
-				<div class="date"><span>November 1, 2012</span></div>
-				<div class="post">
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit... </p>
+			<% @news_list.each do |news_list| %>
+				<div class="news_box">
+					<%= link_to detail_news_path(news_list.id) do %>
+						<%= image_tag "#{news_list.pic}", class: "thumb" %>
+					<% end %>
+					<h5><%= link_to "#{news_list.title}", detail_news_path(news_list.id) %></h5>
+					<div class="date"><span><%= news_list.created_at.strftime('%d %b %Y - at %I:%M%p') %></span></div>
+					<div class="post">
+						<p><%= truncate strip_tags(news_list.content.to_s), length: 20 %></p>
+					</div>
 				</div>
-			</div>
-			<div class="news_box">
-				<a href="#" class="thumb">
-					<img src="assets/pics/news_1.jpg" alt="" />
-				</a>
-				<h5><a href="#">UNOFFICIAL PORSCHE 918 SPYDER PRICING POPS UP</a></h5>
-				<div class="date"><span>November 1, 2012</span></div>
-				<div class="post">
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit... </p>
-				</div>
-			</div>
-			<div class="news_box">
-				<a href="#" class="thumb">
-					<img src="assets/pics/news_1.jpg" alt="" />
-				</a>
-				<h5><a href="#">UNOFFICIAL PORSCHE 918 SPYDER PRICING POPS UP</a></h5>
-				<div class="date"><span>November 1, 2012</span></div>
-				<div class="post">
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit... </p>
-				</div>
-			</div>
-			<div class="news_box">
-				<a href="#" class="thumb">
-					<img src="assets/pics/news_2.jpg" alt="" />
-				</a>
-				<h5><a href="#">UNOFFICIAL PORSCHE 918 SPYDER PRICING POPS UP</a></h5>
-				<div class="date"><span>November 1, 2012</span></div>
-				<div class="post">
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit... </p>
-				</div>
-			</div>
+			<% end %>
 		</div>
 		<br>
-		<div class="all_wrapper"><a href="#" class="all_news">All news</a></div>
+		<div class="all_wrapper">
+			<%= link_to "All News", news_path, class: "all_news" %>
+		</div>
 	</div>
 </div>
