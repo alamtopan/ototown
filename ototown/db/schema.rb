@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140318034831) do
+ActiveRecord::Schema.define(version: 20140319083714) do
 
   create_table "advertises", force: true do |t|
     t.integer  "user_id"
@@ -111,6 +111,8 @@ ActiveRecord::Schema.define(version: 20140318034831) do
     t.string   "pic_content_type"
     t.integer  "pic_file_size"
     t.datetime "pic_updated_at"
+    t.date     "publish"
+    t.date     "unpublish"
   end
 
   create_table "operators", force: true do |t|

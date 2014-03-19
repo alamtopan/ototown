@@ -11,6 +11,7 @@
 				<th>Title News</th>
 				<th>Category News</th>
 				<th>Created At</th>
+				<th>Publish On</th>
 				<th class="text-center">Actions</th>
 			</tr>
 		</thead>
@@ -21,6 +22,7 @@
 				<td><a href="javascript:void(0)"><%= news.title %></a></td>
 				<td><span class="label label-primary"><%= news.category_news.try(:title) %></span></td>
 				<td><%= news.created_at.strftime('%d %b %Y - at %I:%M%p') %></td>
+				<td><%= news.publish %></td>
 				<td class="text-center">
 					<%= render partial: 'backend/shared/action_buttons', locals: {resource: news, confirmation: "#{news.title} will be deleted, are you sure ?"} %>
 				</td>
