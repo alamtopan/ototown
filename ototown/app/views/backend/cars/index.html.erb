@@ -1,0 +1,31 @@
+<%= render layout: 'backend/shared/prepare_table', 
+           locals: {
+                     table_name:  'Car', 
+                     button_name: 'Car',
+                     add_method: true
+                   } do %>
+	<table id="example-datatable" class="table table-vcenter table-condensed table-bordered">
+		<thead>
+			<tr>
+				<th class="text-center">No</th>
+				<th>Name</th>
+				<th>Condition</th>
+				<th>Type</th>
+				<th class="text-center">Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+		<% @cars.each_with_index do |product,index| %>
+			<tr>
+				<td class="text-center"><%= index + 1 %></td>
+				<td><a href="javascript:void(0)"><%= product.name %></a></td>
+				<td><%= product.condition %></td>
+				<td><%= product.type_product %></td>
+				<td class="text-center">
+					<%= render partial: 'backend/shared/action_buttons', locals: {resource: product, confirmation: "#{product.name} will be deleted, are you sure ?"} %>
+				</td>
+			</tr>
+		<% end %>
+		</tbody>
+	</table>
+<% end %>

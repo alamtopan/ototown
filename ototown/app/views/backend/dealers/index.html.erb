@@ -16,9 +16,9 @@
 			</tr>
 		</thead>
 		<tbody>
-		<% @dealers.each do |dealer| %>
+		<% @dealers.each_with_index do |dealer,index| %>
 			<tr>
-				<td class="text-center">1</td>
+				<td class="text-center"><%= index + 1 %></td>
 				<td><a href="javascript:void(0)"><%= dealer.username %></a></td>
 				<td>Fullname</td>
 				<td><span class="label label-primary"><%= dealer.email %></span></td>

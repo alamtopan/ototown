@@ -1,0 +1,124 @@
+<fieldset>
+  <div class="form-group">
+    <%= f.label :name, '',class: 'col-md-3 control-label' %>
+    <div class="col-md-9">
+      <%= f.text_field :name, class: 'form-control', placeholder: 'Name' %>
+    </div>
+  </div>
+ <div class="form-group">
+  <%= f.label :description, '',class: 'col-md-3 control-label' %>
+  <div class="col-md-9">
+    <%= f.text_area :description, class: 'ckeditor form-control', rows: '9', placeholder: 'Description' %>
+  </div>
+</div>
+</fieldset>
+<fieldset>
+ <div class="form-group">
+  <%= f.label :condition, '',class: 'col-md-3 control-label' %>
+  <div class="col-md-9">
+    <%= f.text_field :condition, class: 'form-control', placeholder: 'Condition' %>
+  </div>
+</div>
+ <div class="form-group">
+  <%= f.label :type_product, 'Type',class: 'col-md-3 control-label' %>
+  <div class="col-md-9">
+    <%= f.text_field :type_product, class: 'form-control', placeholder: 'Condition' %>
+  </div>
+</div>
+ <div class="form-group">
+  <%= f.label :brand, '',class: 'col-md-3 control-label' %>
+  <div class="col-md-9">
+    <%= f.text_field :brand, class: 'form-control', placeholder: 'Brand' %>
+  </div>
+</div>
+ <div class="form-group">
+  <%= f.label :model, '',class: 'col-md-3 control-label' %>
+  <div class="col-md-9">
+    <%= f.text_field :model, class: 'form-control', placeholder: 'Model' %>
+  </div>
+</div>
+ <div class="form-group">
+  <%= f.label :year, '',class: 'col-md-3 control-label' %>
+  <div class="col-md-9">
+    <%= f.text_field :year, class: 'form-control', placeholder: 'Year' %>
+  </div>
+</div>
+ <div class="form-group">
+  <%= f.label :color, '',class: 'col-md-3 control-label' %>
+  <div class="col-md-9">
+    <%= f.text_field :color, class: 'form-control', placeholder: 'Year' %>
+  </div>
+</div>
+ <div class="form-group">
+  <%= f.label :plate_number, '',class: 'col-md-3 control-label' %>
+  <div class="col-md-9">
+    <%= f.text_field :plate_number, class: 'form-control', placeholder: 'Plate Number' %>
+  </div>
+</div>
+ <div class="form-group">
+  <%= f.label :exp_date, '',class: 'col-md-3 control-label' %>
+  <div class="col-md-9">
+    <%= f.text_field :exp_date, class: 'datepicker form-control', placeholder: 'Expire Date' %>
+  </div>
+</div>
+ <div class="form-group">
+  <%= f.label :kilometer, '',class: 'col-md-3 control-label' %>
+  <div class="col-md-9">
+    <%= f.text_field :kilometer, class: 'form-control', placeholder: 'Kilometer' %>
+  </div>
+</div>
+ <div class="form-group">
+  <%= f.label :door, '',class: 'col-md-3 control-label' %>
+  <div class="col-md-9">
+    <%= f.text_field :door, class: 'form-control', placeholder: 'Door' %>
+  </div>
+</div>
+ <div class="form-group">
+  <%= f.label :seat, '',class: 'col-md-3 control-label' %>
+  <div class="col-md-9">
+    <%= f.text_field :seat, class: 'form-control', placeholder: 'Seat' %>
+  </div>
+</div>
+ <div class="form-group">
+  <%= f.label :transmission, '',class: 'col-md-3 control-label' %>
+  <div class="col-md-9">
+    <%= f.text_field :transmission, class: 'form-control', placeholder: 'Transmission' %>
+  </div>
+</div>
+ <div class="form-group">
+  <%= f.label :engine, '',class: 'col-md-3 control-label' %>
+  <div class="col-md-9">
+    <%= f.text_field :engine, class: 'form-control', placeholder: 'Engine' %>
+  </div>
+</div>
+ <div class="form-group">
+  <%= f.label :cyclinders, '',class: 'col-md-3 control-label' %>
+  <div class="col-md-9">
+    <%= f.text_field :cyclinders, class: 'form-control', placeholder: 'Cylinders' %>
+  </div>
+</div>
+ <div class="form-group">
+  <%= f.label :fuel, '',class: 'col-md-3 control-label' %>
+  <div class="col-md-9">
+    <%= f.text_field :fuel, class: 'form-control', placeholder: 'Fuel' %>
+  </div>
+</div>
+ <div class="form-group">
+  <%= f.label :location, '',class: 'col-md-3 control-label' %>
+  <div class="col-md-9">
+    <%= f.text_field :location, class: 'form-control', placeholder: 'Location' %>
+  </div>
+</div>
+ <div class="form-group">
+  <%= f.label :image, '',class: 'col-md-3 control-label' %>
+  <div class="col-md-9">
+    <%= f.file_field 'image[]', class: 'form-control' %>
+  </div>
+</div>
+</fieldset>
+<div class="form-group form-actions submit-bott">
+  <div class="col-md-8 col-md-offset-4">
+    <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-arrow-right"></i> Submit</button>
+    <button type="reset" class="btn btn-sm btn-warning"><i class="fa fa-repeat"></i> Reset</button>
+  </div>
+</div>

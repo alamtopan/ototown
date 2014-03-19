@@ -1,7 +1,7 @@
 <%= render layout: 'backend/shared/prepare_table', 
            locals: {
-                     table_name:  'Product', 
-                     button_name: 'Product',
+                     table_name:  'Sparepart', 
+                     button_name: 'Sparepart',
                      add_method: true
                    } do %>
 	<table id="example-datatable" class="table table-vcenter table-condensed table-bordered">
@@ -9,18 +9,16 @@
 			<tr>
 				<th class="text-center">No</th>
 				<th>Name</th>
-				<th>Category</th>
 				<th>Condition</th>
 				<th>Type</th>
 				<th class="text-center">Actions</th>
 			</tr>
 		</thead>
 		<tbody>
-		<% @products.each_with_index do |product,index| %>
+		<% @spareparts.each_with_index do |product,index| %>
 			<tr>
 				<td class="text-center"><%= index + 1 %></td>
 				<td><a href="javascript:void(0)"><%= product.name %></a></td>
-				<td><%= product.category.try(:name) || '-' %></td>
 				<td><%= product.condition %></td>
 				<td><%= product.type_product %></td>
 				<td class="text-center">
