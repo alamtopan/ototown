@@ -69,9 +69,24 @@ ActiveRecord::Schema.define(version: 20140319083714) do
 
   create_table "dealer_infos", force: true do |t|
     t.text     "address"
-    t.text     "no_dealer"
     t.integer  "dealer_id"
     t.boolean  "active"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "title"
+    t.text     "description"
+    t.string   "phone"
+    t.string   "email"
+  end
+
+  create_table "image_dealers", force: true do |t|
+    t.string   "title"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.text     "description"
+    t.integer  "dealer_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -170,6 +185,8 @@ ActiveRecord::Schema.define(version: 20140319083714) do
     t.string   "location"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "city"
+    t.string   "province"
   end
 
   create_table "profiles", force: true do |t|

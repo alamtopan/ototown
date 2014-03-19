@@ -39,10 +39,13 @@
 //= require ckeditor/override
 //= require ckeditor/init
 //= require bootstrap-datepicker
+//= require cocoon
 
 //= require back/pages/tablesDatatables
 $(function(){ TablesDatatables.init(); });
   $(document).ready(function(){
     // datepicker
-    $('.datepicker').datepicker();
+    $('.datepicker').datepicker({
+      format: 'yyyy/mm/dd'
+    });
   })
