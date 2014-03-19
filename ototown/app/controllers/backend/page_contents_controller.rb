@@ -4,14 +4,10 @@ class Backend::PageContentsController < Backend::ApplicationController
 
   def prepare_select
  		@category_contents = [
- 														['Logo','Logo'],
  														['Slider','Slider'],
- 														['Widget Sell','Widget Sell'],
- 														['Widget Search','Widget Search'],
  														['Widget Find Us','Widget Find Us'],
  														['About Us','About Us'],
- 														['Need Help','Need Help'],
- 														['Footer','Footer']
+ 														['Need Help','Need Help']
  													]
  	end
 end
