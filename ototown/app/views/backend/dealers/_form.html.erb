@@ -43,6 +43,15 @@
 <%= f.fields_for(:dealer_info) do |info| %>
   <%= render 'info_fields', :f => info %>
 <% end %>
+<fieldset>
+  <legend><i class="fa fa-angle-right"></i> Image Dealer</legend>
+  <%= f.fields_for :images do |image| %>
+    <%= render 'image_fields', f: image %>
+  <% end %>
+</fieldset>
+<div class="links">
+  <%= link_to_add_association 'add image', f, :images %>
+</div>
 <div class="form-group form-actions">
   <div class="col-md-8 col-md-offset-4">
     <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-arrow-right"></i> Submit</button>
