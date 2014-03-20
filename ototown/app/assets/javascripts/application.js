@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require front/js/jquery-1.11.0.min
 //= require front/js/bootstrap
 //= require front/js/jquery.easing.1.3

@@ -4,51 +4,18 @@
   <div class="carousel-inner">
     <div class="item active">
       <img src="assets/slide/top.jpg" alt="First slide">
-      <div class="container">
-        <% unless current_user %>
+    </div>
+    <% @slider.each do |slider| %>
+      <div class="item">
+        <%= image_tag "#{slider.pic}" %>
+        <div class="container">
           <div class="carousel-caption">
-            <p><img src="assets/car.png" alt="First slide"></p>
-            <p><a class="btn btn-lg btn-primary" href="#signup" data-toggle="modal" data-target=".bs-modal-sm">Sign Up</a></p>
+            <h1><%= slider.title %></h1>
+            <p><%= slider.content %></p>
           </div>
-        <% end %>
-      </div>
-    </div>
-    <div class="item">
-      <img src="assets/slide/slider1.jpg" alt="Second slide">
-      <div class="container">
-        <div class="carousel-caption">
-          <h1>Buy your new car on AutoDealer</h1>
-          <p>Everything you need to build an amazing dealership website</p>
         </div>
       </div>
-    </div>
-    <div class="item">
-      <img src="assets/slide/slider2.jpg" alt="Second slide">
-      <div class="container">
-        <div class="carousel-caption">
-          <h1>NEW & 2nd HAND</h1>
-          <p>More than 3500 vehicles in our offer</p>
-        </div>
-      </div>
-    </div>
-    <div class="item">
-      <img src="assets/slide/slider3.jpg" alt="Third slide">
-      <div class="container">
-        <div class="carousel-caption">
-          <h1>SUPER SPORTS</h1>
-          <p>Only the finest breed of Supercars</p>
-        </div>
-      </div>
-    </div>
-    <div class="item">
-      <img src="assets/slide/slider4.jpg" alt="Third slide">
-      <div class="container">
-        <div class="carousel-caption">
-          <h1>QUALITY OF SERVICE</h1>
-          <p>We guarantee BEST PRICES for second-hand cars</p>
-        </div>
-      </div>
-    </div>
+    <% end %>
   </div>
   <a class="left carousel-control" href="#myCarousel" data-slide="prev">
     <span class="glyphicon glyphicon-chevron-left"></span>

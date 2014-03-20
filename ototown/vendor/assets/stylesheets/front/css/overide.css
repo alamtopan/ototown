@@ -95,3 +95,38 @@
 	right: -55px;
 	z-index: 1032;
 }
+
+.settings_form select.selt {
+	width: 100px;
+}
+.area{
+	width: 95%;
+}
+.avatar-small{
+	width: 40px;
+	float: left;
+	margin-left: 20px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.avatar-small-one{
+	width: 40px;
+	height: 40px;
+	float: left;
+	margin-right: 10px;
+	overflow: hidden;
+	border-radius: 200px 200px 200px 200px;
+	-moz-border-radius: 200px 200px 200px 200px;
+	-webkit-border-radius: 200px 200px 200px 200px;
+	border: 0px solid #000000;
+}
+.avatar-small-one img{
+	width: 40px;
+}
+.navbar-brand-ava,.name-ava{
+	float: left;
+	margin-top: 5px;
+}
+.name-ava{
+	margin-top: 10px;
+}

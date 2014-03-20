@@ -3,19 +3,21 @@
 		<div class="f_widget ">
 			<h3><strong>About</strong> us</h3>
 			<ul>
-				<li><a href="contacts">Contact</a></li>
-				<li><a href="#">Our Partners</a></li>
-				<li><a href="#">Advertising Online</a></li>
-				<li><a href="#">Site Map</a></li>
+				<% @about.each do |about| %>
+					<li>
+						<%= link_to "#{about.title}", root_path %>
+					</li>
+				<% end %>
 			</ul>
 		</div>
 		<div class="f_widget divide">
 			<h3><strong>Need</strong> help?</h3>
 			<ul>
-				<li><a href="#">How do I add an offer?</a></li>
-				<li><a href="#">How do I find a vehicle</a></li>
-				<li><a href="#">Price list</a></li>
-				<li><a href="#">Office for car dealers</a></li>
+				<% @need_help.each do |need_help| %>
+					<li>
+						<%= link_to "#{need_help.title}", root_path %>
+					</li>
+				<% end %>
 			</ul>
 		</div>
 		<div class="fwidget_separator"></div>
@@ -38,6 +40,6 @@
 		</div>
 	</div>
 	<div class="copyright_wrapper">
-		<div class="copyright"><span>&copy; 2013 Auto Sale. All Rights Reserved.</span></div>
+		<div class="copyright"><span><%= @web.footer_tags %></span></div>
 	</div>
 </div>

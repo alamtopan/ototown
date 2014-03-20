@@ -13,7 +13,7 @@ WebSetting.create({
 	description: "",
 	keywords: "",
 	header_tags: "",
-	footer_tags: "",
+	footer_tags: "© 2013 Auto Sale. All Rights Reserved",
 	contact: "",
 	email: "info@ototown.com"
 	})
