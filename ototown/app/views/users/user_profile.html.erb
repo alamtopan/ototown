@@ -2,42 +2,54 @@
 	<h1><strong>Profile</strong></h1>
 	<div class="settings_photo" id="upload-photo-container" style="position: relative;">
 		<div class="photo">
-			<img id="profile_photo" src="http://autodealer.winterjuice.com/wp-content/themes/winterjuice/framework/usr_data/user/75/138x138/75.jpg">
+			<%= image_tag @user.profile.avatar.url(:medium) %>
 			<div class="loader"></div>
 		</div>
 		<div class="upload-photo">
-			<div class="username">yudi</div>
+			<div class="username"><%= @user.username %></div>
 			<a href="#" class="btn1" id="upload-photo" style="position: relative; z-index: 1;">upload a photo</a>
 		</div>
 	</div>
-	<form action="http://autodealer.winterjuice.com/profile/settings/" method="post" id="settings-form" novalidate="novalidate">
+	<%= form_for @user, url: user_update_path, method: 'put' do |f| %>
 		<div class="settings_form">
-			<div class="col1">
-				<label class="text">Full name:</label>
-				<input type="text" class="text" name="name" id="name" value="yudi">
-			</div>
-			<div class="col2">
-				<label class="text">E-mail:</label>
-				<input type="text" disabled="" class="text" name="email" id="email" value="abd.rmt.wyd@gmail.com">
-			</div>
-			<div class="col1">
-				<label class="text">Phone 1:</label>
-				<input type="text" name="phone_1" class="text" value="">
-			</div>
-			<div class="col2">
-				<label class="text">Phone 2:</label>
-				<input type="text" name="phone_2" class="text" value="">
-			</div>
-			<div class="col1 last">
-				<label class="text">Region:</label>
-				<select name="region_id" id="region_id" class="text">
-					<option value="0">Any</option>
-				</select>
-			</div>
-			<div class="clear"></div>
+			<%= f.fields_for(:profile) do |profile| %>
+				<div class="col1">
+					<%= profile.label :full_name, '', class: 'text' %>
+					<%= profile.text_field :full_name, class: 'text' %>
+				</div>
+				<div class="col2">
+					<%= f.label :email, '', class: 'text' %>
+					<%= f.email_field :email, class: 'text' %>
+				</div>
+				<div class="col1">
+					<%= profile.label :birthday, '', class: 'text' %>
+					<%= profile.text_field :birthday, class: 'text datepicker' %>
+				</div>
+				<div class="col2">
+					<%= profile.label :city, '', class: 'text' %>
+					<%= profile.text_field :city, class: 'text' %>
+				</div>
+				<div class="col1">
+					<%= profile.label :codepos, '', class: 'text' %>
+					<%= profile.text_field :codepos, class: 'text' %>
+				</div>
+				<div class="col2">
+					<%= profile.label :phone, '', class: 'text' %>
+					<%= profile.text_field :phone, class: 'text' %>
+				</div>
+				<div class="col1 last">
+					<%= profile.label :gender, '', class: 'text' %>
+					<%= profile.select :gender, [['Pria', 'Pria'], ['Wanita', 'Wanita']],{:prompt => "- Select Gender -"}, {class: 'text'} %>
+				</div>
+				<div class="col2 last">
+					<%= profile.label :address, '', class: 'text' %>
+					<%= profile.text_area :address, class: 'text' %>
+				</div>
+				<div class="clear"></div>
+			<% end %>
 		</div>
-		<a href="#" class="btn1 submit-save">SAVE CHANGES</a>
-		<a href="#" class="btn2 submit-change-password">CHANGE PASSWORD</a>
-	</form>
+		<%= f.submit :save, class: 'btn1 submit-save' %>
+		<%= link_to 'CHANGE PASSWORD', edit_user_password_path, class: 'btn2 submit-change-password' %>
+	<% end %>
 </div>
 <div class="clear mb1"></div>

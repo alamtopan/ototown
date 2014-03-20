@@ -29,6 +29,7 @@ gem 'jbuilder', '~> 1.2'
   gem 'httparty'
   gem 'wash_out'
   gem 'htmlentities'
+  gem 'activerecord-session_store', github: 'rails/activerecord-session_store'
 #end
 
 
@@ -38,7 +39,6 @@ group :assets do
   gem 'cancan'
   gem 'paperclip'                     # attachment tool
   gem 'mini_magick'
-  gem 'kaminari'
   gem 'ckeditor'
   gem 'breadcrumbs_on_rails'
   gem 'acts-as-taggable-on'

@@ -20,5 +20,6 @@
 	*= require front/css/style400
 	*= require jquery.fancybox-1.3.4
 	*= require front/css/font-awesome.min
+	*= require datepicker
   */
 

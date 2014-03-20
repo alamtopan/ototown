@@ -1,7 +1,7 @@
 Ototown::Application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
   root 'publics#home'
-
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   #Dealers
   get   '/dealers',           to: 'dealers#dealers',           as: 'dealers'
   get   '/detail_dealer',     to: 'dealers#detail_dealer',     as: 'detail_dealer'
@@ -18,6 +18,7 @@ Ototown::Application.routes.draw do
   #Users
   get   '/user_home',         to: 'users#user_home',           as: 'user_home'
   get   '/user_profile',      to: 'users#user_profile',        as: 'user_profile'
+  put   '/user_profile',      to: 'users#update',              as: 'user_update'
 
   namespace :backend do
     get '/',                  to: 'home#index'                 

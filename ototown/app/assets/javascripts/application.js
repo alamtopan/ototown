@@ -25,12 +25,17 @@
 //= require front/js/js
 //= require front/js/vehicles
 //= require front/js/jquery.fancybox
+//= require bootstrap-datepicker
 
 $(document).ready(function(){
-    //FANCYBOX
-    //https://github.com/fancyapps/fancyBox
-    $(".fancybox").fancybox({
-        openEffect: "none",
-        closeEffect: "none"
-    });
+  //FANCYBOX
+  //https://github.com/fancyapps/fancyBox
+  $(".fancybox").fancybox({
+      openEffect: "none",
+      closeEffect: "none"
+  });
+  // datepicker
+  $('.datepicker').datepicker({
+    format: 'yyyy/mm/dd'
+  });
 });

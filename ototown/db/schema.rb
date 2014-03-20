@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140319173047) do
+ActiveRecord::Schema.define(version: 20140319173048) do
 
   create_table "advertises", force: true do |t|
     t.integer  "user_id"
@@ -148,6 +148,8 @@ ActiveRecord::Schema.define(version: 20140319173047) do
     t.datetime "updated_at"
     t.integer  "role_id"
     t.string   "username"
+    t.string   "provider"
+    t.string   "uid"
   end
 
   add_index "operators", ["email"], name: "index_operators_on_email", unique: true, using: :btree
@@ -210,6 +212,16 @@ ActiveRecord::Schema.define(version: 20140319173047) do
     t.datetime "avatar_updated_at"
     t.string   "province"
   end
+
+  create_table "sessions", force: true do |t|
+    t.string   "session_id", null: false
+    t.text     "data"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "sessions", ["session_id"], name: "index_sessions_on_session_id", unique: true, using: :btree
+  add_index "sessions", ["updated_at"], name: "index_sessions_on_updated_at", using: :btree
 
   create_table "web_settings", force: true do |t|
     t.string   "title"
