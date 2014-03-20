@@ -8,6 +8,16 @@
 
 puts "Seeding data"
 
+WebSetting.create({
+	title: "www.ototown.com",
+	description: "",
+	keywords: "",
+	header_tags: "",
+	footer_tags: "",
+	contact: "",
+	email: "info@ototown.com"
+	})
+
 def load_rb(seed)
   require 'yaml'
   puts "#{Time.now} | Execute seed #{seed.inspect}"

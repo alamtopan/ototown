@@ -1,0 +1,8 @@
+<div class="f_widget divide last">
+	<h3><strong>Find</strong> us here</h3>
+	<ul class="horizontal">
+		<li><a href="#"><img src="assets/fb_icon.png" alt=""></a></li>
+		<li><a href="#"><img src="assets/twitter_icon.png" alt=""></a></li>
+		<li><a href="#"><img src="assets/in_icon.png" alt=""></a></li>
+	</ul>
+</div>
