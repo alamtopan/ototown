@@ -2,15 +2,15 @@
            locals: {
                      table_name:  'Dealers', 
                      button_name: 'Dealers',
-                     add_method: false
+                     add_method: true
                    } do %>
 	<table id="example-datatable" class="table table-vcenter table-condensed table-bordered">
 		<thead>
 			<tr>
 				<th class="text-center">ID</th>
-				<th>Username</th>
-				<th>Fullname</th>
-				<th>Email</th>
+				<th>Dealer Name</th>
+				<th width="25%">Adress</th>
+				<th>Phone</th>
 				<th>Created At</th>
 				<th class="text-center">Actions</th>
 			</tr>
@@ -19,9 +19,9 @@
 		<% @dealers.each_with_index do |dealer,index| %>
 			<tr>
 				<td class="text-center"><%= index + 1 %></td>
-				<td><a href="javascript:void(0)"><%= dealer.username %></a></td>
-				<td>Fullname</td>
-				<td><span class="label label-primary"><%= dealer.email %></span></td>
+				<td><a href="javascript:void(0)"><%= dealer.dealer_info.title %></a></td>
+				<td><%= dealer.dealer_info.address %></td>
+				<td><span class="label label-primary"><%= dealer.dealer_info.phone %></span></td>
 				<th><%= dealer.created_at %></th>
 				<td class="text-center">
 					<%= render partial: 'backend/shared/action_buttons', locals: {resource: dealer, confirmation: "#{dealer.username} will be deleted, are you sure ?"} %>
