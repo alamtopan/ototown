@@ -1763,19 +1763,23 @@ img.aligncenter {
 }
 .pagination ul li a{
 	display: block;
-	width: 29px;
+	padding: 0px 10px;
 	height: 29px;
-	background: url(../../../assets/pagination.png) no-repeat 0 0;
 	color: #607586;
 	font-size: 13px;
 	line-height: 28px;
 	text-shadow:0 1px 0 #FFFFFF;
 	text-align: center;
 	text-decoration: none;
+	border: solid 1px #ccc;
+	border-radius: 2px 2px 2px 2px;
+	-moz-border-radius: 2px 2px 2px 2px;
+	-webkit-border-radius: 2px 2px 2px 2px;
 }
 .pagination ul li a:hover,
 .pagination ul li.active a{
-	background-position: 0 -29px;
+	background: #293b4a url(../../../assets/bg_header.jpg) repeat center 0;
+	border: solid 1px #293b4a;
 	color: #FFFFFF;
 	text-shadow:none;
 }

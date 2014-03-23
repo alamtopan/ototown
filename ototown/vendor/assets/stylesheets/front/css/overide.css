@@ -136,7 +136,11 @@
 .no-button{
 	background: none!important;
 	border: 0px;
+	font-size: 12px;
 }
 .grey_area{
 	padding-left: 5px;
+}
+.accs{
+	margin-top: 10px;
 }
