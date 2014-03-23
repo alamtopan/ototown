@@ -4,41 +4,12 @@
       <br>
       <div class="bs-example bs-example-tabs">
         <ul id="myTab" class="nav nav-tabs">
-          <li class="active"><a href="#signin" data-toggle="tab">Sign In</a></li>
-          <li class=""><a href="#signup" data-toggle="tab">Register</a></li>
+          <li class="active"><a href="#signin" data-toggle="tab">Register Member</a></li>
         </ul>
       </div>
       <div class="modal-body">
         <div id="myTabContent" class="tab-content">
           <div class="tab-pane fade active in" id="signin">
-            <%= link_to user_omniauth_authorize_path(:facebook), class: 'btn btn-primary-fb' do %>
-              <%= raw "&nbsp;&nbsp;&nbsp;SignUp With Facebook" %>
-            <% end %>
-            <br>
-            <%= form_for :user, url: user_session_path, method: 'post', html: {class: 'form-horizontal'} do |f| %>
-              <fieldset>
-                <div class="control-group">
-                  <%= f.label :email, '', class: 'control-label' %>
-                  <div class="controls">
-                    <%= f.email_field :email, class: 'form-control width90 input-medium', placeholder: 'Your Email',required: true %>
-                  </div>
-                </div>
-                <div class="control-group">
-                  <%= f.label :password, '', class: 'control-label' %>
-                  <div class="controls">
-                    <%= f.password_field :password, class: 'form-control width90 input-large', placeholder: 'Your Password', required: true %>
-                  </div>
-                </div>
-                <div class="control-group">
-                  <label class="control-label" for="signin"></label>
-                  <div class="controls">
-                    <%= f.submit :signin, class: 'btn btn-success' %>
-                  </div>
-                </div>
-              </fieldset>
-            <% end %>
-          </div>
-          <div class="tab-pane fade" id="signup">
             <%= form_for :user, url: user_registration_path, method: 'post', html: {class: 'form-horizontal'} do |f| %>
               <fieldset>
                 <div class="control-group">
@@ -70,6 +41,56 @@
                   <label class="control-label" for="confirmsignup"></label>
                   <div class="controls">
                     <button id="confirmsignup" type="submit" name="confirmsignup" class="btn btn-success">Sign Up</button>
+                  </div>
+                </div>
+              </fieldset>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+      <center>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </center>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade bs-modal-sm2" id="myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <br>
+      <div class="bs-example bs-example-tabs">
+        <ul id="myTab" class="nav nav-tabs">
+          <li class="active"><a href="#signin" data-toggle="tab">Sign In</a></li>
+        </ul>
+      </div>
+      <div class="modal-body">
+        <div id="myTabContent" class="tab-content">
+          <div class="tab-pane fade active in" id="signin">
+            <%= link_to user_omniauth_authorize_path(:facebook), class: 'btn btn-primary-fb' do %>
+              <%= raw "&nbsp;&nbsp;&nbsp;SignUp With Facebook" %>
+            <% end %>
+            <br>
+            <%= form_for :user, url: user_session_path, method: 'post', html: {class: 'form-horizontal'} do |f| %>
+              <fieldset>
+                <div class="control-group">
+                  <%= f.label :email, '', class: 'control-label' %>
+                  <div class="controls">
+                    <%= f.email_field :email, class: 'form-control width90 input-medium', placeholder: 'Your Email',required: true %>
+                  </div>
+                </div>
+                <div class="control-group">
+                  <%= f.label :password, '', class: 'control-label' %>
+                  <div class="controls">
+                    <%= f.password_field :password, class: 'form-control width90 input-large', placeholder: 'Your Password', required: true %>
+                  </div>
+                </div>
+                <div class="control-group">
+                  <label class="control-label" for="signin"></label>
+                  <div class="controls">
+                    <%= f.submit :signin, class: 'btn btn-success' %>
                   </div>
                 </div>
               </fieldset>

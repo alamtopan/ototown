@@ -36,11 +36,8 @@
 .sell_box.txb.full100{
 	width: 95%!important;
 }
-.margin-top80,.margin-top60{
-	background-color: rgb(248, 248, 248);
-} 
 .margin-top80{
-	padding-top: 80px;
+	padding-top: 60px;
 } 
 .margin-top60{
 	padding-top: 60px;
@@ -119,6 +116,8 @@
 	-moz-border-radius: 200px 200px 200px 200px;
 	-webkit-border-radius: 200px 200px 200px 200px;
 	border: 0px solid #000000;
+	position: absolute;
+	top: 5px;
 }
 .avatar-small-one img{
 	width: 40px;
@@ -129,4 +128,15 @@
 }
 .name-ava{
 	margin-top: 10px;
+}
+.usr-name{
+	padding-top: 10px;
+	padding-left: 50px;
+}
+.no-button{
+	background: none!important;
+	border: 0px;
+}
+.grey_area{
+	padding-left: 5px;
 }
