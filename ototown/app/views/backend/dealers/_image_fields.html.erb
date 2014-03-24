@@ -1,21 +1,10 @@
 <div class="nested-field">
   <%= link_to_remove_association "remove image", f, { wrapper_class: 'nested-field' } %>
   <div class="form-group">
-    <%= f.label :title, 'Name', class: 'col-md-4 control-label' %>
-    <div class="col-md-6">
-      <%= f.text_field :title, class: 'form-control' %>
-    </div>
-  </div>
-  <div class="form-group">
     <%= f.label :image, '', class: 'col-md-4 control-label' %>
     <div class="col-md-6">
+      <%= image_tag f.object.image.url(:medium) %>
       <%= f.file_field :image, class: 'form-control' %>
-    </div>
-  </div>
-  <div class="form-group">
-    <%= f.label :description, '', class: 'col-md-4 control-label' %>
-    <div class="col-md-8">
-      <%= f.text_area :description, rows: 4, class: 'ckeditor form-control' %>
     </div>
   </div>
 </div>

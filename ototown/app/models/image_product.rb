@@ -8,6 +8,7 @@ class ImageProduct < ActiveRecord::Base
                                           :medium => "860x460>", 
                                           :normal => "460x260>", 
                                           :thumb => "125x125>" 
-                                        }
+                                        }, 
+                                        :default_url => "/assets/no-image.jpg"
   validates_attachment :image, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }
 end
