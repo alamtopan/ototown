@@ -19,28 +19,40 @@
     <%= f.text_field :condition, class: 'form-control', placeholder: 'Condition' %>
   </div>
 </div>
- <div class="form-group">
+<div class="form-group">
   <%= f.label :type_product, 'Type',class: 'col-md-3 control-label' %>
   <div class="col-md-6">
-    <%= f.text_field :type_product, class: 'form-control', placeholder: 'Condition' %>
+    <%= f.select :type_product, options_for_select(@types, @sparepart.type_product), {include_blank: 'Choose One'}, class: 'form-control' %>
   </div>
 </div>
  <div class="form-group">
   <%= f.label :brand, '',class: 'col-md-3 control-label' %>
   <div class="col-md-6">
-    <%= f.text_field :brand, class: 'form-control', placeholder: 'Brand' %>
+    <%= f.select :brand, options_for_select(@brands, @sparepart.brand), {include_blank: 'Choose One'}, class: 'form-control' %>
   </div>
 </div>
  <div class="form-group">
   <%= f.label :model, '',class: 'col-md-3 control-label' %>
   <div class="col-md-6">
-    <%= f.text_field :model, class: 'form-control', placeholder: 'Model' %>
+    <%= f.select :model, options_for_select(@models, @sparepart.model), {include_blank: 'Choose One'}, class: 'form-control' %>
   </div>
 </div>
  <div class="form-group">
   <%= f.label :year, '',class: 'col-md-3 control-label' %>
   <div class="col-md-6">
-    <%= f.text_field :year, class: 'form-control', placeholder: 'Year' %>
+    <%= f.select :year, options_for_select(@years, @sparepart.year), {include_blank: 'Choose One'}, class: 'form-control' %>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.label :province, '',class: 'col-md-3 control-label' %>
+  <div class="col-md-6">
+    <%= f.text_field :province, class: 'form-control', placeholder: 'Province', id: 'province_attributes' %>
+  </div>
+</div>
+ <div class="form-group">
+  <%= f.label :city, '',class: 'col-md-3 control-label' %>
+  <div class="col-md-6">
+    <%= f.text_field :city, class: 'form-control', placeholder: 'City', id: 'city_attributes' %>
   </div>
 </div>
  <div class="form-group">

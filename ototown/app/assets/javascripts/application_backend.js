@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require back/app
 //= require back/plugins
+//= require jquery-auto
 //= require back/vendor/bootstrap.min
 //= require back/vendor/modernizr-2.7.1-respond-1.4.2.min
 //= require back/pages/compAnimations
@@ -40,6 +41,7 @@
 //= require ckeditor/init
 //= require bootstrap-datepicker
 //= require cocoon
+//= require front/province
 
 //= require back/pages/tablesDatatables
 $(function(){ TablesDatatables.init(); });
@@ -50,17 +52,17 @@ $(function(){ TablesDatatables.init(); });
     });
   });
 
-$('#customer_profile_attributes_province').autocomplete({
+$('#province_attributes').autocomplete({
       data: window.provinces,
       onItemSelect: function(result){
 
-        $('#customer_profile_attributes_city').removeData();
-        $('#customer_profile_attributes_city').unbind();
-        $('#customer_profile_attributes_city').autocomplete({
+        $('#city_attributes').removeData();
+        $('#city_attributes').unbind();
+        $('#city_attributes').autocomplete({
           data: window.provinces_cities[result.value]
         })
       }
   });
-  $('#customer_profile_attributes_province').focus(function(){
-    $('#customer_profile_attributes_city').val('')
+  $('#province_attributes').focus(function(){
+    $('#city_attributes').val('')
   });
