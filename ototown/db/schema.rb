@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140319173048) do
+ActiveRecord::Schema.define(version: 20140325142031) do
 
   create_table "advertises", force: true do |t|
     t.integer  "user_id"
@@ -26,6 +26,12 @@ ActiveRecord::Schema.define(version: 20140319173048) do
     t.date     "start_at"
     t.date     "end_at"
     t.boolean  "active"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "brands", force: true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -109,6 +115,12 @@ ActiveRecord::Schema.define(version: 20140319173048) do
     t.text     "content"
     t.integer  "recipient_id"
     t.boolean  "read"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "models", force: true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -214,7 +226,7 @@ ActiveRecord::Schema.define(version: 20140319173048) do
   end
 
   create_table "sessions", force: true do |t|
-    t.string   "session_id", null: false
+    t.string   "session_id", default: "ototown_sesssion_", null: false
     t.text     "data"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -222,6 +234,12 @@ ActiveRecord::Schema.define(version: 20140319173048) do
 
   add_index "sessions", ["session_id"], name: "index_sessions_on_session_id", unique: true, using: :btree
   add_index "sessions", ["updated_at"], name: "index_sessions_on_updated_at", using: :btree
+
+  create_table "types", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "web_settings", force: true do |t|
     t.string   "title"
