@@ -304,3 +304,30 @@ label.error{
 #popup-registration .btn1,#registration-page .btn1{
 	margin-bottom: 2px;
 }
+.credit-simulation{
+	border: 1px solid #EBEBEB;
+	background: #F8F8F8;
+	padding: 15px;
+	border-radius: 10px 10px 10px 10px;
+	-moz-border-radius: 10px 10px 10px 10px;
+	-webkit-borderradius: 10px 10px 10px 10px;
+	-webkit-box-shadow: 10px 10px 5px -10px rgba(0,0,0,0.75);
+	-moz-box-shadow: 10px 10px 5px -10px rgba(0,0,0,0.75);
+	box-shadow: 10px 10px 5px -10px rgba(0,0,0,0.75);
+}
+.member-at{
+	font-size: 12px;
+	color: red;
+}
+.fb-comment-car{
+	margin-top: 40px;
+}
+.full100{
+	width: 80%!important;
+}
+.font10{
+	font-size: 10px;
+}
+.logo{
+	text-shadow: 0 3px 0 #222
+}

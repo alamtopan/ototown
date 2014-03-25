@@ -379,10 +379,7 @@ cite{
 .main_wrapper{
 	position:relative;
 }
-.markered{
-	background: url(../../../assets/marker_3.gif) no-repeat right 6px;
-	padding-right: 17px;
-}
+
 .grey_area{
 	background: #F8F8F8;
 	line-height: 18px;
@@ -1548,7 +1545,9 @@ img.aligncenter {
 	border-radius: 4px 4px 4px 4px;
 	-moz-border-radius: 4px 4px 4px 4px;
 	-webkit-border-radius: 4px 4px 4px 4px;
-	box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
+	-webkit-box-shadow: 10px 10px 5px -10px rgba(0,0,0,0.75);
+	-moz-box-shadow: 10px 10px 5px -10px rgba(0,0,0,0.75);
+	box-shadow: 10px 10px 5px -10px rgba(0,0,0,0.75);
 }
 .catalog_sidebar .search_auto{
 	width: 210px;
@@ -3437,10 +3436,10 @@ ul.dropdown-menu li.dropdown-header{
 	color: #333;
 	background-color: #222;
 	border-color: #111;
-	color: #ccc;
+	color: #fff;
 }
 .btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open .dropdown-toggle.btn-default {
-	color: #fff;
+	color: #eee;
 }
 #header .top_info .accs {
 	float: right;
