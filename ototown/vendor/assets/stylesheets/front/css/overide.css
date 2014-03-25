@@ -157,3 +157,150 @@
 .width-auto{
 	width: 97.5%!important;
 }
+.wrapper_login_page{
+	min-width:940px;
+}
+.wrapper_login_page #login-page{
+	display: block;
+	width:260px;
+	min-height:240px;
+	position: absolute;
+	margin-left: -130px;
+	margin-top: -140px;
+	left:50%;
+	top:50%;
+}
+.wrapper_login_page .background{
+	background-color: #969ea1;
+	position: relative;
+}
+.wrapper_login_page .background img{
+	width:100%;
+	min-height:300px;
+}
+.wrapper_login_page #registration-page{
+	display: block;
+	width:260px;
+	min-height:312px;
+	position: absolute;
+	margin-left: -130px;
+	margin-top: -176px;
+	left:50%;
+	top:50%;
+}
+.wrapper_login_page #recovery-page,
+.wrapper_login_page #recovery-hash-page{
+	display: block;
+	width:260px;
+	min-height:150px;
+	position: absolute;
+	margin-left: -130px;
+	margin-top: -145px;
+	left:50%;
+	top:50%;
+}
+.wrapper_login_page #confirm-email-page{
+	display: block;
+	width:260px;
+	min-height:150px;
+	position: absolute;
+	margin-left: -130px;
+	margin-top: -145px;
+	left:50%;
+	top:50%;
+}
+
+input.error,select.error{
+	border-color:red;
+}
+label.error{
+	color:red;
+	display: block;
+}
+/*
+================================================================================
+|                                     POPUP                                    |
+================================================================================
+*/
+.popup{
+	z-index: 9000;
+	border:1px solid #dddddd;
+	background-color: #ffffff;
+	text-align:left;
+	padding: 20px;
+	display: none;
+}
+.popup .close{
+	display: block;
+	width: 9px;
+	height:9px;
+	background: url(../images/icon_close.png) 0 0 no-repeat;
+	float:right;
+}
+.popup .popup_title{
+	font-size: 24px;
+	line-height: 24px;
+	font-family: 'PT Sans', sans-serif, Arial,sans-serif;
+	font-weight: 700;
+	padding-bottom: 5px;
+	border-bottom: 1px solid #d1d5dc;
+	color: #293848;
+}
+.popup .popup_content{
+	padding: 0 0 0;
+}
+.popup .popup_content .text{
+    width: 240px;
+    display: block;
+    margin-top:20px;
+    padding:7px 10px 6px;
+}
+.popup .popup_content div.col1{
+	width:122px;
+	clear:left;
+	float:left;
+	padding-bottom: 5px;
+}
+.popup .popup_content div.col2{
+	width:122px;
+	float:left;
+	padding-bottom: 5px;
+}
+.popup .popup_content .login{
+	padding-left:35px;
+	padding-right:35px;
+}
+.popup .popup_content .btn1,.popup .popup_content .btn2{
+	margin-top:20px;
+	margin-bottom:15px;
+}
+.popup .popup_content label.checkbox{
+	color:#798fa1;
+}
+.popup .popup_content label.checkbox input{
+	float:left;
+	margin:0 8px 0 0;
+	padding:0px;
+}
+.popup .popup_content a{
+	/*color:#f89d13;*/
+}
+
+#popup-login{
+	position: absolute;
+	top:0px;
+	right:-10px;
+	width:260px;
+}
+#popup-login .popup_content a.lost_password,#login-page .popup_content a.lost_password{
+	color:#f89d13;
+}
+#popup-registration{
+	position: absolute;
+	top:0px;
+	right:-10px;
+	width:260px;
+}
+#popup-registration .btn1,#registration-page .btn1{
+	margin-bottom: 2px;
+}

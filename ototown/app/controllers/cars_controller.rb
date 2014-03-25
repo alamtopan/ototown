@@ -1,5 +1,6 @@
 class CarsController < ApplicationController
 	def cars
+		render layout: 'application_catalog'
 	end
 	def detail_car
 		render layout: 'application_car_detail'
