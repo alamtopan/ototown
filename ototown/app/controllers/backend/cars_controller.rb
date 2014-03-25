@@ -11,6 +11,6 @@ class Backend::CarsController < Backend::ApplicationController
       colors = ['Black','Red','White','Blue','Silver','Pink','Gray','Metalic','Silver Stone','Green',
         'Yellow','Purple','Maroon']
       @colors = colors.map{|c| [c,c]}
-      @transmissions = ['Automatic','Manual'].map{|tr| [tr,tr]}
+      @transmissions = ['Auto','Mechanic'].map{|tr| [tr,tr]}
     end
 end

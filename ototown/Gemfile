@@ -39,7 +39,6 @@ gem 'jbuilder', '~> 1.2'
   gem 'activerecord-session_store', github: 'rails/activerecord-session_store'
 #end
 
-
 group :assets do
   gem 'omniauth-facebook'
   gem 'devise'
@@ -56,6 +55,10 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+group :development do
+  gem 'nokogiri'
+  gem 'rest-client', '~> 1.6.7'
+end
 
 group :production do
   gem 'pg'

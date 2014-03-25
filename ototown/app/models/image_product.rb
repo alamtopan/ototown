@@ -1,5 +1,5 @@
 class ImageProduct < ActiveRecord::Base
-  attr_accessible :image, :name, :description
+  attr_accessible :image, :name, :description, :product_id
 
   belongs_to :product
 
