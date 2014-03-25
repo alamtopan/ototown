@@ -15,37 +15,37 @@
 <fieldset>
  <div class="form-group">
   <%= f.label :condition, '',class: 'col-md-3 control-label' %>
-  <div class="col-md-9">
+  <div class="col-md-6">
     <%= f.text_field :condition, class: 'form-control', placeholder: 'Condition' %>
   </div>
 </div>
  <div class="form-group">
   <%= f.label :type_product, 'Type',class: 'col-md-3 control-label' %>
-  <div class="col-md-9">
+  <div class="col-md-6">
     <%= f.text_field :type_product, class: 'form-control', placeholder: 'Condition' %>
   </div>
 </div>
  <div class="form-group">
   <%= f.label :brand, '',class: 'col-md-3 control-label' %>
-  <div class="col-md-9">
+  <div class="col-md-6">
     <%= f.text_field :brand, class: 'form-control', placeholder: 'Brand' %>
   </div>
 </div>
  <div class="form-group">
   <%= f.label :model, '',class: 'col-md-3 control-label' %>
-  <div class="col-md-9">
+  <div class="col-md-6">
     <%= f.text_field :model, class: 'form-control', placeholder: 'Model' %>
   </div>
 </div>
  <div class="form-group">
   <%= f.label :year, '',class: 'col-md-3 control-label' %>
-  <div class="col-md-9">
+  <div class="col-md-6">
     <%= f.text_field :year, class: 'form-control', placeholder: 'Year' %>
   </div>
 </div>
  <div class="form-group">
   <%= f.label :location, '',class: 'col-md-3 control-label' %>
-  <div class="col-md-9">
+  <div class="col-md-6">
     <%= f.text_field :location, class: 'form-control', placeholder: 'Location' %>
   </div>
 </div>
@@ -56,9 +56,10 @@
     <%= render 'image_fields', f: image %>
   <% end %>
   <div class="links">
-    <%= link_to_add_association 'add image', f, :images %>
+    <%= link_to_add_association '<button type="submit" class="btn btn-sm btn-primary">+ Add Image</button>'.html_safe, f, :images %>
   </div>
 </fieldset>
+<br><br>
 <div class="form-group form-actions submit-bott">
   <div class="col-md-8 col-md-offset-4">
     <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-arrow-right"></i> Submit</button>

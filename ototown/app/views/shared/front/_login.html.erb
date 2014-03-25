@@ -15,26 +15,26 @@
                 <div class="control-group">
                   <%= f.label :email, '', class: 'control-label' %>
                   <div class="controls">
-                    <%= f.email_field :email, class: 'form-control width90 input-large', placeholder: 'example@email.com' %>
+                    <%= f.email_field :email, class: 'form-control width90 input-large', placeholder: 'example@email.com',required: true %>
                   </div>
                 </div>
                 <div class="control-group">
                   <%= f.label :username, '', class: 'control-label' %>
                   <div class="controls">
-                    <%= f.text_field :username, class: 'form-control width90 input-large', placeholder: 'Your Username' %>
+                    <%= f.text_field :username, class: 'form-control width90 input-large', placeholder: 'Your Username',required: true %>
                   </div>
                 </div>
                 <div class="control-group">
                   <%= f.label :password, '', class: 'control-label' %>
                   <div class="controls">
-                    <%= f.password_field :password, class: 'form-control width90 input-large', placeholder: 'Your Password' %>
+                    <%= f.password_field :password, class: 'form-control width90 input-large', placeholder: 'Your Password',required: true %>
                     <em>min 8 Characters</em>
                   </div>
                 </div>
                 <div class="control-group">
                   <%= f.label :password_confirmation, '', class: 'control-label' %>
                   <div class="controls">
-                    <%= f.password_field :password_confirmation, class: 'form-control width90 input-large', placeholder: 'Confirm Your Password' %>
+                    <%= f.password_field :password_confirmation, class: 'form-control width90 input-large', placeholder: 'Confirm Your Password',required: true %>
                   </div>
                 </div>
                 <div class="control-group">

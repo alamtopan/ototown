@@ -144,3 +144,16 @@
 .accs{
 	margin-top: 10px;
 }
+
+.dealer_profile {
+	background: rgb(248, 248, 248)!important;
+	border-radius: 5px 5px 5px 5px;
+	-moz-border-radius: 5px 5px 5px 5px;
+	-webkit-border-radius: 5px 5px 5px 5px;
+}
+.width100{
+	width: 100%!important;
+}
+.width-auto{
+	width: 97.5%!important;
+}
