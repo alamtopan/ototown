@@ -48,4 +48,19 @@ $(function(){ TablesDatatables.init(); });
     $('.datepicker').datepicker({
       format: 'yyyy/mm/dd'
     });
-  })
+  });
+
+$('#customer_profile_attributes_province').autocomplete({
+      data: window.provinces,
+      onItemSelect: function(result){
+
+        $('#customer_profile_attributes_city').removeData();
+        $('#customer_profile_attributes_city').unbind();
+        $('#customer_profile_attributes_city').autocomplete({
+          data: window.provinces_cities[result.value]
+        })
+      }
+  });
+  $('#customer_profile_attributes_province').focus(function(){
+    $('#customer_profile_attributes_city').val('')
+  });
