@@ -1,0 +1,29 @@
+<%= render layout: 'backend/shared/prepare_table', 
+           locals: {
+                     table_name:  'Model', 
+                     button_name: 'Model',
+                     add_method: true
+                   } do %>
+	<table id="example-datatable" class="table table-vcenter table-condensed table-bordered">
+		<thead>
+			<tr>
+				<th class="text-center" width="10%">No</th>
+				<th>Name</th>
+				<th>Brand</th>
+				<th class="text-center">Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+		<% @models.each_with_index do |model,index| %>
+			<tr>
+				<td class="text-center"><%= index + 1 %></td>
+				<td><a href="javascript:void(0)"><%= model.name %></a></td>
+				<td><%= model.brand.try(:name) %></td>
+				<td class="text-center">
+					<%= render partial: 'backend/shared/action_buttons', locals: {resource: model, confirmation: "#{model.name} will be deleted, are you sure ?"} %>
+				</td>
+			</tr>
+		<% end %>
+		</tbody>
+	</table>
+<% end %>

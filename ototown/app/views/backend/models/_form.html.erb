@@ -1,0 +1,20 @@
+<fieldset>
+  <div class="form-group">
+    <%= f.label :name, '',class: 'col-md-3 control-label' %>
+    <div class="col-md-9">
+     <%= f.text_field :name, class: 'form-control', placeholder: 'Name' %>
+   </div>
+ </div>
+ <div class="form-group">
+    <%= f.label :brand_id, '',class: 'col-md-3 control-label' %>
+    <div class="col-md-6">
+      <%= f.select :brand_id, options_for_select(@brands, @model.brand_id), {include_blank: 'Choose One'}, class: 'form-control' %>
+    </div>
+  </div>
+</fieldset>
+<div class="form-group form-actions submit-bott">
+  <div class="col-md-8 col-md-offset-4">
+    <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-arrow-right"></i> Submit</button>
+    <button type="reset" class="btn btn-sm btn-warning"><i class="fa fa-repeat"></i> Reset</button>
+  </div>
+</div>
