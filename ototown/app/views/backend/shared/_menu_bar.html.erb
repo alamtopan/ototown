@@ -34,14 +34,22 @@
 				</li>
 				<li class="sidebar-header">
 					<span class="sidebar-header-title">Data Content</span>
+				<li>
+					<a href="#" class="sidebar-nav-menu"><i class="fa fa-angle-left sidebar-nav-indicator"></i><i class="fa fa-building-o fa-fw sidebar-nav-icon"></i>Dealers</a>
+					<ul>
+						<li>
+							<%= link_to 'Create New', new_backend_dealer_path  %>
+						</li>
+						<li>
+							<%= link_to 'List Dealers', backend_dealers_path %>
+						</li>
+						<li>
+							<%= link_to 'List Request Dealers', dealers_request_backend_dealers_path %>
+						</li>
+					</ul>
 				</li>
 				<li>
-					<%= link_to backend_dealers_path, class: '' do %>
-						<i class="gi gi-certificate sidebar-nav-icon"></i>Dealers</a>
-					<% end %>
-				</li>
-				<li>
-					<a href="#" class="sidebar-nav-menu"><i class="fa fa-angle-left sidebar-nav-indicator"></i><i class="gi gi-certificate sidebar-nav-icon"></i>Users</a>
+					<a href="#" class="sidebar-nav-menu"><i class="fa fa-angle-left sidebar-nav-indicator"></i><i class="fa fa-users fa-fw sidebar-nav-icon"></i>Users</a>
 					<ul>
 						<li>
 							<%= link_to 'Create New', new_backend_user_path  %>
@@ -52,7 +60,7 @@
 					</ul>
 				</li>
 				<li>
-					<a href="#" class="sidebar-nav-menu"><i class="fa fa-angle-left sidebar-nav-indicator"></i><i class="gi gi-certificate sidebar-nav-icon"></i>Cars</a>
+					<a href="#" class="sidebar-nav-menu"><i class="fa fa-angle-left sidebar-nav-indicator"></i><i class="fa fa-truck fa-fw sidebar-nav-icon"></i>Cars</a>
 					<ul>
 						<li>
 							<%= link_to 'Create New', new_backend_car_path  %>
@@ -63,7 +71,7 @@
 					</ul>
 				</li>
 				<li>
-					<a href="#" class="sidebar-nav-menu"><i class="fa fa-angle-left sidebar-nav-indicator"></i><i class="gi gi-certificate sidebar-nav-icon"></i>Spare Parts</a>
+					<a href="#" class="sidebar-nav-menu"><i class="fa fa-angle-left sidebar-nav-indicator"></i><i class="fa fa-wrench fa-fw sidebar-nav-icon"></i>Spare Parts</a>
 					<ul>
 						<li>
 							<%= link_to 'Create New', new_backend_sparepart_path  %>
@@ -74,7 +82,7 @@
 					</ul>
 				</li>
 				<li>
-					<a href="#" class="sidebar-nav-menu"><i class="fa fa-angle-left sidebar-nav-indicator"></i><i class="gi gi-certificate sidebar-nav-icon"></i>News</a>
+					<a href="#" class="sidebar-nav-menu"><i class="fa fa-angle-left sidebar-nav-indicator"></i><i class="fa fa-file-text fa-fw sidebar-nav-icon"></i>News</a>
 					<ul>
 						<li>
 							<%= link_to 'Create New', new_backend_news_path %>
@@ -88,7 +96,7 @@
 					</ul>
 				</li>
 				<li>
-					<a href="#" class="sidebar-nav-menu"><i class="fa fa-angle-left sidebar-nav-indicator"></i><i class="gi gi-certificate sidebar-nav-icon"></i>Edit Contents</a>
+					<a href="#" class="sidebar-nav-menu"><i class="fa fa-angle-left sidebar-nav-indicator"></i><i class="fa fa-gears fa-fw sidebar-nav-icon"></i>Edit Contents</a>
 					<ul>
 						<li>
 							<%= link_to 'Create New', new_backend_page_content_path %>
@@ -99,7 +107,7 @@
 					</ul>
 				</li>
 				<li>
-					<a href="#" class="sidebar-nav-menu"><i class="fa fa-angle-left sidebar-nav-indicator"></i><i class="gi gi-certificate sidebar-nav-icon"></i>Web Settings</a>
+					<a href="#" class="sidebar-nav-menu"><i class="fa fa-angle-left sidebar-nav-indicator"></i><i class="fa fa-cog fa-fw sidebar-nav-icon"></i>Web Settings</a>
 					<ul>
 						<li>
 							<%= link_to 'List Data', backend_web_settings_path %>

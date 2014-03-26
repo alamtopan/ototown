@@ -22,7 +22,7 @@ class Dealer < Operator
   protected
     def after_initialized
       self.profile = Profile.new if self.profile.blank?
-      self.dealer_info = DealerInfo.new if self.dealer_info.blank?
+      self.dealer_info = DealerInfo.new(active: false) if self.dealer_info.blank?
     end
   
 end

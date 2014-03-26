@@ -1,6 +1,6 @@
 <%= render layout: 'backend/shared/prepare_table', 
            locals: {
-                     table_name:  'Dealers', 
+                     table_name:  'Dealers Request', 
                      button_name: 'Dealers',
                      add_method: true
                    } do %>
@@ -24,7 +24,7 @@
 				<td><%= dealer.dealer_info.address %></td>
 				<td><%= dealer.dealer_info.phone %></td>
 				<td>
-					<%= link_to '<span class="label label-primary">Remove To Dealer Request</span>'.html_safe,  unapprove_dealer_backend_dealers_path(dealer), confirm: "Are you sure ?" %>
+					<%= link_to '<span class="label label-primary">Approve To Be Dealer</span>'.html_safe,  approve_dealer_backend_dealers_path(dealer), confirm: "Are you sure ?" %>
 				</td>
 				<th><%= dealer.created_at %></th>
 				<td class="text-center">

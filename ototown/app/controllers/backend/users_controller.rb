@@ -9,7 +9,7 @@ class Backend::UsersController < Backend::ApplicationController
     else
       flash[:error] = 'Failed To Add Dealer'
     end
-    redirect_to backend_dealers_path
+    redirect_to edit_backend_dealer_path(@user)
   end
 
   private    

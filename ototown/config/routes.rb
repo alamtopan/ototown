@@ -31,7 +31,13 @@ Ototown::Application.routes.draw do
         get 'add-to-dealer', to: 'users#add_dealer', as: 'add_dealer'
       end
     end
-    resources :dealers
+    resources :dealers do
+      collection do
+        get 'dealers_request', to: 'dealers#dealers_request', as: 'dealers_request'
+        get 'approve_dealer/:id', to: 'dealers#approve_dealer', as: 'approve_dealer'
+        get 'unapprove_dealer/:id', to: 'dealers#unapprove_dealer', as: 'unapprove_dealer'
+      end
+    end
     resources :news
     resources :category_news
     resources :categories
