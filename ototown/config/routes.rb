@@ -19,6 +19,8 @@ Ototown::Application.routes.draw do
   get   '/user_home',         to: 'users#user_home',           as: 'user_home'
   get   '/user_profile',      to: 'users#user_profile',        as: 'user_profile'
   put   '/user_profile',      to: 'users#update',              as: 'user_update'
+  
+  get   '/brand_model',       to: 'publics#brand_model',              as: 'brand_model'
 
   namespace :backend do
     get '/',                  to: 'home#index'                 
@@ -41,6 +43,9 @@ Ototown::Application.routes.draw do
     resources :news
     resources :category_news
     resources :categories
+    resources :brands
+    resources :models
+    resources :types
     resources :cars
     resources :spareparts
     resources :page_contents

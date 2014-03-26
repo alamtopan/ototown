@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140325142031) do
+ActiveRecord::Schema.define(version: 20140326152839) do
 
   create_table "advertises", force: true do |t|
     t.integer  "user_id"
@@ -123,6 +123,7 @@ ActiveRecord::Schema.define(version: 20140325142031) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "brand_name"
   end
 
   create_table "news", force: true do |t|
@@ -226,7 +227,7 @@ ActiveRecord::Schema.define(version: 20140325142031) do
   end
 
   create_table "sessions", force: true do |t|
-    t.string   "session_id", null: false
+    t.string   "session_id", default: "ototown_sesssion_", null: false
     t.text     "data"
     t.datetime "created_at"
     t.datetime "updated_at"

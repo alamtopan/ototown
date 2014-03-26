@@ -28,13 +28,13 @@
  <div class="form-group">
   <%= f.label :brand, '',class: 'col-md-3 control-label' %>
   <div class="col-md-6">
-    <%= f.select :brand, options_for_select(@brands, @car.brand), {include_blank: 'Choose One'}, class: 'form-control' %>
+    <%= f.select :brand, options_for_select(@brands, @car.brand), {include_blank: 'Choose One'}, class: 'form-control', id: 'brand_product', data: {url: brand_model_path} %>
   </div>
 </div>
  <div class="form-group">
   <%= f.label :model, '',class: 'col-md-3 control-label' %>
   <div class="col-md-6">
-    <%= f.select :model, options_for_select(@models, @car.model), {include_blank: 'Choose One'}, class: 'form-control' %>
+    <%= f.select :model, options_for_select([], @car.model), {include_blank: 'Choose One'}, class: 'form-control', id: 'model_product' %>
   </div>
 </div>
  <div class="form-group">

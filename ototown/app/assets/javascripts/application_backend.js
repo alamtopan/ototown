@@ -45,14 +45,13 @@
 
 //= require back/pages/tablesDatatables
 $(function(){ TablesDatatables.init(); });
-  $(document).ready(function(){
-    // datepicker
-    $('.datepicker').datepicker({
-      format: 'yyyy/mm/dd'
-    });
+$(document).ready(function(){
+  // datepicker
+  $('.datepicker').datepicker({
+    format: 'yyyy/mm/dd'
   });
 
-$('#province_attributes').autocomplete({
+  $('#province_attributes').autocomplete({
       data: window.provinces,
       onItemSelect: function(result){
 
@@ -66,3 +65,12 @@ $('#province_attributes').autocomplete({
   $('#province_attributes').focus(function(){
     $('#city_attributes').val('')
   });
+
+  $('#brand_product').change(function(){
+    var url = $(this).data('url'); 
+    $.get(url, {brand: $(this).val()})
+      .done(function(data){
+        $('#model_product').html(data);
+      });
+  })
+});
