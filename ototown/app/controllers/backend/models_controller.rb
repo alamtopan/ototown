@@ -4,6 +4,6 @@ class Backend::ModelsController < Backend::ApplicationController
 
   private
     def generate_select
-      @brands = Brand.all.map{|t| [t.name, t.id]}
+      @brands = Brand.all.map{|t| [t.name, t.name]}
     end
 end

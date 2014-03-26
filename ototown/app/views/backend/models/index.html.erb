@@ -18,7 +18,7 @@
 			<tr>
 				<td class="text-center"><%= index + 1 %></td>
 				<td><a href="javascript:void(0)"><%= model.name %></a></td>
-				<td><%= model.brand.try(:name) %></td>
+				<td><%= model.brand_name %></td>
 				<td class="text-center">
 					<%= render partial: 'backend/shared/action_buttons', locals: {resource: model, confirmation: "#{model.name} will be deleted, are you sure ?"} %>
 				</td>
