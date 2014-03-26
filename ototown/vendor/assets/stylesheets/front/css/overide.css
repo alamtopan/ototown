@@ -331,3 +331,6 @@ label.error{
 .logo{
 	text-shadow: 0 3px 0 #222
 }
+.btn-default:hover{
+	background: #000;
+}

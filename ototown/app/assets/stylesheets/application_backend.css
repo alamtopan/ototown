@@ -15,4 +15,5 @@
 	*= require back/themes
 	*= require back/overide
 	*= require datepicker
+	*= require autocomplite
   */
