@@ -46,13 +46,13 @@
           <%= link_to 'Dealers',dealers_path %> 
         </li>
         <li>
-          <%= link_to 'Used Cars',cars_path %> 
+          <%= link_to 'Used Cars',cars_path(:Used) %> 
         </li>
         <li>
-          <%= link_to 'New Cars',cars_path %> 
+          <%= link_to 'New Cars',cars_path(:New) %> 
         </li>
         <li>
-          <%= link_to 'Classic Cars',cars_path %> 
+          <%= link_to 'Classic Cars',cars_path(:Classic) %> 
         </li>
         <li>
           <%= link_to 'Spare Parts',cars_path %> 
@@ -76,7 +76,7 @@
             </a>
             <ul class="dropdown-menu">
               <li>
-                <%= link_to "Profile", user_profile_path %>
+                <%= link_to "Profile", user_home_path %>
               </li>
               <li>
                 <%= link_to "Setting Account", user_profile_path %>

@@ -16,14 +16,6 @@
 			</div>
 			<div class="main_wrapper ">
 				<div class="layout_left_content">
-					<div class="cars_categories">
-						<input type="hidden" id="cars_categories" name="cars_categories" value="all">
-						<a href="#" class="active" data-id="all"><span>All cars</span></a>
-						<a href="#" class="" data-id="new"><span>new cars</span></a>
-						<a href="#" class="" data-id="used"><span>used cars</span></a>
-					</div>
-					<h1><strong>Cars</strong> (16 results)</h1>
-					<%= render partial: 'shared/front/side_bar_cars' %>
 					<%= bootstrap_flash %>
 					<%= yield %>
 				</div>

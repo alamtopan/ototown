@@ -1,5 +1,13 @@
 <fieldset>
   <div class="form-group">
+   <%= f.label :condition, '',class: 'col-md-3 control-label' %>
+    <% @condition.each_with_index do |condition, index|%>
+      <div class="col-md-2">
+        <%= f.radio_button :condition, condition ,id:"condition_#{index}",required: true%>  <b><%= condition %></b>
+      </div>
+    <% end %>
+  </div>
+  <div class="form-group">
     <%= f.label :name, '',class: 'col-md-3 control-label' %>
     <div class="col-md-9">
       <%= f.text_field :name, class: 'form-control', placeholder: 'Name' %>
@@ -19,12 +27,6 @@
   </div>
 </fieldset>
 <fieldset>
- <div class="form-group">
-  <%= f.label :condition, '',class: 'col-md-3 control-label' %>
-  <div class="col-md-6">
-    <%= f.text_field :condition, class: 'form-control', placeholder: 'Condition' %>
-  </div>
-</div>
 <div class="form-group">
   <%= f.label :type_product, 'Type',class: 'col-md-3 control-label' %>
   <div class="col-md-6">
