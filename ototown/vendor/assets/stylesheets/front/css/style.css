@@ -3196,6 +3196,7 @@ ul.personal_list li .grey_area span{
 ================================================================================
 */
 #footer{
+	margin-top: 40px!important;
 	min-width:980px;
 	width: 100%;
 	margin: 0 auto;

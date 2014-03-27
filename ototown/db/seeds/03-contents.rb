@@ -70,9 +70,8 @@ module SeedContent
     ]
 
     contents.each do |content_n|
-      page_opts = {title: content_n[:title], category: content_n[:category]}
+      page_opts = {title: content_n[:title], category: content_n[:category], content: content_n[:content]}
       page = PageContent.where(page_opts).first || PageContent.new(page_opts)
-      page.content = File.open(content_n[:content]).read if content_n[:content].present? && File.exist?(content_n[:content])
       page.pic = File.new(content_n[:pic]) if content_n[:pic].present? && File.exist?(content_n[:pic])
       page.save
     end
