@@ -1,6 +1,7 @@
 class PublicsController < ApplicationController
 	def home
 		@news_list = News.limit(10)
+		@cars = Car.limit(10).order('created_at DESC')
 		render layout: 'application_home'
 	end
 

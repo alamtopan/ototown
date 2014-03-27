@@ -7,6 +7,8 @@ class User < Operator
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, :omniauth_providers => [:facebook]
 
+  has_many :products
+  
   after_initialize :after_initialized
 
   has_one :profile, :dependent => :destroy 

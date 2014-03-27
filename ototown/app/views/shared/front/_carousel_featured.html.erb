@@ -1,150 +1,24 @@
 <div class="recent">
 	<h2><strong>Latest</strong> Vehicles On Sale</h2>
 	<div class="recent_carousel">
-		<div class="slide">
-			<a href="product">
-				<img src="assets/pics/recent_blog_2.jpg" alt="" />
-				<div class="description">
-					<p>
-						Registration 2010<br/>3.0 Diesel<br/>230 HP<br/>Body Coupe<br/>80 000 Miles
-					</p>
-				</div>
-				<div class="title">
-					<p>
-						<span>Mercedes-Benz</span>
-						<span class="price">$ 115 265</span>
-					</p>
-				</div>
-			</a>
-		</div>
-		<div class="slide">
-			<a href="product">
-				<img src="assets/pics/recent_blog_2.jpg" alt="" />
-				<div class="description">
-					<p>
-						Registration 2010<br/>3.0 Diesel<br/>230 HP<br/>Body Coupe<br/>80 000 Miles
-					</p>
-				</div>
-				<div class="title">
-					<p>
-						<span>Mercedes-Benz</span>
-						<span class="price">$ 115 265</span>
-					</p>
-				</div>
-			</a>
-		</div>
-		<div class="slide">
-			<a href="product">
-				<img src="assets/pics/recent_blog_2.jpg" alt="" />
-				<div class="description">
-					<p>
-						Registration 2010<br/>3.0 Diesel<br/>230 HP<br/>Body Coupe<br/>80 000 Miles
-					</p>
-				</div>
-				<div class="title">
-					<p>
-						<span>Mercedes-Benz</span>
-						<span class="price">$ 115 265</span>
-					</p>
-				</div>
-			</a>
-		</div>
-		<div class="slide">
-			<a href="product">
-				<img src="assets/pics/recent_blog_2.jpg" alt="" />
-				<div class="description">
-					<p>
-						Registration 2010<br/>3.0 Diesel<br/>230 HP<br/>Body Coupe<br/>80 000 Miles
-					</p>
-				</div>
-				<div class="title">
-					<p>
-						<span>Mercedes-Benz</span>
-						<span class="price">$ 115 265</span>
-					</p>
-				</div>
-			</a>
-		</div>
-		<div class="slide">
-			<a href="product">
-				<img src="assets/pics/recent_blog_2.jpg" alt="" />
-				<div class="description">
-					<p>
-						Registration 2010<br/>3.0 Diesel<br/>230 HP<br/>Body Coupe<br/>80 000 Miles
-					</p>
-				</div>
-				<div class="title">
-					<p>
-						<span>Mercedes-Benz</span>
-						<span class="price">$ 115 265</span>
-					</p>
-				</div>
-			</a>
-		</div>
-		<div class="slide">
-			<a href="product">
-				<img src="assets/pics/recent_blog_2.jpg" alt="" />
-				<div class="description">
-					<p>
-						Registration 2010<br/>3.0 Diesel<br/>230 HP<br/>Body Coupe<br/>80 000 Miles
-					</p>
-				</div>
-				<div class="title">
-					<p>
-						<span>Mercedes-Benz</span>
-						<span class="price">$ 115 265</span>
-					</p>
-				</div>
-			</a>
-		</div>
-		<div class="slide">
-			<a href="product">
-				<img src="assets/pics/recent_blog_2.jpg" alt="" />
-				<div class="description">
-					<p>
-						Registration 2010<br/>3.0 Diesel<br/>230 HP<br/>Body Coupe<br/>80 000 Miles
-					</p>
-				</div>
-				<div class="title">
-					<p>
-						<span>Mercedes-Benz</span>
-						<span class="price">$ 115 265</span>
-					</p>
-				</div>
-			</a>
-		</div>
-		<div class="slide">
-			<a href="product">
-				<img src="assets/pics/recent_blog_2.jpg" alt="" />
-				<div class="description">
-					<p>
-						Registration 2010<br/>3.0 Diesel<br/>230 HP<br/>Body Coupe<br/>80 000 Miles
-					</p>
-				</div>
-				<div class="title">
-					<p>
-						<span>Mercedes-Benz</span>
-						<span class="price">$ 115 265</span>
-					</p>
-				</div>
-			</a>
-		</div>
-		<div class="slide">
-			<a href="product">
-				<img src="assets/pics/recent_blog_2.jpg" alt="" />
-				<div class="description">
-					<p>
-						Registration 2010<br/>3.0 Diesel<br/>230 HP<br/>Body Coupe<br/>80 000 Miles
-					</p>
-				</div>
-				<div class="title">
-					<p>
-						<span>Mercedes-Benz</span>
-						<span class="price">$ 115 265</span>
-					</p>
-				</div>
-			</a>
-		</div>
+		<% @cars.each do |car| %>
+			<div class="slide">
+				<%= link_to detail_car_path(car) do %>
+					<%= image_tag car.images.first.image.url(:medium) %>
+					<div class="description">
+						<p>
+							Registration <%= car.created_at.year %><br/><%= car.transmission %><br/>Year <%= car.year %><br/><%= car.type_product %>
+						</p>
+					</div>
+					<div class="title">
+						<p>
+							<span><%= car.brand %></span>
+							<span class="price"><%= number_to_currency(car.price, unit: 'Rp.') %></span>
+						</p>
+					</div>
+				<% end %>
+			</div>
+		<% end %>
 	</div>
 </div>
 <div class="banners">

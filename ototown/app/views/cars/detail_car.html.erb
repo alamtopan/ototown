@@ -2,64 +2,92 @@
 	<div id="content">
 		<div class="content">
 			<div class="breadcrumbs">
-				<a href="http://autodealer.winterjuice.com/">Home</a>
-				<img src="http://autodealer.winterjuice.com/wp-content/themes/winterjuice/framework/assets/images/marker_2.gif" alt="">
-				<a href="http://autodealer.winterjuice.com/catalog/">Catalog</a>
-				<img src="http://autodealer.winterjuice.com/wp-content/themes/winterjuice/framework/assets/images/marker_2.gif" alt="">
-				<a href="http://autodealer.winterjuice.com/catalog/porsche">Porsche</a>
-				<img src="http://autodealer.winterjuice.com/wp-content/themes/winterjuice/framework/assets/images/marker_2.gif" alt="">
-				<a href="http://autodealer.winterjuice.com/catalog/porsche/porsche-911">911</a>
-				<img src="http://autodealer.winterjuice.com/wp-content/themes/winterjuice/framework/assets/images/marker_2.gif" alt="">
-				Porsche 911 CARRERA
+				<a href="#">Home</a>
+				<%= image_tag '../../assets/marker_2.gif' %>
+				<a href="#">Cars</a>
+				<%= image_tag '../../assets/marker_2.gif' %>
+				<%= @car.name %>
 			</div>
 			<div class="main_wrapper">
 				<div class="main_wrapper ">
 					<div class="cars_id">
-						<div class="id">Offer ID <span>C228</span></div>
-						<div class="views">The offer had 788 Views</div>
+						<div class="id">Brand <span><%= @car.brand %></span></div>
+						<div class="views">Model <%= "#{@car.model} #{@car.year}" %></div>
 					</div>
 					<h1>
-						<strong>Porsche</strong> 911 CARRERA		 
+						<%= @car.name %>		 
 					</h1>
 					<div class="car_image_wrapper">
-						<%= render partial: 'shared/front/slide_car_detail' %>
+						<%= render 'shared/front/slide_car_detail', images: @car.images %>
 					</div>
 					<div class="car_characteristics">
 						<a href="#" class="print" onclick="window.print();return false;"></a>
-						<div class="price" data-currency="EURO" data-price="86790" style="margin-left:10px; margin-top:15px;">
-							86,790 EURO 
+						<div class="price" data-currency="Rp" data-price="<%= @car.price %>" style="margin-left:10px; margin-top:15px;">
+							<%= number_to_currency(@car.price, unit: 'Rp.') %> 
 						</div>
 						<div class="clear"></div>
 						<div class="features_table">
 							<div class="line">
 								<div class="left">Model, Body type:</div>
-								<div class="right">Porsche 911 CARRERA, Coupe</div>
+								<div class="right"><%= "#{@car.model}, #{@car.type_product}" %></div>
 							</div>
 							<div class="line">
 								<div class="left">Fabrication:</div>
-								<div class="right">2013</div>
+								<div class="right"><%= @car.year %></div>
 							</div>
 							<div class="line">
 								<div class="left">Fuel:</div>
-								<div class="right">Gas</div>
+								<div class="right"><%= @car.fuel %></div>
 							</div>
 							<div class="line">
 								<div class="left">Engine:</div>
-								<div class="right">4200 cm³</div>
+								<div class="right"><%= @car.engine %></div>
 							</div>
 							<div class="line">
 								<div class="left">Transmision:</div>
-								<div class="right">Automatic</div>
+								<div class="right"><%= @car.transmission %></div>
 							</div>
 							<div class="line">
 								<div class="left">Color:</div>
 								<div class="right">
-									<span class="color" style="background-color:#fafafa"></span> White
+									<span class="color" style="background-color:<%= @car.color %>"></span> <%= @car.color %>
+								</div>
+							</div>
+							<div class="line">
+								<div class="left">Condition:</div>
+								<div class="right">
+									<%= @car.condition %>
+								</div>
+							</div>
+							<div class="line">
+								<div class="left">Year:</div>
+								<div class="right">
+									<%= @car.year %>
+								</div>
+							</div>
+							<div class="line">
+								<div class="left">Plate Number:</div>
+								<div class="right">
+									<%= "#{@car.plate_number}, #{@car.city}, #{@car.province}" %>
+								</div>
+							</div>
+							<div class="line">
+								<div class="left">Expire Date:</div>
+								<div class="right">
+									<%= @car.exp_date %>
 								</div>
 							</div>
 							<div class="line">
 								<div class="left">Doors:</div>
-								<div class="right">5</div>
+								<div class="right"><%= @car.door %></div>
+							</div>
+							<div class="line">
+								<div class="left">Seats:</div>
+								<div class="right"><%= @car.seat %></div>
+							</div>
+							<div class="line">
+								<div class="left">Cyclinders:</div>
+								<div class="right"><%= @car.cyclinders %></div>
 							</div>
 						</div>
 					</div>
@@ -67,8 +95,12 @@
 					<div class="info_box">
 						<div class="car_contacts">
 							<h2><strong>Detail</strong> Information</h2>
-							<p>abs, air conditioning, airbag, board computer, central locking, differential lock, eds, electric windows, esp, fog lights, radio / cd air conditioning, airbag, board computer, central locking, differential lock, eds, electric windows, esp, fog lights, radio / cd</p>
-							<p>abs, air conditioning, airbag, board computer, central locking, differential lock, eds, electric windows, esp, fog lights, radio / cd</p>
+							<div>
+								<b>Location: </b>
+								<br/> 
+								<%= @car.location %>
+							</div><br/>
+							<%= @car.description %>
 							<p></p>
 							<div class="clear"></div>
 							<div class="clear"></div>
@@ -115,7 +147,7 @@
 									fjs.parentNode.insertBefore(js, fjs);
 								}(document, 'script', 'facebook-jssdk'));
 							</script>
-							<div class="fb-comments"data-href="http://localhost:3000" data-num-posts="10" data-colorscheme="light" mobile="false">
+							<div class="fb-comments" data-href="<%= detail_car_url(@product) %>" data-num-posts="10" data-colorscheme="light" mobile="false">
 							</div>
 						</div>
 					</div>
@@ -125,15 +157,15 @@
 								<div class="widget contacts_widget credit-simulation">
 									<h2><strong>Contact</strong></h2>
 									<div class="post">
-										<img style="max-width:70px;float:left;margin-right:20px;" src="http://autodealer.winterjuice.com/wp-content/themes/winterjuice/framework/usr_data/user/41/138x138/41.jpg" alt="">
-										<p><b>Alam Topani</b></p>
-										<p class="member-at">Join At : <br>02-6-2015</p>
+										<%= image_tag @car.user.profile.avatar.url(:medium), style: 'max-width:70px;float:left;margin-right:20px;' %>
+										<p><b><%= @car.user.profile.full_name %></b></p>
+										<p class="member-at">Join At : <br><%= @car.user.created_at.strftime('%d %b %Y') %></p>
 										<div class="clear"></div>
 									</div><br>
-									<div class="addr detail">Germany, Der strasse, Berlin</div>
-									<div class="phones detail">+62857 95 6729</div>
+									<div class="addr detail"><%= @car.user.profile.address %></div>
+									<div class="phones detail"><%= @car.user.profile.phone %></div>
 									<div class="email detail single_line">
-										<a href="mailto:example@winterjuice.com" rel="moc/eciujretniw//elpmaxe" class="email_link_replace markered">example@winterjuice.com
+										<a href="mailto:<%= @car.user.email %>" rel="moc/eciujretniw//elpmaxe" class="email_link_replace markered"><%= @car.user.email %>
 										</a>
 									</div>
 									<div class="clear"></div>

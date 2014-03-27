@@ -24,7 +24,9 @@ module SeedCar
                   engine: content.css('.detail-content').children[11].text.strip,
                   cylinders: content.css('.detail-content').children[12].text.strip,
                   fuel: content.css('.detail-content').children[13].text.strip,
-                  location: content.css('.detail-content').children[14].text.strip
+                  location: content.css('.detail-content').children[14].text.strip,
+                  price: 15000000,
+                  user_id: User.all.shuffle.first.id
                 }  
       car = Car.where(name: params[:name]).first
       if car.present?
