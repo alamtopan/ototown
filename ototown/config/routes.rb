@@ -9,7 +9,9 @@ Ototown::Application.routes.draw do
   #Cars
   get   '/cars',              to: 'cars#cars',                 as: 'cars'
   get   '/detail_car/:id',    to: 'cars#detail_car',           as: 'detail_car'
-  get   '/form_car',          to: 'cars#form_car',             as: 'form_car'
+  
+  get   '/form_product',      to: 'cars#form_product',         as: 'form_product'
+  post  '/form_product',      to: 'cars#create_product',       as: 'create_product'
 
   #News
   get   '/detail_news/:id',		to: 'publics#detail_news',       as: 'detail_news'

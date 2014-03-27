@@ -21,9 +21,12 @@
 //= require front/js/jquery.mousewheel-3.0.4.pack
 //= require front/js/jquery.countdown
 //= require front/js/jquery.checkbox
+//= require jquery-auto
 //= require front/js/js
 //= require front/js/vehicles
 //= require front/js/jquery.fancybox
+//= require front/province
+//= require cocoon
 //= require bootstrap-datepicker
 
 $(document).ready(function(){
@@ -37,4 +40,29 @@ $(document).ready(function(){
   $('.datepicker').datepicker({
     format: 'yyyy/mm/dd'
   });
+
+  // Select Province
+  $('#province_attributes').autocomplete({
+      data: window.provinces,
+      onItemSelect: function(result){
+
+        $('#city_attributes').removeData();
+        $('#city_attributes').unbind();
+        $('#city_attributes').autocomplete({
+          data: window.provinces_cities[result.value]
+        })
+      }
+  });
+  $('#province_attributes').focus(function(){
+    $('#city_attributes').val('')
+  });
+
+  $('#brand_product').change(function(){
+    var url = $(this).data('url'); 
+    $.get(url, {brand: $(this).val()})
+      .done(function(data){
+        $('#model_product').html(data);
+      });
+  })
+
 });

@@ -3612,6 +3612,7 @@ body #content .profile_layout .widget-nav-profile li.dealer_affiliates{
 	font-weight: 700;
 	margin-bottom: 15px;
 }
+.settings_photo .upload-photo .btn1,
 .settings_photo .upload-photo .btn1{
 	margin-right:20px;
 }
@@ -3673,7 +3674,8 @@ body #content .profile_layout .widget-nav-profile li.dealer_affiliates{
 	border:1px solid #ebebeb;
 	background-color: #f8f8f8;
 }
-.profile_content .actions_cars .btn1{
+.profile_content .actions_cars .btn1,
+.profile_content .actions_cars .btn10{
 	float: right;
 	margin: 8px 19px 0 0;
 }
@@ -3831,7 +3833,7 @@ textarea {
 .btn-class {
 	border-radius: 6px;
 }
-#comment-btn, .btn1,.btn2,.btn3{
+#comment-btn, .btn1,.btn2,.btn3,.btn10{
 	font-family: 'PT Sans', sans-serif, Arial,sans-serif;
 	font-weight: 700;
 	display: inline-block;
@@ -3862,7 +3864,7 @@ textarea {
   	*zoom: 1;
     min-height: 20px;
 }
-.btn1:hover {
+.btn1:hover, .btn10:hover {
 	opacity: 0.8;
 }
 
@@ -4014,7 +4016,7 @@ textarea {
 .btn5:hover {
 	opacity: 0.8;
 }
-.btn1:hover,.btn2:hover,.btn3:hover{
+.btn1:hover,.btn2:hover,.btn3:hover,.btn10:hover{
 	text-decoration: none;
 
 }
