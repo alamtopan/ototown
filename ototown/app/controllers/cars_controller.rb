@@ -38,6 +38,6 @@ class CarsController < ApplicationController
 
     def product_params
       params.require(:product).permit(:condition,:name,:category_id,:description,:province,:city,:brand,:model,:transmission,:year,:type_product,:color,
-      																:price,:negotiable)
+      																:price,:negotiable, images_attributes: [:image])
     end
 end

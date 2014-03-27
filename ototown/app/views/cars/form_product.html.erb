@@ -11,7 +11,7 @@
 			<div class="main_wrapper">
 				<div class="main_wrapper">
 					<h1><strong>Add</strong> Car</h1>
-					<%= form_for @product, url: create_product_path, method: "post", id: 'vehicle-form' do |f| %>
+					<%= form_for @product, url: create_product_path, html:{method: "post", id: 'vehicle-form',multipart: true} do |f| %>
 						<div class="step_breadcrumb">
 							<a href="#" class="active" id="step_1">step 1.  SELECT CATEGORIES</a>
 							<a href="#" class="" id="step_2">step 2.  TECHNICAL CHARACTERISTICS</a>
