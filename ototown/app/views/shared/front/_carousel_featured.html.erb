@@ -7,14 +7,15 @@
 					<%= image_tag car.images.first.image.url(:medium) %>
 					<div class="description">
 						<p>
-							Registration <%= car.created_at.year %><br/><%= car.transmission %><br/>Year <%= car.year %><br/><%= car.type_product %>
+							Registration: <%= car.created_at.year %><br/>
+							Transmission: <%= car.transmission %><br/>
+							Year: <%= car.year %><br/>
+							Type: <%= car.type_product %>
 						</p>
 					</div>
 					<div class="title">
-						<p>
-							<span><%= car.brand %></span>
-							<span class="price"><%= number_to_currency(car.price, unit: 'Rp.') %></span>
-						</p>
+						<%= car.brand %>
+						<span class="price"><%= number_to_currency(car.price, unit: 'Rp.') %></span>
 					</div>
 				<% end %>
 			</div>

@@ -1,6 +1,7 @@
 class Backend::SparepartsController < Backend::ApplicationController
   defaults :resource_class => Sparepart, :collection_name => 'spareparts', :instance_name => 'sparepart'
   prepend_before_filter :generate_select, except: [:index,:show]
+  before_filter :choice_condition
 
   private
     def generate_select
@@ -8,5 +9,14 @@ class Backend::SparepartsController < Backend::ApplicationController
       @types = Type.all.map{|t| [t.name, t.name]}
       @brands = Brand.all.map{|t| [t.name, t.name]}
       @years = (1945..Time.new.year).to_a.map{|y| [y, y]}
+    end
+
+    def choice_condition
+      @condition = [
+                      "All",
+                      "Used",
+                      "New",
+                      "Classic"
+                    ]
     end
 end

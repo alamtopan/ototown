@@ -334,3 +334,23 @@ label.error{
 .btn-default:hover{
 	background: #000;
 }
+.car_catalog{
+	width: 160px;
+	height: 115px;
+	border: solid 1px #ddd;
+	padding: 5px;
+	overflow: hidden;
+	-webkit-box-shadow: 10px 10px 5px -10px rgba(0,0,0,0.75);
+	-moz-box-shadow: 10px 10px 5px -10px rgba(0,0,0,0.75);
+	box-shadow: 10px 10px 5px -10px rgba(0,0,0,0.75);
+}
+.car_catalog:hover{
+	background-color: #eee;
+}
+.car_catalog img{
+	width: 100%;
+	height: 100%;
+}
+.pagination.nalog{
+	margin-top: 0px;
+}

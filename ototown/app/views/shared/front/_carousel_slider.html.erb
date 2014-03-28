@@ -2,11 +2,8 @@
   <!-- Indicators -->
   <div class="patt"></div>
   <div class="carousel-inner">
-    <div class="item active">
-      <img src="assets/slide/top.jpg" alt="First slide">
-    </div>
-    <% @slider.each do |slider| %>
-      <div class="item">
+    <% @slider.each_with_index do |slider,index| %>
+      <div class="item <%= 'active' if index.zero? %>">
         <%= image_tag "#{slider.pic}" %>
         <div class="container">
           <div class="carousel-caption">

@@ -1,6 +1,7 @@
 class Backend::CarsController < Backend::ApplicationController
   defaults :resource_class => Car, :collection_name => 'cars', :instance_name => 'car'
   prepend_before_filter :generate_select, except: [:index,:show]
+  before_filter :choice_condition
 
   private
     def generate_select
@@ -12,5 +13,14 @@ class Backend::CarsController < Backend::ApplicationController
         'Yellow','Purple','Maroon']
       @colors = colors.map{|c| [c,c]}
       @transmissions = ['Auto','Mechanic'].map{|tr| [tr,tr]}
+    end
+
+    def choice_condition
+      @condition = [
+                      "All",
+                      "Used",
+                      "New",
+                      "Classic"
+                    ]
     end
 end
