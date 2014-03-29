@@ -1,6 +1,6 @@
 class Backend::DealersController < Backend::ApplicationController
   defaults :resource_class => Dealer, :collection_name => 'dealers', :instance_name => 'dealer'
-  prepend_before_filter :draw_passwordd, only: :update
+  prepend_before_filter :draw_password, only: :update
 
   def index
   	@dealers = Dealer.includes(:dealer_info).where("dealer_infos.active = TRUE").order("operators.id DESC")

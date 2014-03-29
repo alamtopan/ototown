@@ -281,7 +281,7 @@ only screen and (min-device-width: 700px) and (max-device-width: 800px){
 		float: left;
 		overflow: hidden;
 		width: 25%;
-		margin: 0 3% 0 0;
+		margin: 0 3% 2% 0;
 		padding: 19px 19px 28px;
 	}
 	.recent_blog .post_block.last{

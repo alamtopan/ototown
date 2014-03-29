@@ -3,46 +3,25 @@
 		<div class="widget grey car_widget back-white dealer_profile ">
 			<h2><strong>About</strong> us</h2>
 			<div class="post">
-				<img style="max-width:70px;float:left;margin-right:20px;" src="http://autodealer.winterjuice.com/wp-content/themes/winterjuice/framework/usr_data/user/41/138x138/41.jpg" alt="">
-				<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.</p>
+				<%= image_tag @dealer.profile.avatar.url(:medium), style: 'max-width:70px;float:left;margin-right:20px;' %>
+				<p>
+					<div>Director :</div>
+					<b><%= @dealer.profile.full_name %></b>
+				</p>
+				<% if @dealer.dealer_info.description.present? %>
+					<p><%= @dealer.dealer_info.description.html_safe %></p>
+				<% end %>
 				<div class="clear"></div>
 			</div>
 		</div>
 		<div class="widget contacts_widget">
-			<h2><strong>Contact</strong></h2>
-			<div class="addr detail">Germany, Der strasse, Berlin</div>
-			<div class="phones detail">+62857 956729</div>
+			<h2><strong>Contact Dealer</strong></h2>
+			<div class="addr detail"><%= @dealer.dealer_info.address %></div>
+			<div class="phones detail"><%= @dealer.dealer_info.phone %></div>
 			<div class="email detail single_line">
-				<a href="mailto:example@winterjuice.com" rel="moc/eciujretniw//elpmaxe" class="email_link_replace markered">example@winterjuice.com
+				<a href="mailto:<%= @dealer.email %>" rel="moc/eciujretniw//elpmaxe" class="email_link_replace markered"><%= @dealer.dealer_info.email %>
 				</a>
 			</div>
-			<div class="clear"></div>
-		</div>
-		<div class="widget schedule_widget">
-			<h2><strong>Schedule</strong></h2>
-			<ul class="schedule_widget_items">
-				<li>
-					Monday<span>08:00 - 17:00</span>
-				</li>
-				<li>
-					Tuesday<span>08:00 - 17:00</span>
-				</li>
-				<li>
-					Wednesday<span>08:00 - 17:00</span>
-				</li>
-				<li>
-					Thursday<span>08:00 - 17:00</span>
-				</li>
-				<li>
-					Friday<span>08:00 - 17:00</span>
-				</li>
-				<li>
-					Saturday<span>10:00 - 16:00</span>
-				</li>
-				<li>
-					Sunday<span>--:--</span>
-				</li>
-			</ul>
 			<div class="clear"></div>
 		</div>
 	</div>

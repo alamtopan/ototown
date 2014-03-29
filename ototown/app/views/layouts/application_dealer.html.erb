@@ -11,12 +11,14 @@
 		<div class="content">
 			<div class="breadcrumbs margin-top80">
 				<a href="http://autodealer.winterjuice.com/">Home</a>
-				<img src="http://autodealer.winterjuice.com/wp-content/themes/winterjuice/framework/assets/images/marker_2.gif">
-				Catalog
+				<%= image_tag '../../assets/marker_2.gif' %>
+				Dealers
+				<%= image_tag '../../assets/marker_2.gif' %>
+				<%= @dealer.dealer_info.title %>
 			</div>
 			<div class="main_wrapper ">
 				<div class="layout_left_content">
-					<h1><strong>Sport</strong> Motor</h1>
+					<h1><strong><%= @dealer.dealer_info.title %></strong></h1>
 					<%= render partial: 'shared/front/side_bar_dealer' %>
 					<%= bootstrap_flash %>
 					<%= yield %>

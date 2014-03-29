@@ -4,7 +4,7 @@ Ototown::Application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   #Dealers
   get   '/dealers',           to: 'dealers#dealers',           as: 'dealers'
-  get   '/detail_dealer',     to: 'dealers#detail_dealer',     as: 'detail_dealer'
+  get   '/detail_dealer/:id', to: 'dealers#detail_dealer',     as: 'detail_dealer'
 
   #Cars
   get   '/cars/:condition',   to: 'cars#cars',                 as: 'cars'

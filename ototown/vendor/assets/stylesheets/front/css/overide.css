@@ -354,3 +354,9 @@ label.error{
 .pagination.nalog{
 	margin-top: 0px;
 }
+.gray-font{
+	color: #ccc;
+}
+.post_block{
+	padding: 16px!important;
+}

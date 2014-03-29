@@ -1,156 +1,50 @@
 <div class="main_catalog" style="padding-top:0px">
 	<div class="car_image_wrapper width100">
-		<%= render partial: 'shared/front/slide_dealer_detail' %>
+		<%= render 'shared/front/slide_dealer_detail', images: @dealer.images %>
 	</div>
 	<div class="top_catalog_box padding-bottom0">
-		<div class="sorting drop_list" data-id="sorted_field">
-			<strong>Sort by: </strong>
-			<input type="hidden" id="sorted_field" value="date">
-			<input type="hidden" id="sorted_direction" value="desc">
-			<div class="selected">
-				<span><a href="#">Publish date</a></span>
-				<ul>
-					<li><a href="#" data-field="date" data-direction="desc">Publish date</a></li>
-					<li><a href="#" data-field="price" data-direction="asc">Price ASC</a></li>
-					<li><a href="#" data-field="price" data-direction="desc">Price DESC</a></li>
-					<li><a href="#" data-field="name" data-direction="asc">Name ASC</a></li>
-					<li><a href="#" data-field="name" data-direction="desc">Name DESC</a></li>
-				</ul>
-			</div>
-			<div class="clear"></div>
-		</div>
 		<div class="view_on_page drop_list" data-id="view_on_page">
-			<strong>View on page:</strong>
-			<input type="hidden" id="view_on_page" value="12">
-			<div class="selected">
-				<span><a href="#">12</a></span>
-				<ul>
-					<li><a href="#" data-value="12">12</a></li>
-					<li><a href="#" data-value="24">24</a></li>
-					<li><a href="#" data-value="48">48</a></li>
-					<li><a href="#" data-value="96">96</a></li>
-				</ul>
-			</div>
-			<div class="clear"></div>
+			<b>Total Cars:</b> <span class="gray-font"> <%= @cars_count.size %> Cars in this Dealer</span>
 		</div>			
 		<div class="pagination">
-      <ul>
-        <li class="active"><a href="http://autodealer.winterjuice.com/catalog/index">1</a></li>
-    	  <li><a href="http://autodealer.winterjuice.com/catalog/index/2">2</a></li>
-    	</ul>
+			<%= paginate @cars %>
 		</div>
 		<div class="clear"></div>
 	</div>
 	<ul class="catalog_table">
-		<li class="is_dealer">
-			<a href="http://autodealer.winterjuice.com/cars/porsche-911-carrera/" class="thumb">
-				<img src="http://autodealer.winterjuice.com/wp-content/themes/winterjuice/framework/usr_data/car/70/165x120/70.jpg" alt="">
-			</a>
-			<div class="catalog_desc">
-				<div class="location">Location: Germany</div>
-				<div class="title_box">
-					<h4><a href="http://autodealer.winterjuice.com/cars/porsche-911-carrera/">Porsche 911 CARRERA</a></h4>
-					<div class="price">€86,790</div>
+		<% @cars.each_with_index do |car, index| %>
+			<li class="is_dealer">
+				<%= link_to detail_car_path(car), class: 'thumb' do %>
+					<div class= "car_catalog"><%= image_tag car.images.first.image %></div>
+				<% end %>
+				<div class="catalog_desc">
+					<div class="location">Location: <b><%= car.province %>, <%= car.city %></b></div>
+					<div class="title_box">
+						<h4>
+							<%= link_to detail_car_path(car) do %>
+								<%= car.name %>
+							<% end %>
+						</h4>
+						<div class="price"><%= number_to_currency(car.price, unit: 'Rp.') %></div>
+					</div>
+					<div class="clear"></div>
+					<div class="grey_area">
+						<span>Fabrication: <b><%= car.year %></b></span>
+						<span>Brand: <b><%= car.brand %></b></span>
+						<span>Model: <b><%= car.model %></b></span>
+						<span>Condition: <b><%= car.condition %></b></span>
+					</div>
+					<div style="float:right"></div>
+					<%= link_to detail_car_path(car),class: "more markered" do %>
+						View details
+					<% end %>
 				</div>
-				<div class="clear"></div>
-				<div class="grey_area">
-					<span>Fabrication: 2013</span>
-					<span>4200 cm³ Gas</span>
-					<span>Body Coupe</span>
-					<span>0 Miles</span>
-					<span><strong>New car</strong></span>
-				</div>
-				<div style="float:right"></div>
-				<a href="http://autodealer.winterjuice.com/cars/porsche-911-carrera/" class="more markered">View details</a>
-			</div>
-		</li>
-		<li class="is_dealer">
-			<a href="http://autodealer.winterjuice.com/cars/mercedes-benz-s-class-s300/" class="thumb">
-				<img src="http://autodealer.winterjuice.com/wp-content/themes/winterjuice/framework/usr_data/car/65/165x120/65.jpg" alt="">
-			</a>
-			<div class="catalog_desc">
-				<div class="location">Location: Germany</div>
-				<div class="title_box">
-					<h4>
-						<a href="http://autodealer.winterjuice.com/cars/mercedes-benz-s-class-s300/">Mercedes-Benz S-CLASS S300</a>
-					</h4>
-					<div class="price">€65,000</div>
-				</div>
-				<div class="clear"></div>
-				<div class="grey_area">
-					<span>Fabrication: 2014</span>
-					<span>4000 cm³ Diesel</span>
-					<span>Body Coupe</span>
-					<span>0 Miles</span>
-					<span><strong>New car</strong></span>
-				</div>
-				<div style="float:right">
-					<a href="http://autodealer.winterjuice.com/dealer/info/10/"><i class="icon-award-empty is-dealer award"></i>
-						BTC Motors
-					</a>
-				</div>
-				<a href="http://autodealer.winterjuice.com/cars/mercedes-benz-s-class-s300/" class="more markered">View details</a>
-			</div>
-		</li>
-		<li class="is_dealer">
-			<a href="http://autodealer.winterjuice.com/cars/land-rover-defender-90/" class="thumb">
-				<img src="http://autodealer.winterjuice.com/wp-content/themes/winterjuice/framework/usr_data/car/44/165x120/44.jpg" alt="">
-			</a>
-			<div class="catalog_desc">
-				<div class="location">Location: Germany</div>
-				<div class="title_box">
-					<h4><a href="http://autodealer.winterjuice.com/cars/land-rover-defender-90/">Land Rover Defender 90</a></h4>
-					<div class="price">€25,100</div>
-				</div>
-				<div class="clear"></div>
-				<div class="grey_area">
-					<span>Fabrication: 2013</span>
-					<span>2200 cm³ Gas</span>
-					<span>Body SUV</span>
-					<span>0 Miles</span>
-					<span><strong>New car</strong></span>
-				</div>
-				<div style="float:right">
-						<a href="http://autodealer.winterjuice.com/dealer/info/10/"><i class="icon-award-empty is-dealer award"></i>
-							BTC Motors
-						</a>
-				</div>
-				<a href="http://autodealer.winterjuice.com/cars/land-rover-defender-90/" class="more markered">View details</a>
-			</div>
-		</li>
-		<li class="is_dealer">
-			<a href="http://autodealer.winterjuice.com/cars/acura-alfa-romeo-lux/" class="thumb">
-				<img src="http://autodealer.winterjuice.com/wp-content/themes/winterjuice/framework/usr_data/car/37/165x120/37.jpg" alt="">
-			</a>
-			<div class="catalog_desc">
-				<div class="location">Location: Germany</div>
-				<div class="title_box">
-					<h4><a href="http://autodealer.winterjuice.com/cars/acura-alfa-romeo-lux/">Acura MDX Lux</a></h4>
-					<div class="price">€120,000</div>
-				</div>
-				<div class="clear"></div>
-				<div class="grey_area">
-					<span>Fabrication: 2010</span>
-					<span>3200 cm³ Diesel</span>
-					<span>Body SUV</span>
-					<span>1 233 Miles</span>
-					<span><strong>Used</strong></span>
-				</div>
-				<div style="float:right">
-					<a href="http://autodealer.winterjuice.com/dealer/info/1/">
-						<i class="icon-award-empty is-dealer award"></i>Winter Juice Motors LLC
-					</a>
-				</div>
-				<a href="http://autodealer.winterjuice.com/cars/acura-alfa-romeo-lux/" class="more markered">View details</a>
-			</div>
-		</li>
+			</li>
+		<% end %>
 	</ul>
 	<div class="bottom_catalog_box padding-top0">		
 		<div class="pagination">
-      <ul> 
-        <li class="active"><a href="http://autodealer.winterjuice.com/catalog/index">1</a></li>
-    	  <li><a href="http://autodealer.winterjuice.com/catalog/index/2">2</a></li>
-	    </ul>
+			<%= paginate @cars %>
 		</div>
 		<div class="clear"></div>
 	</div>

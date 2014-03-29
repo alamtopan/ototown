@@ -22,7 +22,7 @@
     <label class="col-md-4 control-label" for="val_website">Birthday </label>
     <div class="col-md-6">
       <div class="input-group">
-        <%= profile.date_select :birthday, {start_year: 1960, order: [:day, :month, :year], prompt: { day: 'Select day', month: 'Select month', year: 'Select year'}}, {class: 'datepicker', required: true} %>
+        <%= profile.date_select :birthday, {start_year: 1960, order: [:day, :month, :year], prompt: { day: 'Select day', month: 'Select month', year: 'Select year'}}, {required: true} %>
       </div>
     </div>
   </div>
