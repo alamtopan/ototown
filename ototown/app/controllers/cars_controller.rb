@@ -1,5 +1,5 @@
 class CarsController < ApplicationController
-  before_filter :generate_select, except: [:index,:show]
+  before_filter :generate_select, except: [:incdex,:show]
 	def cars
 		condition = params[:condition]
 		@cars = Car.where(condition: condition).page(params[:page]).per(8).order("id DESC")
@@ -20,10 +20,11 @@ class CarsController < ApplicationController
 		@product = current_user.products.new(product_params)
 		if @product.save
 			flash[:notice] = 'Your Product Created'
+			redirect_to user_home_path
 		else
-			flash[:alert] = 'Failed'
+			flash[:alert] = @product.errors.full_messages
+			redirect_to form_product_path
 		end
-		redirect_to user_home_path
 	end
 
 	private
@@ -39,7 +40,8 @@ class CarsController < ApplicationController
     end
 
     def product_params
-      params.require(:product).permit(:condition,:name,:category_id,:description,:province,:city,:brand,:model,:transmission,:year,:type_product,:color,
-      																:price,:negotiable, images_attributes: [:image])
+      params.require(:product).permit(:condition,:name,:category_id,:description,:province,:city,:brand,:model, :fuel, :status
+      									:transmission,:year,:type_product,:color, :price,:negotiable, :location, :cylinders,
+      									images_attributes: [:image])
     end
 end

@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   before_filter :authenticate_user!
 
 	def user_home
+    @products = current_user.products.page(params[:page])
 		render layout: 'application_user'
 	end
 

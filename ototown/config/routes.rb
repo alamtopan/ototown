@@ -10,8 +10,8 @@ Ototown::Application.routes.draw do
   get   '/cars/:condition',   to: 'cars#cars',                 as: 'cars'
   get   '/detail_car/:id',    to: 'cars#detail_car',           as: 'detail_car'
   
-  get   '/form_product',      to: 'cars#form_product',         as: 'form_product'
-  post  '/form_product',      to: 'cars#create_product',       as: 'create_product'
+  # get   '/form_product',      to: 'cars#form_product',         as: 'form_product'
+  # post  '/form_product',      to: 'cars#create_product',       as: 'create_product'
 
   #News
   get   '/detail_news/:id',		to: 'publics#detail_news',       as: 'detail_news'
@@ -22,7 +22,17 @@ Ototown::Application.routes.draw do
   get   '/user_profile',      to: 'users#user_profile',        as: 'user_profile'
   put   '/user_profile',      to: 'users#update',              as: 'user_update'
   
-  get   '/brand_model',       to: 'publics#brand_model',              as: 'brand_model'
+  scope :user do 
+    resources :products
+    get '/archive_products',          to: 'products#archive',          as: 'archive_products'
+    put '/change_status/:product_id', to: 'products#change_status',    as: 'change_status'
+  end
+  
+  # Product
+  
+
+
+  get   '/brand_model',       to: 'publics#brand_model',         as: 'brand_model'
 
   namespace :backend do
     get '/',                  to: 'home#index'                 

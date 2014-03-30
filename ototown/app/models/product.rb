@@ -5,8 +5,10 @@ class Product < ActiveRecord::Base
   belongs_to :category
   belongs_to :user
   has_one :advertise
-  has_many :images, class_name: 'ImageProduct'
+  has_many :images, class_name: 'ImageProduct', dependent: :destroy
   
-  accepts_nested_attributes_for :images, :reject_if => :all_blank, :allow_destroy => true
+  accepts_nested_attributes_for :images, reject_if: :all_blank, allow_destroy: true
+
+  validates :name, :category_id, :condition, :user_id, presence: true
 
 end

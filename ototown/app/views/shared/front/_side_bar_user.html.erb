@@ -2,9 +2,18 @@
 	<div class="widget widget-nav-profile">
 		<h2><strong>Account</strong> menu</h2>
 		<ul>
-			<li class="active vehicles"><a href="/profile/vehicles/">My cars</a></li>
-			<li class=" vehicles_archive"><a href="/profile/vehicles/archive/">Archive cars</a></li>
-			<li class=" settings"><a href="/profile/settings/">Profile</a></li>
+			<li class="vehicles <%= 'active' if action_name == 'user_home' %>">
+				<%= link_to 'Dashboard', user_home_path %>
+			</li>
+			<li class="vehicles <%= 'active' if action_name == 'index' %>">
+				<%= link_to 'My Product', products_path %>
+			</li>
+			<li class=" vehicles_archive <%= 'active' if action_name == 'archive' %>">
+				<%= link_to 'My Archive Product', archive_products_path %>
+			</li>
+			<li class=" settings <%= 'active' if action_name == 'user_profile' %>">
+				<%= link_to 'Profile', user_profile_path %>
+			</li>
 		</ul>
 	</div>				
 	<div id="dialog-request-dealer" title="I want to be a dealer" style="display:none;">
