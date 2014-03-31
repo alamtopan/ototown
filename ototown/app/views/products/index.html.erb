@@ -10,15 +10,12 @@
 		</div>
 	<% end %>
 	<div class="actions_cars">
-		<a href="#" class="btn1" id="apply_actions">apply</a>
-		<select class="text" id="select_action_car">
-			<option value="0">Select action</option>
-			<option value="car_republish">Republish</option>
-			<option value="car_archive">Remove the archive</option>
-		</select>
+		<%= form_for '', url: mass_actions_path do |f| %>
+		<%= f.submit :apply, class: 'btn1', id: 'apply_actions' %>
+		<%= f.select :select_actions, options_for_select([['Change Status','1'],['Remove','2']]), {include_blank: 'Select Action'}, class: 'text', name: 'select_actions' %>
 		<div class="label_select">Apply to the marked:</div>
 		<div class="mark_all">
-			<label><input type="checkbox" id="select_all_cars">Select all cars on the page</label>
+			<label></label>
 		</div>
 	</div>
 	<div class="cars_list">
@@ -30,7 +27,7 @@
 				<div class="img"><%= image_tag product.images.first.image.url(:medium) if product.images.present? %></div>
 				<div class="general_info">
 					<h2><%= product.name %></h2>
-					<div class="date"><%= product.created_at %></div>
+					<div class="date"><%= time_ago_in_words(product.updated_at) %></div>
 					<div class="price"><%= number_to_currency product.price, unit: 'Rp' %></div>
 				</div>
 				<div class="location">
@@ -51,6 +48,7 @@
 			</div>
 		<% end %>
 	</div>
+	<% end %>
 
 	<div class="bottom_catalog_box">
 		<div class="clear"></div>

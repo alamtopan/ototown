@@ -11,8 +11,13 @@ class User < Operator
   
   after_initialize :after_initialized
 
-  has_one :profile, :dependent => :destroy 
+  has_many :images, foreign_key: 'dealer_id', class_name: 'ImageDealer', :dependent => :destroy 
+  has_one :profile, foreign_key: 'user_id', :dependent => :destroy 
+  has_one :dealer_info, foreign_key: 'dealer_id', :dependent => :destroy 
   accepts_nested_attributes_for :profile, reject_if: :all_blank
+  accepts_nested_attributes_for :dealer_info, reject_if: :all_blank
+  accepts_nested_attributes_for :images, :reject_if => :all_blank, :allow_destroy => true
+
 
   default_scope { where(role_id: ROLE_ID) }
 

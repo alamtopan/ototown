@@ -1,0 +1,38 @@
+<div class="modal-dialog">
+  <div class="profile_content modal-content">
+    <h1><strong>Profile</strong></h1>
+    <%= form_for @user, url: '' do |f| %>
+      <%= f.fields_for(:dealer_info) do |info| %> 
+        <div class="settings_form">
+          <div class="col1">
+            <%= info.label :title, 'Dealer Name', class: 'text' %>
+            <%= info.text_field :title, class: 'text' %>
+          </div>
+          <div class="col2">
+            <%= info.label :address, '', class: 'text' %>
+            <%= info.text_area :address, class: 'text' %>
+          </div>
+          <div class="col1">
+            <%= info.label :phone, '', class: 'text' %>
+            <%= info.text_field :phone, class: 'text' %>
+          </div>
+          <div class="col2">
+            <%= info.label :email, '', class: 'text' %>
+            <%= info.text_field :email, class: 'text' %>
+          </div>
+          <div class="col3 last">
+            <%= info.label :description, '', class: 'text' %>
+            <%= info.text_area :description, rows: 4, class: 'ckeditor text' %>
+          </div>
+          <h2><strong>Image Dealer</strong></h2>
+          <%= f.fields_for :images do |image| %>
+            <%= render 'shared/front/image_dealer_form_modal', f: image %>
+          <% end %>
+          <div class="links">
+            <%= link_to_add_association '<button type="submit" class="btn btn-sm btn-primary">+ Add Image</button>'.html_safe, f, :images %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>

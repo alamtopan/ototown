@@ -24,6 +24,7 @@ Ototown::Application.routes.draw do
   
   scope :user do 
     resources :products
+    post '/mass_actions',    to: 'products#mass_actions',     as: 'mass_actions'
     get '/archive_products',          to: 'products#archive',          as: 'archive_products'
     put '/change_status/:product_id', to: 'products#change_status',    as: 'change_status'
   end

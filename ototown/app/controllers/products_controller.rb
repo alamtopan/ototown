@@ -44,6 +44,18 @@ class ProductsController < UsersController
 		redirect_to :back
 	end
 
+	def mass_actions
+		@products = current_user.products.find(params[:product_ids])
+		if params[:select_actions] == '1'
+			@products.map{|prod| prod.update(status: !prod.status)}
+			flash[:notice] = "Products Has Changed Status"
+		elsif params[:select_actions] == '2'
+			@products.map{|prod| prod.delete}
+			flash[:notice] = "Products Has Deleted"
+		end
+		redirect_to :back
+	end
+
 	private
 		def set_product
 			@product = current_user.products.find_by!(params[:product_id])

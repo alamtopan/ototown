@@ -2,7 +2,7 @@
 	<div class="widget widget-nav-profile">
 		<h2><strong>Account</strong> menu</h2>
 		<ul>
-			<li class="vehicles <%= 'active' if action_name == 'user_home' %>">
+			<li class="settings <%= 'active' if action_name == 'user_home' %>">
 				<%= link_to 'Dashboard', user_home_path %>
 			</li>
 			<li class="vehicles <%= 'active' if action_name == 'index' %>">
@@ -10,9 +10,6 @@
 			</li>
 			<li class=" vehicles_archive <%= 'active' if action_name == 'archive' %>">
 				<%= link_to 'My Archive Product', archive_products_path %>
-			</li>
-			<li class=" settings <%= 'active' if action_name == 'user_profile' %>">
-				<%= link_to 'Profile', user_profile_path %>
 			</li>
 		</ul>
 	</div>				
@@ -25,6 +22,9 @@
 		</div>
 	</div>
 	<div class="widget widget-for-dealer">
-		<a href="#" class="btn2 dialog_request_dealer">I want to be a dealer</a>
+		<a href="#" class="btn2 dialog_request_dealer" data-toggle="modal" data-target="#">I want to be a dealer</a>
 	</div>
+</div>
+<div class="modal fade" id="dealer-form" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<%= render 'shared/front/dealer_form_modal' %>
 </div>

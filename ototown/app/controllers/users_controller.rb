@@ -3,17 +3,17 @@ class UsersController < ApplicationController
   before_filter :authenticate_user!
 
 	def user_home
-    @products = current_user.products.page(params[:page])
+    @user = current_user 
 		render layout: 'application_user'
 	end
 
 	def user_profile
-    @user = User.find(current_user.id) 
+    @user = current_user 
 		render layout: 'application_user'
 	end
 
   def update
-    @user = User.find(current_user.id)  
+    @user = current_user  
     if @user.update_attributes(params[:user])   
       flash[:notice] = "Successfully updated profile!" 
       redirect_to user_profile_path
@@ -27,6 +27,10 @@ class UsersController < ApplicationController
       %w(password password_confirmation).each do |attr|
         params[:admin].delete(attr)
       end if params[:admin] && params[:admin][:password].blank?
+    end
+
+    def set_object
+      @user = current_user
     end
 
 end
