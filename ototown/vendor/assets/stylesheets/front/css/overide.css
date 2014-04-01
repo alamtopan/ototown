@@ -306,7 +306,14 @@ label.error{
 }
 .credit-simulation{
 	border: 1px solid #EBEBEB;
-	background: #F8F8F8;
+	background: #fefefe;
+	background: -moz-linear-gradient(top, #fefefe 0%, #eceded 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fefefe), color-stop(100%, #eceded));
+	background: -webkit-linear-gradient(top, #fefefe 0%, #eceded 100%);
+	background: -o-linear-gradient(top, #fefefe 0%, #eceded 100%);
+	background: -ms-linear-gradient(top, #fefefe 0%, #eceded 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fefefe', endColorstr='#eceded',GradientType=0 );
+	background: linear-gradient(top, #fefefe 0%, #eceded 100%);
 	padding: 15px;
 	border-radius: 10px 10px 10px 10px;
 	-moz-border-radius: 10px 10px 10px 10px;
