@@ -1,8 +1,8 @@
 class User < Operator
   ROLE_ID = 2
 
-  attr_accessible :email, :username, :password, :password_confirmation, :profile_attributes, :role_id
-  
+  attr_accessible :email, :username, :password, :password_confirmation, :profile_attributes, :role_id,
+                  :dealer_info_attributes, :images_attributes
   devise :database_authenticatable, :lockable, :timeoutable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, :omniauth_providers => [:facebook]
@@ -19,7 +19,7 @@ class User < Operator
   accepts_nested_attributes_for :images, :reject_if => :all_blank, :allow_destroy => true
 
 
-  default_scope { includes(:dealer_info).where('dealer_infos.active = FALSE OR dealer_infos.active IS NULL') }
+  default_scope { where(role_id: ROLE_ID) }
 
   class << self
     def find_for_facebook_oauth(auth)
@@ -42,9 +42,18 @@ class User < Operator
 
   end
 
+  def not_dealer?
+    self.dealer_info.active.nil?
+  end
+
+  def request_dealer?
+    self.dealer_info.active == false
+  end
+
   protected
     def after_initialized
       self.profile = Profile.new if self.profile.blank?
+      self.dealer_info = DealerInfo.new if self.dealer_info.blank?
     end
   
 end

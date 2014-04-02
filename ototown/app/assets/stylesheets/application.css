@@ -24,4 +24,9 @@
 	*= require autocomplite
   */
 
+  /*modal*/
+  #dealer-form .modal-content{
+  	width: 700px;
+  }
+
 

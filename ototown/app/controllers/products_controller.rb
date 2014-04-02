@@ -19,10 +19,10 @@ class ProductsController < UsersController
 		@product = current_user.products.new(product_params)
 		if @product.save
 			flash[:notice] = 'Your Product Created'
-			redirect_to user_home_path
+			redirect_to products_path
 		else
 			flash[:alert] = @product.errors.full_messages
-			redirect_to form_product_path
+			redirect_to new_product_path
 		end
 	end
 

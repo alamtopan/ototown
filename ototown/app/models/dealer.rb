@@ -1,5 +1,4 @@
-class Dealer < Operator
-  ROLE_ID = 3
+class Dealer < User
 
   attr_accessible :email, :username, :password, :password_confirmation, :profile_attributes, 
                   :dealer_info_attributes, :role_id, :images_attributes
@@ -17,7 +16,7 @@ class Dealer < Operator
 
   after_initialize :after_initialized
 
-  default_scope { includes(:dealer_info).where('dealer_infos.active = TRUE') }
+  default_scope { includes(:dealer_info).where('dealer_infos.active = TRUE OR dealer_infos.active = false') }
 
   protected
     def after_initialized

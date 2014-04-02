@@ -4,7 +4,7 @@ class Backend::UsersController < Backend::ApplicationController
 
   def add_dealer
     @user = User.find(params[:id])
-    if @user.update({role_id: Dealer::ROLE_ID})
+    if @user.dealer_info(active: false)
       flash[:notice] = 'User Has Been Change To Dealer'
     else
       flash[:error] = 'Failed To Add Dealer'
