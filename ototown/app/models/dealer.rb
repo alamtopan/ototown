@@ -17,7 +17,7 @@ class Dealer < Operator
 
   after_initialize :after_initialized
 
-  default_scope { where(role_id: ROLE_ID) }
+  default_scope { includes(:dealer_info).where('dealer_infos.active = TRUE') }
 
   protected
     def after_initialized

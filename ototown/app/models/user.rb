@@ -19,7 +19,7 @@ class User < Operator
   accepts_nested_attributes_for :images, :reject_if => :all_blank, :allow_destroy => true
 
 
-  default_scope { where(role_id: ROLE_ID) }
+  default_scope { includes(:dealer_info).where('dealer_infos.active = FALSE OR dealer_infos.active IS NULL') }
 
   class << self
     def find_for_facebook_oauth(auth)
