@@ -38,7 +38,7 @@ class UsersController < ApplicationController
     end
 
     def set_object
-      @user = current_user || current_dealer
+      @user = current_user
     end
 
     def dealer_info_params
