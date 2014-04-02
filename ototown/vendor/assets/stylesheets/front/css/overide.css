@@ -366,4 +366,8 @@ label.error{
 }
 .post_block{
 	padding: 16px!important;
+	background: #F8F8F8;
+}
+.full-100{
+	width: 100%;
 }
