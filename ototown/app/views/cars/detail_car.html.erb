@@ -105,53 +105,55 @@
 							<div class="clear"></div>
 							<div class="clear"></div>
 						</div>
-						<div class="car_info credit-simulation">
-							<h2><strong>Credit</strong>& Simulation</h2>
-							<div id="calc-container">
-								<div id="calculator-tab">
-									<div id="calc-container">
-										<div id="calculator-tab">
-											<div class="sell_box step_2" style="">
-												<div class="col_2">
-													<div class="select_wrapper">
-														<label><span>* </span><strong>Price:</strong></label>
-														<input name="calc-price" type="text" class="text full100" id="calc-price" value="130,000,000">
+						<% if @car.advertise.present? && @car.advertise.active %>
+							<div class="car_info credit-simulation">
+								<h2><strong>Credit</strong>& Simulation</h2>
+								<div id="calc-container">
+									<div id="calculator-tab">
+										<div id="calc-container">
+											<div id="calculator-tab">
+												<div class="sell_box step_2" style="">
+													<div class="col_2">
+														<div class="select_wrapper">
+															<label><span>* </span><strong>Price:</strong></label>
+															<input name="calc-price" type="text" class="text full100" id="calc-price" value="<%= number_to_currency(@car.advertise.price, unit: '') %>">
+														</div>
+														<div class="select_wrapper">
+															<label><span>* </span><strong>Loan Term:</strong></label>
+															<input name="calc-tenor" type="number" class="text full100" id="calc-tenor1" value="<%= @car.advertise.loan_term %>"> <b class="font10">/Month</b>
+														</div>
 													</div>
-													<div class="select_wrapper">
-														<label><span>* </span><strong>Loan Term:</strong></label>
-														<input name="calc-tenor" type="number" class="text full100" id="calc-tenor1" value="24"> <b class="font10">/Month</b>
+													<div class="col_3">
+														<div class="select_wrapper">
+															<label><span>* </span><strong>Interest Rate:</strong></label>
+															<input name="calc-tenor2" type="number" class="text full100" id="calc-tenor2" value="<%= @car.advertise.interest_rate %>"> <b class="font10">%</b>
+														</div>
+														<div class="select_wrapper">
+															<label><span>* </span><strong>Down Payment:</strong></label>
+															<input name="calc-uangmuka" type="text" class="text full100" id="calc-uangmuka" value="<%= number_to_currency(@car.advertise.down_payment, unit: '') %>">
+														</div>
 													</div>
-												</div>
-												<div class="col_3">
-													<div class="select_wrapper">
-														<label><span>* </span><strong>Interest Rate:</strong></label>
-														<input name="calc-tenor2" type="number" class="text full100" id="calc-tenor2" value="9"> <b class="font10">%</b>
+													<div class="clear"></div>
+													<div class="clear"></div>
+													<h2></h2>
+													<div class="btn-next">
+														<a href="#" class="btn1 hitung" id="cicilan1">CALCULATE</a>
 													</div>
-													<div class="select_wrapper">
-														<label><span>* </span><strong>Down Payment:</strong></label>
-														<input name="calc-uangmuka" type="text" class="text full100" id="calc-uangmuka" value="39,000,000">
-													</div>
-												</div>
-												<div class="clear"></div>
-												<div class="clear"></div>
-												<h2></h2>
-												<div class="btn-next">
-													<a href="#" class="btn1 hitung" id="cicilan1">CALCULATE</a>
-												</div>
-												<br>
-												<div class="section_calculate">
-													<div>
-														<label><span>* </span><strong>Monthly Payment</strong></label>
-														<span class="cal">Rp.</span> <input type="text" class="text full-calculate" name="calc-angsuran" id="calc-angsuran">
+													<br>
+													<div class="section_calculate">
+														<div>
+															<label><span>* </span><strong>Monthly Payment</strong></label>
+															<span class="cal">Rp.</span> <input type="text" class="text full-calculate" name="calc-angsuran" id="calc-angsuran">
+														</div>
 													</div>
 												</div>
 											</div>
 										</div>
+										<div id="amortizationtable"></div>
 									</div>
-									<div id="amortizationtable"></div>
 								</div>
 							</div>
-						</div>
+						<% end %>
 						<div class="fb-comment-car">
 							<div id="fb-root"></div>
 							<script>

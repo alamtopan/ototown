@@ -15,6 +15,7 @@ class Product < ActiveRecord::Base
   accepts_nested_attributes_for :images, reject_if: :all_blank, allow_destroy: true
 
   validates :name, :category_id, :condition, :user_id, presence: true
+  validates_length_of :price, maximum: 12
 
   def slug_candidates
     "#{id}-#{name}"

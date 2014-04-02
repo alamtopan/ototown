@@ -61,6 +61,7 @@ Ototown::Application.routes.draw do
     resources :models
     resources :types
     resources :cars
+    resources :advertises
     resources :spareparts
     resources :page_contents
     resources :web_settings

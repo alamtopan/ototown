@@ -27,7 +27,7 @@
 				<div class="img"><%= link_to image_tag(product.images.first.image.url(:medium)), detail_car_path(product) if product.images.present? %></div>
 				<div class="general_info">
 					<h2><%= link_to product.name, detail_car_path(product)  %></h2>
-					<div class="date"><%= time_ago_in_words(product.updated_at) %></div>
+					<div class="date"><%= time_ago_in_words(product.created_at) %></div>
 					<div class="price"><%= number_to_currency product.price, unit: 'Rp' %></div>
 				</div>
 				<div class="location">
@@ -41,8 +41,8 @@
 				<div class="count_photo"><%= product.images.size %></div>
 				<div class="actions">
 					<%= link_to (product.status ? 'To Draft' : 'Republish'), change_status_path(product), method: 'put' %>
-					<a href="#" class="markered">Edit</a>
-					<a href="#" class="markered">View on site</a>
+					<%= link_to 'Edit', edit_product_path(product), class: 'markered' %>
+					<%= link_to 'View On Site', detail_car_path(product), class: 'markered' %>
 					<%= link_to 'Remove', product_path(product), method: 'delete', class: 'markered last car_archive', data:{confirm: 'Are You Sure For Delete This Product?'} %>
 				</div>
 			</div>

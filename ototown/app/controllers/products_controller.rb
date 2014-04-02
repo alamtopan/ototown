@@ -1,6 +1,6 @@
 class ProductsController < UsersController
 	layout 'application_user'
-	before_action :set_product, except: [:index, :archive,:new]
+	before_action :set_product, except: [:index, :archive,:new,:create]
 	before_action :generate_select, except: [:index, :archive,:destroy,:change_status]
 	def index
 		@products = current_user.products.where('status = TRUE').page(params[:page])
@@ -15,6 +15,10 @@ class ProductsController < UsersController
 		render layout: 'application_home'
 	end
 
+	def edit
+		render layout: 'application_home'
+	end
+
 	def create
 		@product = current_user.products.new(product_params)
 		if @product.save
@@ -23,6 +27,16 @@ class ProductsController < UsersController
 		else
 			flash[:alert] = @product.errors.full_messages
 			redirect_to new_product_path
+		end
+	end
+
+	def update
+		if @product.update(product_params)
+			flash[:notice] = 'Your Product Changed'
+			redirect_to products_path
+		else
+			flash[:alert] = @product.errors.full_messages
+			redirect_to edit_product_path(@product)
 		end
 	end
 
