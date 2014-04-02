@@ -31,6 +31,7 @@ class ProductsController < UsersController
 	end
 
 	def update
+		debugger
 		if @product.update(product_params)
 			flash[:notice] = 'Your Product Changed'
 			redirect_to products_path
@@ -89,7 +90,7 @@ class ProductsController < UsersController
 	    def product_params
 	      params.require(:product).permit(:condition,:name,:category_id,:description,:province,:city,:brand,:model, :fuel, :status,
 	      									:transmission,:year,:type_product,:color, :price,:negotiable, :location, :cylinders,
-	      									images_attributes: [:image])
+	      									images_attributes: [:id,:image,:_destroy])
 		end
 
 end
