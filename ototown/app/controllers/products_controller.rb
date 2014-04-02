@@ -1,6 +1,6 @@
 class ProductsController < UsersController
 	layout 'application_user'
-	before_action :set_product, except: [:index, :archive]
+	before_action :set_product, except: [:index, :archive,:new]
 	before_action :generate_select, except: [:index, :archive,:destroy,:change_status]
 	def index
 		@products = current_user.products.where('status = TRUE').page(params[:page])
