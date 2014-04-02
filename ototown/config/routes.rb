@@ -17,6 +17,9 @@ Ototown::Application.routes.draw do
   get   '/detail_news/:id',		to: 'publics#detail_news',       as: 'detail_news'
   get   '/news',     					to: 'publics#news',              as: 'news'
 
+  #Pages
+  get   '/page/:id',          to: 'publics#page',              as: 'page'
+
   #Users
   get   '/user_home',         to: 'users#user_home',           as: 'user_home'
   get   '/user_profile',      to: 'users#user_profile',        as: 'user_profile'
