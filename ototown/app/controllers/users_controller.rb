@@ -22,10 +22,16 @@ class UsersController < ApplicationController
   end
 
   def be_dealer
-    if @user.dealer_info.update(dealer_info_params.merge({active: false}))
-      flash[:notice] = 'Thanks You. We Will Verify Your Data'
+    if @user.update(dealer_info_params.merge({active: false}))
+      info = @user.dealer_info
+      info.active = false
+      if info.save
+        flash[:notice] = 'Thanks You. We Will Verify Your Data'
+      else
+        flash[:errors] = info.errors.full_messages
+      end
     else
-      flash[:errors] = dealer_info.errors.full_messages
+      flash[:errors] = @user.errors.full_messages
     end
     redirect_to user_profile_path
   end
@@ -42,7 +48,7 @@ class UsersController < ApplicationController
     end
 
     def dealer_info_params
-      params.require(:user).permit(dealer_info_attributes: [:title,:address,:phone,:description],
+      params.require(:user).permit(dealer_info_attributes: [:title,:address,:phone,:description,:email],
         images_attributes:[:image])
     end
 

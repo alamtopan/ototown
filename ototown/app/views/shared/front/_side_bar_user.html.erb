@@ -22,6 +22,11 @@
 		</div>
 	</div>
 	<div class="widget widget-for-dealer">
-		<a href="#" class="btn2 dialog_request_dealer" data-toggle="modal" data-target="#dealer-form">I want to be a dealer</a>
+		<% if @user.not_dealer? %>
+			<a href="#" class="btn2 dialog_request_dealer" data-toggle="modal" data-target="#dealer-form">I want to be a dealer</a>
+		<% end %>
+		<% if @user.request_dealer? %>
+			<a href="#" class="btn2 dialog_request_dealer">Not Verified Yet</a>
+		<% end %>
 	</div>
 </div>

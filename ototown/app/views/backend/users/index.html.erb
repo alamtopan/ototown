@@ -22,7 +22,7 @@
 				<td><a href="javascript:void(0)"><%= user.username %></a></td>
 				<td>Fullname</td>
 				<td><span class="label label-primary"><%= user.email %></span></td>
-				<th><%= link_to 'Add To Dealer', add_dealer_backend_user_path(user) %></th>
+				<th><%= user.dealer_info.active.present? ? link_to('Add To Dealer', add_dealer_backend_user_path(user)) : 'Has Been Dealer' %></th>
 				<td class="text-center">
 					<%= render partial: 'backend/shared/action_buttons', locals: {resource: user, confirmation: "#{user.username} will be deleted, are you sure ?"} %>
 				</td>
