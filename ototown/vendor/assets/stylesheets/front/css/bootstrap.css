@@ -4043,11 +4043,13 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-inverse .navbar-nav > li > a:hover,
 .navbar-inverse .navbar-nav > li > a:focus {
   color: #fff;
-  background-color: #6f5499;
-  background-image: -webkit-linear-gradient(top,#563d7c 0,#6f5499 100%);
-  background-image: linear-gradient(to bottom,#563d7c 0,#6f5499 100%);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#563d7c', endColorstr='#6F5499', GradientType=0);
+  background: #3090BF;
+  background: -moz-linear-gradient(top, #3090bf 0%, #2ab3e8 38%, #2ab3e8 67%, #3090bf 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #3090bf), color-stop(38%, #2ab3e8), color-stop(67%, #2ab3e8), color-stop(100%, #3090bf));
+  background: -webkit-linear-gradient(top, #3090bf 0%, #2ab3e8 38%, #2ab3e8 67%, #3090bf 100%);
+  background: -o-linear-gradient(top, #3090bf 0%, #2ab3e8 38%, #2ab3e8 67%, #3090bf 100%);
+  background: -ms-linear-gradient(top, #3090bf 0%, #2ab3e8 38%, #2ab3e8 67%, #3090bf 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#3090BF', endColorstr='#3090BF',GradientType=0 );
   text-shadow: 0 1px 0 #000;
 }
 .navbar-inverse .navbar-nav > .active > a,
@@ -4080,11 +4082,14 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-inverse .navbar-nav > .open > a:hover,
 .navbar-inverse .navbar-nav > .open > a:focus {
   color: #fff;
-  background-color: #6f5499;
-  background-image: -webkit-linear-gradient(top,#563d7c 0,#6f5499 100%);
-  background-image: linear-gradient(to bottom,#563d7c 0,#6f5499 100%);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#563d7c', endColorstr='#6F5499', GradientType=0);
+  background: #14bbec;
+  background: -moz-linear-gradient(top, #14bbec 0%, #208ccc 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #14bbec), color-stop(100%, #208ccc));
+  background: -webkit-linear-gradient(top, #14bbec 0%, #208ccc 100%);
+  background: -o-linear-gradient(top, #14bbec 0%, #208ccc 100%);
+  background: -ms-linear-gradient(top, #14bbec 0%, #208ccc 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#14bbec', endColorstr='#208ccc',GradientType=0 );
+  background: linear-gradient(top, #14bbec 0%, #208ccc 100%);
   text-shadow: 0 1px 0 #000;
 }
 @media (max-width: 767px) {

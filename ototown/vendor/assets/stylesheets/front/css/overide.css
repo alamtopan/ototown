@@ -371,3 +371,18 @@ label.error{
 .full-100{
 	width: 100%;
 }
+.h-content{
+	border-radius: 7px 7px 0 0;
+	-moz-border-radius: 7px 7px 0 0;
+	-webkit-border-radius: 7px 7px 0 0;
+	padding: 6px 20px;
+	color: #fff;
+	background: #14bbec;
+	background: -moz-linear-gradient(top, #14bbec 0%, #208ccc 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #14bbec), color-stop(100%, #208ccc));
+	background: -webkit-linear-gradient(top, #14bbec 0%, #208ccc 100%);
+	background: -o-linear-gradient(top, #14bbec 0%, #208ccc 100%);
+	background: -ms-linear-gradient(top, #14bbec 0%, #208ccc 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#14bbec', endColorstr='#208ccc',GradientType=0 );
+	background: linear-gradient(top, #14bbec 0%, #208ccc 100%);
+}

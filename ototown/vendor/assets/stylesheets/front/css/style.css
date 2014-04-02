@@ -12,14 +12,14 @@ input,textarea,a{
 	outline:0;
 }
 body{
-	font-family: 'PTSansRegular',Arial,sans-serif;
+	 
 	font-size:13px;
 	color:#607586;
 	background:#FFFFFF;
 	overflow-x:hidden;
 }
 a{
-	font-family: 'PTSansRegular',Arial,sans-serif;
+	 
 	font-size:13px;
 	color:#607586;
 	text-decoration:none;
@@ -28,7 +28,7 @@ a:hover{
 	text-decoration:underline;
 }
 strong{
-	font-family: 'PTSansBold',Arial,sans-serif;
+	
 	font-weight: bold;
 }
 p{
@@ -44,7 +44,7 @@ h1{
 }
 h2{
 	font-weight: normal;
-	font-family: 'PTSansRegular',Arial,sans-serif;
+	 
 	font-size: 24px;
 	line-height: 30px;
 	color: #293848;
@@ -55,7 +55,7 @@ h2{
 }
 h3{
 	font-weight: normal;
-	font-family: 'PTSansRegular',Arial,sans-serif;
+	 
 	font-size: 21px;
 	line-height: 28px;
 	color: #293848;
@@ -63,7 +63,7 @@ h3{
 }
 h4{
 	font-weight: bold;
-	font-family: 'PTSansBold',Arial,sans-serif;
+	
 	font-size: 18px;
 	line-height: 24px;
 	color: #293848;
@@ -71,7 +71,7 @@ h4{
 }
 h4 a{
 	font-weight: bold;
-	font-family: 'PTSansBold',Arial,sans-serif;
+	
 	font-size: 18px;
 	line-height: 24px;
 	color: #293848;
@@ -124,12 +124,13 @@ cite{
 	width: 100%;
 	margin: 0 auto;
 	text-align:left;
-	background-color: #6f5499;
-background-image: -webkit-linear-gradient(top,#563d7c 0,#6f5499 100%);
-background-image: linear-gradient(to bottom,#563d7c 0,#6f5499 100%);
-background-repeat: repeat-x;
-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#563d7c', endColorstr='#6F5499', GradientType=0);
-	box-shadow: 0px 3px 5px 1px rgba(0,0,0,0.40);
+	background: #3090BF;
+	background: -moz-linear-gradient(top, #3090bf 0%, #2ab3e8 38%, #2ab3e8 67%, #3090bf 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #3090bf), color-stop(38%, #2ab3e8), color-stop(67%, #2ab3e8), color-stop(100%, #3090bf));
+	background: -webkit-linear-gradient(top, #3090bf 0%, #2ab3e8 38%, #2ab3e8 67%, #3090bf 100%);
+	background: -o-linear-gradient(top, #3090bf 0%, #2ab3e8 38%, #2ab3e8 67%, #3090bf 100%);
+	background: -ms-linear-gradient(top, #3090bf 0%, #2ab3e8 38%, #2ab3e8 67%, #3090bf 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#3090BF', endColorstr='#3090BF',GradientType=0 );
 	position: relative;
 	z-index: 100;
 }
@@ -146,7 +147,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#563d7c', endC
 	font-style:italic;
 }
 #header .top_info .logo a{
-	font-family: 'PTSansBold',Arial,sans-serif;
+	
 	font-size: 48px;
 	color: #FFFFFF;
 	line-height: 60px;
@@ -159,14 +160,14 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#563d7c', endC
 #header .top_info .header_contacts{
 	width: 455px;
 	float: left;
-	font-family: 'PTSansRegular',Arial,sans-serif;
+	 
 	color: #B6BFC9;
 	font-size: 12px;
 	line-height: 18px;
 	padding: 8px 0 0 5px;
 }
 #header .top_info .header_contacts .phone{
-	font-family: 'PTSansBold',Arial,sans-serif;
+	
 	font-weight: bold;
 	font-size: 18px;
 	line-height: 24px;
@@ -204,7 +205,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#563d7c', endC
 	padding: 0;
 	padding: 1px 10px 0 10px;
 	line-height: 26px;
-	font-family: 'PTSansRegular',Arial,sans-serif;
+	 
 	color: #798FA1;
 	box-shadow: 0 1px 0 0 #FFFFFF;
 }
@@ -218,7 +219,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#563d7c', endC
 	margin: 0 0 0 7px;
 	padding: 0 0 5px 0;
 	display: inline-block;
-	font-family: 'PTSansBold',Arial,sans-serif;
+	
 	font-weight: bold;
 	text-align: center;
 	font-size: 11px;
@@ -251,7 +252,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#563d7c', endC
 #navigation span{
 	height: 29px;
 	display: none;
-	font-family: 'PTSansBold',Arial,sans-serif;
+	
 	font-weight: bold;
 	color: #FFFFFF;
 	font-size: 15px;
@@ -277,7 +278,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#563d7c', endC
 	display: inline-block;
 	height: 49px;
 	padding: 0 0 0 0;
-	font-family: 'PTSansBold',Arial,sans-serif;
+	
 	font-weight: bold;
 	color: #3B424A;
 	text-shadow:0 1px 0 #FFFFFF;
@@ -452,7 +453,7 @@ img.aligncenter {
     color: #FFFFFF;
     text-shadow:0 -1px 0 #000000;
     display: block;
-    font-family: 'PTSansBold',Arial,sans-serif;
+    
     height: 46px;
     text-align: center;
     font-size: 14px;
@@ -488,7 +489,7 @@ img.aligncenter {
     border-radius: 0;
     color: #FFFFFF;
     display: block;
-    font-family: 'PTSansBold',Arial,sans-serif;
+    
     height: 32px;
     font-size: 11px;
     text-align: center;
@@ -538,7 +539,6 @@ img.aligncenter {
 	width: 187px;
 	height: 145px;
 	padding: 9px 14px 10px 19px;
-	font-family: 'PTSansRegular';
 	font-size: 13px;
 	line-height: 21px;
 	color: #FFFFFF;
@@ -567,7 +567,6 @@ img.aligncenter {
 	left:0;
 	width: 187px;
 	padding: 7px 14px 10px 19px;
-	font-family: 'PTSansBold';
 	font-size: 13px;
 	line-height: 20px;
 	color: #FFFFFF;
@@ -587,7 +586,7 @@ img.aligncenter {
 	text-shadow:0 0 0 #FFB01F;
 	color: #FFB01F;
 	font-weight: normal;
-	font-family: 'PTSansRegular',Arial,sans-serif;
+	 
 }
 .recent .bx-controls{
 	position: absolute;
@@ -656,7 +655,7 @@ img.aligncenter {
 .recent_blog .post_block h5,
 .recent_blog .post_block h5 a{
 	font-weight: bold;
-	font-family: 'PTSansBold',Arial,sans-serif;
+	
 	font-size: 13px;
 	line-height: 16px;
 	color: #293848;
@@ -697,7 +696,6 @@ img.aligncenter {
 	margin-right: 1px;
 	cursor: pointer;
 	font-weight: bold;
-	font-family: 'PTSansBold',Arial,sans-serif;
 	font-size: 14px;
 	line-height: 38px;
 	padding: 1px 18px 0;
@@ -711,11 +709,14 @@ img.aligncenter {
 	border-radius: 5px 5px 0 0;
 }
 .tabs_wrapper ul.tabs li.current{
-	background-color: #6f5499;
-	background-image: -webkit-linear-gradient(top,#563d7c 0,#6f5499 100%);
-	background-image: linear-gradient(to bottom,#563d7c 0,#6f5499 100%);
-	background-repeat: repeat-x;
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#563d7c', endColorstr='#6F5499', GradientType=0);
+	background: #14bbec;
+	background: -moz-linear-gradient(top, #14bbec 0%, #208ccc 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #14bbec), color-stop(100%, #208ccc));
+	background: -webkit-linear-gradient(top, #14bbec 0%, #208ccc 100%);
+	background: -o-linear-gradient(top, #14bbec 0%, #208ccc 100%);
+	background: -ms-linear-gradient(top, #14bbec 0%, #208ccc 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#14bbec', endColorstr='#208ccc',GradientType=0 );
+	background: linear-gradient(top, #14bbec 0%, #208ccc 100%);
 	height: 39px;
 	border:0;
 	line-height: 40px;
@@ -744,7 +745,6 @@ img.aligncenter {
 }
 .home_tabs .box .results{
   	font-weight: bold;
-  	font-family: 'PTSansBold',Arial,sans-serif;
   	font-size: 13px;
   	line-height: 20px;
   	color: #335271;
@@ -778,7 +778,6 @@ img.aligncenter {
 }
 .tabs_carousel .slide a.title{
 	color: #293848;
-	font-family: 'PTSansBold',Arial,sans-serif;
 	font-weight: bold;
 	font-size: 13px;
 	line-height: 20px;
@@ -1072,7 +1071,6 @@ img.aligncenter {
 .video_box .post_block h5,
 .video_box .post_block h5 a{
 	font-weight: bold;
-	font-family: 'PTSansBold',Arial,sans-serif;
 	font-size: 13px;
 	line-height: 16px;
 	color: #293848;
@@ -1083,7 +1081,6 @@ img.aligncenter {
 	text-decoration: underline;
 }
 .video_box .post_block .date{
-	font-family: 'PTSansItalic',Arial,sans-serif;
 	font-size: 11px;
 	line-height: 16px;
 	font-style: italic;
@@ -1134,7 +1131,6 @@ img.aligncenter {
 .news .news_box h5,
 .news .news_box h5 a{
 	font-weight: bold;
-	font-family: 'PTSansBold',Arial,sans-serif;
 	font-size: 13px;
 	line-height: 16px;
 	color: #293848;
@@ -1145,7 +1141,6 @@ img.aligncenter {
 	text-decoration: underline;
 }
 .news .news_box .date{
-	font-family: 'PTSansItalic',Arial,sans-serif;
 	font-size: 11px;
 	line-height: 16px;
 	font-style: italic;
@@ -1161,22 +1156,23 @@ img.aligncenter {
 .news .all_news{
 	width: 81px;
 	height: 32px;
-	background-color: #6f5499;
-	background-image: -webkit-linear-gradient(top,#563d7c 0,#6f5499 100%);
-	background-image: linear-gradient(to bottom,#563d7c 0,#6f5499 100%);
-	background-repeat: repeat-x;
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#563d7c', endColorstr='#6F5499', GradientType=0);
+	background: #14bbec;
+	background: -moz-linear-gradient(top, #14bbec 0%, #208ccc 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #14bbec), color-stop(100%, #208ccc));
+	background: -webkit-linear-gradient(top, #14bbec 0%, #208ccc 100%);
+	background: -o-linear-gradient(top, #14bbec 0%, #208ccc 100%);
+	background: -ms-linear-gradient(top, #14bbec 0%, #208ccc 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#14bbec', endColorstr='#208ccc',GradientType=0 );
+	background: linear-gradient(top, #14bbec 0%, #208ccc 100%);
 	display: block;
 	line-height: 28px;
 	color: #FFFFFF;
-	font-family: 'PTSansBold',Arial,sans-serif;
 	font-size: 11px;
 	text-transform: uppercase;
 	text-decoration: none;
 	text-align: center;
 	font-weight: bold;
 	margin: -15px 0 0 1px;
-	text-shadow:0 -1px 0 #000000;
 	border-radius: 5px 5px 5px 5px;
 	-moz-border-radius: 5px 5px 5px 5px;
 	-webkit-border-radius: 5px 5px 5px 5px;
@@ -1228,7 +1224,7 @@ img.aligncenter {
     box-shadow: 0 1px 0 0 #FBDE99;
     color: #888888;
     display: block;
-    font-family: 'PTSansRegular',Arial,sans-serif;
+     
     height: 28px;
     line-height: 28px;
     margin: 0 0 15px;
@@ -1241,7 +1237,6 @@ img.aligncenter {
     color: #3B424A;
     text-shadow:0 0 0 #3B424A;
     display: block;
-    font-family: 'PTSansBold',Arial,sans-serif;
     font-size: 11px;
     height: 31px;
     line-height: 20px;
@@ -1269,7 +1264,7 @@ img.aligncenter {
 	color: #293848;
 	line-height: 20px;
 	font-weight: bold;
-	font-family: 'PTSansBold',Arial,sans-serif;
+	
 	padding: 0 0 25px 0;
 }
 .newsletter .txb{
@@ -1278,7 +1273,7 @@ img.aligncenter {
     border-radius: 4px 4px 4px 4px;
     color: #798FA1;
     display: inline-block;
-    font-family: 'PTSansRegular',Arial,sans-serif;
+     
     height: 39px;
     line-height: 38px;
     margin: 0 16px 0px 0;
@@ -1291,7 +1286,7 @@ img.aligncenter {
     color: #FFFFFF;
     text-shadow:0 -1px 0 #050A0F;
     display: inline-block;
-    font-family: 'PTSansBold',Arial,sans-serif;
+    
     font-size: 14px;
     height: 46px;
     line-height: 20px;
@@ -1338,7 +1333,7 @@ img.aligncenter {
 	z-index: 2;
 }
 .slider .slide .description h2{
-	font-family: 'PTSansBold',Arial,sans-serif;
+	
 	font-weight: bold;
 	color: #FFFFFF;
 	font-size:21px;
@@ -1504,7 +1499,7 @@ img.aligncenter {
 	width: 81px;
 	height: 34px;
 	background: url(../../../assets/buttons/button_3.png) no-repeat 0 0;
-	font-family: 'PTSansBold',Arial,sans-serif;
+	
 	font-size: 13px;
 	text-transform: uppercase;
 	text-align: center;
@@ -1655,18 +1650,19 @@ img.aligncenter {
 .search_auto .btn_search{
 	width: 104px;
 	height: 46px;
-	background-color: #6f5499;
-	background-image: -webkit-linear-gradient(top,#563d7c 0,#6f5499 100%);
-	background-image: linear-gradient(to bottom,#563d7c 0,#6f5499 100%);
-	background-repeat: repeat-x;
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#563d7c', endColorstr='#6F5499', GradientType=0);
+	background: #14bbec;
+	background: -moz-linear-gradient(top, #14bbec 0%, #208ccc 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #14bbec), color-stop(100%, #208ccc));
+	background: -webkit-linear-gradient(top, #14bbec 0%, #208ccc 100%);
+	background: -o-linear-gradient(top, #14bbec 0%, #208ccc 100%);
+	background: -ms-linear-gradient(top, #14bbec 0%, #208ccc 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#14bbec', endColorstr='#208ccc',GradientType=0 );
+	background: linear-gradient(top, #14bbec 0%, #208ccc 100%);
 	border:0;
 	cursor: pointer;
 	border-radius: 4px;
 	float: right;
-	font-family: 'PTSansBold';
 	color: #FFFFFF;
-	text-shadow:0 -1px 0 #050A0F;
 	text-transform: uppercase;
 	font-size: 14px;
 	margin: 13px 0 0 0;
@@ -1761,8 +1757,14 @@ img.aligncenter {
 }
 .pagination ul li a:hover,
 .pagination ul li.active a{
-	background-color: #6f5499;
-	border: solid 1px #293b4a;
+	background: #14bbec;
+	background: -moz-linear-gradient(top, #14bbec 0%, #208ccc 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #14bbec), color-stop(100%, #208ccc));
+	background: -webkit-linear-gradient(top, #14bbec 0%, #208ccc 100%);
+	background: -o-linear-gradient(top, #14bbec 0%, #208ccc 100%);
+	background: -ms-linear-gradient(top, #14bbec 0%, #208ccc 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#14bbec', endColorstr='#208ccc',GradientType=0 );
+	background: linear-gradient(top, #14bbec 0%, #208ccc 100%);
 	color: #FFFFFF;
 	text-shadow:none;
 }
@@ -1937,7 +1939,7 @@ img.aligncenter {
 	font-weight: bold;
 	color: #293848;
 	line-height: 20px;
-	font-family: 'PTSansBold',Arial,sans-serif;
+	
 	float: left;
 	padding: 0 10px 4px 0;
 }
@@ -1973,7 +1975,7 @@ img.aligncenter {
 }
 .comment_form label{
 	font-weight: bold;
-	font-family: 'PTSansBold',Arial,sans-serif;
+	
 	color: #293484;
 	display: block;
 	padding-left: 1px;
@@ -1987,7 +1989,7 @@ img.aligncenter {
     box-shadow:none;
     color: #888888;
     display: block;
-    font-family: 'PTSansRegular',Arial,sans-serif;
+     
     height: 28px;
     line-height: 28px;
     margin: 0 0 8px;
@@ -2003,7 +2005,7 @@ img.aligncenter {
     box-shadow:none;
     color: #888888;
     display: block;
-    font-family: 'PTSansRegular',Arial,sans-serif;
+     
     height: 100px;
     line-height: 20px;
     margin: 0 0 20px;
@@ -2019,7 +2021,7 @@ img.aligncenter {
     border-radius: 0;
     color: #FFFFFF;
     display: block;
-    font-family: 'PTSansBold',Arial,sans-serif;
+    
     height: 46px;
     font-size: 14px;
     cursor: pointer;
@@ -2070,7 +2072,7 @@ img.aligncenter {
 	padding: 13px 20px 20px;
 }
 .best_offer .description h2{
-	font-family: 'PTSansBold',Arial,sans-serif;
+	
 	font-weight: bold;
 	color: #FFFFFF;
 	font-size:21px;
@@ -2118,7 +2120,7 @@ img.aligncenter {
     border-radius: 0;
     color: #FFFFFF;
     display: block;
-    font-family: 'PTSansBold',Arial,sans-serif;
+    
     height: 33px;
     font-size: 11px;
     text-align: center;
@@ -2161,7 +2163,7 @@ img.aligncenter {
 	font-size: 13px;
 	height: 28px;
 	line-height: 28px;
-	font-family: 'PTSansRegular',Arial,sans-serif;
+	 
 	padding:1px 0 0 11px;
 	box-shadow: 0 1px 0 0 #FFFFFF;
 	width: auto;
@@ -2177,7 +2179,7 @@ img.aligncenter {
 	font-size: 13px;
 	top: 31px;
 	line-height: 28px;
-	font-family: 'PTSansRegular',Arial,sans-serif;
+	 
 	padding:0px 0 0 0px;
 	width: 100%;
 	position: absolute;
@@ -2340,7 +2342,7 @@ img.aligncenter {
 }
 .contact_form label{
 	font-weight: bold;
-	font-family: 'PTSansBold',Arial,sans-serif;
+	
 	color: #293484;
 	display: block;
 	padding-left: 1px;
@@ -2354,7 +2356,7 @@ img.aligncenter {
     box-shadow:none;
     color: #888888;
     display: block;
-    font-family: 'PTSansRegular',Arial,sans-serif;
+     
     height: 28px;
     line-height: 28px;
     margin: 0 0 8px;
@@ -2370,7 +2372,7 @@ img.aligncenter {
     box-shadow:none;
     color: #888888;
     display: block;
-    font-family: 'PTSansRegular',Arial,sans-serif;
+     
     height: 100px;
     line-height: 20px;
     margin: 0 0 20px;
@@ -2386,7 +2388,7 @@ img.aligncenter {
     border-radius: 0;
     color: #FFFFFF;
     display: block;
-    font-family: 'PTSansBold',Arial,sans-serif;
+    
     height: 46px;
     font-size: 14px;
     cursor: pointer;
@@ -2607,7 +2609,7 @@ ul.personal_list li .grey_area span{
 	margin: 0;
 	padding: 1px 10px 0 10px;
 	line-height: 28px;
-	font-family: 'PTSansRegular',Arial,sans-serif;
+	 
 	color: #798FA1;
 }
 .sell_box .txb.large{
@@ -2648,7 +2650,7 @@ ul.personal_list li .grey_area span{
     border-radius: 0;
     color: #FFFFFF;
     display: block;
-    font-family: 'PTSansBold',Arial,sans-serif;
+    
     height: 46px;
     float: right;
     font-size: 14px;
@@ -2909,7 +2911,7 @@ ul.personal_list li .grey_area span{
 	font-size: 16px;
 	line-height: 20px;
 	font-weight: bold;
-	font-family: 'PTSansBold',Arial,sans-serif;
+	
 	color: #F89D13;
 }
 .catalog_table li .grey_area,
@@ -3008,7 +3010,7 @@ ul.personal_list li .grey_area span{
 	float: right;
 	letter-spacing: 0.5px;
 	color: #FFB01F;
-	font-family: 'PTSansRegular',Arial,sans-serif;
+	 
 	font-weight:normal;
 	text-shadow:0 0 0 #FFB01F;
 }
@@ -3025,7 +3027,7 @@ ul.personal_list li .grey_area span{
 }
 .cars_id .id{
 	font-weight: bold;
-	font-family: 'PTSansBold',Arial,sans-serif;
+	
 	color: #293848;
 	line-height: 16px;
 	padding: 0 0 3px;
@@ -3096,7 +3098,7 @@ ul.personal_list li .grey_area span{
 	font-size: 28px;
 	color: #FFB01F;
 	line-height: 32px;
-	font-family: 'PTSansBold',Arial,sans-serif;
+	
 	font-weight: bold;
 	padding-bottom: 19px;
 }
@@ -3104,7 +3106,7 @@ ul.personal_list li .grey_area span{
 	font-size: 13px;
 	color: #607586;
 	font-weight: normal;
-	font-family: 'PTSansRegular',Arial,sans-serif;
+	 
 }
 .features_table {
 	padding: 0 0 19px;
@@ -3115,7 +3117,7 @@ ul.personal_list li .grey_area span{
 	padding: 7px 15px 8px;
 }
 .features_table .line .left{
-	font-family: 'PTSansBold',Arial,sans-serif;
+	
 	font-weight: bold;
 	color: #293848;
 	float: left;
@@ -3145,7 +3147,7 @@ ul.personal_list li .grey_area span{
 	line-height: 26px;
 	color: #FFB01F;
 	text-decoration: none;
-	font-family: 'PTSansBold',Arial,sans-serif;
+	
 	font-weight: bold;
 	text-transform: uppercase;
 	padding: 0 0 0 20px;
@@ -3270,7 +3272,7 @@ ul.personal_list li .grey_area span{
 	float: right;
 }
 #footer a.footer_logo{
-	font-family: 'PTSansBold',Arial,sans-serif;
+	
 	font-size: 38px;
 	color: #8F98A2;
 	line-height: 50px;
