@@ -30,6 +30,8 @@
 //= require ckeditor/init
 //= require cocoon
 //= require bootstrap-datepicker
+//= require front/calculation
+//= require front/culation
 
 $(document).ready(function(){
   //FANCYBOX
