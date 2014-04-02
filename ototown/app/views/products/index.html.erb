@@ -24,9 +24,9 @@
 				<div class="checkbox padd-left-cr">
 					<input type="checkbox" class="select_car" name="product_ids[]" value="<%= product.id %>">
 				</div>
-				<div class="img"><%= image_tag product.images.first.image.url(:medium) if product.images.present? %></div>
+				<div class="img"><%= link_to image_tag(product.images.first.image.url(:medium)), detail_car_path(product) if product.images.present? %></div>
 				<div class="general_info">
-					<h2><%= product.name %></h2>
+					<h2><%= link_to product.name, detail_car_path(product)  %></h2>
 					<div class="date"><%= time_ago_in_words(product.updated_at) %></div>
 					<div class="price"><%= number_to_currency product.price, unit: 'Rp' %></div>
 				</div>
@@ -35,7 +35,7 @@
 					Location: <%= product.location || '-' %>
 				</div>
 				<div class="statistics_info">
-					<div class="item-views">0 views</div>
+					<div class="item-views"><%= product.impressionist_count(:filter=>:all) %> views</div>
 					<div class="item-info"><%= product.condition %></div>
 				</div>
 				<div class="count_photo"><%= product.images.size %></div>

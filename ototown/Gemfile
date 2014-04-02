@@ -33,6 +33,7 @@ gem 'jbuilder', '~> 1.2'
   gem 'delayed_job_web'                 # Delayed Job Monitoring System
   gem 'acts_as_list'
   gem 'friendly_id'
+  gem 'impressionist'
   gem 'httparty'
   gem 'wash_out'
   gem 'htmlentities'
