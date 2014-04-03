@@ -5,7 +5,7 @@
 		<% @cars.each_with_index do |car, index| %>
 			<li class="is_dealer">
 				<%= link_to detail_car_path(car), class: 'thumb' do %>
-					<div class= "car_catalog"><%= image_tag car.images.first.image %></div>
+					<div class= "car_catalog"><%= image_tag car.images.first.image if car.images.present? %></div>
 				<% end %>
 				<div class="catalog_desc">
 					<div class="location">Location: <b><%= car.province %>, <%= car.city %></b></div>

@@ -2,6 +2,11 @@ class Product < ActiveRecord::Base
   attr_accessible :name, :description, :category_id, :condition, :type_product, :brand, :model, :year, :color,
                   :color, :plate_number, :exp_date, :kilometer, :door, :seat, :transmission, :engine,:price,
                   :cyclinders, :fuel, :location, :city, :province, :images_attributes, :user_id,:status,:negotiable
+  
+  is_impressionable
+  extend FriendlyId
+  friendly_id :slug_candidates, use: [:slugged, :finders]
+
   belongs_to :category
   belongs_to :user
   has_one :advertise
@@ -10,5 +15,9 @@ class Product < ActiveRecord::Base
   accepts_nested_attributes_for :images, reject_if: :all_blank, allow_destroy: true
 
   validates :name, :category_id, :condition, :user_id, presence: true
+  validates_length_of :price, maximum: 12
 
+  def slug_candidates
+    "#{id}-#{name}"
+  end
 end

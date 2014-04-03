@@ -24,10 +24,10 @@
 				<div class="checkbox padd-left-cr">
 					<input type="checkbox" class="select_car" name="product_ids[]" value="<%= product.id %>">
 				</div>
-				<div class="img"><%= image_tag product.images.first.image, class: "full-width" if product.images.present? %></div>
+				<div class="img"><%= link_to image_tag(product.images.first.image, class: "full-width"), detail_car_path(product) if product.images.present? %></div>
 				<div class="general_info">
-					<h2><%= product.name %></h2>
-					<div class="date"><%= time_ago_in_words(product.updated_at) %></div>
+					<h2><%= link_to product.name, detail_car_path(product)  %></h2>
+					<div class="date"><%= time_ago_in_words(product.created_at) %></div>
 					<div class="price"><%= number_to_currency product.price, unit: 'Rp' %></div>
 				</div>
 				<div class="location">
@@ -35,14 +35,14 @@
 					Location: <%= product.location || '-' %>
 				</div>
 				<div class="statistics_info">
-					<div class="item-views">0 views</div>
+					<div class="item-views"><%= product.impressionist_count(:filter=>:all) %> views</div>
 					<div class="item-info"><%= product.condition %></div>
 				</div>
 				<div class="count_photo"><%= product.images.size %></div>
 				<div class="actions">
 					<%= link_to (product.status ? 'To Draft' : 'Republish'), change_status_path(product), method: 'put' %>
-					<a href="#" class="markered">Edit</a>
-					<%= link_to "View on Site", detail_car_path(product.id), class: "markered", target: "_blank" %>
+					<%= link_to 'Edit', edit_product_path(product), class: 'markered', target: "_blank" %>
+					<%= link_to 'View On Site', detail_car_path(product), class: 'markered' %>
 					<%= link_to 'Remove', product_path(product), method: 'delete', class: 'markered last car_archive', data:{confirm: 'Are You Sure For Delete This Product?'} %>
 				</div>
 			</div>

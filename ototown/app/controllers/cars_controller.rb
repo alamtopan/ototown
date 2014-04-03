@@ -1,5 +1,5 @@
 class CarsController < ApplicationController
-  before_filter :generate_select, except: [:incdex,:show]
+  before_filter :generate_select, except: [:index,:show]
 	def cars
 		condition = params[:condition]
 		@cars = Car.where(condition: condition).page(params[:page]).per(8).order("id DESC")
@@ -8,6 +8,7 @@ class CarsController < ApplicationController
 
 	def detail_car
 		@car = Car.find(params[:id])
+		impressionist(@car)
 		render layout: 'application_car_detail'
 	end
 

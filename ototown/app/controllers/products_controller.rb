@@ -15,6 +15,10 @@ class ProductsController < UsersController
 		render layout: 'application_home'
 	end
 
+	def edit
+		render layout: 'application_home'
+	end
+
 	def create
 		@product = current_user.products.new(product_params)
 		if @product.save
@@ -23,6 +27,16 @@ class ProductsController < UsersController
 		else
 			flash[:alert] = @product.errors.full_messages
 			redirect_to new_product_path
+		end
+	end
+
+	def update
+		if @product.update(product_params)
+			flash[:notice] = 'Your Product Changed'
+			redirect_to products_path
+		else
+			flash[:alert] = @product.errors.full_messages
+			redirect_to edit_product_path(@product)
 		end
 	end
 
@@ -75,7 +89,7 @@ class ProductsController < UsersController
 	    def product_params
 	      params.require(:product).permit(:condition,:name,:category_id,:description,:province,:city,:brand,:model, :fuel, :status,
 	      									:transmission,:year,:type_product,:color, :price,:negotiable, :location, :cylinders,
-	      									images_attributes: [:image])
+	      									images_attributes: [:id,:image,:_destroy])
 		end
 
 end
