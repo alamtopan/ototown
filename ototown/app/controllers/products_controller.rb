@@ -2,11 +2,11 @@ class ProductsController < UsersController
 	layout 'application_user'
 	before_action :set_product, except: [:index, :archive, :new, :create]
 	before_action :generate_select, except: [:index, :archive, :destroy, :change_status]
-	
+
 	def index
 		@products = current_user.products.where('status = TRUE').page(params[:page])
 	end
-	
+
 	def archive
 		@products = current_user.products.where('status = FALSE').page(params[:page])
 	end
@@ -55,7 +55,7 @@ class ProductsController < UsersController
 			flash[:notice] = 'Your Product Has Deleted'
 		else
 			flash[:errors] = @product.errors.full_messages
-		end		
+		end
 		redirect_to :back
 	end
 
@@ -76,21 +76,21 @@ class ProductsController < UsersController
 			@product = current_user.products.find_by!(params[:product_id])
 		end
 
-	    def generate_select
-	      @models = Model.all.map{|m| [m.name, m.name]}
-	      @types = Type.all.map{|t| [t.name, t.name]}
-	      @brands = Brand.all.map{|t| [t.name, t.name]}
-	      @years = (1945..Time.new.year).to_a.map{|y| [y, y]}
-	      colors = ['Black','Red','White','Blue','Silver','Pink','Gray','Metalic','Silver Stone','Green',
-	        'Yellow','Purple','Maroon']
-	      @colors = colors.map{|c| [c,c]}
-	      @transmissions = ['Auto','Mechanic'].map{|tr| [tr,tr]}
-	    end
+    def generate_select
+      @models = Model.all.map{|m| [m.name, m.name]}
+      @types = Type.all.map{|t| [t.name, t.name]}
+      @brands = Brand.all.map{|t| [t.name, t.name]}
+      @years = (1945..Time.new.year).to_a.map{|y| [y, y]}
+      colors = ['Black','Red','White','Blue','Silver','Pink','Gray','Metalic','Silver Stone','Green',
+        'Yellow','Purple','Maroon']
+      @colors = colors.map{|c| [c,c]}
+      @transmissions = ['Auto','Mechanic'].map{|tr| [tr,tr]}
+    end
 
-	    def product_params
-	      params.require(:product).permit(:condition,:name,:category_id,:description,:province,:city,:brand,:model, :fuel, :status,
-	      									:transmission,:year,:type_product,:color, :price,:negotiable, :location, :cylinders,
-	      									images_attributes: [:id,:image,:_destroy])
+    def product_params
+      params.require(:product).permit(:condition,:name,:category_id,:description,:province,:city,:brand,:model, :fuel, :status,
+      									:transmission,:year,:type_product,:color, :price,:negotiable, :location, :cylinders,
+      									images_attributes: [:id,:image,:_destroy])
 		end
 
 end

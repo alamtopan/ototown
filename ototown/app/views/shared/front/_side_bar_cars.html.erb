@@ -1,100 +1,52 @@
 <div class="catalog_sidebar">
 	<div class="search_auto no-shadow">
-		<div class="sell_box sell_box_1">
-			<h2><strong>Search</strong> Vehicle</h2>
-			<div class="select_wrapper">
-				<span></span><strong><input type="checkbox" name="vehicle" value="Bike"> All</strong> 
-				<span></span><strong><input type="checkbox" name="vehicle" value="Bike"> Used</strong>
-				<span></span><strong><input type="checkbox" name="vehicle" value="Bike"> New</strong>
-				<span></span><strong><input type="checkbox" name="vehicle" value="Bike"> Classic</strong>
+		<% search = params[:search] %>
+		<%= form_for :search, url: search_path, method: 'get' do |f| %>
+			<div class="sell_box sell_box_1">
+				<h2><strong>Search</strong> Vehicle</h2>
+				<div class="select_wrapper">
+					<span></span><strong> <%= f.radio_button :condition, "All", {} %> All</strong>
+					<span></span><strong> <%= f.radio_button :condition, "Used", {} %> Used</strong>
+					<span></span><strong> <%= f.radio_button :condition, "New", {} %> New</strong>
+					<span></span><strong> <%= f.radio_button :classic, "Classic", {} %> Classic</strong>
+				</div>
+				<div class="br"></div>
+				<div class="select_wrapper">
+					<label><span>* </span><strong>Brand:</strong></label>
+					<%= f.select :brand, options_for_select(@brands,search[:brand]), {include_blank: 'Choose One'}, class: 'select_5', id: 'brand_product', data: {url: brand_model_path} %>
+				</div>
+				<div class="select_wrapper">
+					<label><span>* </span><strong>Model: </strong></label>
+			    <%= f.select :model, options_for_select([]), {include_blank: 'Choose One'}, class: 'select_5', id: 'model_product' %>
+				</div>
+				<div class="select_wrapper">
+					<label><span>* </span><strong>Transmission</strong></label>
+			    <%= f.select :transmission, options_for_select(@transmissions,search[:transmission]), {include_blank: 'Choose One'}, class: 'select_5' %>
+				</div>
+				<div class="select_wrapper">
+					<label><span>* </span><strong>Year:</strong></label>
+			    <%= f.select :year, options_for_select(@years,search[:year]), {include_blank: 'Choose One'}, class: 'select_5' %>
+				</div>
+				<div class="select_wrapper">
+					<label><span>* </span><strong>Body Type:</strong></label>
+			    <%= f.select :type_product, options_for_select(@types,search[:type_product]), {include_blank: 'Choose One'}, class: 'select_5' %>
+				</div>
+				<div class="select_wrapper">
+					<label><span>* </span><strong>Province </strong></label>
+					<%= f.text_field :province, class: 'text 100full', id: 'province_attributes', value: search[:province] %>
+				</div>
+				<div class="select_wrapper">
+					<label><span>* </span><strong>City </strong></label>
+					<%= f.text_field :city, class: 'txb', id: 'city_attributes', value: search[:city] %>
+				</div>
+				<div class="input_wrapper" style="width:100%">
+					<label><span>* </span><strong>Keyword:</strong></label>
+					<%= f.text_field :name, class: 'txb', value: search[:name] %>
+				</div>
+				<%= f.submit :search, class: 'btn_search' %>
+				<div class="clear"></div>
 			</div>
-			<div class="br"></div>
-			<div class="select_wrapper">
-				<label><span>* </span><strong>Brand:</strong></label>
-				<select class="select_5">
-					<option value="0">Select</option>
-					<option value="1">Audi</option>
-					<option value="2">Mercedes-Benz</option>
-					<option value="3">BMW</option>
-					<option value="4">Lexus</option>
-					<option value="5">Lincoln</option>
-					<option value="6">Ford</option>
-					<option value="7">Fiat</option>
-					<option value="8">Dodge</option>
-				</select>
-			</div>
-			<div class="select_wrapper">
-				<label><span>* </span><strong>Model: </strong></label>
-				<select class="select_5">
-					<option value="0">Select</option>
-					<option value="1">R8</option>
-					<option value="2">S500</option>
-					<option value="3">540i</option>
-					<option value="4">RX300</option>
-					<option value="5">Navigator</option>
-					<option value="6">Taurus</option>
-					<option value="7">Doblo</option>
-					<option value="8">Viper</option>
-				</select>
-			</div>
-			<div class="select_wrapper">
-				<label><span>* </span><strong>Transmission</strong></label>
-				<select class="select_5">
-					<option value="0">Select</option>
-					<option value="1">Auto</option>
-					<option value="2">Mechanic</option>
-				</select>
-			</div>
-			<div class="select_wrapper">
-				<label><span>* </span><strong>Year:</strong></label>
-				<select class="select_5">
-					<option value="0">Select</option>
-					<option value="1">2013</option>
-					<option value="2">2012</option>
-					<option value="3">2011</option>
-					<option value="4">2010</option>
-					<option value="5">2009</option>
-					<option value="6">2008</option>
-					<option value="7">2007</option>
-					<option value="8">2006</option>
-				</select>
-			</div>
-			<div class="select_wrapper">
-				<label><span>* </span><strong>Body Type:</strong></label>
-				<select class="select_5">
-					<option value="0">Select</option>
-					<option value="1">Sedan</option>
-					<option value="2">Coupe</option>
-					<option value="3">SUV</option>
-					<option value="4">Hatchback</option>
-					<option value="5">Tagra</option>
-				</select>
-			</div>
-			<div class="select_wrapper">
-				<label><span>* </span><strong>Province </strong></label>
-				<select class="select_5">
-					<option value="0">Select</option>
-					<option value="1">DKI Jakarta</option>
-					<option value="2">Jawa Barat</option>
-					<option value="3">Kalimantan</option>
-				</select>
-			</div>
-			<div class="select_wrapper">
-				<label><span>* </span><strong>City </strong></label>
-				<select class="select_5">
-					<option value="0">Select</option>
-					<option value="1">Jakarta</option>
-					<option value="2">Bandung</option>
-					<option value="3">Sukabumi</option>
-				</select>
-			</div>
-			<div class="input_wrapper" style="width:100%">
-				<label><span>* </span><strong>Keyword:</strong></label>
-				<input type="text" class="txb" value=""/>
-			</div>
-			<input type="submit" value="Search" class="btn_search">
-			<div class="clear"></div>
-		</div>
+		<% end %>
 		<div class="clear"></div>
 	</div>
 </div>

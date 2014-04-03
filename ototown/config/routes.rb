@@ -1,6 +1,7 @@
 Ototown::Application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
   root 'publics#home'
+  get  '/search', to: 'publics#search'
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   #Dealers
   get   '/dealers',           to: 'dealers#dealers',           as: 'dealers'
@@ -13,9 +14,6 @@ Ototown::Application.routes.draw do
   #Spareparts
   get   '/spareparts',   to: 'spareparts#spareparts',        as: 'spareparts'
   get   '/detail_sparepart/:id',    to: 'spareparts#detail_sparepart',           as: 'detail_sparepart'
-  
-  # get   '/form_product',      to: 'cars#form_product',         as: 'form_product'
-  # post  '/form_product',      to: 'cars#create_product',       as: 'create_product'
 
   #News
   get   '/detail_news/:id',		to: 'publics#detail_news',       as: 'detail_news'
@@ -28,23 +26,23 @@ Ototown::Application.routes.draw do
   get   '/user_home',         to: 'users#user_home',           as: 'user_home'
   get   '/user_profile',      to: 'users#user_profile',        as: 'user_profile'
   put   '/user_profile',      to: 'users#update',              as: 'user_update'
-  
-  scope :user do 
+
+  scope :user do
     resources :products
     post '/mass_actions',             to: 'products#mass_actions',     as: 'mass_actions'
     get '/archive_products',          to: 'products#archive',          as: 'archive_products'
     put '/change_status/:product_id', to: 'products#change_status',    as: 'change_status'
     post '/be-a-dealer',              to: 'users#be_dealer',           as: 'be_dealer'
   end
-  
+
   # Product
-  
+
 
 
   get   '/brand_model',       to: 'publics#brand_model',         as: 'brand_model'
 
   namespace :backend do
-    get '/',                  to: 'home#index'                 
+    get '/',                  to: 'home#index'
     devise_for :admins, :controllers => { sessions: "backend/admins/sessions" }
     resources :admins  do
       resources :profiles

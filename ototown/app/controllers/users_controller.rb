@@ -12,13 +12,13 @@ class UsersController < ApplicationController
 	end
 
   def update
-    if @user.update_attributes(params[:user])   
-      flash[:notice] = "Successfully updated profile!" 
+    if @user.update_attributes(params[:user])
+      flash[:notice] = "Successfully updated profile!"
       redirect_to user_profile_path
-    else  
+    else
       flash[:errors] = @user.errors.full_messages
       redirect_to user_profile_path
-    end  
+    end
   end
 
   def be_dealer
@@ -36,7 +36,7 @@ class UsersController < ApplicationController
     redirect_to user_profile_path
   end
 
-  private    
+  private
     def draw_password
       %w(password password_confirmation).each do |attr|
         params[:admin].delete(attr)

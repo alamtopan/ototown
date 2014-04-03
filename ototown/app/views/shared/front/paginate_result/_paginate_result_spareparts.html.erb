@@ -1,6 +1,6 @@
 <div class="cars_categories">
 	<div class="pagination nalog">
-		<%= paginate @spareparts %>
+		<%= paginate @spareparts.present? || @products.blank? ? @spareparts : @products %>
 	</div>
 </div>
-<h1><strong>List Spareparts</strong></h1>
+<h1><strong><%= params[:condition] %> Spareparts</strong></h1>

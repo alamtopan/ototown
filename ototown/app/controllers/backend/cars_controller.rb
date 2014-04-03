@@ -33,7 +33,6 @@ class Backend::CarsController < Backend::ApplicationController
 
     def choice_condition
       @condition = [
-                      "All",
                       "Used",
                       "New",
                       "Classic"

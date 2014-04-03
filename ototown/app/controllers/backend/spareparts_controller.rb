@@ -29,7 +29,6 @@ class Backend::SparepartsController < Backend::ApplicationController
 
     def choice_condition
       @condition = [
-                      "All",
                       "Used",
                       "New",
                       "Classic"

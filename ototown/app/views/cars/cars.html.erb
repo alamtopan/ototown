@@ -31,9 +31,9 @@
 				</div>
 			</li>
 		<% end %>
-		<% flash[:error] = "No Data Found" unless @cars.present? %>
+		<%= raw '<div class="alert alert-danger"><a class="close" data-dismiss="alert">×</a>No Data Found</div>' unless @cars.present? %>
 	</ul>
-	<div class="bottom_cat=alog_box padding-top0">		
+	<div class="bottom_cat=alog_box padding-top0">
 		<div class="pagination">
 			<%= paginate @cars %>
 		</div>
