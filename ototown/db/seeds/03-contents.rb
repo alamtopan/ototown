@@ -33,7 +33,7 @@ module SeedContent
       },
       {
         title: 'About Us',
-        content: "",
+        content: File.open("#{Rails.root}/db/fixtures/contents/content.txt").read,
         category: 'About Us',
         pic: ''
       },
@@ -45,25 +45,25 @@ module SeedContent
       },
       {
         title: 'FAQ',
-        content: "",
+        content: File.open("#{Rails.root}/db/fixtures/contents/content.txt").read,
         category: 'About Us',
         pic: ''
       },
       {
         title: 'How do I add an offer?',
-        content: "",
+        content: File.open("#{Rails.root}/db/fixtures/contents/content.txt").read,
         category: 'Need Help',
         pic: ''
       },
       {
         title: 'How do I find a vehicle',
-        content: "",
+        content: File.open("#{Rails.root}/db/fixtures/contents/content.txt").read,
         category: 'Need Help',
         pic: ''
       },
       {
         title: 'Price list',
-        content: "",
+        content: File.open("#{Rails.root}/db/fixtures/contents/content.txt").read,
         category: 'Need Help',
         pic: ''
       }

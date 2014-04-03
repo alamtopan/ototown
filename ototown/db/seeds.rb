@@ -9,6 +9,8 @@
 puts "Seeding data"
 
 WebSetting.create({
+	pav_icon: File.new("#{Rails.root}/public/content/logo/icon.png"),
+	logo: File.new("#{Rails.root}/public/content/logo/ototown.png"),
 	title: "www.ototown.com",
 	description: "",
 	keywords: "",

@@ -8,7 +8,7 @@
 					<div class= "car_catalog"><%= image_tag car.images.first.image if car.images.present? %></div>
 				<% end %>
 				<div class="catalog_desc">
-					<div class="location">Location: <b><%= car.province %>, <%= car.city %></b></div>
+					<div class="location">Location: <b><%= car.city %></b></div>
 					<div class="title_box">
 						<h4>
 							<%= link_to detail_car_path(car) do %>

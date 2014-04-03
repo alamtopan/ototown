@@ -55,7 +55,7 @@
           <%= link_to 'Classic Cars',cars_path(:Classic) %> 
         </li>
         <li>
-          <%= link_to 'Spare Parts',cars_path(:Used) %> 
+          <%= link_to 'Spare Parts',spareparts_path %> 
         </li>
         <li>
           <%= link_to "Compare Cars <span class='compare'>2</span>".html_safe,cars_path(:Used) %> 
@@ -83,7 +83,7 @@
               </li>
               <li class="divider"></li>
               <li><%= link_to 'Add Auto', new_product_path %></li>
-              <li><a href="#">My Reclame</a></li>
+              <li><%= link_to 'My Reclame', products_path %></li>
               <li class="divider"></li>
               <li>
                 <%= link_to "Sign Out", destroy_user_session_path, method: 'delete' %>

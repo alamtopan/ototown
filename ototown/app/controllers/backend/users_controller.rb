@@ -4,12 +4,14 @@ class Backend::UsersController < Backend::ApplicationController
 
   def add_dealer
     @user = User.find(params[:id])
-    if @user.dealer_info(active: false)
+    usr = @user.dealer_info
+    usr.active = false
+    if usr.save
       flash[:notice] = 'User Has Been Change To Dealer'
     else
       flash[:error] = 'Failed To Add Dealer'
     end
-    redirect_to edit_backend_dealer_path(@user)
+    redirect_to dealers_request_backend_dealers_path 
   end
 
   private    

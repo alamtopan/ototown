@@ -9,6 +9,10 @@ Ototown::Application.routes.draw do
   #Cars
   get   '/cars/:condition',   to: 'cars#cars',                 as: 'cars'
   get   '/detail_car/:id',    to: 'cars#detail_car',           as: 'detail_car'
+
+  #Spareparts
+  get   '/spareparts',   to: 'spareparts#spareparts',        as: 'spareparts'
+  get   '/detail_sparepart/:id',    to: 'spareparts#detail_sparepart',           as: 'detail_sparepart'
   
   # get   '/form_product',      to: 'cars#form_product',         as: 'form_product'
   # post  '/form_product',      to: 'cars#create_product',       as: 'create_product'

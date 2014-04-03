@@ -3,8 +3,24 @@ class Backend::CarsController < Backend::ApplicationController
   prepend_before_filter :generate_select, except: [:index,:show]
   before_filter :choice_condition
 
+  def edit
+    @car = Car.find_by(slug: params[:id])
+  end
+
+  def update
+    @car = Car.find_by(slug: params[:id])
+    if @car.update(product_params)
+      flash[:notice] = "Your Product Changed"
+      redirect_to backend_cars_path
+    else
+      flash[:alert] = @car.errors.full_messages
+      redirect :back
+    end
+  end
+
   private
     def generate_select
+      @users = User.all.map{|u| [u.username, u.id]}
       @models = Model.all.map{|m| [m.name, m.name]}
       @types = Type.all.map{|t| [t.name, t.name]}
       @brands = Brand.all.map{|t| [t.name, t.name]}
@@ -22,5 +38,11 @@ class Backend::CarsController < Backend::ApplicationController
                       "New",
                       "Classic"
                     ]
+    end
+
+    def product_params
+      params.require(:car).permit(:condition,:name,:category_id,:description,:province,:city,:brand,:model, :fuel, :status,
+                        :transmission,:year,:type_product,:color, :price,:negotiable, :location, :cylinders,
+                        images_attributes: [:id,:image,:_destroy])
     end
 end

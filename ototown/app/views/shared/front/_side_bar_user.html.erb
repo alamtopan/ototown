@@ -13,28 +13,22 @@
 			</li>
 		</ul>
 	</div>
-	<div>
-		<div id="loan_calculator-2" class="widget_loan_calculator">
-			<div class="loan calculator-wrapper">
-				<div class="widget contacts_widget credit-simulation">
-					<h2><strong>Contact</strong></h2>
-					<div class="post">
-						<%= image_tag @user.profile.avatar.url(:medium), style: 'max-width:70px;float:left;margin-right:20px;' %>
-						<p><b><%= @user.profile.full_name %></b></p>
-						<p class="member-at">Join At : <br><%= @user.created_at.strftime('%d %b %Y') %></p>
-						<div class="clear"></div>
-					</div><br>
-					<div class="addr detail"><%= @user.profile.address %></div>
-					<div class="phones detail"><%= @user.profile.phone %></div>
-					<div class="email detail single_line">
-						<a href="mailto:<%= @user.email %>" rel="moc/eciujretniw//elpmaxe" class="email_link_replace markered"><%= @user.email %>
-						</a>
-					</div>
-					<div class="clear"></div>
-				</div>
-			</div>
+	<div class="widget contacts_widget credit-simulation width_user_info">
+		<h2><strong>Contact</strong></h2>
+		<div class="post">
+			<%= image_tag @user.profile.avatar.url(:medium), style: 'max-width:70px;float:left;margin-right:20px;' %>
+			<p><b><%= @user.profile.full_name %></b></p>
+			<p class="member-at">Join At : <br><%= @user.created_at.strftime('%d %b %Y') %></p>
+			<div class="clear"></div>
+		</div><br>
+		<div class="addr detail"><%= @user.profile.address %></div>
+		<div class="phones detail"><%= @user.profile.phone %></div>
+		<div class="email detail single_line">
+			<a href="mailto:<%= @user.email %>" rel="moc/eciujretniw//elpmaxe" class="email_link_replace markered"><%= @user.email %>
+			</a>
 		</div>
-	</div>					
+		<div class="clear"></div>
+	</div>				
 	<div class="widget widget-for-dealer">
 		<% if @user.not_dealer? %>
 			<a href="#" class="btn2 dialog_request_dealer" data-toggle="modal" data-target="#dealer-form">I want to be a dealer</a>

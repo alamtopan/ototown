@@ -432,3 +432,6 @@ label.error{
 	width: 100%;
 	height: 98px;
 }
+.profile_content{
+	min-height: 200px;
+}

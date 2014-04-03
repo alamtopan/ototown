@@ -37,6 +37,10 @@ only screen and (min-device-width: 700px) and (max-device-width: 800px){
 		top:20px;
 		right: 20px;
 	}
+	.width20{
+		width: 90%;
+	}
+	
 	/*
 	================================================================================
 	|                                     NAVIGATION                               |

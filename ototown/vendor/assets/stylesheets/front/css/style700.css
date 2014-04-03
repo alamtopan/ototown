@@ -40,6 +40,9 @@ only screen and (min-device-width: 600px) and (max-device-width: 700px){
 		right: 20px;
 		padding: 10px 0 0 0;
 	}
+	.width20{
+		width: 90%;
+	}
 	/*
 	================================================================================
 	|                                     NAVIGATION                               |

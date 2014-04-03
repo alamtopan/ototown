@@ -16,13 +16,13 @@
 			</tr>
 		</thead>
 		<tbody>
-		<% @users.each do |user| %>
+		<% @users.each_with_index do |user, index| %>
 			<tr>
-				<td class="text-center">1</td>
+				<td class="text-center"><%= index+1 %></td>
 				<td><a href="javascript:void(0)"><%= user.username %></a></td>
-				<td>Fullname</td>
+				<td><%= user.profile.full_name if user.profile.present? %></td>
 				<td><span class="label label-primary"><%= user.email %></span></td>
-				<th><%= user.dealer_info.active.present? ? link_to('Add To Dealer', add_dealer_backend_user_path(user)) : 'Has Been Dealer' %></th>
+				<th><%= user.dealer_info.active.nil? ? link_to('Add To Dealer', add_dealer_backend_user_path(user)) : 'Has Been Dealer' %></th>
 				<td class="text-center">
 					<%= render partial: 'backend/shared/action_buttons', locals: {resource: user, confirmation: "#{user.username} will be deleted, are you sure ?"} %>
 				</td>

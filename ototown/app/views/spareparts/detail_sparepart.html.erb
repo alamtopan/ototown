@@ -4,109 +4,79 @@
 			<div class="breadcrumbs">
 				<a href="#">Home</a>
 				<%= image_tag '../../assets/marker_2.gif' %>
-				<a href="#">Cars</a>
+				<a href="#">spareparts</a>
 				<%= image_tag '../../assets/marker_2.gif' %>
-				<%= @car.name %>
+				<%= @sparepart.name %>
 			</div>
 			<div class="main_wrapper">
 				<div class="main_wrapper ">
 					<div class="cars_id">
-						<div class="id">Brand <span><%= @car.brand %></span></div>
-						<div class="views">Model <%= "#{@car.model} #{@car.year}" %></div>
+						<div class="id">Brand <span><%= @sparepart.brand %></span></div>
+						<div class="views">Model <%= "#{@sparepart.model} #{@sparepart.year}" %></div>
 					</div>
 					<h1>
-						<%= @car.name %>		 
+						<%= @sparepart.name %>		 
 					</h1>
 					<div class="car_image_wrapper">
-						<%= render 'shared/front/slide_car_detail', images: @car.images %>
+						<%= render 'shared/front/slide_car_detail', images: @sparepart.images %>
 					</div>
 					<div class="car_characteristics">
 						<a href="#" class="print" onclick="window.print();return false;"></a>
-						<div class="price" data-currency="Rp" data-price="<%= @car.price %>" style="margin-left:10px; margin-top:15px;">
-							<%= number_to_currency(@car.price, unit: 'Rp.') %> 
+						<div class="price" data-currency="Rp" data-price="<%= @sparepart.price %>" style="margin-left:10px; margin-top:15px;">
+							<%= number_to_currency(@sparepart.price, unit: 'Rp.') %> 
 						</div>
 						<div class="clear"></div>
 						<div class="features_table">
 							<div class="line">
 								<div class="left">Model, Body type:</div>
-								<div class="right"><%= "#{@car.model}, #{@car.type_product}" %></div>
+								<div class="right"><%= "#{@sparepart.model}, #{@sparepart.type_product}" %></div>
 							</div>
 							<div class="line">
 								<div class="left">Fabrication:</div>
-								<div class="right"><%= @car.year %></div>
-							</div>
-							<div class="line">
-								<div class="left">Fuel:</div>
-								<div class="right"><%= @car.fuel %></div>
-							</div>
-							<div class="line">
-								<div class="left">Engine:</div>
-								<div class="right"><%= @car.engine %></div>
-							</div>
-							<div class="line">
-								<div class="left">Transmision:</div>
-								<div class="right"><%= @car.transmission %></div>
-							</div>
-							<div class="line">
-								<div class="left">Color:</div>
-								<div class="right">
-									<span class="color" style="background-color:<%= @car.color %>"></span> <%= @car.color %>
-								</div>
+								<div class="right"><%= @sparepart.year %></div>
 							</div>
 							<div class="line">
 								<div class="left">Condition:</div>
 								<div class="right">
-									<%= @car.condition %>
+									<%= @sparepart.condition %>
 								</div>
 							</div>
 							<div class="line">
 								<div class="left">Year:</div>
 								<div class="right">
-									<%= @car.year %>
+									<%= @sparepart.year %>
 								</div>
 							</div>
 							<div class="line">
-								<div class="left">Plate Number:</div>
+								<div class="left">Location:</div>
 								<div class="right">
-									<%= "#{@car.plate_number}, #{@car.city}, #{@car.province}" %>
+									<%= "#{@sparepart.city}, #{@sparepart.province}" %>
 								</div>
 							</div>
 							<div class="line">
 								<div class="left">Expire Date:</div>
 								<div class="right">
-									<%= @car.exp_date %>
+									<%= @sparepart.exp_date %>
 								</div>
-							</div>
-							<div class="line">
-								<div class="left">Doors:</div>
-								<div class="right"><%= @car.door %></div>
-							</div>
-							<div class="line">
-								<div class="left">Seats:</div>
-								<div class="right"><%= @car.seat %></div>
-							</div>
-							<div class="line">
-								<div class="left">Cyclinders:</div>
-								<div class="right"><%= @car.cyclinders %></div>
 							</div>
 						</div>
 					</div>
 					<div class="clear"></div>
 					<div class="info_box">
-						<div class="car_contacts">
+						<div class="sparepart_contacts">
 							<h2><strong>Detail</strong> Information</h2>
 							<div>
 								<b>Location: </b>
 								<br/> 
-								<%= @car.location %>
+								<%= @sparepart.location %>
 							</div><br/>
-							<%= @car.description.html_safe %>
+							<%= @sparepart.description.html_safe %>
 							<p></p>
 							<div class="clear"></div>
 							<div class="clear"></div>
 						</div>
-						<% if @car.advertise.present? && @car.advertise.active %>
-							<div class="car_info credit-simulation">
+						<% if @sparepart.advertise.present? && @sparepart.advertise.active %>
+							<div class="sparepart_info credit-simulation">
 								<h2><strong>Credit</strong>& Simulation</h2>
 								<div id="calc-container">
 									<div id="calculator-tab">
@@ -116,21 +86,21 @@
 													<div class="col_2">
 														<div class="select_wrapper">
 															<label><span>* </span><strong>Price:</strong></label>
-															<input name="calc-price" type="text" class="text full100" id="calc-price" value="<%= number_to_currency(@car.advertise.price, unit: '') %>">
+															<input name="calc-price" type="text" class="text full100" id="calc-price" value="<%= number_to_currency(@sparepart.advertise.price, unit: '') %>">
 														</div>
 														<div class="select_wrapper">
 															<label><span>* </span><strong>Loan Term:</strong></label>
-															<input name="calc-tenor" type="number" class="text full100" id="calc-tenor1" value="<%= @car.advertise.loan_term %>"> <b class="font10">/Month</b>
+															<input name="calc-tenor" type="number" class="text full100" id="calc-tenor1" value="<%= @sparepart.advertise.loan_term %>"> <b class="font10">/Month</b>
 														</div>
 													</div>
 													<div class="col_3">
 														<div class="select_wrapper">
 															<label><span>* </span><strong>Interest Rate:</strong></label>
-															<input name="calc-tenor2" type="number" class="text full100" id="calc-tenor2" value="<%= @car.advertise.interest_rate %>"> <b class="font10">%</b>
+															<input name="calc-tenor2" type="number" class="text full100" id="calc-tenor2" value="<%= @sparepart.advertise.interest_rate %>"> <b class="font10">%</b>
 														</div>
 														<div class="select_wrapper">
 															<label><span>* </span><strong>Down Payment:</strong></label>
-															<input name="calc-uangmuka" type="text" class="text full100" id="calc-uangmuka" value="<%= number_to_currency(@car.advertise.down_payment, unit: '') %>">
+															<input name="calc-uangmuka" type="text" class="text full100" id="calc-uangmuka" value="<%= number_to_currency(@sparepart.advertise.down_payment, unit: '') %>">
 														</div>
 													</div>
 													<div class="clear"></div>
@@ -154,7 +124,7 @@
 								</div>
 							</div>
 						<% end %>
-						<div class="fb-comment-car">
+						<div class="fb-comment-sparepart">
 							<div id="fb-root"></div>
 							<script>
 								(function(d, s, id) {
@@ -165,25 +135,25 @@
 									fjs.parentNode.insertBefore(js, fjs);
 								}(document, 'script', 'facebook-jssdk'));
 							</script>
-							<div class="fb-comments" data-href="<%= detail_car_url(@product) %>" data-num-posts="10" data-colorscheme="light" mobile="false">
+							<div class="fb-comments" data-href="<%= detail_sparepart_url(@product) %>" data-num-posts="10" data-colorscheme="light" mobile="false">
 							</div>
 						</div>
 					</div>
-					<div class="car_sidebar">
+					<div class="sparepart_sidebar">
 						<div id="loan_calculator-2" class="widget_loan_calculator">
 							<div class="loan calculator-wrapper">
 								<div class="widget contacts_widget credit-simulation width20">
 									<h2><strong>Contact</strong></h2>
 									<div class="post">
-										<%= image_tag @car.user.profile.avatar.url(:medium), style: 'max-width:70px;float:left;margin-right:20px;' %>
-										<p><b><%= @car.user.profile.full_name %></b></p>
-										<p class="member-at">Join At : <br><%= @car.user.created_at.strftime('%d %b %Y') %></p>
+										<%= image_tag @sparepart.user.profile.avatar.url(:medium), style: 'max-width:70px;float:left;margin-right:20px;' %>
+										<p><b><%= @sparepart.user.profile.full_name %></b></p>
+										<p class="member-at">Join At : <br><%= @sparepart.user.created_at.strftime('%d %b %Y') %></p>
 										<div class="clear"></div>
 									</div><br>
-									<div class="addr detail"><%= @car.user.profile.address %></div>
-									<div class="phones detail"><%= @car.user.profile.phone %></div>
+									<div class="addr detail"><%= @sparepart.user.profile.address %></div>
+									<div class="phones detail"><%= @sparepart.user.profile.phone %></div>
 									<div class="email detail single_line">
-										<a href="mailto:<%= @car.user.email %>" rel="moc/eciujretniw//elpmaxe" class="email_link_replace markered"><%= @car.user.email %>
+										<a href="mailto:<%= @sparepart.user.email %>" rel="moc/eciujretniw//elpmaxe" class="email_link_replace markered"><%= @sparepart.user.email %>
 										</a>
 									</div>
 									<div class="clear"></div>

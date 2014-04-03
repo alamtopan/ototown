@@ -1,5 +1,11 @@
 <fieldset>
   <div class="form-group">
+   <%= f.label :choice_user, '',class: 'col-md-3 control-label' %>
+    <div class="col-md-6">
+      <%= f.select :user_id, options_for_select(@users, @sparepart.user_id), {include_blank: 'Choose One'}, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
    <%= f.label :condition, '',class: 'col-md-3 control-label' %>
     <% @condition.each_with_index do |condition, index|%>
       <div class="col-md-2">
