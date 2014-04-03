@@ -72,7 +72,7 @@ only screen and (min-device-width: 10px) and (max-device-width: 400px){
 		color: #798FA1;
 		box-shadow: 0 1px 0 0 #FFFFFF;
 	}
-	.width20{
+	.width20, .width-20{
 		width: 90%;
 	}
 	/*

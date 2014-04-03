@@ -45,7 +45,7 @@ only screen and (min-device-width: 500px) and (max-device-width: 600px){
 		padding: 10px 0 0 0;
 		text-align: center;
 	}
-	.width20{
+	.width20, .width-20{
 		width: 90%;
 	}
 	/*
