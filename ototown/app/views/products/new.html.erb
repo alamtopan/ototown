@@ -21,34 +21,34 @@
 							<h2><strong>Categories</strong></h2>
 							<div class="col_opt">
 								<span class="custom_chb_wrapper">
-									<span class="custom_chb">
+									<span>
 										<%= f.radio_button :condition, "All", {} %>
 									</span>
-									<label>ALL</label>
+									<b>ALL</b>
 								</span>
 							</div>
 							<div class="col_opt">
 								<span class="custom_chb_wrapper">
-									<span class="custom_chb">
+									<span>
 										<%= f.radio_button :condition, "Used", {} %>
 									</span>
-									<label>USED</label>
+									<b>USED</b>
 								</span>
 							</div>
 							<div class="col_opt">
 								<span class="custom_chb_wrapper">
-									<span class="custom_chb">
+									<span>
 										<%= f.radio_button :condition, "New", {} %>
 									</span>
-									<label>NEW</label>
+									<b>NEW</b>
 								</span>
 							</div>
 							<div class="col_opt_last">
 								<span class="custom_chb_wrapper">
-									<span class="custom_chb">
+									<span>
 										<%= f.radio_button :condition, "Classic", {} %>
 									</span>
-									<label>CLASSIC</label>
+									<b>CLASSIC</b>
 								</span>
 							</div>
 							<div class="br"></div>
@@ -61,18 +61,18 @@
 							<div class="col_2">
 								<div class="input_wrapper">
 									<label><span>* </span><strong>Title:</strong></label>
-									<%= f.text_field :name, class: 'text 100full' %>
+									<%= f.text_field :name, class: 'text 100full', required: "required" %>
 								</div>
 							</div>
 							<div class="col_3">
 								<div class="select_wrapper">
 									<label><span>* </span><strong>Status:</strong></label>
-							    <%= f.select :status, options_for_select([['Publish','1'],['Save Draft','0']]), {}, class: 'text' %>
+							    <%= f.select :status, options_for_select([['Publish','1'],['Save Draft','0']]), {}, class: 'text', required: "required" %>
 								</div>
 							</div>
 							<div class="input_wrapper" style="width:98%">
 								<label><span>* </span><strong>Description:</strong></label>
-								<%= f.text_area :description, class: 'post_content', style: 'width:100%' %>
+								<%= f.text_area :description, class: 'text post_content', style: 'width:100%', required: "required" %>
 							</div>
 							<div class="clear"></div>
 							<h2></h2>
@@ -86,15 +86,15 @@
 							<div class="col_1">
 								<div class="input_wrapper">
 									<label><span>* </span><strong>Province:</strong></label>
-									<%= f.text_field :province, class: 'text 100full', id: 'province_attributes' %>
+									<%= f.text_field :province, class: 'text 100full', id: 'province_attributes', required: "required" %>
 								</div>
 								<div class="input_wrapper">
 									<label><span>* </span><strong>City:</strong></label>
-									<%= f.text_field :city, class: 'text 100full', id: 'city_attributes' %>
+									<%= f.text_field :city, class: 'text 100full', id: 'city_attributes', required: "required" %>
 								</div>
 								<div class="input_wrapper">
 									<label><span>* </span><strong>Location:</strong></label>
-						      <%= f.text_field :location, class: 'text 100full', placeholder: 'Location' %>
+						      <%= f.text_field :location, class: 'text 100full', placeholder: 'Location', required: "required" %>
 								</div>
 								<div class="select_wrapper">
 									<label><span>* </span><strong>Body Type:</strong></label>
@@ -134,7 +134,7 @@
 								</div>
 								<div class="input_wrapper">
 									<label><span>* </span><strong>Price:</strong></label>
-						      <%= f.text_field :price, class: 'text 100full' %>
+						      <%= f.text_field :price, class: 'text 100full', required: "required" %>
 								</div>
 							</div>
 							<div class="clear"></div>

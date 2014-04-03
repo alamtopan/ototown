@@ -24,7 +24,7 @@
 				<div class="checkbox padd-left-cr">
 					<input type="checkbox" class="select_car" name="product_ids[]" value="<%= product.id %>">
 				</div>
-				<div class="img"><%= image_tag product.images.first.image.url(:medium) if product.images.present? %></div>
+				<div class="img"><%= image_tag product.images.first.image, class: "full-width" if product.images.present? %></div>
 				<div class="general_info">
 					<h2><%= product.name %></h2>
 					<div class="date"><%= time_ago_in_words(product.updated_at) %></div>
@@ -42,7 +42,7 @@
 				<div class="actions">
 					<%= link_to (product.status ? 'To Draft' : 'Republish'), change_status_path(product), method: 'put' %>
 					<a href="#" class="markered">Edit</a>
-					<a href="#" class="markered">View on site</a>
+					<%= link_to "View on Site", detail_car_path(product.id), class: "markered", target: "_blank" %>
 					<%= link_to 'Remove', product_path(product), method: 'delete', class: 'markered last car_archive', data:{confirm: 'Are You Sure For Delete This Product?'} %>
 				</div>
 			</div>
