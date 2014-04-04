@@ -2,6 +2,7 @@ class Backend::SparepartsController < Backend::ApplicationController
   defaults :resource_class => Sparepart, :collection_name => 'spareparts', :instance_name => 'sparepart'
   prepend_before_filter :generate_select, except: [:index,:show]
   before_filter :choice_condition
+  before_filter :choice_status
 
   def edit
     @sparepart = Sparepart.find_by(slug: params[:id])
@@ -33,6 +34,10 @@ class Backend::SparepartsController < Backend::ApplicationController
                       "New",
                       "Classic"
                     ]
+    end
+
+    def choice_status
+      @choice_status = [ "true", "false"]
     end
 
     def product_params
