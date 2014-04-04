@@ -2,6 +2,7 @@
 	<div class="search_auto_wrapper">
 		<div class="search_auto">
 			<%= form_for :search, url: search_path, method: 'get' do |f| %>
+				<%= f.hidden_field :category_id, value: 1 %>
 				<div class="sell_box sell_box_1">
 					<h2><strong>Search</strong> Vehicle</h2>
 					<div class="select_wrapper hm">
@@ -65,9 +66,12 @@
 						<%= f.text_field :city, class: 'text 100full', id: 'city_attributes' %>
 					</div>
 					<div class="select_wrapper hm">
-						<label><span>* </span><strong>Price:</strong></label>
-			      From: <%= f.number_field :price_from, class: 'text 100full' %>
-			      To: <%= f.number_field :price_to, class: 'text 100full' %>
+						<label><span>* </span><strong>Price From:</strong></label>
+						<%= f.number_field :price_from, class: 'text 100full' %>
+					</div>
+					<div class="select_wrapper hm">
+						<label><span>* </span><strong>Price to:</strong></label>
+			      <%= f.number_field :price_to, class: 'text 100full' %>
 					</div>
 					<div class="input_wrapper" style="width:100%">
 						<label><span>* </span><strong>Keyword:</strong></label>

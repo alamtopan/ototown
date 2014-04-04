@@ -1,7 +1,9 @@
 class Product < ActiveRecord::Base
   attr_accessible :name, :description, :category_id, :condition, :type_product, :brand, :model, :year, :color,
                   :color, :plate_number, :exp_date, :kilometer, :door, :seat, :transmission, :engine,:price,
-                  :cyclinders, :fuel, :location, :city, :province, :images_attributes, :user_id,:status,:negotiable
+                  :cyclinders, :fuel, :location, :city, :province, :images_attributes, :user_id,:status,:negotiable,
+                  :advertise_attributes
+
 
   is_impressionable
   extend FriendlyId
@@ -9,7 +11,6 @@ class Product < ActiveRecord::Base
 
   belongs_to :category
   belongs_to :user
-  has_one :advertise
   has_many :images, class_name: 'ImageProduct', dependent: :destroy
 
   accepts_nested_attributes_for :images, reject_if: :all_blank, allow_destroy: true
@@ -21,6 +22,10 @@ class Product < ActiveRecord::Base
   scope :filter_by_name, ->(name) do
             return if name.blank?
             where('name LIKE ?', "%#{name}%")
+          end
+  scope :filter_by_category_id, ->(category_id) do
+            return if category_id.blank?
+            where(category_id: category_id)
           end
   scope :filter_by_condition, ->(condition) do
             return if condition.blank?
@@ -62,7 +67,8 @@ class Product < ActiveRecord::Base
   scope :filter_search, ->(params)  do
       return scoped if params.blank?
 
-      filter_by_name(params[:name])
+      filter_by_category_id(params[:category_id])
+        .filter_by_name(params[:name])
         .filter_by_condition(params[:condition])
         .filter_by_brand(params[:brand])
         .filter_by_model(params[:model])

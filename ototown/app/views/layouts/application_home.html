@@ -6,8 +6,8 @@
   <%= csrf_meta_tags %>
 </head>
 <body class="page">
+  <%= render partial: 'shared/front/header' %>
 	<%= bootstrap_flash %>
-	<%= render partial: 'shared/front/header' %>
 	<%= yield %>
 	<%= render partial: 'shared/front/footer' %>
 	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>

@@ -47,6 +47,7 @@ class Backend::CarsController < Backend::ApplicationController
     def product_params
       params.require(:car).permit(:condition,:name,:category_id,:description,:province,:city,:brand,:model, :fuel, :status,
                         :transmission,:year,:type_product,:color, :price,:negotiable, :location, :cylinders,
-                        images_attributes: [:id,:image,:_destroy])
+                        images_attributes: [:id,:image,:_destroy],
+                        advertise_attributes: [:price, :loan_term, :interest_rate, :down_payment, :active, :product_id])
     end
 end

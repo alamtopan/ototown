@@ -73,7 +73,7 @@ class ProductsController < UsersController
 
 	private
 		def set_product
-			@product = current_user.products.find_by!(params[:product_id])
+			@product = current_user.products.find(params[:product_id] || params[:id])
 		end
 
     def generate_select

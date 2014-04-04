@@ -2,6 +2,7 @@
 	<div class="search_auto no-shadow">
 		<% search = params[:search] %>
 		<%= form_for :search, url: search_path, method: 'get' do |f| %>
+			<%= f.hidden_field :category_id, value: 1 %>
 			<div class="sell_box sell_box_1">
 				<h2><strong>Search</strong> Vehicle</h2>
 				<div class="select_wrapper">
@@ -13,7 +14,7 @@
 				<div class="br"></div>
 				<div class="select_wrapper">
 					<label><span>* </span><strong>Brand:</strong></label>
-					<%= f.select :brand, options_for_select(@brands,search[:brand]), {include_blank: 'Choose One'}, class: 'select_5', id: 'brand_product', data: {url: brand_model_path} %>
+					<%= f.select :brand, options_for_select(@brands,search.present? ? search[:brand] : ''), {include_blank: 'Choose One'}, class: 'select_5', id: 'brand_product', data: {url: brand_model_path} %>
 				</div>
 				<div class="select_wrapper">
 					<label><span>* </span><strong>Model: </strong></label>
@@ -21,27 +22,35 @@
 				</div>
 				<div class="select_wrapper">
 					<label><span>* </span><strong>Transmission</strong></label>
-			    <%= f.select :transmission, options_for_select(@transmissions,search[:transmission]), {include_blank: 'Choose One'}, class: 'select_5' %>
+			    <%= f.select :transmission, options_for_select(@transmissions,search.present? ? search[:transmission] : ''), {include_blank: 'Choose One'}, class: 'select_5' %>
 				</div>
 				<div class="select_wrapper">
 					<label><span>* </span><strong>Year:</strong></label>
-			    <%= f.select :year, options_for_select(@years,search[:year]), {include_blank: 'Choose One'}, class: 'select_5' %>
+			    <%= f.select :year, options_for_select(@years,search.present? ? search[:year] : ''), {include_blank: 'Choose One'}, class: 'select_5' %>
 				</div>
 				<div class="select_wrapper">
 					<label><span>* </span><strong>Body Type:</strong></label>
-			    <%= f.select :type_product, options_for_select(@types,search[:type_product]), {include_blank: 'Choose One'}, class: 'select_5' %>
+			    <%= f.select :type_product, options_for_select(@types,search.present? ? search[:type_product] : ''), {include_blank: 'Choose One'}, class: 'select_5' %>
 				</div>
-				<div class="select_wrapper">
+				<div class="input_wrapper">
 					<label><span>* </span><strong>Province </strong></label>
-					<%= f.text_field :province, class: 'text 100full', id: 'province_attributes', value: search[:province] %>
+					<%= f.text_field :province, class: 'txb', id: 'province_attributes', value: search.present? ? search[:province] : '' %>
 				</div>
-				<div class="select_wrapper">
+				<div class="input_wrapper">
 					<label><span>* </span><strong>City </strong></label>
-					<%= f.text_field :city, class: 'txb', id: 'city_attributes', value: search[:city] %>
+					<%= f.text_field :city, class: 'txb', id: 'city_attributes', value: search.present? ? search[:city] : '' %>
+				</div>
+				<div class="input_wrapper">
+					<label><span>* </span><strong>Price From </strong></label>
+					<%= f.text_field :price_from, class: 'txb', value: search.present? ? search[:price_from] : '' %>
+				</div>
+				<div class="input_wrapper">
+					<label><span>* </span><strong>Price To </strong></label>
+					<%= f.text_field :price_to, class: 'txb', value: search.present? ? search[:price_to] : '' %>
 				</div>
 				<div class="input_wrapper" style="width:100%">
 					<label><span>* </span><strong>Keyword:</strong></label>
-					<%= f.text_field :name, class: 'txb', value: search[:name] %>
+					<%= f.text_field :name, class: 'txb', value: search.present? ? search[:name] : '' %>
 				</div>
 				<%= f.submit :search, class: 'btn_search' %>
 				<div class="clear"></div>
