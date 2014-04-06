@@ -19,6 +19,11 @@ Ototown::Application.routes.draw do
   get   '/detail_news/:id',		to: 'publics#detail_news',       as: 'detail_news'
   get   '/news',     					to: 'publics#news',              as: 'news'
 
+  # Compare
+  get 'compare-product/:id',  to: 'publics#compare',           as: 'compare'
+  get 'compare-products',     to: 'publics#compare_products',  as: 'compare_products'
+  delete 'compare-products',  to: 'publics#delete_compare',    as: 'delete_compare_product'
+
   #Pages
   get   '/page/:id',          to: 'publics#page',              as: 'page'
 

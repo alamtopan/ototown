@@ -3,7 +3,7 @@ class PublicsController < ApplicationController
 
 	def home
 		@news_list = News.limit(1)
-		@cars = Car.limit(10).order('created_at DESC')
+		@cars = Car.published.limit(10).order('created_at DESC')
 		render layout: 'application_home'
 	end
 
@@ -40,6 +40,30 @@ class PublicsController < ApplicationController
       render layout: 'application_catalog'
     end
 	end
+
+  def compare
+    unless cookies[:compare_products].nil?
+      unless cookies[:compare_products].include?(params[:id])
+        cookies[:compare_products] = cookies[:compare_products].split() << params[:id]
+      end
+    else
+      cookies[:compare_products] = params[:id]
+    end
+    flash[:notice] = "Product Has add to Compare"
+    redirect_to compare_products_path
+  end
+
+  def compare_products
+    slugs = cookies[:compare_products].split('&')
+    @products = Product.published.where("slug IN (?)", slugs)
+    render layout: 'application_catalog'
+  end
+
+  def delete_compare
+    cookies.delete :compare_products
+    flash[:notice] = "Product Has already to delete"
+    redirect_to root_path
+  end
 
 	private
 

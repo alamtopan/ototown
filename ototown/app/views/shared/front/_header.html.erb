@@ -43,25 +43,28 @@
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-          <%= link_to 'Dealers',dealers_path %> 
+          <%= link_to 'Dealers',dealers_path %>
         </li>
         <li>
-          <%= link_to 'Used Cars',cars_path(:Used) %> 
+          <%= link_to 'Used Cars',cars_path(:Used) %>
         </li>
         <li>
-          <%= link_to 'New Cars',cars_path(:New) %> 
+          <%= link_to 'New Cars',cars_path(:New) %>
         </li>
         <li>
-          <%= link_to 'Classic Cars',cars_path(:Classic) %> 
+          <%= link_to 'Classic Cars',cars_path(:Classic) %>
         </li>
         <li>
-          <%= link_to 'Spare Parts',spareparts_path %> 
+          <%= link_to 'Spare Parts',spareparts_path %>
         </li>
         <li>
-          <%= link_to "Compare Cars <span class='compare'>2</span>".html_safe,cars_path(:Used) %> 
+          <% count_compare = cookies[:compare_products].nil? ? 0 : cookies[:compare_products].split('&').count %>
+          <%= link_to do %>
+            Compare Cars <span class='compare'><%= count_compare %></span>
+          <% end %>
         </li>
         <li>
-          <%= link_to 'News & Tips',news_path %> 
+          <%= link_to 'News & Tips',news_path %>
         </li>
       </ul>
       <% if current_user %>

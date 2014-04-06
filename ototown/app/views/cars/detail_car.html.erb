@@ -15,15 +15,16 @@
 						<div class="views">Model <%= "#{@car.model} #{@car.year}" %></div>
 					</div>
 					<h1>
-						<%= @car.name %>		 
+						<%= @car.name %>
 					</h1>
 					<div class="car_image_wrapper">
 						<%= render 'shared/front/slide_car_detail', images: @car.images %>
 					</div>
 					<div class="car_characteristics">
 						<a href="#" class="print" onclick="window.print();return false;"></a>
+						<%= link_to 'Compare', compare_path(@car), class: "btn btn-primary" %>
 						<div class="price" data-currency="Rp" data-price="<%= @car.price %>" style="margin-left:10px; margin-top:15px;">
-							<%= number_to_currency(@car.price, unit: 'Rp.') %> 
+							<%= number_to_currency(@car.price, unit: 'Rp.') %>
 						</div>
 						<div class="clear"></div>
 						<div class="features_table">
@@ -97,7 +98,7 @@
 							<h2><strong>Detail</strong> Information</h2>
 							<div>
 								<b>Location: </b>
-								<br/> 
+								<br/>
 								<%= @car.location %>
 							</div><br/>
 							<%= @car.description.html_safe %>
@@ -190,7 +191,7 @@
 								</div>
 							</div>
 						</div>
-					</div>	
+					</div>
 					<div class="clear"></div>
 					<div class="clear"></div>
 				</div>
