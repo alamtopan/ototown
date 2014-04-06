@@ -75,55 +75,6 @@
 							<div class="clear"></div>
 							<div class="clear"></div>
 						</div>
-						<% if @sparepart.advertise.present? && @sparepart.advertise.active %>
-							<div class="sparepart_info credit-simulation">
-								<h2><strong>Credit</strong>& Simulation</h2>
-								<div id="calc-container">
-									<div id="calculator-tab">
-										<div id="calc-container">
-											<div id="calculator-tab">
-												<div class="sell_box step_2" style="">
-													<div class="col_2">
-														<div class="select_wrapper">
-															<label><span>* </span><strong>Price:</strong></label>
-															<input name="calc-price" type="text" class="text full100" id="calc-price" value="<%= number_to_currency(@sparepart.advertise.price, unit: '') %>">
-														</div>
-														<div class="select_wrapper">
-															<label><span>* </span><strong>Loan Term:</strong></label>
-															<input name="calc-tenor" type="number" class="text full100" id="calc-tenor1" value="<%= @sparepart.advertise.loan_term %>"> <b class="font10">/Month</b>
-														</div>
-													</div>
-													<div class="col_3">
-														<div class="select_wrapper">
-															<label><span>* </span><strong>Interest Rate:</strong></label>
-															<input name="calc-tenor2" type="number" class="text full100" id="calc-tenor2" value="<%= @sparepart.advertise.interest_rate %>"> <b class="font10">%</b>
-														</div>
-														<div class="select_wrapper">
-															<label><span>* </span><strong>Down Payment:</strong></label>
-															<input name="calc-uangmuka" type="text" class="text full100" id="calc-uangmuka" value="<%= number_to_currency(@sparepart.advertise.down_payment, unit: '') %>">
-														</div>
-													</div>
-													<div class="clear"></div>
-													<div class="clear"></div>
-													<h2></h2>
-													<div class="btn-next">
-														<a href="#" class="btn1 hitung" id="cicilan1">CALCULATE</a>
-													</div>
-													<br>
-													<div class="section_calculate">
-														<div>
-															<label><span>* </span><strong>Monthly Payment</strong></label>
-															<span class="cal">Rp.</span> <input type="text" class="text full-calculate" name="calc-angsuran" id="calc-angsuran">
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div id="amortizationtable"></div>
-									</div>
-								</div>
-							</div>
-						<% end %>
 						<div class="fb-comment-sparepart">
 							<div id="fb-root"></div>
 							<script>
