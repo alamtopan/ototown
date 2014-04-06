@@ -7,8 +7,10 @@
         <%= image_tag "#{slider.pic}" %>
         <div class="container">
           <div class="carousel-caption">
-            <h1><%= slider.title %></h1>
-            <p><%= slider.content %></p>
+            <a href="<%= slider.url %>" class="slide_url">
+              <h1><%= slider.title %></h1>
+            </a>
+            <p><%= slider.content.html_safe %></p>
           </div>
         </div>
       </div>

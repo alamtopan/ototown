@@ -3,12 +3,19 @@ class PublicsController < ApplicationController
 
 	def home
 		@news_list = News.limit(1)
-		@cars = Car.limit(10).order('created_at DESC')
+		@cars = Car.published.limit(20).order('created_at DESC')
+		@dealers = Dealer.includes(:dealer_info).where("dealer_infos.active = TRUE").order("dealer_infos.id DESC").limit(3)
+		@spareparts = Sparepart.limit(20).order('created_at DESC')
 		render layout: 'application_home'
 	end
 
 	def news
-		@news = News.published.page(params[:page]).per(8).order("id DESC")
+		@news = News.includes(:category_news).where("category_news.title = 'News'").published.page(params[:page]).per(4)
+		render layout: 'application_news'
+	end
+
+	def tips
+		@news = News.includes(:category_news).where("category_news.title = 'Tips'").published.page(params[:page]).per(4)
 		render layout: 'application_news'
 	end
 

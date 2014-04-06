@@ -1,11 +1,11 @@
 <%= render partial: 'shared/front/paginate_result/paginate_result_dealers' %>
-<%= render partial: 'shared/front/side_bar_cars' %>
-<div class="main_catalog" style="padding-top:0px;">
+<%= render partial: 'shared/front/search_bar_dealer' %>
+<div>
 	<div class="left">
 		<div class="recent_blog">
 			<% @dealers.each_with_index do |dealer, index| %>
-				<div class="post_block">
-					<%= link_to detail_dealer_path(dealer),class: "thumb" do %>
+				<div class="post_block dealers">
+					<%= link_to detail_dealer_path(dealer),class: "thumb deal" do %>
 						<%= image_tag dealer.images.first.image  if dealer.images.present? %>
 					<% end %>
 					<h5>

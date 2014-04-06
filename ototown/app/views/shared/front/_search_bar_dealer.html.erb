@@ -1,0 +1,32 @@
+<div class="wrapper_1">
+	<div class="search_auto_wrapper">
+		<div class="search_auto">
+			<%= form_for :search, url: search_path, method: 'get' do |f| %>
+				<%= f.hidden_field :category_id, value: 1 %>
+				<div class="sell_box sell_box_1">
+					<h2><strong>Search</strong></h2>
+					<div class="select_wrapper hm">
+						<label><span>* </span><strong>Choice Category:</strong></label>
+				    <%= f.select :type_product, options_for_select(@catalog), {include_blank: 'Choose Category'}, class: 'select_5' %>
+					</div>
+					<div class="select_wrapper hm">
+						<label><span>* </span><strong>Province </strong></label>
+						<%= f.text_field :province, class: 'txb', id: 'province_attributes' %>
+					</div>
+					<div class="select_wrapper hm">
+						<label><span>* </span><strong>City </strong></label>
+						<%= f.text_field :city, class: 'txb', id: 'city_attributes' %>
+					</div>
+					<div class="input_wrapper hm">
+						<label><span>* </span><strong>Keyword:</strong></label>
+						<%= f.text_field :name, class: 'txb' %>
+					</div>
+					<%= f.submit :search, class: 'btn_search' %>
+					<div class="clear"></div>
+				</div>
+			<% end %>
+			<div class="clear"></div>
+		</div>
+	</div>
+	<div class="clear"></div>
+</div>

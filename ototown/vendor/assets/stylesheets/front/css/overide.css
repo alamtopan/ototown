@@ -435,3 +435,71 @@ label.error{
 .profile_content{
 	min-height: 200px;
 }
+.more{
+	text-transform: uppercase;
+	color: #3090BF;
+}
+.nav-news{
+	width: 100%;
+	float: left;
+	margin-bottom: 50px;
+	border-bottom: solid 2px #208ccc;
+}
+.nav-news div a{
+	padding: 10px 60px;
+	float: left;
+	border-radius: 5px 5px 0px 0px;
+	-moz-border-radius: 5px 5px 0px 0px;
+	-webkit-border-radius: 5px 5px 0px 0px;
+	text-transform: uppercase;
+	font-weight: bold;
+	margin-right: 2px;
+	text-decoration: none;
+}
+.nav-news div a:hover{
+	background: #F8F8F8;
+}
+.nav-news div.active a{
+	padding: 10px 60px;
+	border: solid 1px #ddd;
+	border-bottom: none;
+	float: left;
+	text-transform: uppercase;
+	font-weight: bold;
+	background-color: #fff;
+	border-bottom-color: transparent;
+	border-radius: 5px 5px 0px 0px;
+	-moz-border-radius: 5px 5px 0px 0px;
+	-webkit-border-radius: 5px 5px 0px 0px;
+	background: #14bbec;
+	background: -moz-linear-gradient(top, #14bbec 0%, #208ccc 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #14bbec), color-stop(100%, #208ccc));
+	background: -webkit-linear-gradient(top, #14bbec 0%, #208ccc 100%);
+	background: -o-linear-gradient(top, #14bbec 0%, #208ccc 100%);
+	background: -ms-linear-gradient(top, #14bbec 0%, #208ccc 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#14bbec', endColorstr='#208ccc',GradientType=0 );
+	background: linear-gradient(top, #14bbec 0%, #208ccc 100%);
+}
+.nav-news div.active a{
+	color: #fff;
+}
+.nav-news a{
+	font-size: 20px;
+}
+a.slide_url{
+	color: #fff;
+	text-decoration: none;
+}
+a.slide_url:hover{
+	color: #ddd;
+}
+.post_block.dealers{
+	width: 190px;
+}
+.thumb.deal,.thumb.deal img
+{
+	width: 100%!important;
+}
+.small_image{
+	width: 150px;
+}

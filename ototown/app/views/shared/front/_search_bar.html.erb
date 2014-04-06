@@ -7,7 +7,7 @@
 					<h2><strong>Search</strong> Vehicle</h2>
 					<div class="select_wrapper hm">
 						<span class="custom_chb_wrapper">
-							<span>
+							<span class="custom_chb">
 								<%= f.radio_button :condition, "All", {} %>
 							</span>
 							<label>ALL</label>
@@ -15,7 +15,7 @@
 					</div>
 					<div class="select_wrapper hm">
 						<span class="custom_chb_wrapper">
-							<span>
+							<span class="custom_chb">
 								<%= f.radio_button :condition, "Used", {} %>
 							</span>
 							<label>USED</label>
@@ -38,6 +38,10 @@
 						</span>
 					</div>
 					<div class="select_wrapper hm">
+						<label><span>* </span><strong>Body Type:</strong></label>
+				    <%= f.select :type_product, options_for_select(@types), {include_blank: 'Choose One'}, class: 'select_5' %>
+					</div>
+					<div class="select_wrapper hm">
 						<label><span>* </span><strong>Brand:</strong></label>
 						<%= f.select :brand, options_for_select(@brands), {include_blank: 'Choose One'}, class: 'select_5', id: 'brand_product', data: {url: brand_model_path} %>
 					</div>
@@ -53,29 +57,25 @@
 						<label><span>* </span><strong>Year:</strong></label>
 				    <%= f.select :year, options_for_select(@years), {include_blank: 'Choose One'}, class: 'select_5' %>
 					</div>
-					<div class="select_wrapper hm">
-						<label><span>* </span><strong>Body Type:</strong></label>
-				    <%= f.select :type_product, options_for_select(@types), {include_blank: 'Choose One'}, class: 'select_5' %>
+					<div class="input_wrapper hm">
+						<label><span>* </span><strong>Price From:</strong></label>
+						<%= f.text_field :price_from, class: 'txb' %>
+					</div>
+					<div class="input_wrapper hm">
+						<label><span>* </span><strong>Price to:</strong></label>
+			      <%= f.text_field :price_to, class: 'txb' %>
 					</div>
 					<div class="select_wrapper hm">
 						<label><span>* </span><strong>Province </strong></label>
-						<%= f.text_field :province, class: 'text 100full', id: 'province_attributes' %>
+						<%= f.text_field :province, class: 'txb', id: 'province_attributes' %>
 					</div>
 					<div class="select_wrapper hm">
 						<label><span>* </span><strong>City </strong></label>
-						<%= f.text_field :city, class: 'text 100full', id: 'city_attributes' %>
+						<%= f.text_field :city, class: 'txb', id: 'city_attributes' %>
 					</div>
-					<div class="select_wrapper hm">
-						<label><span>* </span><strong>Price From:</strong></label>
-						<%= f.number_field :price_from, class: 'text 100full' %>
-					</div>
-					<div class="select_wrapper hm">
-						<label><span>* </span><strong>Price to:</strong></label>
-			      <%= f.number_field :price_to, class: 'text 100full' %>
-					</div>
-					<div class="input_wrapper" style="width:100%">
+					<div class="input_wrapper hm">
 						<label><span>* </span><strong>Keyword:</strong></label>
-						<%= f.text_field :name, class: 'txb 100full', style: 'width:95%!important' %>
+						<%= f.text_field :name, class: 'txb', style: 'width:95%!important' %>
 					</div>
 					<%= f.submit :search, class: 'btn_search' %>
 					<div class="clear"></div>

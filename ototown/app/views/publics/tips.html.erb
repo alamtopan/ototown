@@ -1,9 +1,9 @@
 <div class="blog">
 	<div class="nav-news">
-	  <div class="active">
+	  <div>
 	  	<%= link_to "News", news_path %>
 	  </div>
-	  <div>
+	  <div class="active">
 	  <%= link_to "TIps", tips_path %>
 	  </div>
 	</div>
@@ -23,7 +23,7 @@
 				<div class="post">
 					<p><%= truncate strip_tags(news.content.to_s), length: 100 %></p>
 				</div>
-				<%= link_to "Read More >>", detail_news_path(news.id), class: "more markered" %>
+				<%= link_to "Read More", detail_news_path(news.id), class: "more markered" %>
 			</div>
 		</div>
 	<% end %>

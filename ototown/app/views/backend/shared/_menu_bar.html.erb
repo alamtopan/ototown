@@ -1,9 +1,9 @@
 <div id="sidebar">
 	<div class="sidebar-scroll">
 		<div class="sidebar-content">
-			<a href="./index.php.html" class="sidebar-brand">
+			<%= link_to backend_path, class: "sidebar-brand" do %>
 				<strong>Administrator</strong>
-			</a>
+			<% end %>
 			<div class="sidebar-section sidebar-user clearfix">
 				<div class="sidebar-user-avatar">
 					<%= image_tag "#{current_backend_admin.profile.avatar}" %>

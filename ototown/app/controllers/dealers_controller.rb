@@ -9,7 +9,7 @@ class DealersController < ApplicationController
 	def detail_dealer
 		@dealer = Dealer.find(params[:id])
 		@cars_count = Car.where(user_id: @dealer.id)
-		@cars = Car.where(user_id: @dealer.id).page(params[:page]).per(8).order("id DESC")
+		@cars = Car.where(user_id: @dealer.id).page(params[:page]).per(6).order("id DESC")
 		render layout: 'application_dealer'
 	end
 
@@ -23,6 +23,8 @@ class DealersController < ApplicationController
         'Yellow','Purple','Maroon']
       @colors = colors.map{|c| [c,c]}
       @transmissions = ['Auto','Mechanic'].map{|tr| [tr,tr]}
+      catalog = ['Dealer', 'Workshop']
+      @catalog = catalog.map{|cata| [cata, cata]}
     end
 
 end

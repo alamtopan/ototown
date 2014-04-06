@@ -26,6 +26,12 @@
       <%= f.text_area :content, class: 'ckeditor form-control', rows: '9', placeholder: 'Description' %>
     </div>
   </div>
+  <div class="form-group">
+    <label class="col-md-3 control-label" for="example-text-input">URL Link</label>
+    <div class="col-md-9">
+     <%= f.text_field :url, class: 'form-control', placeholder: 'http://..' %>
+   </div>
+  </div>
 </fieldset>
 <div class="form-group form-actions submit-bott">
   <div class="col-md-8 col-md-offset-4">

@@ -18,6 +18,7 @@ Ototown::Application.routes.draw do
   #News
   get   '/detail_news/:id',		to: 'publics#detail_news',       as: 'detail_news'
   get   '/news',     					to: 'publics#news',              as: 'news'
+  get   '/tips',              to: 'publics#tips',              as: 'tips'
 
   #Pages
   get   '/page/:id',          to: 'publics#page',              as: 'page'
