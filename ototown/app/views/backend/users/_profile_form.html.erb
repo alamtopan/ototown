@@ -59,7 +59,7 @@
   <div class="form-group">
     <label class="col-md-4 control-label" for="val_skill">Gender </label>
     <div class="col-md-6">
-      <%= profile.select :gender, [['Pria', 'Pria'], ['Wanita', 'Wanita']],{:prompt => "- Select Gender -"}, {class: 'form-control', required: true} %>
+      <%= profile.select :gender, options_for_select(@sex,@user.profile.gender), {include_blank: 'Choose One'}, class: 'form-control' %>
     </div>
   </div>
   <div class="form-group">

@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   prepend_before_filter :draw_password, only: :update
   before_action :set_object
   before_filter :authenticate_user!
+  before_filter :sex
 
 	def user_home
 		render layout: 'application_user'
@@ -50,6 +51,11 @@ class UsersController < ApplicationController
     def dealer_info_params
       params.require(:user).permit(dealer_info_attributes: [:title,:address,:phone,:description,:email],
         images_attributes:[:image])
+    end
+
+    def sex
+      sex = ['Laki-Laki', 'Perempuan']
+      @sex = sex.map{|sex| [sex, sex]}
     end
 
 end

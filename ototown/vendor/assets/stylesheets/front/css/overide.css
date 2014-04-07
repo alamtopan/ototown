@@ -503,3 +503,9 @@ a.slide_url:hover{
 .small_image{
 	width: 150px;
 }
+.detail-google-map{
+	border: solid 1px #ddd;
+	width: 100%;
+	float: left;
+	margin-bottom: 20px;
+}

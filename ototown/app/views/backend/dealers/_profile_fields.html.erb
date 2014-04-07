@@ -51,11 +51,7 @@
   <div class="form-group">
     <label class="col-md-4 control-label" for="val_skill">Gender </label>
     <div class="col-md-6">
-      <select id="gender" name="gender" class="form-control">
-        <option value="" />Please select
-        <option value="Laki-laki" />Laki-laki
-        <option value="Perempuan" />Perempuan
-      </select>
+      <%= profile.select :gender, options_for_select(@sex,@dealer.profile.gender), {include_blank: 'Choose One'}, class: 'form-control' %>
     </div>
   </div>
   <div class="form-group">

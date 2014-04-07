@@ -39,7 +39,7 @@
 					</div>
 					<div class="col1 last">
 						<%= profile.label :gender, '', class: 'text' %>
-						<%= profile.select :gender, [['Pria', 'Pria'], ['Wanita', 'Wanita']],{:prompt => "- Select Gender -"}, {class: 'text'} %>
+						<%= profile.select :gender, options_for_select(@sex,@user.profile.gender), {include_blank: '- Select Gender -'}, class: 'text' %>
 					</div>
 					<div class="col2 last">
 						<%= profile.label :address, '', class: 'text' %>

@@ -2,51 +2,59 @@
 	<div class="car_image_wrapper width100">
 		<%= render 'shared/front/slide_dealer_detail', images: @dealer.images %>
 	</div>
-	<div class="top_catalog_box padding-bottom0">
-		<div class="view_on_page drop_list" data-id="view_on_page">
-			<b>Total Cars:</b> <span class="gray-font"> <%= @cars_count.size %> Cars in this Dealer</span>
-		</div>			
-		<div class="pagination">
-			<%= paginate @cars %>
+	<% #if @dealer.dealer_info.longitude.present? %>
+		<div class="detail-google-map">
+			<iframe width="100%" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.co.id/maps?q=Jalan+Merpati+Raya&amp;hl=id&amp;sll=-6.227849,106.677997&amp;sspn=0.005365,0.010568&amp;hnear=Jalan+Merpati+Raya,+Tangerang,+Banten+15144&amp;t=m&amp;ie=UTF8&amp;hq=&amp;z=14&amp;ll=-6.227071,106.678223&amp;output=embed"></iframe>
 		</div>
-		<div class="clear"></div>
-	</div>
-	<ul class="catalog_table">
-		<% @cars.each_with_index do |car, index| %>
-			<li class="is_dealer">
-				<%= link_to detail_car_path(car), class: 'thumb' do %>
-					<div class= "car_catalog"><%= image_tag car.images.first.image %></div>
-				<% end %>
-				<div class="catalog_desc">
-					<div class="location">Location: <b><%= car.province %>, <%= car.city %></b></div>
-					<div class="title_box">
-						<h4>
-							<%= link_to detail_car_path(car) do %>
-								<%= car.name %>
-							<% end %>
-						</h4>
-						<div class="price"><%= number_to_currency(car.price, unit: 'Rp.') %></div>
-					</div>
-					<div class="clear"></div>
-					<div class="grey_area">
-						<span>Fabrication: <b><%= car.year %></b></span>
-						<span>Brand: <b><%= car.brand %></b></span>
-						<span>Model: <b><%= car.model %></b></span>
-						<span>Condition: <b><%= car.condition %></b></span>
-					</div>
-					<div style="float:right"></div>
-					<%= link_to detail_car_path(car),class: "more markered" do %>
-						View details
+	<% #end %>
+	<%= @dealer.dealer_info.description.html_safe if @dealer.dealer_info.category_type == 'Workshop' %>
+	<% if @dealer.dealer_info.category_type == 'Dealer' %>
+		<div class="top_catalog_box padding-bottom0">
+			<div class="view_on_page drop_list" data-id="view_on_page">
+				<b>Total Cars:</b> <span class="gray-font"> <%= @cars_count.size %> Cars in this Dealer</span>
+			</div>			
+			<div class="pagination">
+				<%= paginate @cars %>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<ul class="catalog_table">
+			<% @cars.each_with_index do |car, index| %>
+				<li class="is_dealer">
+					<%= link_to detail_car_path(car), class: 'thumb' do %>
+						<div class= "car_catalog"><%= image_tag car.images.first.image %></div>
 					<% end %>
-				</div>
-			</li>
-		<% end %>
-	</ul>
-	<div class="bottom_catalog_box padding-top0">		
-		<div class="pagination">
-			<%= paginate @cars %>
+					<div class="catalog_desc">
+						<div class="location">Location: <b><%= car.province %>, <%= car.city %></b></div>
+						<div class="title_box">
+							<h4>
+								<%= link_to detail_car_path(car) do %>
+									<%= car.name %>
+								<% end %>
+							</h4>
+							<div class="price"><%= number_to_currency(car.price, unit: 'Rp.') %></div>
+						</div>
+						<div class="clear"></div>
+						<div class="grey_area">
+							<span>Fabrication: <b><%= car.year %></b></span>
+							<span>Brand: <b><%= car.brand %></b></span>
+							<span>Model: <b><%= car.model %></b></span>
+							<span>Condition: <b><%= car.condition %></b></span>
+						</div>
+						<div style="float:right"></div>
+						<%= link_to detail_car_path(car),class: "more markered" do %>
+							View details
+						<% end %>
+					</div>
+				</li>
+			<% end %>
+		</ul>
+		<div class="bottom_catalog_box padding-top0">		
+			<div class="pagination">
+				<%= paginate @cars %>
+			</div>
+			<div class="clear"></div>
 		</div>
-		<div class="clear"></div>
-	</div>
+	<% end %>
 </div>
 <div class="clear"></div>

@@ -9,7 +9,7 @@
 					<b><%= @dealer.profile.full_name %></b>
 				</p>
 				<% if @dealer.dealer_info.description.present? %>
-					<p><%= @dealer.dealer_info.description.html_safe %></p>
+					<p><%= @dealer.dealer_info.description.html_safe if @dealer.dealer_info.category_type == 'Dealer'%></p>
 				<% end %>
 				<div class="clear"></div>
 			</div>

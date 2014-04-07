@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140406143610) do
+ActiveRecord::Schema.define(version: 20140406225314) do
 
   create_table "advertises", force: true do |t|
     t.integer  "user_id"
@@ -83,6 +83,9 @@ ActiveRecord::Schema.define(version: 20140406143610) do
     t.text     "description"
     t.string   "phone"
     t.string   "email"
+    t.string   "category_type"
+    t.string   "longitude"
+    t.string   "latitude"
   end
 
   create_table "friendly_id_slugs", force: true do |t|
