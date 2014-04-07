@@ -29,4 +29,9 @@
   	width: 700px;
   }
 
+  .scrollit{
+  	overflow: scroll;
+  	width: 300px!important;
+  }
+
 

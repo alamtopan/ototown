@@ -1,7 +1,7 @@
-<% if @products.first.category_id = 1 %>
+<% if @products.first.category_id == 1 %>
   <%= render 'shared/front/paginate_result/paginate_result_cars' %>
   <%= render 'shared/front/side_bar_cars' %>
-<% elsif @products.first.category_id = 2 %>
+<% elsif @products.first.category_id == 2 %>
   <%= render 'shared/front/paginate_result/paginate_result_spareparts' %>
   <%= render 'shared/front/side_bar_spareparts' %>
 <% end %>

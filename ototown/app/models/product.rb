@@ -61,7 +61,8 @@ class Product < ActiveRecord::Base
           end
   scope :filter_by_price, ->(price1,price2) do
             return if price1.blank? && price2.blank?
-            where('price <= ? OR price >= ?', price1,price2)
+            return where('price <= ? OR price >= ?', price2,price1) if price1.blank? || price2.blank?
+            where('price <= ? AND price >= ?', price2,price1) if price1.present? && price2.present?
           end
 
   scope :filter_search, ->(params)  do

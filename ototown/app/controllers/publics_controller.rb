@@ -35,7 +35,19 @@ class PublicsController < ApplicationController
 	end
 
 	def search
-		@products = Product.published.filter_search(params[:search]).page(params[:page])
+    search_params=params[:search]
+    price_tab = search_params[:price].split('-')
+    if price_tab.size < 2
+      if search_params[:price].split('<').size > 1
+        search_params[:price_to] = search_params[:price].split('<')[1].strip
+      elsif search_params[:price].split('<').size > 1
+        search_params[:price_to] = search_params[:price].split('>')[1].strip
+      end
+    else
+      search_params[:price_to] = price_tab[1]
+      search_params[:price_from] = price_tab[0]
+    end
+		@products = Product.published.filter_search(search_params).page(params[:page])
     unless @products.present?
       flash[:alert] = "Search Data Not Found"
       if request.env["HTTP_REFERER"].present?
@@ -62,13 +74,13 @@ class PublicsController < ApplicationController
 
   def compare_products
     slugs = cookies[:compare_products].split('&')
-    @products = Product.published.where("slug IN (?)", slugs)
+    @products = Car.published.where("slug IN (?)", slugs)
     render layout: 'application_catalog'
   end
 
   def delete_compare
     cookies.delete :compare_products
-    flash[:notice] = "Product Has already to delete"
+    flash[:notice] = "Compared Product Has already to delete"
     redirect_to root_path
   end
 
@@ -83,5 +95,8 @@ class PublicsController < ApplicationController
         'Yellow','Purple','Maroon']
       @colors = colors.map{|c| [c,c]}
       @transmissions = ['Auto','Mechanic'].map{|tr| [tr,tr]}
+      @prices = [['< 100.000.000','< 100000000'],['100.000.000-200.000.000','100000000-200000000'],['200.000.000-300.000.000','200000000-300000000'],['300.000.000-400.000.000','300000000-400000000'],['400.000.000-500.000.000','400000000-500000000'],
+        ['500.000.000-600.000.000','500000000-600000000'],['600.000.000-700.000.000','600000000-700000000'],['700.000.000-800.000.000','700000000-800000000'],['800.000.000-900.000.000','800000000-900000000'],['900.000.000-1000.000.000','900000000-1000000000'],
+        ['> 1000.000.000','> 1000000000']]
     end
 end

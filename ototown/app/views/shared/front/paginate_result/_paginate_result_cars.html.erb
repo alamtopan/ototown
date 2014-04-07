@@ -3,4 +3,4 @@
 		<%= paginate @cars.present? || @products.blank? ? @cars : @products %>
 	</div>
 </div>
-<h1><strong><%= params[:condition]%> Cars</strong></h1>
+<h1><strong><%= params[:condition]%> Cars</strong> <%= "Result (#{@products.size})" if params[:search] %></h1>
