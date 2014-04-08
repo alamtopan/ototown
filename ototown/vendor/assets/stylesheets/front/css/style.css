@@ -2672,33 +2672,7 @@ ul.personal_list li .grey_area span{
 |                                     CHECKBOXES                               |
 ================================================================================
 */
-.custom_chb{
-	width:17px;
-	height:17px;
-	float: left;
-	overflow:hidden;
-	background:url(../../../assets/checkbox.png) no-repeat 0 0;
-	cursor:pointer;
-	margin: 2px 0 0 0;
-}
-.custom_chb.active{
-	background-position:0 -17px;
-}
-.custom_chb_wrapper{
-	display: block;
-	overflow: hidden;
-	margin-bottom: 7px;
-}
-.custom_chb_wrapper label{
-	font-size: 13px;
-	float: left;
-	color: #798FA1;
-	line-height: 20px;
-	padding: 0 0 0 8px;
-}
-.custom_chb input{
-	display:none;
-}
+
 /*
 ================================================================================
 |                                     CATALOG                                   |
@@ -4472,30 +4446,38 @@ textarea.text{
 |                                     CHECKBOXES                               |
 ================================================================================
 */
-.custom_chb{
-	width:17px;
-	height:17px;
-	float: left;
-	overflow:hidden;
-	background:url(../../../assets/checkbox.png) no-repeat 0 0;
-	cursor:pointer;
-	margin: 2px 0 0 0;
+
+.custom_chb input[type="radio"]{
+    display:none;
 }
-.custom_chb.active{
-	background-position:0 -17px;
+
+input[type="radio"] + label
+{
+    background:url(../../../assets/checkbox.png) no-repeat 0 0;
+    height: 17px;
+    width: 17px;
+    display:inline-block;
+    padding: 0 0 0 0px;
+    float: left;
 }
-.custom_chb_wrapper{
-	display: block;
-	overflow: hidden;
-	margin-bottom: 7px;
+
+input[type="radio"]:checked + label
+{
+    background-position:0 -17px;
+    height: 17px;
+    width: 17px;
+    display:inline-block;
+    padding: 0 0 0 0px;
 }
-.custom_chb_wrapper label{
-	font-size: 13px;
-	float: left;
-	color: #798FA1;
-	line-height: 20px;
-	padding: 0 0 0 8px;
+.fr{
+	height: 17px;
+  width: 17px;
+  margin-left: 5px;
+  font-weight: bold;
+  float: left;
+
 }
+
 .custom_chb input{
 	display:none;
 }

@@ -6,28 +6,28 @@
 	</div>
 	<div class="sell_box step_1">
 		<h2><strong>Categories</strong></h2>
-		<div class="col_opt">
+		<div class="col_1">
 			<span class="custom_chb_wrapper">
-				<span>
-					<%= f.radio_button :condition, "Used", {} %>
+				<span class="custom_chb">
+					<%= f.radio_button :condition, "Used", {id: "all"} %>
+					<label for="all"></label><span class="fr">ALL</span>
 				</span>
-				<b>USED</b>
 			</span>
 		</div>
-		<div class="col_opt">
+		<div class="col_2">
 			<span class="custom_chb_wrapper">
-				<span>
-					<%= f.radio_button :condition, "New", {} %>
+				<span class="custom_chb">
+					<%= f.radio_button :condition, "New", {id: "new"} %>
+					<label for="used"></label><span class="fr">USED</span>
 				</span>
-				<b>NEW</b>
 			</span>
 		</div>
-		<div class="col_opt_last">
+		<div class="col_3">
 			<span class="custom_chb_wrapper">
-				<span>
-					<%= f.radio_button :condition, "Classic", {} %>
+				<span class="custom_chb">
+					<%= f.radio_button :condition, "Classic", {id: "classic"} %>
+					<label for="classic"></label><span class="fr">NEW</span>
 				</span>
-				<b>CLASSIC</b>
 			</span>
 		</div>
 		<div class="br"></div>
