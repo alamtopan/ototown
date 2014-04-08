@@ -6,6 +6,7 @@ Ototown::Application.routes.draw do
   #Dealers
   get   '/dealers',           to: 'dealers#dealers',           as: 'dealers'
   get   '/detail_dealer/:id', to: 'dealers#detail_dealer',     as: 'detail_dealer'
+  get   '/dealers/search',    to: 'dealers#search',            as:  'dealer_search'
 
   #Cars
   get   '/cars/:condition',   to: 'cars#cars',                 as: 'cars'
