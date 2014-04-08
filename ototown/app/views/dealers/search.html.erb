@@ -1,0 +1,30 @@
+<%= render partial: 'shared/front/paginate_result/paginate_result_dealers' %>
+<%= render partial: 'shared/front/search_bar_dealer' %>
+<div>
+	<div class="left">
+		<div class="recent_blog">
+			<% @dealers.each_with_index do |dealer, index| %>
+				<div class="post_block dealers">
+					<%= link_to detail_dealer_path(dealer),class: "thumb deal" do %>
+						<%= image_tag dealer.images.first.image  if dealer.images.present? %>
+					<% end %>
+					<h5>
+						<%= link_to detail_dealer_path(dealer) do %>
+							<%= dealer.dealer_info.title %>
+						<% end %>
+					</h5>
+					<div class="date"><span><%= dealer.dealer_info.address %></span></div>
+					<div class="post"><p><%= truncate strip_tags(dealer.dealer_info.description.to_s), length: 60 %></p></div>
+				</div>
+			<% end %>
+			<div class="clear"></div>
+		</div>
+	</div>
+	<div class="bottom_catalog_box padding-top0">
+		<div class="pagination">
+			<%= paginate @dealers %>
+		</div>
+		<div class="clear"></div>
+	</div>
+</div>
+<div class="clear"></div>

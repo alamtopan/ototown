@@ -6,12 +6,18 @@ class DealersController < ApplicationController
 		@dealers = Dealer.includes(:dealer_info).where("dealer_infos.active = TRUE").page(params[:page]).per(8).order("operators.id DESC")
 		render layout: 'application_catalog'
 	end
+
 	def detail_dealer
 		@dealer = Dealer.find(params[:id])
 		@cars_count = Car.where(user_id: @dealer.id)
 		@cars = Car.where(user_id: @dealer.id).page(params[:page]).per(6).order("id DESC")
 		render layout: 'application_dealer'
 	end
+
+  def search
+    @dealers = Dealer.filter_search(params[:search]).page(params[:page]).per(8)
+    render layout: 'application_catalog'
+  end
 
 	private
 		def generate_select
