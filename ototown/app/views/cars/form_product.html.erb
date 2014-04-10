@@ -110,7 +110,7 @@
 									<label><span>* </span><strong>Model:</strong></label>
 							    <%= f.select :model, options_for_select([]), {include_blank: 'Choose One'}, class: 'text', id: 'model_product' %>
 								</div>
-								<div class="select_wrapper">
+								<div class="select_wrapper cars">
 									<label><span>* </span><strong>Transmission:</strong></label>
 							    <%= f.select :transmission, options_for_select(@transmissions), {include_blank: 'Choose One'}, class: 'text' %>
 								</div>
@@ -120,15 +120,15 @@
 								</div>
 							</div>
 							<div class="col_3">
-								<div class="input_wrapper">
+								<div class="input_wrapper cars">
 									<label><span>* </span><strong>Cylinders:</strong></label>
 						      <%= f.text_field :cyclinders, class: 'text 100full', placeholder: 'Cyclinders' %>
 								</div>
-								<div class="input_wrapper">
+								<div class="input_wrapper cars">
 									<label><span>* </span><strong>Fuel:</strong></label>
 						      <%= f.text_field :fuel, class: 'text 100full', placeholder: 'Fuel' %>
 								</div>
-								<div class="select_wrapper">
+								<div class="select_wrapper cars">
 									<label><span></span><strong>Color: </strong></label>
 							    <%= f.select :color, options_for_select(@colors), {include_blank: 'Choose One'}, class: 'text' %>
 								</div>
@@ -160,7 +160,7 @@
 						    <%= render 'image_fields', f: image %>
 						  <% end %>
 						  <div class="links">
-						    <%= link_to_add_association '<button type="submit" class="btn btn-sm btn-primary">+ Add Image</button>'.html_safe, f, :images %>
+						    <%= link_to_add_association '<button type="submit" id="add-image" class="btn btn-sm btn-primary">+ Add Image</button>'.html_safe, f, :images %>
 						  </div>
 							<div class="clear"></div>
 							<h2></h2>

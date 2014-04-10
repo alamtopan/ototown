@@ -27,7 +27,7 @@ class ProductsController < UsersController
 			redirect_to products_path
 		else
 			flash[:alert] = @product.errors.full_messages
-			redirect_to new_product_path
+			render :new
 		end
 	end
 
@@ -37,7 +37,7 @@ class ProductsController < UsersController
 			redirect_to products_path
 		else
 			flash[:alert] = @product.errors.full_messages
-			redirect_to edit_product_path(@product)
+			render :edit
 		end
 	end
 
