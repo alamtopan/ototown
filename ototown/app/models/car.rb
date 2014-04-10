@@ -7,7 +7,7 @@ class Car < Product
 
   has_one :advertise, foreign_key: 'product_id'
 
-  accepts_nested_attributes_for :advertise, allow_destroy: true
+  accepts_nested_attributes_for :advertise, reject_if: :all_blank, allow_destroy: true
 
   default_scope { where(category_id: CATEGORY) }
 

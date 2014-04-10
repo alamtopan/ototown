@@ -59,7 +59,7 @@
         </li>
         <li>
           <% count_compare = cookies[:compare_products].nil? ? 0 : cookies[:compare_products].split('&').count %>
-          <%= link_to do %>
+          <%= link_to compare_products_path do %>
             Compare Cars <span class='compare'><%= count_compare %></span>
           <% end %>
         </li>

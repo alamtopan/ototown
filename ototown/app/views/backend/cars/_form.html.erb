@@ -10,7 +10,7 @@
   <div class="form-group">
    <%= f.label :choice_user, '',class: 'col-md-3 control-label' %>
     <div class="col-md-6">
-      <%= f.select :user_id, options_for_select(@users, @car.user_id), {include_blank: 'Choose One'}, class: 'form-control' %>
+      <%= f.select :user_id, options_for_select(@users, @car.user_id), {include_blank: 'Choose One'}, class: 'form-control selectpicker', data: { live_search: "true", size: 8 } %>
     </div>
   </div>
   <div class="form-group">
@@ -152,7 +152,7 @@
 </fieldset>
 <fieldset>
   <legend><i class="fa fa-angle-right"></i> Price Credits </legend>
-  <%= f.fields_for(:advertise) do |adv| %>
+  <%= f.fields_for @advertise do |adv| %>
     <%= render 'advertise_form', f: adv %>
   <% end %>
 </fieldset>

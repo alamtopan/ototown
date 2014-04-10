@@ -23,13 +23,9 @@ class Dealer < User
             return if category_type.blank?
             where("dealer_infos.category_type = ?", category_type)
           end
-  scope :filter_by_phone, ->(phone) do
-            return if phone.blank?
-            where("dealer_infos.phone LIKE ?", "%#{phone}%")
-          end
-  scope :filter_by_email, ->(email) do
-            return if email.blank?
-            where("dealer_infos.email LIKE ?", "%#{email}%")
+  scope :filter_by_address, ->(address) do
+            return if address.blank?
+            where("dealer_infos.address LIKE ?", "%#{address}%")
           end
   scope :filter_by_title, ->(title) do
             return if title.blank?
@@ -42,8 +38,7 @@ class Dealer < User
 
         filter_by_category_type(params[:category_type])
           .filter_by_title(params[:title])
-          .filter_by_phone(params[:phone])
-          .filter_by_email(params[:email])
+          .filter_by_address(params[:address])
 
         end
 

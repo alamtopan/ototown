@@ -42,6 +42,8 @@
 //= require bootstrap-datepicker
 //= require cocoon
 //= require front/province
+//= require bootstrap-select.min
+
 
 //= require back/pages/tablesDatatables
 $(function(){ TablesDatatables.init(); });
@@ -67,10 +69,12 @@ $(document).ready(function(){
   });
 
   $('#brand_product').change(function(){
-    var url = $(this).data('url'); 
+    var url = $(this).data('url');
     $.get(url, {brand: $(this).val()})
       .done(function(data){
         $('#model_product').html(data);
       });
   })
+
+  $('.selectpicker').selectpicker();
 });

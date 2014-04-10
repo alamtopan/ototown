@@ -16,4 +16,5 @@
 	*= require back/overide
 	*= require datepicker
 	*= require autocomplite
+	*= require bootstrap-select.min
   */
