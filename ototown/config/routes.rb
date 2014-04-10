@@ -77,6 +77,7 @@ Ototown::Application.routes.draw do
     resources :spareparts
     resources :page_contents
     resources :web_settings
+    resources :advertisements
   end
 
 end

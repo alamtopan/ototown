@@ -18,6 +18,8 @@ class User < Operator
   accepts_nested_attributes_for :dealer_info, reject_if: :all_blank
   accepts_nested_attributes_for :images, :reject_if => :all_blank, :allow_destroy => true
 
+  validates_uniqueness_of :username
+
 
   default_scope { where(role_id: ROLE_ID) }
 

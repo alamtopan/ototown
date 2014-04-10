@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_filter :configure_permitted_parameters, if: :devise_controller?
   before_filter :footer_content
+  before_filter :advertisements
 
 
   def configure_permitted_parameters
@@ -31,6 +32,16 @@ class ApplicationController < ActionController::Base
       @need_help = PageContent.where("category =?", "Need Help")
       @slider = PageContent.where("category =?", "Slider")
       @web = WebSetting.first
+    end
+
+    def advertisements
+      @advertisement_home_side_left = Advertisement.published.where("position =?","Home Side Left").first
+      @advertisement_home_side_right = Advertisement.published.where("position =?","Home Side Right").first
+      @advertisement_catalog_side_left = Advertisement.published.where("position =?","Catalog Side Left").first
+      @advertisement_catalog_side_right = Advertisement.published.where("position =?","Catalog Side Right").first
+
+      @advertisement_news_side_right_without_des = Advertisement.published.where("position =?","News Sidebar Right Without Information").first
+      @advertisement_news_side_right_with_des = Advertisement.published.where("position =?","News Sidebar Right With Information").first
     end
 
     def configure_permitted_parameters

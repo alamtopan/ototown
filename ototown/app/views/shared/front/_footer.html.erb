@@ -24,19 +24,29 @@
 		<div class="f_widget">
 			<h3><strong>User</strong> area</h3>
 			<ul>
-				<li><a href="add">Register Member</a></li>
-				<li><a href="dealer">Login Area</a></li>
-				<li><a href="#">Dealers</a></li>
-				<li><a href="#">Cars</a></li>
-				<li><a href="#">Spare Parts</a></li>
+				<li>
+					<%= link_to "Register Member", new_user_registration_path %>
+				</li>
+				<li>
+					<%= link_to "Login Area", new_user_session_path %>
+				</li>
+				<li>
+					<%= link_to "Dealers", dealers_path %>
+				</li>
+				<li>
+					<%= link_to "Cars", cars_path(:Used) %>
+				</li>
+				<li>
+					<%= link_to "Spare Parts", spareparts_path %>
+				</li>
 			</ul>
 		</div>
 		<div class="f_widget divide last">
 			<h3><strong>Find</strong> us here</h3>
 			<ul class="horizontal">
-				<li><a href="#"><img src="assets/fb_icon.png" alt="" /></a></li>
-				<li><a href="#"><img src="assets/twitter_icon.png" alt="" /></a></li>
-				<li><a href="#"><img src="assets/in_icon.png" alt="" /></a></li>
+				<li><a href="#"><img src="../assets/fb_icon.png" alt="" /></a></li>
+				<li><a href="#"><img src="../assets/twitter_icon.png" alt="" /></a></li>
+				<li><a href="#"><img src="../assets/in_icon.png" alt="" /></a></li>
 			</ul>
 		</div>
 	</div>

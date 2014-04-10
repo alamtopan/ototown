@@ -1,13 +1,14 @@
 <%= link_to 'Delete Compare Products', delete_compare_product_path, class: 'btn btn-danger pull-right', method: 'delete' %>
+<div class="br"></div>
 <div class="main_catalog" style="padding-top:0px; width:100%; overflow: scroll;">
-  <table class="table catalog_table">
-    <tr>
+  <div class="row">
       <% @products.each_with_index do |car, index| %>
-        <td>
+        <div class="col-md-3">
           <%= link_to detail_car_path(car), class: 'thumb' do %>
-            <div class= "car_catalog"><%= image_tag car.images.first.image if car.images.present? %></div>
+            <div class= "car_catalog_compare"><%= image_tag car.images.first.image if car.images.present? %></div>
           <% end %>
-          <div class="catalog_desc">
+          <div class="br"></div>
+          <div>
             <div class="location">Location: <b><%= car.city %></b></div>
             <div class="title_box">
               <h4>
@@ -17,8 +18,8 @@
               </h4>
             </div>
             <div class="clear"></div>
-            <div class="scrollit">
-              <table class="table table-striped grey_area">
+            <div>
+              <table class="table table-striped">
                 <tr>
                   <td>Price: <b><%= number_to_currency(car.price, unit: 'Rp.') %></b></td>
                 </tr>
@@ -68,15 +69,14 @@
                   <td>Cyclinders: <b><%= car.cyclinders %></b></td>
                 </tr>
                 <tr>
-                  <td>Description: <b><%= car.description.html_safe %></b></td>
+                  <td><b>Description:</b><div class="br"></div><%= car.description.html_safe %></td>
                 </tr>
               </table>
             </div>
           </div>
-        </td>
+        </div>
       <% end %>
       <%= raw '<div class="alert alert-danger"><a class="close" data-dismiss="alert">×</a>No Data Found</div>' unless @products.present? %>
-    </tr>
-  </table>
+  </div>
 </div>
 <div class="clear"></div>

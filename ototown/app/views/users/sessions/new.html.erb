@@ -1,6 +1,7 @@
 <h2>Sign in</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <%= bootstrap_flash %>
 	<%= link_to user_omniauth_authorize_path(:facebook), class: 'btn btn-primary-fb', style: "margin-bottom:0px" do %>
     <%= raw "&nbsp;&nbsp;&nbsp;SignUp With Facebook" %>
   <% end %>

@@ -35,7 +35,7 @@
 	</ul>
 	<div class="bottom_cat=alog_box padding-top0">
 		<div class="pagination">
-			<%= paginate @cars %>
+			<%= paginate @cars.present? || @products.blank? ? @cars : @products %>
 		</div>
 		<div class="clear"></div>
 	</div>

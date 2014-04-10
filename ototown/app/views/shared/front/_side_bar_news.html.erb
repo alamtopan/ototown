@@ -1,32 +1,21 @@
 <div class="sidebar">
 	<div class="widget_divider"></div>
-	<div class="widget">
-		<h2><strong>Featured</strong> work</h2>
-		<div class="thumb_box">
-			<a href="#" class="thumb"><img src="images/pics/widget.jpg" alt=""></a>
+	<% if @advertisement_news_side_right_with_des.present? %>
+		<div class="widget">
+			<a href="<%= @advertisement_news_side_right_with_des.link_url %>">
+				<h2 class="uppercase"><strong><%= @advertisement_news_side_right_with_des.title %></strong></h2>
+			</a>
+			<div class="thumb_box">
+				<a href="<%= @advertisement_news_side_right_with_des.link_url %>" class="thumb">
+				<%= image_tag "#{@advertisement_news_side_right_with_des.picture}" %>
+				</a>
+			</div>
+			<p><%= truncate strip_tags(@advertisement_news_side_right_with_des.content.to_s), length: 100 %></p>
 		</div>
-		<div class="post">
-			<p>Lorem ipsum dolo stet consectetur adipiscing elit vestibulu.</p>
-		</div>
-		<a href="#" class="more markered">Read more</a>
-	</div>
+	<% end %>
 	<div class="widget_divider"></div>
-	<div class="widget">
-		<h2><strong>Twitter</strong> feed</h2>
-		<ul class="twitter_feed">
-			<li>
-				Lorem ipsum dolo at consecte adipiscing elit. Vestibul dictu, nisi id vulputate ullamcoper
-				<a href="http://twitter.com/">http://automarket.com/twitter</a>
-			</li>
-			<li>
-				Lorem ipsum dolo at consecte adipiscing elit. Vestibul dictu, nisi id vulputate ullamcoper
-				<a href="http://twitter.com/">http://automarket.com/twitter</a>
-			</li>
-			<li class="last">
-				Lorem ipsum dolo at consecte adipiscing elit. Vestibul dictu, nisi id vulputate ullamcoper
-				<a href="http://twitter.com/">http://automarket.com/twitter</a>
-			</li>
-		</ul>
-	</div>
+	<% if @advertisement_news_side_right_without_des.present? %>
+		<%= image_tag "#{@advertisement_news_side_right_without_des.picture}", class: "full-100 margin-bottom20" %>
+	<% end %>
 	<div class="widget_divider"></div>
 </div>

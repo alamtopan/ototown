@@ -1,0 +1,31 @@
+<%= render layout: 'backend/shared/prepare_table', 
+           locals: {
+                     table_name:  'Advertisements', 
+                     button_name: 'Advertisements',
+                     add_method: true
+                   } do %>
+	<table id="example-datatable" class="table table-vcenter table-condensed table-bordered">
+		<thead>
+			<tr>
+				<th>Position</th>
+				<th>Name</th>
+				<th>Publish On</th>
+				<th>Expire On</th>
+				<th class="text-center">Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+		<% @advertisements.each_with_index do |advertisement,index| %>
+			<tr>
+				<td><a href="javascript:void(0)"><%= advertisement.position %></a></td>
+				<td><%= advertisement.name %></td>
+				<td><%= advertisement.created_at.strftime('%d %b %Y - at %I:%M%p') %></td>
+				<td><%= advertisement.publish %></td>
+				<td class="text-center">
+					<%= render partial: 'backend/shared/action_buttons', locals: {resource: advertisement, confirmation: "#{advertisement.title} will be deleted, are you sure ?"} %>
+				</td>
+			</tr>
+		<% end %>
+		</tbody>
+	</table>
+<% end %>

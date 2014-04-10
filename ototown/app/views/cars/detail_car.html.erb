@@ -22,7 +22,6 @@
 					</div>
 					<div class="car_characteristics">
 						<a href="#" class="print" onclick="window.print();return false;"></a>
-						<%= link_to 'Compare', compare_path(@car), class: "btn btn-primary" %>
 						<div class="price" data-currency="Rp" data-price="<%= @car.price %>" style="margin-left:10px; margin-top:15px;">
 							<%= number_to_currency(@car.price, unit: 'Rp.') %>
 						</div>
@@ -91,6 +90,7 @@
 								<div class="right"><%= @car.cyclinders %></div>
 							</div>
 						</div>
+						<%= link_to 'Add To Compare', compare_path(@car), class: "btn btn-primary" %>
 					</div>
 					<div class="clear"></div>
 					<div class="info_box">

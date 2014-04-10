@@ -28,9 +28,15 @@
 					<span class="sidebar-header-title">Widget Kit</span>
 				</li>
 				<li>
-					<%= link_to '#!' do %>
-						<i class="gi gi-charts sidebar-nav-icon"></i>Statistics
-					<% end %>
+					<a href="#" class="sidebar-nav-menu"><i class="fa fa-angle-left sidebar-nav-indicator"></i><i class="fa fa-building-o fa-fw sidebar-nav-icon"></i>Advertisements</a>
+					<ul>
+						<li>
+							<%= link_to 'Create New', new_backend_advertisement_path  %>
+						</li>
+						<li>
+							<%= link_to 'List Advertisements', backend_advertisements_path %>
+						</li>
+					</ul>
 				</li>
 				<li class="sidebar-header">
 					<span class="sidebar-header-title">Data Content</span>

@@ -13,8 +13,8 @@
 							<%= dealer.dealer_info.title %>
 						<% end %>
 					</h5>
+					<div class="post"><b><%= dealer.dealer_info.category_type %></b></div>
 					<div class="date"><span><%= dealer.dealer_info.address %></span></div>
-					<div class="post"><p><%= truncate strip_tags(dealer.dealer_info.description.to_s), length: 60 %></p></div>
 				</div>
 			<% end %>
 			<div class="clear"></div>

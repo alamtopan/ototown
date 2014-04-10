@@ -11,7 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140406225314) do
+ActiveRecord::Schema.define(version: 20140410110210) do
+
+  create_table "advertisements", force: true do |t|
+    t.string   "title"
+    t.date     "publish"
+    t.date     "unpublish"
+    t.string   "position"
+    t.string   "name"
+    t.string   "phone"
+    t.text     "address"
+    t.integer  "price"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
+    t.boolean  "active"
+    t.string   "link_url"
+    t.text     "content"
+  end
 
   create_table "advertises", force: true do |t|
     t.integer  "user_id"
