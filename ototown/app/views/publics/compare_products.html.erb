@@ -1,82 +1,84 @@
-<%= link_to 'Delete Compare Products', delete_compare_product_path, class: 'btn btn-danger pull-right', method: 'delete' %>
-<div class="br"></div>
-<div class="main_catalog" style="padding-top:0px; width:100%; overflow: scroll;">
-  <div class="row">
-      <% @products.each_with_index do |car, index| %>
-        <div class="col-md-3">
-          <%= link_to detail_car_path(car), class: 'thumb' do %>
-            <div class= "car_catalog_compare"><%= image_tag car.images.first.image if car.images.present? %></div>
-          <% end %>
-          <div class="br"></div>
-          <div>
-            <div class="location">Location: <b><%= car.city %></b></div>
-            <div class="title_box">
-              <h4>
-                <%= link_to detail_car_path(car) do %>
-                  <%= car.name %>
-                <% end %>
-              </h4>
-            </div>
-            <div class="clear"></div>
+<% if @products.present? %>
+  <%= link_to 'Delete Compare Products', delete_compare_product_path, class: 'btn btn-danger pull-right', method: 'delete' %>
+  <div class="br"></div>
+  <div class="main_catalog" style="padding-top:0px; width:100%; overflow: scroll;">
+    <div class="row">
+        <% @products.each_with_index do |car, index| %>
+          <div class="col-md-3">
+            <%= link_to detail_car_path(car), class: 'thumb' do %>
+              <div class= "car_catalog_compare"><%= image_tag car.images.first.image if car.images.present? %></div>
+            <% end %>
+            <div class="br"></div>
             <div>
-              <table class="table table-striped">
-                <tr>
-                  <td>Price: <b><%= number_to_currency(car.price, unit: 'Rp.') %></b></td>
-                </tr>
-                <tr>
-                  <td>Fabrication: <b><%= car.year %></b></td>
-                </tr>
-                <tr>
-                  <td>Brand: <b><%= car.brand %></b></td>
-                </tr>
-                <tr>
-                  <td>Model, Body type: <b><%= "#{car.model}, #{car.type_product}" %></b></td>
-                </tr>
-                <tr>
-                  <td>Condition: <b><%= car.condition %></b></td>
-                </tr>
-                <tr>
-                  <td>Fuel: <b><%= car.fuel %></b></td>
-                </tr>
-                <tr>
-                  <td>Engine: <b><%= car.engine %></b></td>
-                </tr>
-                <tr>
-                  <td>Transmision: <b><%= car.transmission %></b></td>
-                </tr>
-                <tr>
-                  <td>Color: <b><%= car.color %></b></td>
-                </tr>
-                <tr>
-                  <td>Condition: <b><%= car.condition %></b></td>
-                </tr>
-                <tr>
-                  <td>Year: <b><%= car.year %></b></td>
-                </tr>
-                <tr>
-                  <td>Plate Number: <b><%= "#{car.plate_number}, #{car.city}, #{car.province}" %></b></td>
-                </tr>
-                <tr>
-                  <td>Expire Date: <b><%= car.exp_date %></b></td>
-                </tr>
-                <tr>
-                  <td>Doors: <b><%= car.door %></b></td>
-                </tr>
-                <tr>
-                  <td>Seats: <b><%= car.seat %></b></td>
-                </tr>
-                <tr>
-                  <td>Cyclinders: <b><%= car.cyclinders %></b></td>
-                </tr>
-                <tr>
-                  <td><b>Description:</b><div class="br"></div><%= car.description.html_safe %></td>
-                </tr>
-              </table>
+              <div class="location">Location: <b><%= car.city %></b></div>
+              <div class="title_box">
+                <h4>
+                  <%= link_to detail_car_path(car) do %>
+                    <%= car.name %>
+                  <% end %>
+                </h4>
+              </div>
+              <div class="clear"></div>
+              <div>
+                <table class="table table-striped">
+                  <tr>
+                    <td>Price: <b><%= number_to_currency(car.price, unit: 'Rp.') %></b></td>
+                  </tr>
+                  <tr>
+                    <td>Fabrication: <b><%= car.year %></b></td>
+                  </tr>
+                  <tr>
+                    <td>Brand: <b><%= car.brand %></b></td>
+                  </tr>
+                  <tr>
+                    <td>Model, Body type: <b><%= "#{car.model}, #{car.type_product}" %></b></td>
+                  </tr>
+                  <tr>
+                    <td>Condition: <b><%= car.condition %></b></td>
+                  </tr>
+                  <tr>
+                    <td>Fuel: <b><%= car.fuel %></b></td>
+                  </tr>
+                  <tr>
+                    <td>Engine: <b><%= car.engine %></b></td>
+                  </tr>
+                  <tr>
+                    <td>Transmision: <b><%= car.transmission %></b></td>
+                  </tr>
+                  <tr>
+                    <td>Color: <b><%= car.color %></b></td>
+                  </tr>
+                  <tr>
+                    <td>Condition: <b><%= car.condition %></b></td>
+                  </tr>
+                  <tr>
+                    <td>Year: <b><%= car.year %></b></td>
+                  </tr>
+                  <tr>
+                    <td>Plate Number: <b><%= "#{car.plate_number}, #{car.city}, #{car.province}" %></b></td>
+                  </tr>
+                  <tr>
+                    <td>Expire Date: <b><%= car.exp_date %></b></td>
+                  </tr>
+                  <tr>
+                    <td>Doors: <b><%= car.door %></b></td>
+                  </tr>
+                  <tr>
+                    <td>Seats: <b><%= car.seat %></b></td>
+                  </tr>
+                  <tr>
+                    <td>Cyclinders: <b><%= car.cyclinders %></b></td>
+                  </tr>
+                  <tr>
+                    <td><b>Description:</b><div class="br"></div><%= car.description.html_safe %></td>
+                  </tr>
+                </table>
+              </div>
             </div>
           </div>
-        </div>
-      <% end %>
-      <%= raw '<div class="alert alert-danger"><a class="close" data-dismiss="alert">×</a>No Data Found</div>' unless @products.present? %>
+        <% end %>
+    </div>
   </div>
-</div>
-<div class="clear"></div>
+  <div class="clear"></div>
+<% end %>
+<%= raw '<div class="alert alert-danger"><a class="close" data-dismiss="alert">×</a>No Data Found</div>' unless @products.present? %>

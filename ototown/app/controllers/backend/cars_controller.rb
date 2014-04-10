@@ -1,27 +1,14 @@
 class Backend::CarsController < Backend::ApplicationController
   defaults :resource_class => Car, :collection_name => 'cars', :instance_name => 'car'
   prepend_before_filter :generate_select, except: [:index,:show]
+  prepend_before_filter :set_car, except: [:new, :create, :index]
+  prepend_before_filter :set_advertise, only: [:new, :create]
   before_filter :choice_condition
   before_filter :choice_status
 
-  def edit
-    @car = Car.find_by(slug: params[:id])
-  end
-
-  def update
-    @car = Car.find_by(slug: params[:id])
-    if @car.update(product_params)
-      flash[:notice] = "Your Product Changed"
-      redirect_to backend_cars_path
-    else
-      flash[:alert] = @car.errors.full_messages
-      redirect :back
-    end
-  end
-
   private
     def generate_select
-      @users = User.all.map{|u| [u.username, u.id]}
+      @users = User.all.map{|u| [u.email, u.id]}
       @models = Model.all.map{|m| [m.name, m.name]}
       @types = Type.all.map{|t| [t.name, t.name]}
       @brands = Brand.all.map{|t| [t.name, t.name]}
@@ -30,6 +17,15 @@ class Backend::CarsController < Backend::ApplicationController
         'Yellow','Purple','Maroon']
       @colors = colors.map{|c| [c,c]}
       @transmissions = ['Auto','Mechanic'].map{|tr| [tr,tr]}
+    end
+
+    def set_car
+      @car = Car.find_by(slug: params[:id])
+      @advertise = @car.advertise
+    end
+
+    def set_advertise
+      @advertise = Advertise.new(car: Car.new)
     end
 
     def choice_condition

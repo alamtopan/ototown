@@ -21,7 +21,7 @@ class Backend::SparepartsController < Backend::ApplicationController
 
   private
     def generate_select
-      @users = User.all.map{|u| [u.username, u.id]}
+      @users = User.all.map{|u| [u.email, u.id]}
       @models = Model.all.map{|m| [m.name, m.name]}
       @types = Type.all.map{|t| [t.name, t.name]}
       @brands = Brand.all.map{|t| [t.name, t.name]}

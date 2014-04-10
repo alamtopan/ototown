@@ -2,9 +2,9 @@
 	<div id="content">
 		<div class="content">
 			<div class="breadcrumbs">
-				<a href="#">Home</a>
+				<%= link_to 'Home', root_path %>
 				<%= image_tag '../../assets/marker_2.gif' %>
-				<a href="#">Cars</a>
+				<%= link_to 'Cars', cars_path(@car.condition) %>
 				<%= image_tag '../../assets/marker_2.gif' %>
 				<%= @car.name %>
 			</div>
