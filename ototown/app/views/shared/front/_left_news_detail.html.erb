@@ -1,5 +1,9 @@
 <div class="news_wrapper" style="padding-top:25px;">
-	<%= image_tag "reklame/left-banner.png", class: "full-100 margin-bottom20" %>
+	<% if @advertisement_news_side_right_without_des.present? %>
+		<% @advertisement_news_side_right_without_des.each do |advertisement_news_side_right_without_des| %>
+			<%= image_tag "#{advertisement_news_side_right_without_des.picture}", class: "full-100 margin-bottom20" %>
+		<% end %>
+	<% end %>
 	<div class="news">
 		<h2><strong>Latest</strong> News</h2>
 		<div class="scrool">
