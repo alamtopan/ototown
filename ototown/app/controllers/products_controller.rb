@@ -13,11 +13,11 @@ class ProductsController < UsersController
 
 	def new
 		@product = Product.new
-		render layout: 'application_home'
+		render layout: 'application_full_width'
 	end
 
 	def edit
-		render layout: 'application_home'
+		render layout: 'application_full_width'
 	end
 
 	def create

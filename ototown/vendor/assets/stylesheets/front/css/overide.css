@@ -553,8 +553,6 @@ a.slide_url:hover{
 	width: 100%;
 	height: 145px;
 	overflow: hidden;
-	border: solid 1px #ccc;
-	padding: 2px;
 }
 .car_catalog_compare img{
 	width: 100%;
@@ -581,4 +579,26 @@ a.slide_url:hover{
 }
 .uppercase{
 	text-transform: uppercase;
+}
+.row2000{
+	width: 3000px;
+	background: #eceded;
+	border-top: solid 1px #ddd;
+	float: left;
+	padding-top: 10px;
+}
+.col-240{
+	width: 250px;
+	float: left;
+	margin-left: 10px;
+	border: solid 1px #ddd;
+	padding: 4px;
+	background: #FFF;
+}
+.scroll-compare{
+	padding-top:0px; 
+	width:100%; 
+	overflow-x: scroll; 
+	border-right: solid 1px #ddd; 
+	border-left: solid 1px #ddd;
 }

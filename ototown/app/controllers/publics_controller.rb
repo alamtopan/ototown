@@ -75,7 +75,7 @@ class PublicsController < ApplicationController
   def compare_products
     slugs = cookies[:compare_products] ? cookies[:compare_products].split('&') : []
     @products = Car.published.where("slug IN (?)", slugs)
-    render layout: 'application_catalog'
+    render layout: 'application_compare'
   end
 
   def delete_compare
