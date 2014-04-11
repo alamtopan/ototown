@@ -4,7 +4,18 @@ class Backend::AdvertisementsController < Backend::ApplicationController
 
 	private
 		def position
-			position = ['Home Side Left','Home Side Right','Catalog Side Left','Catalog Side Right','News Sidebar Right Without Information','News Sidebar Right With Information']
+			position =  [
+									'Home Side Left',
+									'Home Side Right',
+									'Catalog Side Left',
+									'Catalog Side Right',
+									'News Sidebar Right Without Information',
+									'News Sidebar Right With Information',
+									'Detail Car Side Left',
+									'Detail Car Side Right',
+									'Detail News Side Left',
+									'Detail News Side Right'
+									]
 			@position = position.map{|po| [po, po]}
 		end
 end

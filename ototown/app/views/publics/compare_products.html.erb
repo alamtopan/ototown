@@ -1,10 +1,10 @@
 <% if @products.present? %>
   <%= link_to 'Delete Compare Products', delete_compare_product_path, class: 'btn btn-danger pull-right', method: 'delete' %>
   <div class="br"></div>
-  <div class="main_catalog" style="padding-top:0px; width:100%; overflow: scroll;">
-    <div class="row">
+  <div class="main_catalog scroll-compare">
+    <div class="row2000">
         <% @products.each_with_index do |car, index| %>
-          <div class="col-md-3">
+          <div class="col-240">
             <%= link_to detail_car_path(car), class: 'thumb' do %>
               <div class= "car_catalog_compare"><%= image_tag car.images.first.image if car.images.present? %></div>
             <% end %>
