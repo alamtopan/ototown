@@ -1,0 +1,34 @@
+<div class="blog">
+	<div class="nav-news">
+	  <div class="active">
+	  	<%= link_to "News", news_path %>
+	  </div>
+	  <div>
+	  <%= link_to "TIps", tips_path %>
+	  </div>
+	</div>
+	<% @news.each do |news| %>
+		<div class="blog_post">
+			<%= link_to detail_news_path(news.id) do %>
+				<%= image_tag "#{news.pic}", class: "thumb" %>
+			<% end %>
+			<div class="blog_desc">
+				<h4><%= link_to "#{news.title}", detail_news_path(news.id) %></h4>
+				<div class="grey_area padding-left10">
+					<a href="example" class="blog_date"><%= news.created_at.strftime('%d %b %Y - at %I:%M%p') %></a>
+					<div class="blog_category">
+						<a href="example"><%= news.category_news.try(:title) %></a>
+					</div>
+				</div>
+				<div class="post">
+					<p><%= truncate strip_tags(news.content.to_s), length: 100 %></p>
+				</div>
+				<%= link_to "Read More >>", detail_news_path(news.id), class: "more markered" %>
+			</div>
+		</div>
+	<% end %>
+	<div class="pagination">
+		<%= paginate @news %>
+	</div>
+	<div class="clear"></div>
+</div>

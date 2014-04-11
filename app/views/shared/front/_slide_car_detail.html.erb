@@ -1,0 +1,26 @@
+<div class="big_image">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <% images.each_with_index do |product,index| %>
+        <div class="item <%= 'active' if index.zero? %>">
+          <%= image_tag product.image.url, style: 'width:100%' %>
+        </div>
+      <% end %>        
+    </div>
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
+  </div>
+</div>
+<div class="small_img">
+  <div class='list-group'>
+    <% images.limit(5).each_with_index do |product,index| %>
+      <a class="fancybox" rel="ligthbox" href="<%= product.image.url %>">
+        <%= image_tag product.image.url(:thumb), class: 'img-responsive' %>
+      </a>
+    <% end %>
+  </div>
+</div>

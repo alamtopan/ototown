@@ -1,0 +1,151 @@
+<div id="sidebar">
+	<div class="sidebar-scroll">
+		<div class="sidebar-content">
+			<%= link_to backend_path, class: "sidebar-brand" do %>
+				<strong>Administrator</strong>
+			<% end %>
+			<div class="sidebar-section sidebar-user clearfix">
+				<div class="sidebar-user-avatar">
+					<%= image_tag "#{current_backend_admin.profile.avatar}" %>
+				</div>
+				<div class="sidebar-user-name"><%= current_backend_admin.username %></div>
+				<div class="sidebar-user-links">
+					<%= link_to edit_backend_admin_path(current_backend_admin.id) do %>
+						<i class="gi gi-cogwheel"></i>
+					<% end %>
+					<%= link_to destroy_backend_admin_session_path, method: 'delete',data: {toogle: 'tooltip', placement: 'bottom', title: 'Logout'} do %>
+					<i class="gi gi-exit"></i>
+					<% end %>
+				</div>
+			</div>
+			<ul class="sidebar-nav">
+				<li>
+					<%= link_to backend_path do %>
+						<i class="gi gi-stopwatch sidebar-nav-icon"></i>Dashboard
+					<% end %>
+				</li>
+				<li class="sidebar-header">
+					<span class="sidebar-header-title">Widget Kit</span>
+				</li>
+				<li>
+					<a href="#" class="sidebar-nav-menu"><i class="fa fa-angle-left sidebar-nav-indicator"></i><i class="fa fa-building-o fa-fw sidebar-nav-icon"></i>Advertisements</a>
+					<ul>
+						<li>
+							<%= link_to 'Create New', new_backend_advertisement_path  %>
+						</li>
+						<li>
+							<%= link_to 'List Advertisements', backend_advertisements_path %>
+						</li>
+					</ul>
+				</li>
+				<li class="sidebar-header">
+					<span class="sidebar-header-title">Data Content</span>
+				<li>
+					<a href="#" class="sidebar-nav-menu"><i class="fa fa-angle-left sidebar-nav-indicator"></i><i class="fa fa-building-o fa-fw sidebar-nav-icon"></i>Dealers</a>
+					<ul>
+						<li>
+							<%= link_to 'Create New', new_backend_dealer_path  %>
+						</li>
+						<li>
+							<%= link_to 'List Dealers', backend_dealers_path %>
+						</li>
+						<li>
+							<%= link_to 'List Request Dealers', dealers_request_backend_dealers_path %>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="#" class="sidebar-nav-menu"><i class="fa fa-angle-left sidebar-nav-indicator"></i><i class="fa fa-users fa-fw sidebar-nav-icon"></i>Users</a>
+					<ul>
+						<li>
+							<%= link_to 'Create New', new_backend_user_path  %>
+						</li>
+						<li>
+							<%= link_to 'List Data', backend_users_path %>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="#" class="sidebar-nav-menu"><i class="fa fa-angle-left sidebar-nav-indicator"></i><i class="fa fa-truck fa-fw sidebar-nav-icon"></i>Cars</a>
+					<ul>
+						<li>
+							<%= link_to 'Create New', new_backend_car_path  %>
+						</li>
+						<li>
+							<%= link_to 'List Data', backend_cars_path  %>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="#" class="sidebar-nav-menu"><i class="fa fa-angle-left sidebar-nav-indicator"></i><i class="fa fa-wrench fa-fw sidebar-nav-icon"></i>Spare Parts</a>
+					<ul>
+						<li>
+							<%= link_to 'Create New', new_backend_sparepart_path  %>
+						</li>
+						<li>
+							<%= link_to 'List Data', backend_spareparts_path  %>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="#" class="sidebar-nav-menu"><i class="fa fa-angle-left sidebar-nav-indicator"></i><i class="fa fa-wrench fa-fw sidebar-nav-icon"></i>Advertise</a>
+					<ul>
+						<li>
+							<%= link_to 'Create New', new_backend_advertise_path  %>
+						</li>
+						<li>
+							<%= link_to 'List Data', backend_advertises_path  %>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="#" class="sidebar-nav-menu"><i class="fa fa-angle-left sidebar-nav-indicator"></i><i class="fa fa-file-text fa-fw sidebar-nav-icon"></i>News</a>
+					<ul>
+						<li>
+							<%= link_to 'Create New', new_backend_news_path %>
+						</li>
+						<li>
+							<%= link_to 'List Data', backend_news_index_path %>
+						</li>
+						<li>
+							<%= link_to 'Category', backend_category_news_index_path %>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="#" class="sidebar-nav-menu"><i class="fa fa-angle-left sidebar-nav-indicator"></i><i class="gi gi-certificate sidebar-nav-icon"></i>Attribute Product</a>
+					<ul>
+						<li>
+							<%= link_to 'List Brand', backend_brands_path %>
+						</li>
+						<li>
+							<%= link_to 'List Model', backend_models_path %>
+						</li>
+						<li>
+							<%= link_to 'List Type', backend_types_path %>
+						</li>
+					</ul>
+				</li>
+				<li>
+				<a href="#" class="sidebar-nav-menu"><i class="fa fa-angle-left sidebar-nav-indicator"></i><i class="fa fa-gears fa-fw sidebar-nav-icon"></i>Edit Contents</a>
+					<ul>
+						<li>
+							<%= link_to 'Create New', new_backend_page_content_path %>
+						</li>
+						<li>
+							<%= link_to 'List Data', backend_page_contents_path %>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="#" class="sidebar-nav-menu"><i class="fa fa-angle-left sidebar-nav-indicator"></i><i class="fa fa-cog fa-fw sidebar-nav-icon"></i>Web Settings</a>
+					<ul>
+						<li>
+							<%= link_to 'List Data', backend_web_settings_path %>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>

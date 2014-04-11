@@ -1,0 +1,28 @@
+<div class="sidebar">
+	<div class="catalog_sidebar">
+		<div class="widget grey car_widget back-white dealer_profile ">
+			<h2><strong>About</strong> us</h2>
+			<div class="post">
+				<%= image_tag @dealer.profile.avatar.url(:medium), style: 'max-width:70px;float:left;margin-right:20px;' %>
+				<p>
+					<div>Director :</div>
+					<b><%= @dealer.profile.full_name %></b>
+				</p>
+				<% if @dealer.dealer_info.description.present? %>
+					<p><%= @dealer.dealer_info.description.html_safe if @dealer.dealer_info.category_type == 'Dealer'%></p>
+				<% end %>
+				<div class="clear"></div>
+			</div>
+		</div>
+		<div class="widget contacts_widget">
+			<h2><strong>Contact Dealer</strong></h2>
+			<div class="addr detail"><%= @dealer.dealer_info.address %></div>
+			<div class="phones detail"><%= @dealer.dealer_info.phone %></div>
+			<div class="email detail single_line">
+				<a href="mailto:<%= @dealer.email %>" rel="moc/eciujretniw//elpmaxe" class="email_link_replace markered"><%= @dealer.dealer_info.email %>
+				</a>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+</div>

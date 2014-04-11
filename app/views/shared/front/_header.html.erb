@@ -1,0 +1,100 @@
+<%= render partial: 'shared/front/login' %>
+<div id="header">
+  <div class="top_info">
+    <div class="logo">
+      <%= link_to root_path do %>
+        <%= image_tag "logo/ototown.png" %>
+      <% end %>
+    </div>
+    <div class="header_contacts">
+    </div>
+    <div class="accs">
+      <div class="btn-group">
+        <% if current_user %>
+          <%= link_to new_product_path, class: "btn2 dialog_request_dealer" do %>
+            ADD AUTO
+          <% end %>
+        <% elsif %>
+          <a href="#signup" data-toggle="modal" data-target=".bs-modal-sm">
+            <button type="button" class="btn btn-default no-button">
+              <span class="glyphicon glyphicon-align-justify"></span> Register
+            </button>
+          </a>
+          <a href="#signup" data-toggle="modal" data-target=".bs-modal-sm2">
+            <button type="button" class="btn btn-default no-button">
+              <span class="glyphicon glyphicon-user"></span> Login
+            </button>
+          </a>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+          <%= link_to 'Dealers',dealers_path %>
+        </li>
+        <li>
+          <%= link_to 'Used Cars',cars_path(:Used) %>
+        </li>
+        <li>
+          <%= link_to 'New Cars',cars_path(:New) %>
+        </li>
+        <li>
+          <%= link_to 'Classic Cars',cars_path(:Classic) %>
+        </li>
+        <li>
+          <%= link_to 'Spare Parts',spareparts_path %>
+        </li>
+        <li>
+          <% count_compare = cookies[:compare_products].nil? ? 0 : cookies[:compare_products].split('&').count %>
+          <%= link_to compare_products_path do %>
+            Compare Cars <span class='compare'><%= count_compare %></span>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to 'News & Tips',news_path %>
+        </li>
+      </ul>
+      <% if current_user %>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown navbar-right">
+            <a href="#" class="dropdown-toggle right-ava" data-toggle="dropdown">
+              <div class="avatar-small-one">
+                <%= image_tag "#{current_user.profile.avatar}" %>
+              </div>
+              <span class="usr-name">My Account</span>
+              <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <%= link_to "Profile", user_home_path %>
+              </li>
+              <li>
+                <%= link_to "Setting Account", user_profile_path %>
+              </li>
+              <li class="divider"></li>
+              <li><%= link_to 'Add Auto', new_product_path %></li>
+              <li><%= link_to 'My Reclame', products_path %></li>
+              <li class="divider"></li>
+              <li>
+                <%= link_to "Sign Out", destroy_user_session_path, method: 'delete' %>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      <% end %>
+    </div>
+  </div>
+</div>

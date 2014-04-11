@@ -1,0 +1,52 @@
+.pav-icon{
+	width: 40px;
+	height: 40px;
+}
+.br{
+	width: 100%;
+	height: 20px;
+	float: left;
+}
+.float-right{
+	float: right;
+}
+.ototown{
+	font-family: 'PTSansBold',Arial,sans-serif;
+	font-size: 48px!important;
+	color: #FFFFFF;
+	line-height: 60px;
+	font-weight: bold;
+	text-decoration: none;
+	font-style: italic;
+}
+.orange{
+	color: #f25a23!important;
+}
+.login-title{
+	border-radius: 10px 10px 0px 0px;
+	-moz-border-radius: 10px 10px 0px 0px;
+	-webkit-border-radius: 10px 10px 0px 0px;
+	border: 0px solid #000000;
+}
+.submit-bott {
+	background-color: #f9fafc!important;
+	border-bottom: 0;
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+	padding: 20px;
+	border: solid 1px #ddd;
+	margin-bottom: 4px;
+}
+
+.nested-fill{
+	background-color: rgb(248, 248, 248);
+	border: solid 1px #ddd;
+	padding: 10px;
+	margin-bottom: 20px;
+	border-radius: 5px 5px 5px 5px;
+	-moz-border-radius: 5px 5px 5px 5px;
+	-webkit-border-radius: 5px 5px 5px 5px;
+}
+.small-image{
+	width: 200px;
+}

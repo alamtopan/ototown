@@ -1,0 +1,55 @@
+<div class="profile_content">
+	<%= form_for @user, url: user_update_path, method: 'put' do |f| %>
+		<%= f.fields_for(:profile) do |profile| %>
+			<h1><strong>Profile</strong></h1>
+			<div class="settings_photo" id="upload-photo-container" style="position: relative;">
+				<div class="photo">
+					<%= image_tag @user.profile.avatar.url(:medium) %>
+					<div class="loader"></div>
+				</div>
+				<div class="upload-photo">
+					<div class="username"><%= @user.username %></div>
+					 <%= profile.file_field :avatar, class: "text" %>
+				</div>
+			</div>
+			<div class="settings_form">
+					<div class="col1">
+						<%= profile.label :full_name, '', class: 'text' %>
+						<%= profile.text_field :full_name, class: 'text' %>
+					</div>
+					<div class="col2">
+						<%= f.label :email, '', class: 'text' %>
+						<%= f.email_field :email, class: 'text' %>
+					</div>
+					<div class="col1">
+						<%= f.label :birthday, '', class: 'text' %>
+						<%= profile.date_select :birthday, {start_year: 1960, order: [:day, :month, :year], prompt: { day: 'Select day', month: 'Select month', year: 'Select year'}}, {class: 'text selt', required: true} %>
+					</div>
+					<div class="col2">
+						<%= profile.label :city, '', class: 'text' %>
+						<%= profile.text_field :city, class: 'text' %>
+					</div>
+					<div class="col1">
+						<%= profile.label :codepos, '', class: 'text' %>
+						<%= profile.text_field :codepos, class: 'text' %>
+					</div>
+					<div class="col2">
+						<%= profile.label :phone, '', class: 'text' %>
+						<%= profile.text_field :phone, class: 'text' %>
+					</div>
+					<div class="col1 last">
+						<%= profile.label :gender, '', class: 'text' %>
+						<%= profile.select :gender, options_for_select(@sex,@user.profile.gender), {include_blank: '- Select Gender -'}, class: 'text' %>
+					</div>
+					<div class="col2 last">
+						<%= profile.label :address, '', class: 'text' %>
+						<%= profile.text_area :address, class: 'text area' %>
+					</div>
+					<div class="clear"></div>
+			</div>
+			<%= f.submit :save, class: 'btn1 submit-save' %>
+			<%= link_to 'CHANGE PASSWORD', edit_user_password_path, class: 'btn2 submit-change-password' %>
+		<% end %>
+	<% end %>
+</div>
+<div class="clear mb1"></div>

@@ -1,0 +1,73 @@
+<fieldset>
+  <legend><i class="fa fa-angle-right"></i> Personal</legend>
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="val_website">Full Name </label>
+    <div class="col-md-6">
+      <div class="input-group">
+        <%= profile.text_field :full_name, class: 'form-control' %>
+        <span class="input-group-addon"><i class="gi gi-user"></i></span>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="val_website">Avatar</label>
+    <div class="col-md-6">
+      <div class="input-group">
+        <%= image_tag @user.profile.avatar.url(:medium) %>
+        <%= profile.file_field :avatar, class: "form-control" %>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="val_website">Birthday </label>
+    <div class="col-md-6">
+      <div class="input-group">
+        <%= profile.date_select :birthday, {start_year: 1960, order: [:day, :month, :year], prompt: { day: 'Select day', month: 'Select month', year: 'Select year'}}, {class: 'datepicker', required: true} %>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="val_website">Province </label>
+    <div class="col-md-6">
+      <div class="input-group">
+        <%= profile.text_field :province, class: 'form-control' %>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="val_website">City </label>
+    <div class="col-md-6">
+      <div class="input-group">
+        <%= profile.text_field :city, class: 'form-control' %>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="val_bio">Address </label>
+    <div class="col-md-8">
+      <%= profile.text_area :address, rows: 4, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="val_website">Codepos </label>
+    <div class="col-md-6">
+      <div class="input-group">
+        <%= profile.text_field :codepos, class: 'form-control' %>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="val_skill">Gender </label>
+    <div class="col-md-6">
+      <%= profile.select :gender, [['Pria', 'Pria'], ['Wanita', 'Wanita']],{:prompt => "- Select Gender -"}, {class: 'form-control', required: true} %>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="val_credit_card">Phone Number </label>
+    <div class="col-md-6">
+      <div class="input-group">
+        <%= profile.text_field :phone, class: 'form-control' %>
+      </div>
+    </div>
+  </div>
+</fieldset>

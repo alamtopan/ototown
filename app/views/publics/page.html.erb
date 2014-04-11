@@ -1,0 +1,18 @@
+<h1><%= @page.title %></h1>
+<div class="grey_area">
+	<a href="example" class="blog_date"><%= @page.created_at.strftime('%d %b %Y - at %I:%M%p') %></a>
+	<div class="blog_category">
+		<a href="example"><%= @page.category.try(:title) %></a>
+	</div>
+</div>
+<br>
+<div class="blog">
+	<div class="blog_single_post">
+		<div class="post">
+			<p>
+				<%= @page.content.html_safe %>
+			</p>
+		</div>
+	</div>
+</div>
+

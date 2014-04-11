@@ -1,0 +1,19 @@
+<h2>Sign in</h2>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <%= bootstrap_flash %>
+	<%= link_to user_omniauth_authorize_path(:facebook), class: 'btn btn-primary-fb', style: "margin-bottom:0px" do %>
+    <%= raw "&nbsp;&nbsp;&nbsp;SignUp With Facebook" %>
+  <% end %>
+  <div><%= f.email_field :email, autofocus: true, class: "text", placeholder: "Email" %></div>
+
+  <div><%= f.password_field :password, autocomplete: "off", class: "text", placeholder: "Password" %></div>
+  <br>
+  <% if devise_mapping.rememberable? -%>
+    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+  <% end -%>
+  <%= link_to "Sign Up", new_registration_path(resource_name), class: "btn1 confirm", style: "float:right" %>
+  <div><%= f.submit "Sign in", class: "btn2 send_mail_again" %></div>
+<% end %>
+
+<%= render "users/shared/links" %>
