@@ -25,9 +25,88 @@
                 <%= info.label :address, '* Address', class: 'text' %>
                 <%= info.text_field :address, class: 'text', required: "required" %>
               </div>
-              <div class="col3 last">
+              <div class="col1">
+                <%= info.label :longitude, 'Longitude Map', class: 'text' %>
+                <%= info.text_field :longitude, class: 'text' %>
+              </div>
+              <div class="col2">
+                <%= info.label :latitude, 'Latitude Map', class: 'text' %>
+                <%= info.text_field :latitude, class: 'text' %>
+              </div>
+              <div class="c3 last">
                 <%= info.label :description, '* Description', class: 'text' %>
                 <%= info.text_area :description, rows: 4, class: 'ckeditor text', required: "required" %>
+              </div>
+              <div class="br"></div>
+              <div class="c3 last">
+                <%= info.label :category_type, '* Category Type', class: 'text' %>
+                <%= info.select :category_type, options_for_select(@category_type,@user.dealer_info.category_type), {include_blank: 'Choose One'}, class: 'text' %>
+              </div>
+            </div>
+            <div class="settings_form" style="border:none">
+              <h2><strong>Image Dealer</strong></h2>
+              <%= f.fields_for :images do |image| %>
+                <%= render 'shared/front/image_fields', f: image %>
+              <% end %>
+              <div class="links">
+                <%= link_to_add_association '<button type="submit" class="btn btn-sm btn-primary">+ Add Image</button>'.html_safe, f, :images %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+        <div class="modal-footer" style="border:none">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">Save changes</button>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="edit-dealer-form" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel" align="center"><strong>FORM REGISTER TO BE DEALER</strong></h4>
+      </div>
+      <%= form_for @user, url: edit_be_dealer_path, method: 'post' do |f| %>
+        <%= f.fields_for(:dealer_info) do |info| %>
+          <div class="modal-body">
+            <div class="settings_form" style="border:none">
+              <div class="col1">
+                <%= info.label :title, '* Dealer Name', class: 'text' %>
+                <%= info.text_field :title, class: 'text', required: "required" %>
+              </div>
+              <div class="col2">
+                <%= info.label :email, '* Email', class: 'text' %>
+                <%= info.email_field :email, class: 'text', required: "required" %>
+              </div>
+              <div class="col1">
+                <%= info.label :phone, '* Phone', class: 'text' %>
+                <%= info.text_field :phone, class: 'text', required: "required" %>
+              </div>
+              <div class="col2">
+                <%= info.label :address, '* Address', class: 'text' %>
+                <%= info.text_field :address, class: 'text', required: "required" %>
+              </div>
+              <div class="col1">
+                <%= info.label :longitude, 'Longitude Map', class: 'text' %>
+                <%= info.text_field :longitude, class: 'text' %>
+              </div>
+              <div class="col2">
+                <%= info.label :latitude, 'Latitude Map', class: 'text' %>
+                <%= info.text_field :latitude, class: 'text' %>
+              </div>
+              <div class="c3 last">
+                <%= info.label :description, '* Description', class: 'text' %>
+                <%= info.text_area :description, rows: 4, class: 'ckeditor text', required: "required" %>
+              </div>
+              <div class="br"></div>
+              <div class="c3 last">
+                <%= info.label :category_type, '* Category Type', class: 'text' %>
+                <%= info.select :category_type, options_for_select(@category_type,@user.dealer_info.category_type), {include_blank: 'Choose One'}, class: 'text' %>
               </div>
             </div>
             <div class="settings_form" style="border:none">

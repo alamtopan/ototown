@@ -28,6 +28,9 @@
   #dealer-form .modal-content{
   	width: 700px;
   }
+  #edit-dealer-form .modal-content{
+  	width: 700px;
+  }
 
   .scrollit{
   	overflow: scroll;

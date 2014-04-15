@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   before_action :set_object
   before_filter :authenticate_user!
   before_filter :sex
+  before_filter :category_type
 
 	def user_home
 		render layout: 'application_user'
@@ -37,6 +38,21 @@ class UsersController < ApplicationController
     redirect_to user_profile_path
   end
 
+  def edit_be_dealer
+    if @user.update(dealer_info_params.merge({active: true}))
+      info = @user.dealer_info
+      info.active = true
+      if info.save
+        flash[:notice] = 'Successfully Update Your Data'
+      else
+        flash[:errors] = info.errors.full_messages
+      end
+    else
+      flash[:errors] = @user.errors.full_messages
+    end
+    redirect_to user_profile_path
+  end
+
   private
     def draw_password
       %w(password password_confirmation).each do |attr|
@@ -49,8 +65,13 @@ class UsersController < ApplicationController
     end
 
     def dealer_info_params
-      params.require(:user).permit(dealer_info_attributes: [:title,:address,:phone,:description,:email],
+      params.require(:user).permit(dealer_info_attributes: [:title,:address,:phone,:description,:email,:longitude, :latitude, :category_type, :active],
         images_attributes:[:image])
+    end
+
+    def category_type
+      category_type = ['Dealer', 'Workshop']
+      @category_type = category_type.map{|category_type| [category_type, category_type]}
     end
 
     def sex
