@@ -32,9 +32,10 @@
 	<div class="widget widget-for-dealer">
 		<% if @user.not_dealer? %>
 			<a href="#" class="btn2 dialog_request_dealer" data-toggle="modal" data-target="#dealer-form">I want to be a dealer</a>
-		<% end %>
-		<% if @user.request_dealer? %>
-			<a href="#" class="btn2 dialog_request_dealer">Not Verified Yet</a>
+		<% elsif @user.request_dealer? %>
+			<a href="#" class="btn2 dialog_request_dealer" data-toggle="modal" data-target="#dealer-form">Not Verified Yet</a>
+		<% else %>
+			<a href="#" class="btn2 dialog_request_dealer" data-toggle="modal" data-target="#edit-dealer-form">Dealer Verified</a>
 		<% end %>
 	</div>
 </div>

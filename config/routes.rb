@@ -40,6 +40,7 @@ Ototown::Application.routes.draw do
     get '/archive_products',          to: 'products#archive',          as: 'archive_products'
     put '/change_status/:product_id', to: 'products#change_status',    as: 'change_status'
     post '/be-a-dealer',              to: 'users#be_dealer',           as: 'be_dealer'
+    post '/edit-be-a-dealer',         to: 'users#edit_be_dealer',           as: 'edit_be_dealer'
   end
 
   # Product
