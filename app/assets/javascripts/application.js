@@ -62,11 +62,25 @@ $(document).ready(function(){
   });
 
   $('#brand_product').change(function(){
-    var url = $(this).data('url'); 
+    var url = $(this).data('url');
     $.get(url, {brand: $(this).val()})
       .done(function(data){
         $('#model_product').html(data);
       });
+  });
+
+  $('#product_category_id').change(function(){
+    if($(this).val() == '2'){
+      $('.cars').hide();
+    }else{
+      $('.cars').show();
+    }
+  });
+
+  $('#add-image').click(function(){
+    if($('.step_3 .col_3').length > 3){
+      $(this).hide();
+    }
   })
 
 });

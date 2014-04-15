@@ -25,6 +25,7 @@ gem 'jbuilder', '~> 1.2'
   gem 'kaminari'                        # pagination
   gem 'protected_attributes'
 # end
+  gem 'breadcrumbs_on_rails'
 
 # group :addons do
   gem 'cocoon'                          # Dynamic nested forms using jQuery
@@ -47,7 +48,6 @@ group :assets do
   gem 'paperclip'                     # attachment tool
   gem 'mini_magick'
   gem 'ckeditor'
-  gem 'breadcrumbs_on_rails'
   gem 'acts-as-taggable-on'
 end
 
