@@ -1,0 +1,25 @@
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <div class="patt"></div>
+  <div class="carousel-inner">
+    <% @slider.each_with_index do |slider,index| %>
+      <div class="item <%= 'active' if index.zero? %>">
+        <%= image_tag "#{slider.pic}" %>
+        <div class="container">
+          <div class="carousel-caption">
+            <a href="<%= slider.url %>" class="slide_url">
+              <h1><%= slider.title %></h1>
+            </a>
+            <p><%= slider.content.html_safe %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+</div>

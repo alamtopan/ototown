@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ototown</title>
+  <%= stylesheet_link_tag    "application_backend", media: "all", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div id="page-container" class="sidebar-full">
+    <%= render 'backend/shared/menu_bar' %>
+    <div id="main-container">
+      <%= render 'backend/shared/header_nav' %>
+      <%= bootstrap_flash %>
+    	<%= yield %>
+      <footer class="clearfix">
+        <div class="pull-right">
+          Created <i class="fa fa-heart text-danger"></i> 
+          by <a href="http://ototown.com" target="_blank">CreativeDesignJakarta.com</a>
+        </div>
+        <div class="pull-left">
+          <span id="year-copy">2014</span> © <a href="http://ototown.com" target="_blank">www.Ototown.com</a>
+        </div>
+      </footer>
+    </div>
+  </div>
+  <%= render 'backend/shared/modal_content' %>
+	<%= javascript_include_tag "application_backend", "data-turbolinks-track" => true %>
+</body>
+</html>

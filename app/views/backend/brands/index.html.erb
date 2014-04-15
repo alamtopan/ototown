@@ -1,0 +1,27 @@
+<%= render layout: 'backend/shared/prepare_table', 
+           locals: {
+                     table_name:  'Brand', 
+                     button_name: 'Brand',
+                     add_method: true
+                   } do %>
+	<table id="example-datatable" class="table table-vcenter table-condensed table-bordered">
+		<thead>
+			<tr>
+				<th class="text-center" width="10%">No</th>
+				<th>Name</th>
+				<th class="text-center">Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+		<% @brands.each_with_index do |brand,index| %>
+			<tr>
+				<td class="text-center"><%= index + 1 %></td>
+				<td><a href="javascript:void(0)"><%= brand.name %></a></td>
+				<td class="text-center">
+					<%= render partial: 'backend/shared/action_buttons', locals: {resource: brand, confirmation: "#{brand.name} will be deleted, are you sure ?"} %>
+				</td>
+			</tr>
+		<% end %>
+		</tbody>
+	</table>
+<% end %>

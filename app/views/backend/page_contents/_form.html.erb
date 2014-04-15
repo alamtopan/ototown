@@ -1,0 +1,41 @@
+<fieldset>
+  <div class="form-group">
+    <label class="col-md-3 control-label" for="example-textarea-input">Category</label>
+    <div class="col-md-6">
+      <%= f.select :category, @category_contents,{:prompt => "- Category Content -"},{class: 'form-control', required: true} %>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-md-3 control-label" for="example-text-input">Picture</label>
+    <div class="col-md-9">
+      <div class="input-group">
+        <%= image_tag @page_contents.pic.url(:medium) %>
+        <%= f.file_field :pic, class: "form-control" %>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-md-3 control-label" for="example-text-input">Title</label>
+    <div class="col-md-9">
+     <%= f.text_field :title, class: 'form-control', placeholder: 'Title' %>
+   </div>
+  </div>
+  <div class="form-group">
+    <label class="col-md-3 control-label" for="example-textarea-input">Content</label>
+    <div class="col-md-9">
+      <%= f.text_area :content, class: 'ckeditor form-control', rows: '9', placeholder: 'Description' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-md-3 control-label" for="example-text-input">URL Link</label>
+    <div class="col-md-9">
+     <%= f.text_field :url, class: 'form-control', placeholder: 'http://..' %>
+   </div>
+  </div>
+</fieldset>
+<div class="form-group form-actions submit-bott">
+  <div class="col-md-8 col-md-offset-4">
+    <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-arrow-right"></i> Submit</button>
+    <button type="reset" class="btn btn-sm btn-warning"><i class="fa fa-repeat"></i> Reset</button>
+  </div>
+</div>

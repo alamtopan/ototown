@@ -1,0 +1,59 @@
+<%= form_failure_message @advertise %>
+<%= form_for :advertise, as: @advertise, url: (@advertise.new_record? ? backend_advertises_path : backend_advertise_path(@advertise)), method: (@advertise.new_record? ? :post : :put),
+      html: { role: 'form',class: 'form-horizontal form-bordered' } do |f| %>
+  <fieldset>
+    <legend><i class="fa fa-angle-right"></i> Advertise </legend>
+    <div class="form-group">
+      <%= f.label :active, 'Active?', class: 'col-md-4 control-label' %>
+      <div class="col-md-1">
+        <%= f.check_box :active, class: 'form-control' %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :price, class: 'col-md-4 control-label' %>
+      <div class="col-md-6">
+        <div class="input-group">
+          <%= f.number_field :price, class: 'form-control', placeholder: 'Price', required: true %>
+        </div>
+      </div>
+    </div>
+     <div class="form-group">
+      <%= f.label :product_id, class: 'col-md-4 control-label' %>
+      <div class="col-md-6">
+        <div class="input-group">
+          <%= f.select :product_id, options_for_select(@products, @advertise.product_id), {include_blank: 'Choose One'}, class: 'form-control' %>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :loan_term, class: 'col-md-4 control-label' %>
+      <div class="col-md-6">
+        <div class="input-group">
+          <%= f.number_field :loan_term, class: 'form-control', placeholder: 'Loan Term', required: true %>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :interest_rate, class: 'col-md-4 control-label' %>
+      <div class="col-md-6">
+        <div class="input-group">
+          <%= f.number_field :interest_rate, class: 'form-control', placeholder: 'Interest Rate', required: true %>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :down_payment, class: 'col-md-4 control-label' %>
+      <div class="col-md-6">
+        <div class="input-group">
+          <%= f.number_field :down_payment, class: 'form-control', placeholder: 'Down Payment', required: true %>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+  <div class="form-group form-actions">
+    <div class="col-md-8 col-md-offset-4">
+      <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-arrow-right"></i> Submit</button>
+      <button type="reset" class="btn btn-sm btn-warning"><i class="fa fa-repeat"></i> Reset</button>
+    </div>
+  </div>
+<% end %>

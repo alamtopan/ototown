@@ -1,0 +1,37 @@
+<%= render layout: 'backend/shared/prepare_table', 
+           locals: {
+                     table_name:  'Advertise', 
+                     button_name: 'Advertise',
+                     add_method: true
+                   } do %>
+  <table id="example-datatable" class="table table-vcenter table-condensed table-bordered">
+    <thead>
+      <tr>
+        <th class="text-center">No</th>
+        <th>Product</th>
+        <th>Price</th>
+        <th>Loan Term</th>
+        <th>Interest Rate</th>
+        <th>Down Payment</th>
+        <th>Active</th>
+        <th class="text-center">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @advertises.each_with_index do |adv,index| %>
+      <tr>
+        <td class="text-center"><%= index + 1 %></td>
+        <td><a href="javascript:void(0)"><%= adv.product.name %></a></td>
+        <th><%= adv.price %></th>
+        <th><%= adv.loan_term %></th>
+        <th><%= adv.interest_rate %></th>
+        <th><%= adv.down_payment %></th>
+        <th><%= adv.active %></th>
+        <td class="text-center">
+          <%= render partial: 'backend/shared/action_buttons', locals: {resource: adv, confirmation: "#{adv.product.name} Advertise will be deleted, are you sure ?"} %>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+<% end %>

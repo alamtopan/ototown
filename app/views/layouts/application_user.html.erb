@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ototown</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body class="page">
+	<%= render partial: 'shared/front/header' %>
+	<div class="margin-top80">
+		<div id="content">
+			<div class="content">
+				<div class="breadcrumbs">
+					<%= link_to 'Home', root_path %>
+					<%= image_tag '../../assets/marker_2.gif' %>
+					<%= link_to 'Account', user_profile_path %>
+				</div>
+				<%= bootstrap_flash %>
+				<div class="main_wrapper profile_layout">
+					<%= render partial: 'shared/front/side_bar_user' %>
+					<%= yield %>
+				</div>
+			</div>
+		</div>
+	</div>
+	<%= render partial: 'shared/front/footer' %>
+	<%= render 'shared/front/dealer_form_modal' %>
+	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+</body>
+</html>

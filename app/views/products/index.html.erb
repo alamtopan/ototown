@@ -1,0 +1,57 @@
+<div class="profile_content">
+	<h1 class="no_border"><strong>My</strong> cars</h1>
+	<% if params[:q] %>
+		<div class="search_cars">
+			<a href="http://autodealer.winterjuice.com/profile/vehicles/add/" class="btn2" style="float:right;">Add auto</a>
+			<div class="found_count">
+				<span>Found:</span> 0 cars
+				<span style="padding-left:30px;">Publish Limit:</span> 10 cars
+			</div>
+		</div>
+	<% end %>
+	<div class="actions_cars">
+		<%= form_for '', url: mass_actions_path do |f| %>
+		<%= f.submit :apply, class: 'btn1', id: 'apply_actions' %>
+		<%= f.select :select_actions, options_for_select([['Change Status','1'],['Remove','2']]), {include_blank: 'Select Action'}, class: 'text', name: 'select_actions' %>
+		<div class="label_select">Apply to the marked:</div>
+		<div class="mark_all">
+			<label></label>
+		</div>
+	</div>
+	<div class="cars_list">
+		<% @products.each_with_index do |product,i| %>
+		  <div class="car" id="<%= "product-#{i}" %> ">
+				<div class="checkbox padd-left-cr">
+					<input type="checkbox" class="select_car" name="product_ids[]" value="<%= product.id %>">
+				</div>
+				<div class="img"><%= link_to image_tag(product.images.first.image, class: "full-width"), detail_car_path(product) if product.images.present? %></div>
+				<div class="general_info">
+					<h2><%= link_to product.name, detail_car_path(product)  %></h2>
+					<div class="date"><%= time_ago_in_words(product.created_at) %></div>
+					<div class="price"><%= number_to_currency product.price, unit: 'Rp' %></div>
+				</div>
+				<div class="location">
+					Fabrication: <%= product.year %><br>
+					Location: <%= product.location || '-' %>
+				</div>
+				<div class="statistics_info">
+					<div class="item-views"><%= product.impressionist_count(:filter=>:all) %> views</div>
+					<div class="item-info"><%= product.condition %></div>
+				</div>
+				<div class="count_photo"><%= product.images.size %></div>
+				<div class="actions">
+					<%= link_to (product.status ? 'To Draft' : 'Republish'), change_status_path(product), method: 'put' %>
+					<%= link_to 'Edit', edit_product_path(product), class: 'markered', target: "_blank" %>
+					<%= link_to 'View On Site', detail_car_path(product), class: 'markered' %>
+					<%= link_to 'Remove', product_path(product), method: 'delete', class: 'markered last car_archive', data:{confirm: 'Are You Sure For Delete This Product?'} %>
+				</div>
+			</div>
+		<% end %>
+	</div>
+	<% end %>
+
+	<div class="bottom_catalog_box">
+		<div class="clear"></div>
+	</div>
+</div>
+<div class="clear mb1"></div>

@@ -1,0 +1,18 @@
+<div class="recent_blog">
+	<h2><strong>Latest </strong> Dealers on Ototown</h2>
+	<% @dealers.each_with_index do |dealer, index| %>
+		<div class="post_block dealers <%= 'last' if index == @dealers.size-1 %>">
+			<%= link_to detail_dealer_path(dealer),class: "thumb deal" do %>
+				<%= image_tag dealer.images.first.image  if dealer.images.present? %>
+			<% end %>
+			<h5>
+				<%= link_to detail_dealer_path(dealer) do %>
+					<%= dealer.dealer_info.title %>
+				<% end %>
+			</h5>
+			<div class="date"><span><%= dealer.dealer_info.address %></span></div>
+			<div class="post"><p><%= truncate strip_tags(dealer.dealer_info.description.to_s), length: 60 %></p></div>
+		</div>
+	<% end %>
+	<div class="clear"></div>
+</div>

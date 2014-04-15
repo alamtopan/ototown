@@ -1,0 +1,32 @@
+<h1><%= @news.title %></h1>
+<div class="grey_area">
+	<a href="example" class="blog_date"><%= @news.created_at.strftime('%d %b %Y - at %I:%M%p') %></a>
+	<div class="blog_category">
+		<a href="example"><%= @news.category_news.try(:title) %></a>
+	</div>
+</div>
+<br>
+<div class="blog">
+	<div class="blog_single_post">
+		<div class="post">
+			<p>
+				<%= link_to detail_news_path(@news.id) do %>
+					<%= image_tag "#{@news.pic}", class: "thumb left-float" %>
+				<% end %>
+				<%= @news.content.html_safe %></p>
+		</div>
+	</div>
+</div>
+
+<div id="fb-root"></div>
+<script>
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/id_ID/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script>
+<div class="fb-comments"data-href="<%= detail_news_url(@news.id) %>" data-num-posts="10" data-colorscheme="light" mobile="false">
+</div>

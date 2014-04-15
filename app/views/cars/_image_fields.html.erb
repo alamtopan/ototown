@@ -1,0 +1,13 @@
+<div class="col_3">
+	<div class="input_wrapper">
+		<div class="nested-field nested-fill">
+		  <%= link_to_remove_association '<button type="reset" class="btn btn-sm btn-warning">X</button>'.html_safe, f, { wrapper_class: 'nested-field' } %>
+			<span id="upload-photos" style="position: relative; z-index: 1;">
+				<%= image_tag f.object.image, class: 'car_catalog' %>
+			</span>
+			<div id="html5_18its6hbvjnf1c7qd2imu1ktv4_container" class="moxie-shim moxie-shim-html5">
+			  <%= f.file_field :image, class: 'text' %>
+			</div>
+		</div>
+	</div>
+</div>

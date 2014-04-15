@@ -1,0 +1,174 @@
+<fieldset>
+  <div class="form-group">
+    <%= f.label :published, '',class: 'col-md-3 control-label' %>
+    <% @choice_status.each_with_index do |choice_status, index| %>
+      <div class="col-md-2">
+        <%= f.radio_button :status, choice_status, id: "choice_status_#{index}", required: true %>  <b><%= choice_status %></b>
+      </div>
+    <% end %>
+  </div>
+  <div class="form-group">
+   <%= f.label :choice_user, '',class: 'col-md-3 control-label' %>
+    <div class="col-md-6">
+      <%= f.select :user_id, options_for_select(@users, @car.user_id), {include_blank: 'Choose One'}, class: 'form-control selectpicker', data: { live_search: "true", size: 8 } %>
+    </div>
+  </div>
+  <div class="form-group">
+   <%= f.label :condition, '',class: 'col-md-3 control-label' %>
+    <% @condition.each_with_index do |condition, index|%>
+      <div class="col-md-2">
+        <%= f.radio_button :condition, condition ,id:"condition_#{index}",required: true%>  <b><%= condition %></b>
+      </div>
+    <% end %>
+  </div>
+  <div class="form-group">
+    <%= f.label :name, '',class: 'col-md-3 control-label' %>
+    <div class="col-md-9">
+      <%= f.text_field :name, class: 'form-control', placeholder: 'Name' %>
+    </div>
+  </div>
+   <div class="form-group">
+    <%= f.label :description, '',class: 'col-md-3 control-label' %>
+    <div class="col-md-9">
+      <%= f.text_area :description, class: 'ckeditor form-control', rows: '9', placeholder: 'Description' %>
+    </div>
+  </div>
+   <div class="form-group">
+    <%= f.label :price, '',class: 'col-md-3 control-label' %>
+    <div class="col-md-9">
+      <%= f.number_field :price, class: 'form-control', placeholder: 'Price' %>
+    </div>
+  </div>
+</fieldset>
+<fieldset>
+<div class="form-group">
+  <%= f.label :type_product, 'Type',class: 'col-md-3 control-label' %>
+  <div class="col-md-6">
+    <%= f.select :type_product, options_for_select(@types, @car.type_product), {include_blank: 'Choose One'}, class: 'form-control' %>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.label :brand, '',class: 'col-md-3 control-label' %>
+  <div class="col-md-6">
+    <%= f.select :brand, options_for_select(@brands, @car.brand), {include_blank: 'Choose One'}, class: 'form-control', id: 'brand_product', data: {url: brand_model_path} %>
+  </div>
+</div>
+ <div class="form-group">
+  <%= f.label :model, '',class: 'col-md-3 control-label' %>
+  <div class="col-md-6">
+    <%= f.select :model, options_for_select([], @car.model), {include_blank: 'Choose One'}, class: 'form-control', id: 'model_product' %>
+  </div>
+</div>
+ <div class="form-group">
+  <%= f.label :year, '',class: 'col-md-3 control-label' %>
+  <div class="col-md-6">
+    <%= f.select :year, options_for_select(@years, @car.year), {include_blank: 'Choose One'}, class: 'form-control' %>
+  </div>
+</div>
+ <div class="form-group">
+  <%= f.label :color, '',class: 'col-md-3 control-label' %>
+  <div class="col-md-6">
+    <%= f.select :color, options_for_select(@colors, @car.color), {include_blank: 'Choose One'}, class: 'form-control' %>
+  </div>
+</div>
+ <div class="form-group">
+  <%= f.label :plate_number, '',class: 'col-md-3 control-label' %>
+  <div class="col-md-6">
+    <%= f.text_field :plate_number, class: 'form-control', placeholder: 'Plate Number' %>
+  </div>
+</div>
+ <div class="form-group">
+  <%= f.label :exp_date, '',class: 'col-md-3 control-label' %>
+  <div class="col-md-6">
+    <%= f.text_field :exp_date, class: 'datepicker form-control', placeholder: 'Expire Date' %>
+  </div>
+</div>
+ <div class="form-group">
+  <%= f.label :kilometer, '',class: 'col-md-3 control-label' %>
+  <div class="col-md-6">
+    <%= f.text_field :kilometer, class: 'form-control', placeholder: 'Kilometer' %>
+  </div>
+</div>
+ <div class="form-group">
+  <%= f.label :door, '',class: 'col-md-3 control-label' %>
+  <div class="col-md-6">
+    <%= f.number_field :door, class: 'form-control', placeholder: 'Door' %>
+  </div>
+</div>
+ <div class="form-group">
+  <%= f.label :seat, '',class: 'col-md-3 control-label' %>
+  <div class="col-md-6">
+    <%= f.number_field :seat, class: 'form-control', placeholder: 'Seat' %>
+  </div>
+</div>
+ <div class="form-group">
+  <%= f.label :transmission, '',class: 'col-md-3 control-label' %>
+  <div class="col-md-6">
+    <%= f.select :transmission, options_for_select(@transmissions, @car.transmission), {include_blank: 'Choose One'}, class: 'form-control' %>
+  </div>
+</div>
+ <div class="form-group">
+  <%= f.label :engine, '',class: 'col-md-3 control-label' %>
+  <div class="col-md-6">
+    <%= f.text_field :engine, class: 'form-control', placeholder: 'Engine' %>
+  </div>
+</div>
+ <div class="form-group">
+  <%= f.label :cyclinders, '',class: 'col-md-3 control-label' %>
+  <div class="col-md-6">
+    <%= f.text_field :cyclinders, class: 'form-control', placeholder: 'Cylinders' %>
+  </div>
+</div>
+ <div class="form-group">
+  <%= f.label :fuel, '',class: 'col-md-3 control-label' %>
+  <div class="col-md-6">
+    <%= f.text_field :fuel, class: 'form-control', placeholder: 'Fuel' %>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.label :province, '',class: 'col-md-3 control-label' %>
+  <div class="col-md-6">
+    <%= f.text_field :province, class: 'form-control', placeholder: 'Province', id: 'province_attributes' %>
+  </div>
+</div>
+ <div class="form-group">
+  <%= f.label :city, '',class: 'col-md-3 control-label' %>
+  <div class="col-md-6">
+    <%= f.text_field :city, class: 'form-control', placeholder: 'City', id: 'city_attributes' %>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.label :location, '',class: 'col-md-3 control-label' %>
+  <div class="col-md-6">
+    <%= f.text_field :location, class: 'form-control', placeholder: 'Location' %>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.label :price, '',class: 'col-md-3 control-label' %>
+  <div class="col-md-6">
+    <%= f.text_field :price, class: 'form-control', placeholder: 'Price' %>
+  </div>
+</div>
+</fieldset>
+<fieldset>
+  <legend><i class="fa fa-angle-right"></i> Price Credits </legend>
+  <%= f.fields_for @advertise do |adv| %>
+    <%= render 'advertise_form', f: adv %>
+  <% end %>
+</fieldset>
+<fieldset>
+  <legend><i class="fa fa-angle-right"></i> Image Products </legend>
+  <%= f.fields_for :images do |image| %>
+    <%= render 'image_fields', f: image %>
+  <% end %>
+  <div class="links">
+    <%= link_to_add_association '<button type="submit" class="btn btn-sm btn-primary">+ Add Image</button>'.html_safe, f, :images %>
+  </div>
+</fieldset>
+<br><br>
+<div class="form-group form-actions submit-bott">
+  <div class="col-md-8 col-md-offset-4">
+    <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-arrow-right"></i> Submit</button>
+    <button type="reset" class="btn btn-sm btn-warning"><i class="fa fa-repeat"></i> Reset</button>
+  </div>
+</div>

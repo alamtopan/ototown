@@ -1,0 +1,16 @@
+<div id="page-content">
+	<div class="block">
+		<div class="block-title">
+			<div class="block-options pull-right">
+				<%= link_to new_resource_path, class: "btn btn-alt btn-sm btn-default toggle-bordered enable-tooltip active" do %>
+					Add <%= button_name %>
+				<% end if add_method %>
+			</div>
+			<h2><strong><%= table_name %> </strong>List</h2>
+		</div>
+		<div class="table-responsive">
+			<%= yield %>
+			<br>
+		</div>
+	</div>
+</div>
