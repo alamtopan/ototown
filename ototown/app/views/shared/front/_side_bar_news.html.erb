@@ -1,0 +1,23 @@
+<div class="sidebar">
+	<div class="widget_divider"></div>
+	<% if @advertisement_news_side_right_with_des.present? %>
+		<div class="widget">
+			<a href="<%= @advertisement_news_side_right_with_des.link_url %>">
+				<h2 class="uppercase"><strong><%= @advertisement_news_side_right_with_des.title %></strong></h2>
+			</a>
+			<div class="thumb_box">
+				<a href="<%= @advertisement_news_side_right_with_des.link_url %>" class="thumb">
+				<%= image_tag "#{@advertisement_news_side_right_with_des.picture}" %>
+				</a>
+			</div>
+			<p><%= truncate strip_tags(@advertisement_news_side_right_with_des.content.to_s), length: 100 %></p>
+		</div>
+	<% end %>
+	<div class="widget_divider"></div>
+	<% if @advertisement_news_side_right_without_des.present? %>
+		<% @advertisement_news_side_right_without_des.each do |advertisement_news_side_right_without_des| %>
+			<%= image_tag "#{advertisement_news_side_right_without_des.picture}", class: "full-100 margin-bottom20" %>
+		<% end %>
+	<% end %>
+	<div class="widget_divider"></div>
+</div>

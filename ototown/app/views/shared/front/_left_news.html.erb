@@ -1,0 +1,24 @@
+<div class="news_wrapper" style="padding-top:25px;">
+	<div class="news">
+		<h2><strong>Latest</strong> News</h2>
+		<div>
+			<% @news_list.each do |news_list| %>
+				<div class="news_box">
+					<h5><%= link_to "#{news_list.title}", detail_news_path(news_list.id) %></h5>
+					<%= link_to detail_news_path(news_list.id) do %>
+						<%= image_tag "#{news_list.pic}", class: "full-100" %>
+					<% end %>
+					<div class="date"><span><%= news_list.created_at.strftime('%d %b %Y - at %I:%M%p') %></span></div>
+					<div class="post">
+						<p><%= truncate strip_tags(news_list.content.to_s), length: 60 %></p>
+					</div>
+				</div>
+			<% end %>
+		</div>
+		<br>
+		<div class="all_wrapper">
+			<%= link_to "All News", news_path, class: "all_news" %>
+		</div>
+	</div>
+	<%= image_tag "reklame/left-banner.png", class: "full-100" %>
+</div>

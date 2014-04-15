@@ -1,0 +1,9 @@
+<div class="nested-field nested-fill">
+  <div class="col-md-6">
+    <%= link_to_remove_association '<button type="reset" class="btn btn-sm btn-warning">X</button>'.html_safe, f, { wrapper_class: 'nested-field' } %>
+    <%= image_tag f.object.image.url, class: "car_catalog" %>
+    <%= f.file_field :image %>
+    <%= f.text_field :description, class: 'text' %>
+    <div class="br"></div>
+  </div>
+</div>

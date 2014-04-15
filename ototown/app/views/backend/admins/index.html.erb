@@ -1,0 +1,33 @@
+<%= render layout: 'backend/shared/prepare_table', 
+           locals: {
+                     table_name:  'Users', 
+                     button_name: 'Users',
+                     add_method: true
+                   } do %>
+	<table id="example-datatable" class="table table-vcenter table-condensed table-bordered">
+		<thead>
+			<tr>
+				<th class="text-center">ID</th>
+				<th>Username</th>
+				<th>Fullname</th>
+				<th>Email</th>
+				<th>Dealer</th>
+				<th class="text-center">Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+		<% @users.each do |user| %>
+			<tr>
+				<td class="text-center">1</td>
+				<td><a href="javascript:void(0)"><%= user.username %></a></td>
+				<td>Fullname</td>
+				<td><span class="label label-primary"><%= user.email %></span></td>
+				<th><%= link_to 'Add To Dealer', add_dealer_backend_user_path(user) %></th>
+				<td class="text-center">
+					<%= render partial: 'backend/shared/action_buttons', locals: {resource: user, confirmation: "#{user.username} will be deleted, are you sure ?"} %>
+				</td>
+			</tr>
+		<% end %>
+		</tbody>
+	</table>
+<% end %>

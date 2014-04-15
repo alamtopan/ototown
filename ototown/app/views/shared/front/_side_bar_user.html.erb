@@ -1,0 +1,41 @@
+<div class="sidebar">
+	<div class="widget widget-nav-profile">
+		<h2><strong>Account</strong> menu</h2>
+		<ul>
+			<li class="settings <%= 'active' if action_name == 'user_home' %>">
+				<%= link_to 'Dashboard', user_home_path %>
+			</li>
+			<li class="vehicles <%= 'active' if action_name == 'index' %>">
+				<%= link_to 'My Product', products_path %>
+			</li>
+			<li class=" vehicles_archive <%= 'active' if action_name == 'archive' %>">
+				<%= link_to 'My Archive Product', archive_products_path %>
+			</li>
+		</ul>
+	</div>
+	<div class="widget contacts_widget credit-simulation width_user_info">
+		<h2><strong>Contact</strong></h2>
+		<div class="post">
+			<%= image_tag @user.profile.avatar.url(:medium), style: 'max-width:70px;float:left;margin-right:20px;' %>
+			<p><b><%= @user.profile.full_name %></b></p>
+			<p class="member-at">Join At : <br><%= @user.created_at.strftime('%d %b %Y') %></p>
+			<div class="clear"></div>
+		</div><br>
+		<div class="addr detail"><%= @user.profile.address %></div>
+		<div class="phones detail"><%= @user.profile.phone %></div>
+		<div class="email detail single_line">
+			<a href="mailto:<%= @user.email %>" rel="moc/eciujretniw//elpmaxe" class="email_link_replace markered"><%= @user.email %>
+			</a>
+		</div>
+		<div class="clear"></div>
+	</div>				
+	<div class="widget widget-for-dealer">
+		<% if @user.not_dealer? %>
+			<a href="#" class="btn2 dialog_request_dealer" data-toggle="modal" data-target="#dealer-form">I want to be a dealer</a>
+		<% elsif @user.request_dealer? %>
+			<a href="#" class="btn2 dialog_request_dealer" data-toggle="modal" data-target="#dealer-form">Not Verified Yet</a>
+		<% else %>
+			<a href="#" class="btn2 dialog_request_dealer" data-toggle="modal" data-target="#edit-dealer-form">Dealer Verified</a>
+		<% end %>
+	</div>
+</div>

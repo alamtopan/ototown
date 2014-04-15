@@ -1,0 +1,29 @@
+<%= render layout: 'backend/shared/prepare_table', 
+           locals: {
+                     table_name:  'Category', 
+                     button_name: 'Category',
+                     add_method: true
+                   } do %>
+  <table id="example-datatable" class="table table-vcenter table-condensed table-bordered">
+    <thead>
+      <tr>
+        <th class="text-center">No</th>
+        <th>Name</th>
+        <th>Created At</th>
+        <th class="text-center">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @categories.each_with_index do |cate,index| %>
+      <tr>
+        <td class="text-center"><%= index + 1 %></td>
+        <td><a href="javascript:void(0)"><%= cate.name %></a></td>
+        <th><%= cate.created_at %></th>
+        <td class="text-center">
+          <%= render partial: 'backend/shared/action_buttons', locals: {resource: cate, confirmation: "#{cate.name} will be deleted, are you sure ?"} %>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+<% end %>

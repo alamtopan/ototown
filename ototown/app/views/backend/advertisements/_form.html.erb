@@ -1,0 +1,84 @@
+<fieldset>
+  <div class="form-group">
+    <%= f.label :active, 'Active?', class: 'col-md-3 control-label' %>
+    <div class="col-md-1">
+      <%= f.check_box :active, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-md-3 control-label" for="example-textarea-input">Position</label>
+    <div class="col-md-6">
+      <%= f.select :position, options_for_select(@position, @advertisement.position),{prompt: 'Select Position'},class: 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-md-3 control-label" for="example-text-input">Title</label>
+    <div class="col-md-9">
+     <%= f.text_field :title, class: 'form-control', placeholder: 'Title' %>
+   </div>
+  </div>
+  <div class="form-group">
+    <label class="col-md-3 control-label" for="example-text-input">Link Advertisement</label>
+    <div class="col-md-9">
+     <%= f.text_field :link_url, class: 'form-control', placeholder: 'Link URL' %>
+   </div>
+  </div>
+  <div class="form-group">
+    <label class="col-md-3 control-label" for="example-text-input">Picture</label>
+    <div class="col-md-9">
+      <div class="input-group">
+        <%= image_tag @advertisement.picture.url(:medium) %>
+        <%= f.file_field :picture, class: "form-control" %>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-md-3 control-label" for="example-text-input">Content</label>
+    <div class="col-md-9">
+      <%= f.text_area :content, class: 'ckeditor form-control', rows: '9', placeholder: 'Description' %>
+   </div>
+  </div>
+  <div class="form-group">
+    <label class="col-md-3 control-label" for="example-textarea-input">Publish On</label>
+    <div class="col-md-3">
+      <%= f.text_field :publish, class: 'form-control input-datepicker', placeholder: 'mm/dd/yyyy', data: {"date-format" => "yyyy-mm-dd"} %>
+    </div>
+    <label class="col-md-1 control-label" for="example-textarea-input">Expire On</label>
+    <div class="col-md-3">
+      <%= f.text_field :unpublish, class: 'form-control input-datepicker', placeholder: 'mm/dd/yyyy', data: {"date-format" => "yyyy-mm-dd"} %>
+    </div>
+  </div>
+</fieldset>
+<fieldset>
+  <legend><i class="fa fa-angle-right"></i> Advertisers </legend>
+  <div class="form-group">
+    <label class="col-md-3 control-label" for="example-text-input">Name</label>
+    <div class="col-md-5">
+     <%= f.text_field :name, class: 'form-control', placeholder: 'Name' %>
+   </div>
+  </div>
+  <div class="form-group">
+    <label class="col-md-3 control-label" for="example-text-input">Phone</label>
+    <div class="col-md-5">
+     <%= f.text_field :phone, class: 'form-control', placeholder: 'Phone' %>
+   </div>
+  </div>
+  <div class="form-group">
+    <label class="col-md-3 control-label" for="example-text-input">Address</label>
+    <div class="col-md-5">
+     <%= f.text_field :address, class: 'form-control', placeholder: 'Address' %>
+   </div>
+  </div>
+  <div class="form-group">
+    <label class="col-md-3 control-label" for="example-text-input">Price</label>
+    <div class="col-md-5">
+     <%= f.text_field :price, class: 'form-control', placeholder: 'Price' %>
+   </div>
+  </div>
+</fieldset>
+<div class="form-group form-actions submit-bott">
+  <div class="col-md-8 col-md-offset-4">
+    <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-arrow-right"></i> Submit</button>
+    <button type="reset" class="btn btn-sm btn-warning"><i class="fa fa-repeat"></i> Reset</button>
+  </div>
+</div>

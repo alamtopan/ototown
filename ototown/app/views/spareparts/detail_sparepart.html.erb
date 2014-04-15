@@ -1,0 +1,122 @@
+<div class="margin-top80">
+	<div id="content">
+		<div class="content">
+			<div class="breadcrumbs">
+				<%= link_to 'Home', root_path %>
+				<%= image_tag '../../assets/marker_2.gif' %>
+				<%= link_to 'Sparepart', spareparts_path %>
+				<%= image_tag '../../assets/marker_2.gif' %>
+				<%= @sparepart.name %>
+			</div>
+			<div class="main_wrapper">
+				<div class="main_wrapper ">
+					<div class="cars_id">
+						<div class="id">Brand <span><%= @sparepart.brand %></span></div>
+						<div class="views">Model <%= "#{@sparepart.model} #{@sparepart.year}" %></div>
+					</div>
+					<h1>
+						<%= @sparepart.name %>
+					</h1>
+					<div class="car_image_wrapper">
+						<%= render 'shared/front/slide_car_detail', images: @sparepart.images %>
+					</div>
+					<div class="car_characteristics">
+						<a href="#" class="print" onclick="window.print();return false;"></a>
+						<div class="price" data-currency="Rp" data-price="<%= @sparepart.price %>" style="margin-left:10px; margin-top:15px;">
+							<%= number_to_currency(@sparepart.price, unit: 'Rp.') %>
+						</div>
+						<div class="clear"></div>
+						<div class="features_table">
+							<div class="line">
+								<div class="left">Model, Body type:</div>
+								<div class="right"><%= "#{@sparepart.model}, #{@sparepart.type_product}" %></div>
+							</div>
+							<div class="line">
+								<div class="left">Fabrication:</div>
+								<div class="right"><%= @sparepart.year %></div>
+							</div>
+							<div class="line">
+								<div class="left">Condition:</div>
+								<div class="right">
+									<%= @sparepart.condition %>
+								</div>
+							</div>
+							<div class="line">
+								<div class="left">Year:</div>
+								<div class="right">
+									<%= @sparepart.year %>
+								</div>
+							</div>
+							<div class="line">
+								<div class="left">Location:</div>
+								<div class="right">
+									<%= "#{@sparepart.city}, #{@sparepart.province}" %>
+								</div>
+							</div>
+							<div class="line">
+								<div class="left">Expire Date:</div>
+								<div class="right">
+									<%= @sparepart.exp_date %>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="clear"></div>
+					<div class="info_box">
+						<div class="sparepart_contacts">
+							<h2><strong>Detail</strong> Information</h2>
+							<div>
+								<b>Location: </b>
+								<br/>
+								<%= @sparepart.location %>
+							</div><br/>
+							<%= @sparepart.description.html_safe %>
+							<p></p>
+							<div class="clear"></div>
+							<div class="clear"></div>
+						</div>
+						<div class="fb-comment-sparepart">
+							<div id="fb-root"></div>
+							<script>
+								(function(d, s, id) {
+									var js, fjs = d.getElementsByTagName(s)[0];
+									if (d.getElementById(id)) return;
+									js = d.createElement(s); js.id = id;
+									js.src = "//connect.facebook.net/id_ID/all.js#xfbml=1";
+									fjs.parentNode.insertBefore(js, fjs);
+								}(document, 'script', 'facebook-jssdk'));
+							</script>
+							<div class="fb-comments" data-href="<%= detail_sparepart_url(@product) %>" data-num-posts="10" data-colorscheme="light" mobile="false">
+							</div>
+						</div>
+					</div>
+					<div class="sparepart_sidebar">
+						<div id="loan_calculator-2" class="widget_loan_calculator">
+							<div class="loan calculator-wrapper">
+								<div class="widget contacts_widget credit-simulation width-20">
+									<h2><strong>Contact</strong></h2>
+									<div class="post">
+										<%= image_tag @sparepart.user.profile.avatar.url(:medium), style: 'max-width:70px;float:left;margin-right:20px;' %>
+										<p><b><%= @sparepart.user.profile.full_name %></b></p>
+										<p class="member-at">Join At : <br><%= @sparepart.user.created_at.strftime('%d %b %Y') %></p>
+										<div class="clear"></div>
+									</div><br>
+									<div class="addr detail"><%= @sparepart.user.profile.address %></div>
+									<div class="phones detail"><%= @sparepart.user.profile.phone %></div>
+									<div class="email detail single_line">
+										<a href="mailto:<%= @sparepart.user.email %>" rel="moc/eciujretniw//elpmaxe" class="email_link_replace markered"><%= @sparepart.user.email %>
+										</a>
+									</div>
+									<div class="clear"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="clear"></div>
+					<div class="clear"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>

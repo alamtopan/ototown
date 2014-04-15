@@ -1,0 +1,31 @@
+<%= render layout: 'backend/shared/prepare_table', 
+           locals: {
+                     table_name:  'Page Contents', 
+                     button_name: 'Page Contents',
+                     add_method: true
+                   } do %>
+	<table id="example-datatable" class="table table-vcenter table-condensed table-bordered">
+		<thead>
+			<tr>
+				<th class="text-center" width="10%">No</th>
+				<th width="30%">Title Content</th>
+				<th>Category Content</th>
+				<th>Created At</th>
+				<th class="text-center">Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+		<% @page_contents.each_with_index do |page,index| %>
+			<tr>
+				<td class="text-center"><%= index + 1 %></td>
+				<td><a href="javascript:void(0)"><%= page.title %></a></td>
+				<td><span class="label label-primary"><%= page.category %></span></td>
+				<td><%= page.created_at.strftime('%d %b %Y - at %I:%M%p') %></td>
+				<td class="text-center">
+					<%= render partial: 'backend/shared/action_buttons', locals: {resource: page, confirmation: "#{page.title} will be deleted, are you sure ?"} %>
+				</td>
+			</tr>
+		<% end %>
+		</tbody>
+	</table>
+<% end %>

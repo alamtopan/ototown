@@ -1,0 +1,22 @@
+<div class="tabs_wrapper home_tabs section">
+	<ul class="tabs">
+		<li class="current">Latest Spare Parts</li>
+	</ul>
+	<div class="box visible">
+		<%= link_to "Show all...", spareparts_path, class: "all" %></a>
+ 		<div class="results"><span>Found <%= @spareparts.size %> Spareparts</span></div>
+ 		<div class="clear"></div>
+ 		<div class="tabs_carousel">
+ 		<% @spareparts.each_with_index do |sparepart, index| %>
+   		<div class="slide">
+   			<%= link_to detail_sparepart_path(sparepart),class: "img" do %>
+					<%= image_tag sparepart.images.first.image, class: "small_image"  if sparepart.images.present? %>
+				<% end %>
+				<%= link_to detail_sparepart_path(sparepart),class: "title" do %>
+					<%= sparepart.name %>
+				<% end %>
+			</div>
+		<% end %>
+		</div>
+	</div>
+</div>

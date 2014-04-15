@@ -1,0 +1,8 @@
+<div class="btn-group btn-group-xs">
+	<%= link_to edit_resource_path(resource), class: 'btn btn-default', data: {toogle: 'tooltip', title: 'Edit'} do %>
+		<i class="fa fa-pencil"></i>
+	<% end %>
+	<%= link_to resource_path(resource), method: 'delete',class: 'btn btn-danger', data: {confirm: confirmation, toogle: 'tooltip', title: 'Delete'} do %>
+		<i class="fa fa-times"></i>
+	<% end %>
+</div>

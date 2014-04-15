@@ -1,0 +1,27 @@
+<div class="wrapper_1">
+	<div class="search_auto_wrapper">
+		<div class="search_auto">
+			<%= form_for :search, url: dealer_search_path, method: 'get' do |f| %>
+				<div class="sell_box sell_box_1">
+					<h2><strong>Search</strong></h2>
+					<div class="select_wrapper hm">
+						<label><span>* </span><strong>Choice Category:</strong></label>
+				    <%= f.select :category_type, options_for_select(@catalog), {include_blank: 'Choose Category'}, class: 'select_5' %>
+					</div>
+					<div class="select_wrapper hm">
+						<label><span>* </span><strong>Address </strong></label>
+						<%= f.text_field :address, class: 'txb' %>
+					</div>
+					<div class="input_wrapper hm">
+						<label><span>* </span><strong>Keyword:</strong></label>
+						<%= f.text_field :title, class: 'txb', style: 'width:120%!important' %>
+					</div>
+					<%= f.submit :search, class: 'btn_search' %>
+					<div class="clear"></div>
+				</div>
+			<% end %>
+			<div class="clear"></div>
+		</div>
+	</div>
+	<div class="clear"></div>
+</div>

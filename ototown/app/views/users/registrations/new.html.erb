@@ -1,0 +1,17 @@
+<h2>Sign up</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div><%= f.text_field :username, autofocus: true , class: "text", placeholder: "Username"%></div>
+
+  <div><%= f.email_field :email, autofocus: true , class: "text", placeholder: "Email"%></div>
+
+  <div><%= f.password_field :password, autocomplete: "off", class: "text", placeholder: "Password" %></div>
+
+  <div><%= f.password_field :password_confirmation, autocomplete: "off", class: "text", placeholder: "Password Confirmation" %></div>
+  <%= link_to "Sign In", new_session_path(resource_name), class: "btn1 confirm", style: "float:right" %>
+  <div><%= f.submit "Sign up", class: "btn2 send_mail_again" %></div>
+<% end %>
+
+<%= render "users/shared/links" %>

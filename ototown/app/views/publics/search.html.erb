@@ -1,0 +1,48 @@
+<% if @products.first.category_id == 1 %>
+  <%= render 'shared/front/paginate_result/paginate_result_cars' %>
+  <%= render 'shared/front/side_bar_cars' %>
+<% elsif @products.first.category_id == 2 %>
+  <%= render 'shared/front/paginate_result/paginate_result_spareparts' %>
+  <%= render 'shared/front/side_bar_spareparts' %>
+<% end %>
+<div class="main_catalog" style="padding-top:0px;">
+  <ul class="catalog_table">
+    <% @products.each_with_index do |product, index| %>
+      <li class="is_dealer">
+        <%= link_to detail_car_path(product), class: 'thumb' do %>
+          <div class= "car_catalog"><%= image_tag product.images.first.image if product.images.present? %></div>
+        <% end %>
+        <div class="catalog_desc">
+          <div class="location">Location: <b><%= product.city %></b></div>
+          <div class="title_box">
+            <h4>
+              <%= link_to detail_car_path(product) do %>
+                <%= product.name %>
+              <% end %>
+            </h4>
+            <div class="price"><%= number_to_currency(product.price, unit: 'Rp.') %></div>
+          </div>
+          <div class="clear"></div>
+          <div class="grey_area">
+            <span>Fabrication: <b><%= product.year %></b></span>
+            <span>Brand: <b><%= product.brand %></b></span>
+            <span>Model: <b><%= product.model %></b></span>
+            <span>Condition: <b><%= product.condition %></b></span>
+          </div>
+          <div style="float:right"></div>
+          <%= link_to detail_car_path(product),class: "more markered" do %>
+            View details
+          <% end %>
+        </div>
+      </li>
+    <% end %>
+    <%= raw '<div class="alert alert-danger"><a class="close" data-dismiss="alert">×</a>No Data Found</div>' unless @products.present? %>
+  </ul>
+  <div class="bottom_cat=alog_box padding-top0">
+    <div class="pagination">
+      <%= paginate @products %>
+    </div>
+    <div class="clear"></div>
+  </div>
+</div>
+<div class="clear"></div>

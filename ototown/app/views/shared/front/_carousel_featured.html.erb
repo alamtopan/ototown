@@ -1,0 +1,40 @@
+<div class="recent">
+	<h2><strong>Latest</strong> Vehicles On Sale</h2>
+	<div class="recent_carousel">
+		<% @cars.each do |car| %>
+			<div class="slide">
+				<%= link_to detail_car_path(car) do %>
+					<%= image_tag car.images.first.image.url(:medium) if car.images.present? %>
+					<div class="description">
+						<p>
+							Registration: <%= car.created_at.year %><br/>
+							Transmission: <%= car.transmission %><br/>
+							Year: <%= car.year %><br/>
+							Type: <%= car.type_product %>
+						</p>
+					</div>
+					<div class="title">
+						<%= car.brand %>
+						<span class="price"><%= number_to_currency(car.price, unit: 'Rp.') %></span>
+					</div>
+				<% end %>
+			</div>
+		<% end %>
+	</div>
+</div>
+<div class="banners">
+	<div class="banner_1 main_banner">
+		<div class="text_wrapper">
+			<p class="title"><strong>Looking</strong> for a car?</p>
+			<p class="desc">1.000 new offers every day. 35.000 offers on site</p>
+		</div>
+		<a href="./catalog">Search</a>
+	</div>
+	<div class="banner_2 main_banner">
+		<div class="text_wrapper">
+			<p class="title"><strong>Want</strong> to sell a car?</p>
+			<p class="desc">200.000 visitors every day. Add your offer now!</p>
+		</div>
+		<a href="./add">Sell</a>
+	</div>
+</div>

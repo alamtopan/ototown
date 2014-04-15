@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ototown</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body class="page">
+  <%= render partial: 'shared/front/header' %>
+	<%= bootstrap_flash %>
+	<%= yield %>
+	<%= render partial: 'shared/front/footer' %>
+	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+
+	<%= image_tag "#{@advertisement_home_side_left.picture}", class: "side-reklame-home-left" if @advertisement_home_side_left.present? %>
+	<%= image_tag "#{@advertisement_home_side_right.picture}", class: "side-reklame-home-right" if @advertisement_home_side_right.present? %>
+</body>
+</html>

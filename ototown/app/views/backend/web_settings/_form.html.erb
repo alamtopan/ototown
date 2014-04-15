@@ -1,0 +1,68 @@
+<fieldset>
+  <div class="form-group">
+    <label class="col-md-3 control-label" for="example-text-input">Pav Icon</label>
+    <div class="col-md-9">
+      <div class="input-group">
+        <%= image_tag @web_settings.pav_icon.url(:medium), class: "pav-icon" %>
+        <%= f.file_field :pav_icon, class: "form-control" %>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-md-3 control-label" for="example-text-input">Logo</label>
+    <div class="col-md-9">
+      <div class="input-group">
+        <%= image_tag @web_settings.logo.url(:medium) %>
+        <%= f.file_field :logo, class: "form-control" %>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-md-3 control-label" for="example-text-input">Title</label>
+    <div class="col-md-9">
+     <%= f.text_field :title, class: 'form-control', placeholder: 'Title' %>
+   </div>
+  </div>
+  <div class="form-group">
+    <label class="col-md-3 control-label" for="example-textarea-input">Description</label>
+    <div class="col-md-9">
+      <%= f.text_area :description, class: 'form-control', rows: '9', placeholder: 'Description' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-md-3 control-label" for="example-text-input">Keywords</label>
+    <div class="col-md-9">
+     <%= f.text_area :keywords, class: 'form-control', placeholder: 'Keywords' %>
+   </div>
+  </div>
+  <div class="form-group">
+    <label class="col-md-3 control-label" for="example-text-input">Header Tags</label>
+    <div class="col-md-9">
+     <%= f.text_area :header_tags, class: 'form-control', placeholder: 'Header Tags' %>
+   </div>
+  </div>
+  <div class="form-group">
+    <label class="col-md-3 control-label" for="example-text-input">Footer Tags</label>
+    <div class="col-md-9">
+     <%= f.text_area :footer_tags, class: 'form-control', placeholder: 'Footer Tags' %>
+   </div>
+  </div>
+  <div class="form-group">
+    <label class="col-md-3 control-label" for="example-text-input">Contact</label>
+    <div class="col-md-6">
+     <%= f.text_field :contact, class: 'form-control', placeholder: 'Contact' %>
+   </div>
+  </div>
+  <div class="form-group">
+    <label class="col-md-3 control-label" for="example-text-input">Email</label>
+    <div class="col-md-6">
+     <%= f.text_field :email, class: 'form-control', placeholder: 'Email' %>
+   </div>
+  </div>
+</fieldset>
+<div class="form-group form-actions submit-bott">
+  <div class="col-md-8 col-md-offset-4">
+    <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-arrow-right"></i> Submit</button>
+    <button type="reset" class="btn btn-sm btn-warning"><i class="fa fa-repeat"></i> Reset</button>
+  </div>
+</div>
