@@ -81,6 +81,10 @@ $(document).ready(function(){
     if($('.step_3 .col_3').length > 3){
       $(this).hide();
     }
+
+    if($('.set-3 .col-md-6').length > 3){
+      $(this).hide();
+    }
   })
 
 });

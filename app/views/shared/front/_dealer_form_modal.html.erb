@@ -109,13 +109,13 @@
                 <%= info.select :category_type, options_for_select(@category_type,@user.dealer_info.category_type), {include_blank: 'Choose One'}, class: 'text' %>
               </div>
             </div>
-            <div class="settings_form" style="border:none">
+            <div class="settings_form set-3" style="border:none">
               <h2><strong>Image Dealer</strong></h2>
               <%= f.fields_for :images do |image| %>
                 <%= render 'shared/front/image_fields', f: image %>
               <% end %>
               <div class="links">
-                <%= link_to_add_association '<button type="submit" class="btn btn-sm btn-primary">+ Add Image</button>'.html_safe, f, :images %>
+                <%= link_to_add_association '<button type="submit" class="btn btn-sm btn-primary" id="add-image">+ Add Image</button>'.html_safe, f, :images %>
               </div>
             </div>
           <% end %>
